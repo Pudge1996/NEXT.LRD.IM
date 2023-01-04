@@ -1,26 +1,324 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+@layer base {
+  /* 通用&布局 */
   body {
-    color: white;
-    background: black;
+    @apply bg-color transition-[background-color] text-neutral-900 dark:text-neutral-50 font-normal antialiased break-words scroll-pt-[104px] font-sans leading-relaxed;
   }
+  .layout {
+    @apply max-w-2xl mx-auto pt-8 sm:pb-12 sm:pt-14 px-5 md:px-3 relative min-h-[calc(100vh-182px)] sm:min-h-[calc(100vh-152px)];
+  }
+  /* 页面背景色 */
+  .bg-color {
+    @apply bg-white dark:bg-black transition-[background-color];
+  }
+
+  /* 文字 */
+  h1 {
+    @apply text-4xl sm:text-5xl font-semibold;
+  }
+  p {
+    @apply text-lg my-7 leading-relaxed;
+  }
+  .text-priamry {
+    @apply text-neutral-900 dark:text-neutral-50;
+  }
+  .text-secondary {
+    @apply text-neutral-600 dark:text-neutral-300;
+  }
+  .text-tertiary {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+  strong{
+    @apply font-semibold;
+  }
+
+  /* 分割线 */
+  hr {
+    @apply my-6 sm:my-10 border-neutral-200 dark:border-neutral-800 transition-[border-color];
+  }
+
+  /* 超链接颜色（无下划线） */
+  .link-color-none {
+    @apply text-inherit sm:hover:text-blue-700 active:text-blue-900 sm:active:text-blue-900 dark:sm:hover:text-blue-400 dark:active:text-blue-500 dark:sm:active:text-blue-500;
+  }
+
+  p a,
+  span a,
+  li a,
+  .link-color {
+    @apply text-blue-700 dark:text-blue-400 hover:underline underline-offset-2 active:no-underline sm:hover:text-blue-700 active:text-blue-900 sm:active:text-blue-900 dark:sm:hover:text-blue-400 dark:active:text-blue-500 dark:sm:active:text-blue-500 ring-default;
+  }
+
+  /* 添加 Tab 键聚焦后的 Outline 效果 */
+  .force-link {
+    @apply ring-default;
+  }
+
+  /* 个人简历专用样式 */
+  /* 下载简历、打印简历的按钮，移除header */
+  .resume a{
+    @apply text-secondary print:no-underline underline underline-offset-2 decoration-neutral-400 sm:hover:decoration-blue-700 dark:decoration-neutral-500 sm:hover:font-medium transition-[text-decoration-color];
+  }
+
+  .resume strong{
+    @apply text-priamry;
+  }
+  .resume section h2{
+    @apply text-lg font-semibold;
+  }
+  .resume section p{
+    @apply text-base mt-2 mb-3 text-secondary;
+  }
+
+  .resume-info section p{
+    @apply last:mb-0;
+  }
+
+  /* 联系方式 */
+  .resume .contact p{
+    @apply my-2;
+  }
+
+  /* 公司和工作经验列表 */
+  .resume-exp section{
+    @apply flex flex-col sm:flex-row gap-1 sm:gap-2 md:gap-10;
+  }
+
+  /* 工作时间 */
+  .resume-exp section>p{
+    @apply font-medium sm:min-w-[9rem] whitespace-nowrap text-neutral-500 dark:text-neutral-400 mb-0;
+  }
+
+  /* 公司名+岗位+地点，和工作成果的组 */
+  .resume-exp section>div{
+    @apply flex flex-col gap-1 sm:gap-0;
+  }
+
+  /* 公司名称 */
+  .resume-exp section div p:first-of-type{
+    @apply font-semibold mb-0 sm:mb-1 mt-1 sm:mt-2 text-priamry;
+  }
+
+  /* 公司名称（带有超链接的名称） */
+  .resume-exp section div p a:first-of-type{
+    @apply font-semibold mb-1 no-underline text-xl sm:text-base text-priamry sm:hover:text-blue-700 active:text-blue-900 sm:active:text-blue-900 dark:sm:hover:text-blue-400 dark:active:text-blue-500 dark:sm:active:text-blue-500;
+  }
+  
+  /* 岗位和城市 */
+  .resume-exp section div p:nth-child(2){
+    @apply text-base sm:text-sm font-medium mt-0 mb-0 sm:mb-2 text-neutral-500 dark:text-neutral-400 select-none;
+  }
+
+  /* 公司+岗位+地点的组 */
+  /* .resume-exp section div div:first-of-type{
+    @apply flex flex-row sm:flex-col items-center sm:items-start gap-2 sm:gap-0;
+  } */
+
+
+  /* 工作经验列表 */
+  .resume-exp section ul{
+    @apply pl-6 sm:pl-4 list-decimal text-secondary;
+  }
+
+  .resume-exp section ul a{
+    @apply text-secondary hover:underline underline-offset-2 active:no-underline sm:hover:text-blue-700 active:text-blue-900 sm:active:text-blue-900 dark:sm:hover:text-blue-400 dark:active:text-blue-500 dark:sm:active:text-blue-500 ;
+  }
+  .resume-exp section ul li{
+    @apply mt-1 mb-2 sm:mb-3 last:mb-0;
+  }
+
+
+  /* 技能清单 */
+  .resume-skill>section{
+    @apply w-full md:w-[calc(50%-1rem)] ;
+  }
+
+  .resume-skill>section p{
+    @apply mt-1 mb-0;
+  }
+
+  /* 下载简历按钮 */
+  .resume-download{
+    @apply no-underline link-color text-neutral-500 dark:text-neutral-400 sm:hover:text-blue-700 active:text-blue-900 sm:active:text-blue-900 dark:sm:hover:text-blue-400 dark:active:text-blue-500 dark:sm:active:text-blue-500 !important;
+  }
+
+  /* 博客详情页 */
+  .blog-content h1{
+    @apply leading-tight;
+  }
+
+  .blog-content h2{
+    @apply leading-tight text-2xl font-semibold my-5;
+  }
+
+  .blog-content h3{
+    @apply leading-tight text-[22px] font-semibold my-5;
+  }
+
+  .blog-content h4{
+    @apply leading-tight text-xl font-semibold my-5;
+  }
+
+  .blog-content h5, .blog-content h6{
+    @apply leading-tight font-semibold my-5;
+  }
+
+  .blog-content p{
+    @apply my-7;
+  }
+
+  .blog-content img{
+    @apply relative !important;
+  }
+
+  .blog-content blockquote{
+    @apply leading-none my-7 px-5 text-secondary relative before:left-[-8px] md:before:left-[-28px] before:top-[-19px] md:before:top-[-10px] before:bg-neutral-200 dark:before:bg-neutral-700;
+  }
+
+  .blog-content blockquote::before{
+    content:'';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    mask: url("data:image/svg+xml,%3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.796 7.487C1.218 6.874.908 6.186.908 5.07c0-1.963 1.378-3.722 3.382-4.592l.5.773C2.92 2.263 2.556 3.576 2.41 4.403c.301-.155.695-.21 1.082-.174 1.011.094 1.809.924 1.809 1.957a1.963 1.963 0 0 1-1.963 1.963 2.17 2.17 0 0 1-1.541-.662zm5.608 0c-.578-.613-.888-1.301-.888-2.417 0-1.963 1.378-3.722 3.382-4.592l.5.773c-1.87 1.012-2.235 2.325-2.381 3.152.301-.155.695-.21 1.082-.174 1.012.094 1.81.924 1.81 1.957a1.963 1.963 0 0 1-1.964 1.963 2.17 2.17 0 0 1-1.54-.662z' fill='%23000'/%3E%3C/svg%3E")
+    no-repeat 50% 50%/40px;
+    z-index: -1;
+  }
+
+  .blog-content blockquote p{
+    @apply my-1;
+  }
+
+  .blog-content ol, .blog-content ul{
+    @apply text-lg pl-10 my-7;
+  }
+  .blog-content ul{
+    @apply list-disc;
+  }
+
+  .blog-content ol{
+    @apply list-decimal;
+  }
+
+  .blog-content p code{
+    @apply  px-1 py-[2px] border bg-neutral-100 border-neutral-400 dark:bg-neutral-800 dark:border-neutral-600 rounded-md select-all transition-colors;
+  }
+
 }
+
+@layer components {
+  /* 图片浅容器背景 */
+  .img-loading-bg {
+    @apply bg-neutral-100 dark:bg-neutral-900 transition-[background-color];
+  }
+
+  /* 图片加载中 Spin 效果 */
+  .img-loading-spin {
+    @apply bg-neutral-100 dark:bg-neutral-900 transition-[background-color] before:animate-spin before:absolute motion-reduce:before:relative;
+  }
+
+  /* 基本按钮 */
+  .btn-base {
+    @apply hover:ring-0 sm:hover:bg-neutral-200  dark:sm:hover:bg-neutral-800 active:ring-4 active:ring-offset-2 active:ring-offset-neutral-100 dark:active:ring-offset-black active:ring-blue-600 focus:outline-none focus-visible:ring-4 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100 dark:focus-visible:ring-offset-black focus-visible:ring-blue-600 transition-[background-color] hover:transition-none dark:hover:transition-none select-none;
+  }
+
+  .btn-md {
+    @apply text-lg p-2 rounded leading-tight;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 rounded-lg font-medium;
+  }
+
+  .btn-icon {
+    @apply text-lg p-2 rounded;
+  }
+
+  /* 给非按钮添加 Tab 键聚焦后的 Outline 效果 */
+  .ring-default {
+    @apply focus:outline-none focus-visible:ring-4 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:ring-offset-black focus:ring-blue-600 rounded-md;
+  }
+
+  /* Changelog 时间轴效果 */
+
+}
+
+/* Tailwind CSS 以外的内容 */
+
+body{
+  font-feature-settings: 'case';
+}
+
+
+/* 文字截断效果 */
+.elis-2{
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 鼠标点击以聚焦时，不显示 outline */
+:focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* 移除 iOS 按下按钮时的背景色 */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* p, span 标签下的a标签，hover时出现外跳的图标 */
+p a[target="_blank"]:hover::after,
+p a[target="_blank"]:focus::after,
+span a[target="_blank"]:hover::after,
+span a[target="_blank"]:focus::after,
+li a[target="_blank"]:hover::after,
+li a[target="_blank"]:focus::after,
+.force-link:hover::after,
+.force-link:focus::after {
+  content: "";
+  margin-left: 0.125em;
+  margin-right: 0.125em;
+  mask: url("data:image/svg+xml,%3Csvg width='1em' height='1em' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1282_6689)'%3E%3Cpath d='M14.34 1.7a2.801 2.801 0 0 0-1.445-.782 9.05 9.05 0 0 0-1.907-.18H4.996c-.708 0-1.341.06-1.898.18a2.799 2.799 0 0 0-1.438.781c-.4.396-.661.87-.781 1.422a9.36 9.36 0 0 0-.172 1.89v5.954c0 .719.057 1.357.172 1.914.12.552.38 1.026.781 1.422a2.8 2.8 0 0 0 1.438.781 9.12 9.12 0 0 0 1.906.18h5.984c.719 0 1.357-.06 1.914-.18a2.759 2.759 0 0 0 1.438-.781c.4-.396.659-.87.773-1.422.12-.557.18-1.195.18-1.914v-5.93a9.05 9.05 0 0 0-.18-1.906 2.74 2.74 0 0 0-.773-1.43zm-.61 3.116v6.36c0 .411-.036.791-.109 1.14a1.674 1.674 0 0 1-.43.844c-.213.214-.497.357-.851.43-.35.073-.727.11-1.133.11H4.793a5.64 5.64 0 0 1-1.14-.11 1.678 1.678 0 0 1-.852-.43 1.674 1.674 0 0 1-.43-.844 5.996 5.996 0 0 1-.101-1.14V4.832c0-.417.033-.8.101-1.148.073-.35.216-.63.43-.844.213-.219.497-.362.851-.43.36-.073.748-.11 1.164-.11h6.391c.406 0 .784.037 1.133.11.354.073.638.216.851.43.22.213.362.495.43.844.073.349.11.726.11 1.132zm-3.289 5.211a.592.592 0 0 0 .47-.195.75.75 0 0 0 .179-.516V5.684c0-.271-.073-.472-.219-.602-.14-.13-.333-.195-.578-.195H6.637a.732.732 0 0 0-.516.18.604.604 0 0 0-.187.468c0 .203.065.365.195.485.13.114.302.171.516.171h1.312l1.063-.125-1.15 1.047-2.725 2.735a.694.694 0 0 0-.227.5c0 .213.065.385.195.515.13.125.295.188.492.188a.736.736 0 0 0 .297-.055.859.859 0 0 0 .243-.172L8.87 8.105l1.04-1.132-.118 1.109v1.242c0 .219.06.39.18.516a.62.62 0 0 0 .468.187z' fill='%23000'/%3E%3C/g%3E%3C/svg%3E")
+    no-repeat 50% 50%/1em 1em;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-color: currentColor;
+  vertical-align: -0.125em;
+}
+
+.force-link-icon::after {
+  content: "";
+  margin-left: 0.125em;
+  margin-right: 0.125em;
+  mask: url("data:image/svg+xml,%3Csvg width='1em' height='1em' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1282_6689)'%3E%3Cpath d='M14.34 1.7a2.801 2.801 0 0 0-1.445-.782 9.05 9.05 0 0 0-1.907-.18H4.996c-.708 0-1.341.06-1.898.18a2.799 2.799 0 0 0-1.438.781c-.4.396-.661.87-.781 1.422a9.36 9.36 0 0 0-.172 1.89v5.954c0 .719.057 1.357.172 1.914.12.552.38 1.026.781 1.422a2.8 2.8 0 0 0 1.438.781 9.12 9.12 0 0 0 1.906.18h5.984c.719 0 1.357-.06 1.914-.18a2.759 2.759 0 0 0 1.438-.781c.4-.396.659-.87.773-1.422.12-.557.18-1.195.18-1.914v-5.93a9.05 9.05 0 0 0-.18-1.906 2.74 2.74 0 0 0-.773-1.43zm-.61 3.116v6.36c0 .411-.036.791-.109 1.14a1.674 1.674 0 0 1-.43.844c-.213.214-.497.357-.851.43-.35.073-.727.11-1.133.11H4.793a5.64 5.64 0 0 1-1.14-.11 1.678 1.678 0 0 1-.852-.43 1.674 1.674 0 0 1-.43-.844 5.996 5.996 0 0 1-.101-1.14V4.832c0-.417.033-.8.101-1.148.073-.35.216-.63.43-.844.213-.219.497-.362.851-.43.36-.073.748-.11 1.164-.11h6.391c.406 0 .784.037 1.133.11.354.073.638.216.851.43.22.213.362.495.43.844.073.349.11.726.11 1.132zm-3.289 5.211a.592.592 0 0 0 .47-.195.75.75 0 0 0 .179-.516V5.684c0-.271-.073-.472-.219-.602-.14-.13-.333-.195-.578-.195H6.637a.732.732 0 0 0-.516.18.604.604 0 0 0-.187.468c0 .203.065.365.195.485.13.114.302.171.516.171h1.312l1.063-.125-1.15 1.047-2.725 2.735a.694.694 0 0 0-.227.5c0 .213.065.385.195.515.13.125.295.188.492.188a.736.736 0 0 0 .297-.055.859.859 0 0 0 .243-.172L8.87 8.105l1.04-1.132-.118 1.109v1.242c0 .219.06.39.18.516a.62.62 0 0 0 .468.187z' fill='%23000'/%3E%3C/g%3E%3C/svg%3E")
+    no-repeat 50% 50%/1em 1em;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-color: currentColor;
+  vertical-align: -0.125em;
+}
+
+/* 图片加载中 Spin 效果 */
+.img-loading-spin::before {
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12h-4a8 8 0 1 1-8-8V0z' fill='%23A3A3A3' fill-opacity='.5'/%3E%3C/svg%3E")
+    no-repeat 50% 50%/1.5rem 1.5rem;
+}
+
+/* 深色模式下的页面背景渐变 */
+.dark .bg-gradient {
+  background: radial-gradient(ellipse 70% 50% at 50% -22%, #777ac636, #0000);
+}
+
+/* 博客详情页 */
+

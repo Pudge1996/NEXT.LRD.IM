@@ -1,0 +1,145 @@
+---
+title: 博客实现 RSS 订阅能力全记录
+description: 我的个人网站 LRD.IM 从 2018 年元旦发布至今，已经持续维护 4 年了。从最开始根据一个网站模板替换图文，到现在全面的「自主研发」，这是我最骄傲的一款作品。接下来要开始尝试将我的博客内容输出成 RSS 源。
+category: 
+tags: RSS, 订阅
+author: 李瑞东
+date: 2022/11/11
+recommend: "ALL About RSS 推荐"
+recommendLink: "https://t.me/aboutrss/1276"
+mediumLink: ""
+---
+
+# Heading (rank 1)
+## Heading 2
+### 3
+#### 4
+##### 5
+###### 6
+
+> Block quote
+
+* Unordered
+* List
+
+1. Ordered
+2. List
+
+A paragraph, introducing a thematic break:
+
+---
+
+```css
+p{
+    font-size: 26px;
+}
+```
+
+[link](https://example.com)
+
+![image](https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2022-11-16.png)
+
+*emphasis*, **strong**, `code()`
+
+## Blockquotes
+
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
+
+## Lists
+
+Unordered
+
++ Create a list by starting a line with `+`, `-`, or `*`
++ Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces new list start:
+    * Ac tristique libero volutpat at
+    + Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
++ Very easy!
+
+Ordered
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+
+
+1. You can use sequential numbers...
+1. ...or keep all the numbers as `1.`
+
+Start numbering with offset:
+
+57. foo
+1. bar
+
+
+## Code
+
+Inline `code`
+
+
+
+```
+Sample text here...
+```
+
+Syntax highlighting
+
+``` js
+var foo = function (bar) {
+  return bar++;
+};
+
+console.log(foo(5));
+```
+
+## Tables
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+Right aligned columns
+
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+
+- 19^th^
+- H~2~O
+
+
+### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
+
+++Inserted text++
+
+### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
+
+Footnote 1 link[^first].
+
+Footnote 2 link[^second].
+
+Inline footnote^[Text of inline footnote] definition.
+
+Duplicated footnote reference[^second].
+
+[^first]: Footnote **can have markup**
+
+    and multiple paragraphs.
+
+[^second]: Footnote text.
+
