@@ -22,7 +22,7 @@ export default function Footer() {
           target="_blank"
           className="flex justify-between items-center gap-1 ring-default"
         >
-          订阅 RSS
+          RSS 订阅
         </Link>
         <span> · </span>
         <div className="flex justify-between items-center gap-1">

@@ -1,0 +1,36 @@
+---
+title: 在 iPhone 上安装旧版 Dribbble App
+description: Dribbble 官方在今年的 3 月份更新了 iOS 版客户端，但体验并不好，比如没有适配好全面屏、不能切换显示模式、卡等等。
+category: 软件插件
+tags: Dribbble, Charles, 抓包, App, 旧版 App, 客户端, iOS
+author: 李瑞东
+date: "20190414"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/%E5%9C%A8-iphone-%E4%B8%8A%E5%AE%89%E8%A3%85%E6%97%A7%E7%89%88-dribbble-app-66746628e600"
+---
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-04-14-66746628e600/01.png "安装旧版 Dribbble — Pudge")
+
+> 2019/07/05 补充：
+> Dribbble for iOS 在 5 月份更新的 2.0 版本已经做了许多改良。
+
+Dribbble 官方在今年的 3 月份更新了 iOS 版客户端，但体验并不好，比如没有适配好全面屏、不能切换显示模式、卡等等。
+
+所以我一直打算安装回旧版的 App，正好周末有点时间就要搞点事了。我通过 Charles 抓包 iTunes 12.4 上的 Dribbble 客户端，获得 Dribbble 1.3.0.ipa 文件，然后用 iMazing 安装至我的 iPhone。
+
+[在 Dropbox 中下载](https://www.dropbox.com/s/p2477hqxphtiuvb/Dribbble%201.3.0.ipa?dl=0) | [如何安装](https://imazing.com/guides/how-to-manage-apps-without-itunes)
+
+抓包、安装过程不再赘述了，网上一搜一大把，我参考的是这两篇文章：
+
+- [利用 Charles Proxy 下载旧版本 iOS App — 少数派](https://sspai.com/post/36122)
+- [利用Charles抓取旧版 iOS App — Newlearnerの小站](https://www.newlearner.site/2018/12/19/charles-ipa.html#i-2)
+
+中间遇到两个坑：
+
+1. Charles 不能直接和 SS 使用，不用 SS 又连不上 iTunes 或 iCloud，所以要进行设置：参考[这篇文章](http://wangjiawen.farbox.com/skill/shadowsocks-work-with-charles)；
+2. iTunes 12.7以上 移除了应用模块，所以无法抓包 App，而 Mojave 又不支持低版本的 iTunes，还好我有一台 10.12.6 Sierra 的电脑，通过 iTunes 12.4 可以正常下载 App。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-04-14-66746628e600/02.png "通过 Charles 下载旧版 App")
+
+[在 Dropbox 中下载](https://www.dropbox.com/s/p2477hqxphtiuvb/Dribbble%201.3.0.ipa?dl=0) | [如何安装](https://imazing.com/guides/how-to-manage-apps-without-itunes)

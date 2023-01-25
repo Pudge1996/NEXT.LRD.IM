@@ -5,7 +5,7 @@ import siteMetadata from "/data/siteMetadata";
 import ProjectItems from "/components/ProjectItems";
 import ContactCard from "/components/ContactCard";
 
-export default function Home() {
+export default function index() {
   
   return (
     <>

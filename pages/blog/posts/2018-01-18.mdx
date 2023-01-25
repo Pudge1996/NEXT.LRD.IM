@@ -1,0 +1,50 @@
+---
+title: 重燃动效激情之 AE 动效导出为 JSON！
+description: 今天正想把毕设的一些图标动效做好，突然间想到可以用 Bodymovin 导出 JSON 还没试过，于是就现场捣鼓了一番。现在发现其实非常方便！
+category: 软件插件
+tags: AE, AfterEffects, JSON, Lottie, Bodymovin, 动画, 导出
+author: 李瑞东
+date: "20180118"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/%E9%87%8D%E7%87%83%E5%8A%A8%E6%95%88%E6%BF%80%E6%83%85%E4%B9%8B-ae-%E5%8A%A8%E6%95%88%E5%AF%BC%E5%87%BA%E4%B8%BA-json-5fe20d63f09f"
+---
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-01-18-5fe20d63f09f/01.jpg)
+
+今天正想把毕设的一些图标动效做好，突然间想到可以用 Bodymovin 导出 JSON 还没试过，于是就现场捣鼓了一番。现在发现其实非常方便！
+
+通过 Bodymovin 导出 AE 所制作的动画需要：
+
+1. 在 AE 里制作好的合成；
+2. [Bodymovin](http://airbnb.io/lottie/after-effects/bodymovin-installation.html) 插件。
+
+## 开始
+
+按照[步骤](http://airbnb.io/lottie/after-effects/bodymovin-installation.html)安装好 Bodymovin 插件之后如果 AE 文件里有合成，将会自动显示在该界面。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-01-18-5fe20d63f09f/02.png "Settings 可以做一些客制化的设定，关于这些设定，可以在这里查看详细信息。")
+
+在右侧设置好保存路径后点左上角的 Render 即可导出，
+
+在导出前请检查 AE 的合成是否有过于炫酷的特效，因为目前 Bodymovin 并未完全支持所有 AE 效果，比如表达式、图层效果、遮罩的混合模式等等。[了解更多](http://airbnb.io/lottie/supported-features.html)
+
+导出后会是一份 JSON 文件，我们可以去 [Lottie Preview](https://www.lottiefiles.com/preview) 里预览效果，而且可以用手机端查看，在手机里如果有一些效果不能正常显示的话软件是会提示的。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-01-18-5fe20d63f09f/03.jpg "像这里 Lottie 就提示我里面有些效果是不能正常显示而且不支持表达式的。")
+
+这样看上去整个过程非常简单，基本上 AE 里做出来的都能导出。
+
+---
+
+## 导出带有表达式的合成
+
+Bodymovin 不支持导出带有表达式的合成，但如我我们有一些效果真的非常需要表达式来完成，那该怎么办呢？
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-01-18-5fe20d63f09f/04.png "带有表达式的图层")
+
+我们选中带有表达式的那一栏属性的关键帧中右键选择“关键帧辅助”>“将表达式转换为关键帧”，AE 会计算表达式，在每个帧创建一个关键帧，然后禁用该表达式。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-01-18-5fe20d63f09f/05.png "将带有表达式的属性转换为关键帧")
+
+在这种情况下 Bodymovin 就可以正常导出之前带有表达式的图层了！

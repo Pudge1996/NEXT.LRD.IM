@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
 
-export default function Home() {
+export default function about() {
   return (
     <>
       <Head>

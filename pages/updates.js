@@ -6,7 +6,7 @@ import siteMetadata from "/data/siteMetadata";
 import updatesData from "/data/updatesData";
 import ContactCard from "/components/ContactCard";
 
-export default function Home() {
+export default function updates() {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
     <>
@@ -40,7 +40,7 @@ export default function Home() {
             rel="noopener noreferrer"
             title="Github Issues"
           >
-            反馈问题
+            反馈 Issues
           </Link>
           <span>&nbsp;&nbsp;·&nbsp;&nbsp;</span>
           <span

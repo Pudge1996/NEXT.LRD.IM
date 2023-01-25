@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import siteMetadata from "/data/siteMetadata";
 import Link from "next/link";
-import { IoArrowDownCircleOutline } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
-import SingleLayout from '../components/SingleLayout'
 
 
-export default function Me() {
+export default function me() {
   const fileUrl = 'https://lrdim.oss-cn-shenzhen.aliyuncs.com/resources/resume-20221123.pdf';
   return (
     
@@ -134,7 +131,7 @@ export default function Me() {
             </section>
             <section>
               <strong>数据分析</strong>
-              <p>有基础的体验度量能力，能够结合数据反馈来调整设计策略，产出设计<Link href="/link" target="_blank" title="打开鱼棠 SCRM 设计项目方案">方案</Link></p>
+              <p>有基础的体验度量能力，能够结合数据反馈来调整设计策略，探索设计<Link href="/link" target="_blank" title="打开鱼棠 SCRM 设计项目方案">方案</Link></p>
             </section>
             <section>
               <strong>前端实现</strong>
@@ -147,6 +144,3 @@ export default function Me() {
     </div>
   )
 }
-
-
-Me.getLayout = page => <SingleLayout>{page}</SingleLayout>;

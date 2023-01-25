@@ -3,21 +3,23 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import companyData from "/data/companyData";
+import ProjectItemData from "/data/ProjectItemData";
+
 
 
 export default function ProjectItems() {
   const [isLoaded, setIsLoaded] = useState(false);
+  
   return (
-    <div className="flex flex-col gap-8">
-      {companyData.map((company) => (
+    <div className="flex flex-col-reverse gap-8">
+      {ProjectItemData.map((company) => (
         // 公司 Company 列表
         <div>
           <div className="flex gap-3 py-3 sm:py-4 text-lg sm:text-[22px] items-center font-medium  bg-color  top-[62px] sm:top-[58px] transition-[background-color] z-[1]">
             <div className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] relative overflow-hidden rounded border-[0.5px] dark:border-transparent img-loading-bg transition-colors">
               <Image
                 // 公司图片
-                src={company.title} // 待办 src={company.img}
+                src={company.img} // 待办 src={company.img}
                 alt={company.name}
                 layout="fill"
                 className="select-none"
@@ -47,7 +49,7 @@ export default function ProjectItems() {
                     <div className={` relative aspect-video mb-3 rounded-lg select-none  overflow-hidden img-loading-bg ${isLoaded ? '' : 'img-loading-spin'}`}>
                       <Image
                         // 项目图片
-                        src={project.title} // 待办 src={project.img}
+                        src={project.img} // 待办 src={project.img}
                         alt={project.title}
                         onLoad={() => setIsLoaded(true)}
                         onError={() => setIsLoaded(true)}

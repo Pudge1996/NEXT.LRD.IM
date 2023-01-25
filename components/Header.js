@@ -4,13 +4,13 @@ import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
 import DarkModeButton from "/components/DarkModeButton";
 import headerNavLinks from "/data/headerNavLinks";
-import { IoMenu, IoLogoRss, IoPersonAdd } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
+import { IoMenu, IoLogoRss, IoPerson } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import ContactCard from "/components/ContactCard";
 
 export default function Header() {
   return (
     <>
-      <div className="bg-color transition-all border-b border-neutral-200 dark:border-neutral-900 sticky h-max top-0 z-50 ">
+      <div className="bg-color transition-all border-b border-neutral-200 dark:border-neutral-900 sticky h-max top-0 z-[39] ">
         <div className="relative flex justify-between items-center max-w-2xl mx-auto px-5 md:px-3 h-[60px]">
           <Link
             href="/"
@@ -83,7 +83,7 @@ export default function Header() {
                       <Menu.Item>
                         <div className="flex items-center justify-between btn-base btn-md active:ring-0 active:ring-offset-0">
                           <div className="flex justify-center relative btn-base btn-icon">
-                            <IoPersonAdd className="text-xl" />
+                            <IoPerson className="text-xl" />
                             <ContactCard />
                           </div>
                           <div className="flex justify-center">

@@ -19,7 +19,6 @@ export default function DarkModeButton() {
       {mounted && (
         (theme === 'dark' ? (<IoSunny />) : (<IoMoon />))
       )}
-      <span className='hidden sm:inline'>切换背景</span>
     </button>
 
   );

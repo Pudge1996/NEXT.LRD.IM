@@ -1,0 +1,129 @@
+---
+title: 分享发现：AE中制作矢量动画图标的四款效率工具
+description: 最近在做一些动画图标的过程中发现了四款能提高工作效率的AE插件，分别是 Motion2、Flow、Overlord、gifGun，下面为大家逐一介绍。
+category: 软件插件
+tags: AE, AfterEffects, 插件, plugins, Motion2, Flow, Overlord, gifGun
+author: 李瑞东
+date: "20190207"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/%E5%88%86%E4%BA%AB%E5%8F%91%E7%8E%B0-ae%E4%B8%AD%E5%88%B6%E4%BD%9C%E7%9F%A2%E9%87%8F%E5%8A%A8%E7%94%BB%E5%9B%BE%E6%A0%87%E7%9A%84%E4%B8%89%E6%AC%BE%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7-90ab380890a3"
+---
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/01.jpg)
+
+最近在做一些动画图标的过程中发现了四款能提高工作效率的AE插件，分别是 Motion2、Flow、Overlord、gifGun，下面为大家逐一介绍。
+
+{/* ![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/02.png) */}
+
+## Motion2
+
+Motion2 是一款著名的动效辅助插件了，在这次动画图标库的制作中比较常用的功能是：
+
+1. 锚点定位。该功能可以快速将元素的锚点定位至九个方位，不用每次都按Y键来拖动。（如图1–1）
+2. Null 创建空图层。选定一个或多个图层后可以快速为所选图层新建空图层并作为该空图层的子元素。这个功能多用于快速缩放多个图层，避免两个不同图层的锚点不同导致缩放时出现错位等问题。（如图1–2）
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/03.gif "图1–1 使用锚点定位功能快速定位")
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/04.gif "图1–2 使用 Null 功能快速调整多个图层")
+
+当然 Motion2 可用的功能还有很多，比如快速调整缓动参数、制作弹性效果的 Excite、批量重命名 Name 等等，这些功能在制作矢量动画图标时不常用就不一一介绍了，感兴趣的同学可以到 Motion2 官网或 YouTube 中了解更多。
+
+[Motion2 官方网站](https://www.mtmograph.com/motion/) | [Motion2 官方视频介绍](https://youtu.be/XsWTGlkiyfI)
+
+{/* ![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/05.png) */}
+
+## Flow
+
+同样 Flow 也是比较多人使用的插件，作用是一键设置关键帧缓动曲线。常用的曲线基本上都在预设当中，当然也支持自定义运动曲线设置，主要功能介绍：
+
+1. 一键设置关键帧缓动曲线。选中相应关键帧，点击 Flow 窗口内的曲线图标，即可一键设置运动曲线。（如图2–1）
+2. 自定义缓动曲线。拖动图表上的手柄或输入数值，点击按钮 “APPLY” 即可应用。同时可以储存该参数，方便下次使用。（如图2–2）
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/06.gif "图2–1 一键设置关键帧缓动曲线")
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/07.gif "图2–2 自定义缓动曲线并储存")
+
+使用该插件时可能遇到的常见问题：
+
+**安装后点击 Window-Extensions-Flow 没有弹出 Flow 插件面板，怎么办？**
+需要在终端输入一段代码，查看[解决方案](https://lrd.im/blog/2018-03-17)。
+
+**每次应用缓动曲线时必须按 “APPLY”，有没有办法点自动应用到关键帧上？**
+在偏好设置中勾选 Auto-apply curve 即可（如图2–3）
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/08.gif "图2–3 设置自动应用缓动曲线")
+
+**应用 Back 、BackIn、BackOut 缓动曲线时弹出一个对话框（如图2–4），什么意思？**
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/09.png "图2–4 抖动问题弹窗")
+
+弹窗出现的原因：用户在为某些默认不支持抖动（Overshoot）的属性设置了带有抖动效果的缓动曲线。例如在 Position 属性中应用 Back 、BackIn、BackOut 或其他贝塞尔函数值大于1的曲线就会出现该弹窗。
+
+可选操作：
+
+**Clip**：裁剪掉抖动过界的部分，超过贝塞尔函数值1的部分强制设置为1；
+**Skip**：跳过此次设置，当什么事也没发生。
+**Separate Dimensions**（建议选项）：设为独立尺寸。这是解决问题的选项，将 Position 的 X 轴和 Y 轴运动独立，即可实现抖动效果。
+
+在为 LottieFiles.com 制作动态图标时我多数使用 Cubic 这一缓动曲线，原因是该曲线比较平滑自然，但是比 Ease 稍有动感，同时也有参考 ANTD 的[动效-速度](https://motion.ant.design/language/speed#%E7%BC%93%E5%8A%A8)。
+
+当然 Flow 插件所生成的缓动曲线并不能满足所有需求，必要的时候还是需要到速度图表（Speed Graph）里微调，才能达到满意的效果。
+
+同时 Flow 还有其他功能，比如导出导入个性化配置的缓动曲线、以表达式的方式应用缓动曲线至关键帧等等，感兴趣的同学可以到 Flow 官网或 YouTube 中了解更多。
+
+[Flow 官方网站](https://aescripts.com/flow/) | [Flow 官方介绍视频](https://youtu.be/olB5zSHfBr4)
+
+{/* ![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/10.png) */}
+
+## Overlord
+
+Overlord 插件主要作用是将 AI 中绘制的矢量图标快速导入到 AE 里作为形状图层，可供动效设计使用。主要功能介绍：
+
+1. 矢量图形在 AI 与 AE 中互相传送。点击 Push 按钮，即可将 AI 中绘制好的矢量图形传送至 AE 中当前的合成，免除了以往复杂的操作。（如图3–1）
+2. AI 中新建一个当前 AE 合成大小的文档。（如图3–3）
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/11.gif "图3–1 在 AI 与 AE 中互相传输矢量图形")
+
+这个功能也是 Overlord 的核心功能。
+
+安装好 Overlord 插件后 AE 和 AI 都会有一个插件面板，在 AI 里绘制好图案后点击传送按钮即可将图形传送至 AE 当前合成中的对应位置。
+
+同时 AE 也可以将形状图层传送到 AI 的对应位置中。（例外：已知 Polystar 必须先转为贝塞尔路径才可以从 AE 传输至 AI）
+
+Overlord 各按钮功能介绍（如图3–2）：
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/12.jpg)
+
+以往在 AI 中导出矢量图形至 AE 需要分好图层，导入 AE，再转化为矢量图层，而且还有很多无用的空 Group 或 Merge Path， 但是有了 Overlord 插件，一键导入即可，大幅提高工作效率。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/13.gif "图3–3 快速新建 AI 文档")
+
+前文提到在 AI 中传送形状到 AE 时会保留位置信息，所以 AI 画板大小和 AE 合成大小一致是很关键的，因此我们也会用到 “Matching artbord from comp” 这个功能，作用是在AI 中新建一个当前 AE 合成大小的文档，这样我们能将形状传送到对应的位置。
+
+想了解更多 Overlord 的信息，请到 Overlord 官网或 YouTube 中了解更多。
+
+[Overlord 官方网站](https://www.battleaxe.co/overlord) | [Overlord 官方介绍视频](https://www.youtube.com/playlist?list=PL6zZfVT2g-vLaR9kos0bTnrtpBe9HcEQX)
+
+{/* ![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/14.png) */}
+
+## gifGun
+
+gifGun是一款能够直接在 AE 中导出 GIF 动图的插件。界面简单明了，只有 “导出 GIF” 和 “设置”
+
+直接点击 “Make GIF” 即可将当前合成导出成 GIF 动图，无需赘述（如图4–1）。
+
+同时设置选项里也支持个性化的设置，比如限制宽度、设置颜色数量、保留透明通道等等。（如图4–2）。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/15.gif "图4–1 一键生成 GIF 动图
+")
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-02-07-90ab380890a3/16.jpg "图4–2 gifGun 设置面板")
+
+这个插件也是大幅提高工作效率的插件，有时候需要输出动效设计小样给其他小组成员看，一键导出即可。速度快而且质量好。
+
+想了解更多关于 gifGun 的信息，请到 gifGun 官网或 YouTube 中了解更多。
+
+[gifGun官方网站](https://aescripts.com/gifgun/) | [gifGun 官方介绍视频](https://youtu.be/mqURGR9niXU)
+
+以上是我最近在制作动画图标时发现的四款能提高工作效率的插件，欢迎留言交流。

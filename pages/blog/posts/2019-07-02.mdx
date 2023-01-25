@@ -1,0 +1,91 @@
+---
+title: 在 Sketch/PS 中导出 Display P3 广色域图片的方法
+description: 前一段时间换上了 iPhone 之后，我一直对官网上的描述里的 “Display P3” 挺好奇的，然后上网搜了下，发现了里面大有学问。下面放上在 Sketch/PS里导出 Display P3 色域图片的方法，供参考
+category: 软件插件
+tags: Sketch, P3, Display P3, 广色域, 色域, 色彩描述, PS, Photoshop, 导出
+author: 李瑞东
+date: "20190702"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/%E7%94%A8-sketch-%E5%AF%BC%E5%87%BA-display-p3-%E5%B9%BF%E8%89%B2%E5%9F%9F%E5%9B%BE%E7%89%87-1b6d3ee82147"
+---
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-07-02-1b6d3ee82147/01.jpg "Photo by Daniele Levis Pelusi on Unsplash")
+
+前一段时间换上了 iPhone 之后，我一直对官网上的描述里的 “Display P3” 挺好奇的，然后上网搜了下，发现了里面大有学问。
+
+下面放上在 Sketch/PS 里导出 Display P3 色域图片的方法，供参考…
+
+## 一、在 Sketch 中导出 Display P3 广色域图片
+
+### 1. 设置色彩配置方案
+
+首先如果之前没有设置过色中彩配置，请先到首选项中设置默认色彩配置方案（如图 1–1），该设置会在下一个新建文档中生效
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-07-02-1b6d3ee82147/02.png "1–1 设置色彩配置方案")
+
+如果想要修改当前文档的色彩配置方案，请到 File — Change Color Profile 中选择 Display P3。这时会提示选择 Assign 或 Convert（如图 1–2）。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-07-02-1b6d3ee82147/03.png "如图1–2 修改当前文档的色彩配置方案")
+
+**Assign**：保留当前颜色的色值，让色彩更艳丽（推荐使用该方案）；
+**Convert**：修改当前文档内颜色的色值，在转换过程中尽量保持颜色不变。
+
+点选 Change Profile 后，色彩配置方案将会改变。
+
+### 2. 导出图片
+
+导出图片时取消勾选 Save for web 选项（如图 1–3），出来的图片将会按照 Sketch 文档内的色彩配置方案来导出，等于说内嵌了 Display P3 的颜色配置文件。
+
+如果勾选此选项，导出来的图片色彩空间将会强制设置为 sRGB。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-07-02-1b6d3ee82147/04.png "1–3 设置导出选项")
+
+导出成功后我们会得到一张 P3 色域的图片（如图 2–2）。颜色十分艳丽。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-07-02-1b6d3ee82147/05.png "1–4 查看图片信息")
+
+## 二、在 PS 中导出 Display P3 广色域图片
+
+### 1.设置当前文档的颜色配置文件
+
+在 “编辑” — “转换为配置文件…” 弹出的对话框中的 “配置文件” 里选择 Display P3（如图2–1，当然你也可以选择其他颜色配置文件），点击确定。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-07-02-1b6d3ee82147/06.png "图2–1 设置颜色配置文件")
+
+### 2.导出图片
+
+Cmd+Shift+S 进入“储存为 Web 格式”对话框，勾选“嵌入颜色配置文件”，取消勾选“转换为 sRGB”（如图2–2），然后保存文件。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-07-02-1b6d3ee82147/07.png "图2–2 设置导出选项")
+
+得到一张 Display P3 广色域图片（如图2–3）。在 AI 中的设置也是类似，这里不再重复写了。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-07-02-1b6d3ee82147/08.png "2–3 查看图片信息")
+
+## 实际应用（并没有）
+
+前段时间和公司里的前端工程师商量在一个抽奖活动用上 Display P3 广色域图片，那时候他在给我测试版验收页面的时候的确能在手机里看到色彩艳丽、饱满的广色域图片。
+
+但是由于广色域图片不能被压缩（或者说是我暂时没有发现能压缩图片大小而保留颜色配置文件的方法），而前端工程师对图片的大小又特别敏感，所以最后还是没有使用到线上，属实可惜。
+
+### 1. 关于色彩空间的一些补充
+
+1. 大多数图片处理工具会帮你抹掉内嵌的颜色配置文件。所以如果图片在使用时经过阿里云 OSS 图片处理工具（或其他类似产品）处理，将会被转换成 sRGB 色彩空间图片。
+2. 在上文 1–3 中所设置的 Bitmap Exporting 选项，也会同步影响 Sketch Measure 插件内的导出标注功能。
+3. 暂时没有发现怎么用 Photoshop、AE 导出 Display P3 广色域动图。
+4. DCI-P3 不等于 Display P3 。DCI-P3 所能显示的颜色比后者更多，多应用在影视上。而后者是 Apple 在 DCI-P3 的基础上参考了 sRGB 制定出来的标准。iPhone7 以上设备都默认使用该色彩空间。
+5. 色彩配置文件、颜色描述文件、颜色特性文件说的都是同一个东西：[ICC Profile](https://zh.wikipedia.org/wiki/ICC%E8%89%B2%E5%BD%A9%E7%89%B9%E6%80%A7%E6%96%87%E4%BB%B6 "维基百科对 ICC Profile 的介绍")。这个文件通常嵌在文件中，便于在不同设备上浏览得到同样的色彩表现（前提是显示设备支持显示该颜色）。
+6. BT.709/BT.2020 是未来 4k、8k 电视的标准，可以显示的色彩范围比 P3/sRGB 大得多。
+
+### 2. 参考网站
+
+- [P3/sRGB/NTSC/AdobeRGB 屏幕色域是越大越好吗？](https://www.wobenben.com/html/news/201807/11695_1.html)
+- [ICC色彩特性文件 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/ICC%E8%89%B2%E5%BD%A9%E7%89%B9%E6%80%A7%E6%96%87%E4%BB%B6)
+- [Apple Display P3 色空间解析 - 知乎](https://zhuanlan.zhihu.com/p/39990465)
+- [Examples of various wide-gamut images](https://webkit.org/blog-files/color-gamut/)
+- [Interactive Wide-Gamut Comparisons](https://webkit.org/blog-files/color-gamut/comparison.html)
+
+### 3. 扩展阅读
+
+- [WWDC16 - Videos - Apple Developer](https://developer.apple.com/videos/wwdc2016)

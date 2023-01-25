@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     maxWidth: {
       '2xl': '702px',
+      '4xl': '1200px',
     },
     extend: {
       screens: {
@@ -15,5 +16,6 @@ module.exports = {
     },
   },
   plugins: [],
-  darkMode: 'class'
+  darkMode: 'class',
+  // important: true,
 }

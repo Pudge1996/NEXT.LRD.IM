@@ -1,0 +1,85 @@
+---
+title: 在 AI 中导出更干净的 SVG 图形！
+description: 当我们做好一些图标准备导出成 SVG 文件时都要轮廓化描边，但是草率地轮廓化描边经常会产生多余的锚点，我在做相关工作的过程中找到了一些方法，或许可以帮助您导出更干净的 SVG 图形。
+category: 软件插件
+tags: AI, illustrator, SVG, export, 导出, 精简, 压缩
+author: 李瑞东
+date: "20180201"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/%E5%9C%A8-ai-%E4%B8%AD%E5%AF%BC%E5%87%BA%E6%9B%B4-%E5%B9%B2%E5%87%80-%E7%9A%84-svg-%E5%9B%BE%E5%BD%A2-5f6feede2f21"
+---
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/01.jpg)
+
+> 当我们做好一些图标准备导出成 SVG 文件时都要轮廓化描边，但是草率地轮廓化描边经常会产生多余的锚点，我在做相关工作的过程中找到了一些方法，或许可以帮助您导出更干净的 SVG 图形。
+
+## 何为“不太干净”的 SVG 图形？
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/02.png)
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/03.png "「不太干净」的 SVG 图形。")
+
+这两个图标在一开始设计的时候都是用 2 像素的描边进行设计，在轮廓化描边以及合并形状之后产生了许多多余的锚点。
+
+如果用 AI 自带的简化（对象-路径-简化）工具，会改变图标原来的形状。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/04.png "使用 AI 自带的简化工具会改变原有的形状。（顶层的黄色是使用简化工具之后的效果）")
+
+下面分享两个技巧，帮助设计师导出干净的 SVG 图标。
+
+## 技巧一：将图形摆正
+
+如果我们的图标在创作过程中调整了形状的角度，在轮廓化描边之前请把形状转正，轮廓化描边之后再还原。如下图：
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/05.png)
+
+请注意大多数情况下都要手动定一个原点再旋转，不能用 AI 默认的中心点，因为中心点会随着形状的旋转而变化，导致无法回到原来的位置。
+
+## 技巧二：减少重叠的路径
+
+通常图标都是用各种基础形状之间的布尔运算制作出来的，在轮廓化描边之前请注意减少相互重叠的路径，如下图：
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/06.png "检查您的图标是否有过多的重叠路径")
+
+我们要做的就是选删掉这些重叠的部分，再轮廓化描边就好了。
+
+因为重叠的曲线路径（尤其是曲线路径），不删除直接轮廓化描边的话会出现很多不必要的锚点。
+
+如果您设计的路径端点是圆头端点或者方头端点，请在锚点与路径的交接处也要处理！
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/07.png "圆头端点")
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/08.png "")
+
+如果用 AI 自带的吸附效果，把锚点跟路径并在一块的时候直接轮廓化锚边很容易会多几个不必要的锚点，所以我们还要再处理一下。
+
+第一个方法是把键盘增量调低一点（大概0.5 px）手动把每个锚点向路径远离一个键盘增量；
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/09.png "用键盘增量来解决，适合水平、垂直或是45°旋转的路径")
+
+第二个方法是把轮廓化锚边之后不急着合并，而是把端点位置的锚点往里面缩一点（圆头端点可以使用「删除锚点工具」，方头端点只能直接拖动锚点）
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/10.png "删除某些比较突出的锚点，适合圆头端点的路径")
+
+可以看到其实这样做的目的是也是减少重叠的路径，让一个轮廓不受其他小路径的影响。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/11.png "清理前后对比明显")
+
+## 最后
+
+想要导出更干净的 SVG 图标并不难，只是比较繁琐，而且很枯燥。其实如果平常使用在 APP 设计、网页、BANNER 之类的场景，就算锚点有一点偏差也没关系，因为图案太小了，上看不出来细微的偏差。但是如果想让作品更规整、规范就要把每一处细节处理好。
+
+---
+
+最最后分享一下我近期设计的图标集，诸位有需要可以随意取用。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/12.jpg "商务 PPT 图标")
+
+**商务 PPT 图标**
+下载：[UpLabs](https://www.uplabs.com/posts/business-icon-set-icons) | [EpicPxls](https://www.epicpxls.com/items/business-icon-set) | [CreativeMarket](https://creativemarket.com/CreativePudge/2342439-Business-Icon-Set%28Outline-Filled%29)
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-02-01-5f6feede2f21/13.jpg "旅行社交图标")
+
+**旅行社交图标**
+下载：[UpLabs](https://www.uplabs.com/posts/24-free-social-icon-set) | [EpicPxls](https://www.epicpxls.com/items/24-free-social-icon-set)

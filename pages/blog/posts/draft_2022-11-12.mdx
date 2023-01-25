@@ -1,0 +1,144 @@
+---
+title: 所有 Markdown 类型展示
+description: 展示站内所有已经支持的 Markdown 格式。
+category: 设计之外
+author: 李瑞东
+date: "20221112"
+recommend: ""
+recommendLink: ""
+mediumLink: ""
+---
+
+~ (https://www.baidu.com)
+
+## GFM 插件
+
+**Autolink literals 自动链接**
+www.example.com, https://example.com, and contact@example.com.
+
+**Footnote 脚注**
+A note[^1]
+[^1]: Big note. https://example.com
+
+**Strikethrough 删除线**
+~~two~~ tildes.
+
+**Table 表格**
+| 左对齐 | 中对齐 | 中对齐 | 右对齐 |
+| :- | :-: | :-: | -: |
+| data   | path to data files to supply the data templateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplates. | path to data files to supply the data templateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplateemplates. | 6,400,350 |
+| engine | engine to be used for processing templates. Handlebars is the default. | engine to be used for processing templates. Handlebars is the default. | 3,550 |
+
+| 小表格 | 小表格 |
+| :- | :- |
+| `代码块` | **加粗的单元格** |
+| `[1, 2, 3] //高亮的代码块 {:js}` | [超链接](https://example.com) |
+| 单元格 | 单元格 |
+| 单元格 | 单元格 |
+| 单元格 | 单元格 |
+
+**Tasklist 任务清单**
+
+* [ ] to do
+* [x] done
+
+
+
+---
+
+## 默认样式
+
+## H2 二号标题
+### H3 三号标题
+#### H4 四号标题
+
+**Block quote 引用文本**
+> “理想情况下，所有验证都应该是内联的…”
+>
+> “…在字段完成后立即修复错误对用户的交互成本最低…”
+>
+> —— 来自 [Nielsen Norman Group](https://www.nngroup.com/) 的《[如何反馈表单中的错误：10 条设计指南](https://www.nngroup.com/articles/errors-forms-design-guidelines/#:~:text=1.%20Aim%20for,had%20completed%20successfully.)》
+
+**Lists 列表**
++ 无序列表，`+`, `-`, 或 `*` 均有效，但会被视为不同的列表
++ 无序列表 
+
+99. 有序列表 1
+1. 有序列表 2
+
+**Paragraph 正文**
+A paragraph, introducing a thematic break.
+
+**Horizontal Rules 水平分割线**
+
+---
+
+
+**Emphasis 强调文本**
+**粗体文字**
+
+__粗体文字__
+
+*斜体文字*
+
+_斜体文字_
+
+~~删除线~~
+
+**Links 超链接**
+[超链接文本](./2020-09-11 "Title 内容")
+
+
+**Inline Code 行内代码**
+行内代码 `code`
+
+This is an array `[1, 2, 3]{:js}` of numbers 1 through 3.
+
+---
+
+## 魔改过的插件
+
+**Images 图片**
+
+![Alt 内容](https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2022-11-16.png "Title 内容")
+
+**Code Block 代码块**
+``` js title="Name.js" {3-5} /BlogH3/ /props/1 /inline-block/
+const BlogH3 = (props) => {
+  return (
+    <h3 id={props.id}>//示例行高亮
+      <a href={"#" + props.id} className="inline-block group w-full">{props.children} <div className="text-blue-700 dark:text-blue-400 hidden group-hover:inline-block align-[-0.125em]"><FiHash /></div></a>
+    </h3>
+  );
+};
+```
+
+``` css 
+@tailwind components;
+@tailwind utilities;
+
+.mdx-bundle h2:first-child{
+  @apply mt-7;
+}
+
+pre > code {
+  display: grid;
+}
+```
+
+**Mark 高亮的文本**
+==Marked text==
+
+---
+
+## zmarkdown 的插件
+
+**iFrame**
+!(https://www.youtube.com/watch?v=8TQIvdFl4aU)
+
+**Keyboard Keys 键盘按键**
+Hit ||enter|| twice to create a new paragraph.
+
+**Superscript / Subscript 上标和下标**
+上标：19^th^
+下标：H~2~O

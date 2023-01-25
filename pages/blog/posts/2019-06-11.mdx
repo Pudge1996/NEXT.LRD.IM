@@ -1,0 +1,77 @@
+---
+title: 最近用 Bodymovin 导出动画遇到的问题和解决方法
+description: 本文记录作者用 Bodymovin 导出动画时遇到的各种各样奇怪问题，并提供可行的解决方案。持续更新
+category: 软件插件
+tags: Lottie, AE, Bodymovin, AfterEffects, 插件, 动画, 渐变色, 修剪路径, Mask
+author: 李瑞东
+date: "20190611"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/%E6%9C%80%E8%BF%91%E7%94%A8-bodymovin-%E5%AF%BC%E5%87%BA%E5%8A%A8%E7%94%BB%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95-f2599035a378"
+---
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-06-11-f2599035a378/01.png)
+
+> 本文记录作者用 Bodymovin 导出动画时遇到的各种各样奇怪问题，并提供可行的解决方案。持续更新
+
+## 一、渐变色导出异常
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-06-11-f2599035a378/02.png "图1–1 渐变色导出异常")
+
+渐变色导出后颜色异常，仅剩黑白双色的渐变，原因及解决方法：
+
+原因一、使用了中文版的 After Effects，渐变填充的选项会变成中文名，使得导出后颜色异常。
+
+**解决方法：**
+方法1. 手动更改图层内 “渐变填充” 的效果为英文名或数字；
+方法2. 更换为英文版 After Effects
+
+原因二、未保存文件。
+
+**解决方法：**
+Cmd+S 设定一个路径保存 After Effects 源文件
+
+## 二、修剪路径动画播放卡顿
+
+制作某些路径动画我们需要在两帧内调换修剪路径的 “Start” 和 “End”，导出来的路径动画就会在这一瞬间会出现卡顿，如图 2–1：
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-06-11-f2599035a378/03.gif "图2–1 修剪路径动画卡顿")
+
+针对这个问题我发 Email 询问了插件的作者 hernan torrisi，这里是他回信的原文：
+
+> Hi, the problem is that the player interpolates between frames by default, so it’s trying to calculate values between two consecutive keyframes.
+> You can solve it by converting those keyframes to Hold Keyframes in AE, or you can call a method in the animation instance to prevent rendering in between frames: anim.setSubframe(false)
+
+我的理解是因为浏览器动画默认帧率和导出来的 JSON 动画帧率不一致，令浏览器自动在中间播放补间动画，即把调换修剪路径数值的两帧之间的动画也播放出来了，所以解决方法有两个：
+
+**解决方法：**
+方法1. 切换较前的一个关键帧为 [Hold Keyframes](https://helpx.adobe.com/after-effects/using/keyframe-interpolation.html)（如图2-2）；
+方法2. 设置禁用 Subframe，在前端代码中加一行 anim.setSubframe(false) 命令，（如图2-3）
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-06-11-f2599035a378/04.gif "2–2 切换关键帧类型为 Hold Keyframes")
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-06-11-f2599035a378/05.png "图2–3 禁用 Subframe")
+
+## 三、在 Mask 下的修剪路径动画显示异常
+
+通常情况下我们为一个修剪路径动画加上 Mask， 路径动画会出现显示异常，如图 3–1：
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-06-11-f2599035a378/06.gif "图3–1 路径动画显示异常")
+
+这个问题我也问过插件作者，这里是他的原文
+
+> Yes, unfortunately browsers don't handle masks correctly when applied to strokes.
+> You can add a shape group with a rectangle that covers the whole surface of the stroke and a transparent fill mode in any layer that has a masked stroke and it will correct the artifact.
+
+我的理解是浏览器对这个效果支持有问题，所以导致问题的产生。下面直接放解决方法：
+
+**解决方法：**
+1. 在做修剪路径的图层里新建一个 Group；
+2. 在新的 Group 里创建一个矩形（或圆形，不重要）将其拖放至描边效果的上方，并使其大小覆盖整个 Mask 图层。
+3. 调整第一步所添加的 Group 不透明度为 0
+
+这是作者给出的解决方法，但我个人尝试发现其实第1、3步可以省略（如图3–2），导出的动画也能正常显示。
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2019-06-11-f2599035a378/07.gif "图3–2 添加矩形，解决显示异常")
+
+以上是我近期遇到的一些问题和解决方案，在 Medium 上作记录。以后遇到问题也会在上面更新。

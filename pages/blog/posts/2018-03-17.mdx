@@ -1,0 +1,41 @@
+---
+title: macOS 安装 AE 插件 Flow 无法打开的修复方法
+description: 以前一直在 AE2015 里使用 Flow，最近下载了 AE2018，安装好 Flow后点击 Window-Extensions-Flow 却没有任何反应，几经波折找到了解决方法。
+category: 软件插件
+tags: macOS, AE, AfterEffects, Flow, plugin, 插件, 无法打开, 修复, AE2018
+author: 李瑞东
+date: "20180317"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/mac-%E4%B8%8B%E5%AE%89%E8%A3%85-ae-%E6%8F%92%E4%BB%B6-flow-%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95-4d7ff2bc9cd1"
+---
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-03-17-4d7ff2bc9cd1/01.jpg "Photo by Green Chameleon on Unsplash")
+
+> 以前一直在 AE2015 里使用 Flow，最近下载了 AE2018，安装好 Flow后点击 Window-Extensions-Flow 却没有任何反应，几经波折找到了解决方法。
+
+2019.01.13 更新：AE2019 必须使用新版 1.4.0b 或更新版本，否则即使设置正确也无法正常使用。
+
+2021.06.20 更新：方法适用于 Big Sur 下的 AE2020。
+
+## 解决方法
+
+在终端依次运行以下命令：
+
+```shell title="Terminal.app"
+defaults write com.adobe.CSXS.5 PlayerDebugMode 1
+
+defaults write com.adobe.CSXS.6 PlayerDebugMode 1
+
+defaults write com.adobe.CSXS.7 PlayerDebugMode 1
+
+defaults write com.adobe.CSXS.8 PlayerDebugMode 1
+```
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-03-17-4d7ff2bc9cd1/02.png)
+
+再次打开 AE，Flow 已经可以正常使用了！
+
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2018-03-17-4d7ff2bc9cd1/03.png)
+
+PS:记得在首选项里勾选允许脚本写入文件和访问网络！
