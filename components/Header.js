@@ -1,13 +1,14 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment } from "react";
+import { useRouter } from "next/router";
 import { Menu, Transition } from "@headlessui/react";
 import Link from "next/link";
-import siteMetadata from "/data/siteMetadata";
-import DarkModeButton from "/components/DarkModeButton";
-import headerNavLinks from "/data/headerNavLinks";
+import DarkModeButton from "/components/common/DarkModeButton";
+import headerNavLinks from "/data/common/headerNavLinks";
 import { IoMenu, IoLogoRss, IoPerson } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
-import ContactCard from "/components/ContactCard";
+import ContactCard from "/components/common/ContactCard";
 
 export default function Header() {
+  const router = useRouter();
   return (
     <>
       <div className="bg-color transition-all border-b border-neutral-200 dark:border-neutral-900 sticky h-max top-0 z-[39] ">
@@ -32,11 +33,19 @@ export default function Header() {
             {headerNavLinks.map((link) => (
               <Link
                 key={link.title}
-                href={link.href}
+                href={link.url}
                 title={link.title}
-                className="btn-base btn-md hidden sm:block"
+                className={`btn-base hover:text-primary btn-md text-tertiary hidden sm:block`}
               >
-                {link.title}
+                <span
+                  className={`${
+                    router.pathname == link.url
+                      ? "text-primary font-semibold"
+                      : ""
+                  }`}
+                >
+                  {link.title}
+                </span>
               </Link>
             ))}
 
@@ -61,11 +70,10 @@ export default function Header() {
                   <Menu.Items className="absolute top-12 right-0 rtl:left-0 rtl:right-auto rounded-xl bg-color shadow-lg border border-neutral-200 dark:border-2 dark:border-neutral-800">
                     <div className="p-2 w-40 w-max-48 flex flex-col">
                       {headerNavLinks.map((link) => (
-                        <Menu.Item>
+                        <Menu.Item key={link.title}>
                           {({ active }) => (
                             <Link
-                              key={link.title}
-                              href={link.href}
+                              href={link.url}
                               className={` btn-base btn-md px-3 py-4 ${
                                 active
                                   ? "ring-4 ring-offset-2 ring-offset-neutral-100 dark:ring-offset-black ring-blue-600"

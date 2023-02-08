@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pm2start": "pm2 start npm --name lrdnext -- run start"
   },
   "dependencies": {
     "@fec/remark-a11y-emoji": "^3.1.0",
@@ -22,18 +23,23 @@
     "next": "13.0.6",
     "next-image-zoom": "^1.1.7",
     "next-themes": "^0.2.1",
+    "nextjs-google-analytics": "^2.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "react-resizable": "^3.0.4",
     "rehype-pretty-code": "^0.6.0",
     "rehype-slug": "^5.1.0",
     "remark-breaks": "^3.0.2",
+    "remark-collapse": "^0.1.2",
     "remark-gfm": "^3.0.1",
     "remark-iframes": "^4.0.5",
     "remark-kbd": "^1.1.0",
     "remark-rehype": "^10.1.0",
     "remark-sub-super": "^1.0.20",
+    "remark-wiki-link": "^1.0.4",
     "shiki": "^0.12.1",
+    "styled-jsx": "^5.1.2",
     "unified": "^10.1.2"
   },
   "devDependencies": {

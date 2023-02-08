@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import ScrollToTop from "../components/ScrollToTop";
+import ScrollToTop from "../components/common/ScrollToTop";
 
 // 所有页面的布局结构
 

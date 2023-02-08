@@ -139,7 +139,7 @@
       }
     }
     h3{
-      @apply leading-tight text-[22px] font-semibold my-7;
+      @apply leading-tight text-[22px] font-semibold mt-4 sm:mt-7 mb-2;
     }
     h4{
       @apply leading-tight text-xl font-semibold mt-4 sm:mt-7 mb-2;
@@ -151,22 +151,24 @@
       @apply my-4 sm:my-7;
     }
     h3+p{
-      @apply mt-4;
+      @apply mt-2;
     }
-    h4+p, h5+p{
+    h4+p, h5+p, h4+ul, h5+ul, h4+ol, h5+ol{
+      @apply mt-0 sm:mt-2;
+    }
+    &>*:first-child{
       @apply mt-0;
     }
     figure{ /* 引用了 Zoom 组件的图片 */
       @apply my-4 sm:my-7;
-
-      &:first-child{
-        @apply mt-7;
-      }
       & div div:first-child img{ /* 未放大时的图片 */
         @apply cursor-zoom-in rounded-lg;
       }
       & div div:first-child{ /* 未放大时的图片 */
         @apply cursor-zoom-out ; 
+      }
+      & div div:nth-child(2)>img{ /* 放大时的图片 */
+        @apply border-none; 
       }
       & div div:nth-child(2){ /* 移除 .png 图片放大时浅灰色 */
         background-color: transparent !important;
@@ -174,23 +176,33 @@
       figcaption{ /* 图片描述 */
         @apply empty:hidden text-center text-secondary block text-sm mt-2 leading-tight md:leading-relaxed;
       }
-      &+p{
+      &:first-child+p{ /* 第一个元素是图片时，首字下沉 */
         @apply first-letter:uppercase first-letter:text-6xl first-letter:font-bold first-letter:mr-1 first-letter:float-left
       }
-
-      
+    }
+    figcaption{ /* 通用图片描述，可用在组件或视频下方 */
+      @apply empty:hidden text-center text-secondary block text-sm mt-2 leading-tight md:leading-relaxed;
     }
     img{
       @apply relative !important;
     }
+    video{
+      @apply rounded-lg img-loading-bg border-neutral-200 dark:border-neutral-800;
+    }
     
     blockquote{
       @apply leading-none my-7 px-5 text-secondary relative before:left-[-8px] md:before:left-[-28px] before:top-[-19px] md:before:top-[-10px] before:bg-neutral-200 dark:before:bg-neutral-700;
+      strong{
+        @apply text-primary;
+      }
       p{
         @apply my-1;
       }
       &>p{
         @apply first:first-letter:uppercase first:first-letter:text-lg first:first-letter:font-normal first:first-letter:mr-0 first:first-letter:float-none
+      }
+      &:first-child+figure+p{
+        @apply first-letter:uppercase first-letter:text-6xl first-letter:font-bold first-letter:mr-1 first-letter:float-left
       }
       &::before{
         content:'';
@@ -203,13 +215,16 @@
       }
     }
     ol{
-      @apply text-lg pl-10 my-4 sm:my-7 list-decimal;
+      @apply text-lg pl-[2ch] my-4 sm:my-7 list-decimal marker:text-gray-400 dark:marker:text-gray-600 marker:font-semibold;
+      ol{
+        @apply my-0 list-[lower-latin];
+      }
       li{
         @apply my-1 sm:my-2;
       }
     }
     ul{
-      @apply text-lg pl-10 my-4 sm:my-7 list-disc;
+      @apply text-lg pl-[2ch] my-4 sm:my-7 list-disc marker:text-gray-400 dark:marker:text-gray-600;
       &.contains-task-list{ /* 任务清单 */
         @apply list-none;
       }
@@ -230,6 +245,9 @@
       
       div:first-child{ /* 文件标题 */
         @apply pt-3 pb-2 ml-4 sm:ml-6 inline-block text-sky-500 border-b-2 border-sky-500 font-medium text-[13px];
+      }
+      &+h4{
+        @apply mt-6 sm:mt-9;
       }
       pre{
         @apply py-4 sm:py-6 border-t border-slate-700 dark:border-neutral-800 leading-[26px] overflow-auto;
@@ -259,7 +277,7 @@
           @apply link-color;
         }
         code{
-          @apply mx-1 px-1 py-[2px] border bg-neutral-100 border-neutral-300 dark:bg-neutral-800 dark:border-neutral-600 rounded  transition-colors text-base;
+          @apply mx-1 px-1 py-[2px] border bg-neutral-100 border-neutral-300 dark:bg-neutral-800 dark:border-neutral-600 rounded  transition-colors text-sm;
         }
       }
       td[align="right"]{
@@ -272,22 +290,26 @@
         @apply bg-neutral-100 dark:bg-neutral-900;
       }
     }
-    .contains-task-list{ /* 任务清单 */
-      input[type="checkbox"] {
-        /* position: absolute;
-        margin: 0 !important;
-        padding: 0 !important;
-        opacity: 0;
-        height: 0;
-        width: 0;
-        pointer-events: none;  */
+    details summary{
+      @apply inline-flex w-full items-center cursor-pointer btn-base btn-lg px-4 border border-neutral-200 dark:border-neutral-800;
+      &+*{
+        @apply mt-4 !important;
       }
-      li input{ 
-        /* @apply before:inline-block  before:w-4 before:h-4 before:bg-transparent before:border-2 before:border-neutral-400 before:mr-2 before:rounded; */
+      &::before{
+      content: "展开";
+      margin-right: .5em;
+      mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16a.999.999 0 01-.707-1.707L11.586 10 7.293 5.707a.999.999 0 111.414-1.414l5 5a.999.999 0 010 1.414l-5 5A.997.997 0 018 16z' fill='%235C5F62'/%3E%3C/svg%3E") no-repeat 50% 50%/1.2em 1.2em;
+      display: inline-block;
+      flex-shrink: 0;
+      height: 1.2em;
+      width: 1.2em;
+      background-color: currentColor;
+      vertical-align: -0.125em;
       }
-      input[checked]+li{
-        /* @apply before:border-none; */
-      }
+    }
+    details[open] summary::before{
+      mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 14a.997.997 0 01-.707-.293l-5-5a.999.999 0 111.414-1.414L10 11.586l4.293-4.293a.999.999 0 111.414 1.414l-5 5A.997.997 0 0110 14z' fill='%235C5F62'/%3E%3C/svg%3E")
+   no-repeat 50% 50%/1.2em 1.2em;
     }
   }
 }
@@ -295,7 +317,7 @@
 .project-v2{ /* 作品模版v2 */
     @apply max-w-4xl;
     .top-info{
-      @apply text-center mt-0 md:mt-10 lg:mt-16 mb-4 md:mb-0;
+      @apply text-center mt-0 md:mt-10 lg:mt-16 mb-4 md:mb-8;
       h1{
         @apply text-3xl md:text-5xl lg:text-5xl break-keep;
       }
@@ -340,7 +362,7 @@
         position: relative !important;
       }
       &>div{
-        @apply mx-auto;
+        @apply mx-auto rounded-lg min-h-[120px];
       }
       div div:first-child img{ /* 未放大时的图片 */
         @apply cursor-zoom-in rounded-lg;
@@ -362,7 +384,7 @@
         @apply text-center text-secondary block text-sm mt-2 leading-tight md:leading-relaxed mx-auto max-w-2xl;
       }
     figure.scroll{
-      @apply h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll;
+      @apply h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll w-fit;
     }
   }
 
@@ -402,9 +424,6 @@
   .ring-default {
     @apply focus:outline-none focus-visible:ring-4 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:ring-offset-black focus:ring-blue-600 rounded-md;
   }
-
-  /* Changelog 时间轴效果 */
-
 }
 
 /* Tailwind CSS 以外的内容 */
@@ -494,24 +513,7 @@ li a[target="_blank"]:focus::after,
 
 /* 博客详情页 */
 
-
-
-/* 博客详情页的侧边栏 */
-
-.blog-content{
-  aside section h5 {
-    @apply text-lg font-semibold mb-3;
-  }
-  aside hr{
-    @apply my-2;
-  }
-}
-
 /* 目录 H3 的缩进 */
 .blog-toc .toc-h3 a{
   @apply pl-6 sm:text-sm;
 }
-
-/* .blog-toc ol li a{
-  @apply text-secondary hover:text-primary;
-} */

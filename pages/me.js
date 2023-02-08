@@ -10,20 +10,6 @@ export default function me() {
     <div className="">
        <Head>
         <title>简历 - {siteMetadata.title}</title>
-        <meta name="author" content={siteMetadata.author} />
-        <meta name="description" content={siteMetadata.description} />
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
-        <meta name="og:type" content="summary" />
-        <meta property="og:title" content={siteMetadata.title} />
-        <meta property="og:description" content={siteMetadata.description} />
-
-        {/* For Twitter */}
-        <meta name="twitter:site" content="@Pudge_1996" />
-        <meta name="twitter:creator" content="@Pudge_1996" />
       </Head>
 
       <main className="resume max-w-2xl mx-auto pt-8 sm:pb-12 sm:pt-14 px-5 md:px-3">

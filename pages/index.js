@@ -1,32 +1,112 @@
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
-import ProjectItems from "/components/ProjectItems";
-import ContactCard from "/components/ContactCard";
+import ContactCard from "/components/common/ContactCard";
+import ProjectItemData from "/data/project/ProjectItemData";
+
 
 export default function index() {
+
+  function ProjectItems() {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  return (
+    <div className="flex flex-col-reverse gap-8">
+      {ProjectItemData.map((company, index) => (
+        <div key={index}>
+          {/* 公司 Company 列表 */}
+          <div className="flex gap-3 py-3 sm:py-4 text-lg sm:text-[22px] items-center font-medium  bg-color  top-[62px] sm:top-[58px] transition-[background-color] z-[1]">
+            <div className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] relative overflow-hidden rounded border-[0.5px] dark:border-transparent img-loading-bg transition-colors">
+              <Image
+                // 公司图片
+                src={company.img}
+                alt={company.name}
+                className="select-none"
+                fill
+                sizes="100vw" />
+            </div>
+            <Link
+              href={company.url} // 待办
+              aria-label={company.name}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ring-default link-color-none force-link"
+            >
+              {company.name}
+            </Link>
+          </div>
+
+          {/* 作品 Project 列表 */}
+          <div className="flex flex-wrap gap-8 sm:max-md:gap-6 mt-0 sm:mt-2">
+            {company.projects &&
+              company.projects.map((project, index) => (
+                <div className="sm:w-[calc(50%-1rem)]" key={index}>
+                  <Link
+                    href={project.url} // 待办
+                    aria-label={company.name}
+                    className="group flex flex-col ring-default"
+                  >
+                    <div className={` relative aspect-video mb-3 rounded-lg select-none  overflow-hidden img-loading-bg ${isLoaded ? '' : 'img-loading-spin'}`}>
+                      <Image
+                        // 项目图片
+                        // 待办 src={project.img}
+                        src={project.img}
+                        alt={project.title}
+                        onLoad={() => setIsLoaded(true)}
+                        onError={() => setIsLoaded(true)}
+                        className="rounded-lg"
+                        fill
+                        sizes="100vw" />
+                    </div>
+
+                    <h3 className="text-lg font-semibold leading-tight mb-1 sm:group-hover:text-blue-600 group-active:text-blue-800 sm:group-active:text-blue-800 dark:sm:group-hover:text-blue-400 dark:group-active:text-blue-500 sm:dark:group-active:text-blue-500">
+                      {project.title}
+                    </h3>
+                    <div className="leading-snug text-secondary">
+                      {project.desc}
+                    </div>
+                  </Link>
+                </div>
+              ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
   
   return (
     <>
       <Head>
         <title>首页 - {siteMetadata.title}</title>
-        <meta name="author" content={siteMetadata.author} />
-        <meta name="description" content={siteMetadata.description} />
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
-        <meta name="og:type" content="summary" />
-        <meta property="og:title" content={siteMetadata.title} />
-        <meta property="og:description" content={siteMetadata.description} />
-
-        {/* For Twitter */}
-        <meta name="twitter:site" content="@Pudge_1996" />
-        <meta name="twitter:creator" content="@Pudge_1996" />
       </Head>
-
+      <style jsx>{`
+        .react-resizable {
+          position: relative;
+        }
+        .react-resizable-handle {
+          position: absolute;
+          width: 22px;
+          height: 30px;
+          background-repeat: no-repeat;
+          transform: translate(11px, -5.5px);
+          background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAyMiAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIuNSIgeT0iLjUiIHdpZHRoPSIyMSIgaGVpZ2h0PSIyOSIgcng9IjMuNSIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik04IDdhMiAyIDAgMSAwIDAgNCAyIDIgMCAwIDAgMC00em0wIDUuOTk5YTIuMDAxIDIuMDAxIDAgMSAwIC4wMDEgNC4wMDJBMi4wMDEgMi4wMDEgMCAwIDAgOCAxM3ptMCA2YTIuMDAxIDIuMDAxIDAgMSAwIC4wMDEgNC4wMDJBMi4wMDEgMi4wMDEgMCAwIDAgOCAxOXptNi04YTIgMiAwIDAgMCAxLjQxNC0zLjQxNUEyIDIgMCAxIDAgMTQgMTAuOTk5em0wIDJhMi4wMDEgMi4wMDEgMCAxIDAgLjAwMSA0LjAwMkEyLjAwMSAyLjAwMSAwIDAgMCAxNCAxM3ptMCA2YTIuMDAxIDIuMDAxIDAgMSAwIC4wMDEgNC4wMDJBMi4wMDEgMi4wMDEgMCAwIDAgMTQgMTguOTk5eiIgZmlsbD0iI0JCQiIvPjxyZWN0IHg9Ii41IiB5PSIuNSIgd2lkdGg9IjIxIiBoZWlnaHQ9IjI5IiByeD0iMy41IiBzdHJva2U9IiNEREQiLz48L3N2Zz4=");
+          background-position: center center;
+          box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+            0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+        .dark .react-resizable-handle {
+          background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAyMiAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIuNSIgeT0iLjUiIHdpZHRoPSIyMSIgaGVpZ2h0PSIyOSIgcng9IjMuNSIgZmlsbD0iIzAwMCIvPjxwYXRoIGQ9Ik04IDdhMiAyIDAgMSAwIDAgNCAyIDIgMCAwIDAgMC00em0wIDUuOTk5YTIuMDAxIDIuMDAxIDAgMSAwIC4wMDEgNC4wMDJBMi4wMDEgMi4wMDEgMCAwIDAgOCAxM3ptMCA2YTIuMDAxIDIuMDAxIDAgMSAwIC4wMDEgNC4wMDJBMi4wMDEgMi4wMDEgMCAwIDAgOCAxOXptNi04YTIgMiAwIDAgMCAxLjQxNC0zLjQxNUEyIDIgMCAxIDAgMTQgMTAuOTk5em0wIDJhMi4wMDEgMi4wMDEgMCAxIDAgLjAwMSA0LjAwMkEyLjAwMSAyLjAwMSAwIDAgMCAxNCAxM3ptMCA2YTIuMDAxIDIuMDAxIDAgMSAwIC4wMDEgNC4wMDJBMi4wMDEgMi4wMDEgMCAwIDAgMTQgMTguOTk5eiIgZmlsbD0iIzQ0NCIvPjxyZWN0IHg9Ii41IiB5PSIuNSIgd2lkdGg9IjIxIiBoZWlnaHQ9IjI5IiByeD0iMy41IiBzdHJva2U9IiMyNjI2MjYiLz48L3N2Zz4=");
+        }
+        
+        .react-resizable-handle-e {
+          right: 0;
+          top: 50%;
+          margin-top: -10px;
+          cursor: ew-resize;
+        }
+      `}</style>
       <div className="layout project">
         <section className="mb-14">
           <h1 className="">李瑞东</h1>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import DarkModeButton from "/components/DarkModeButton";
+import DarkModeButton from "/components/common/DarkModeButton";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

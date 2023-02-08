@@ -207,6 +207,7 @@ export const getSinglePost = async (slug) => {
   const source = getSourceOfFile(slug + ".mdx");
   const { code, frontmatter } = await bundleMDX({
     source: source,
+    
     mdxOptions(options) {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
@@ -219,6 +220,7 @@ export const getSinglePost = async (slug) => {
         rehypeSlug,
         [rehypePrettyCode, codeOptions],
       ];
+      
       return options;
     },
   });

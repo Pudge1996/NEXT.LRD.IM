@@ -1,0 +1,23 @@
+# dbxignore v2
+# 您好！该文件由您的朋友在 Dropbox 制作完成，旨在防止同步电脑生成的不必要的文件。
+# 请通过以下链接详细了解有关信息：https://help.dropbox.com/installs-integrations/sync-uploads/external-drive
+# 
+.dropbox.device
+.localized
+.volumeicon.icns
+.fseventsd
+.spotlight-v100
+.documentrevisions-v100
+.temporaryitems
+.trashes
+.com.apple.timemachine.donotpresent
+system volume information
+$recycle.bin
+filehistory
+toolkit
+.dbxignore
+**/*.paper
+**/*.gdoc
+**/*.gsheet
+**/*.gslides
+**/._*

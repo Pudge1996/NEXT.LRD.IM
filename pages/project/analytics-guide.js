@@ -1,43 +1,33 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
-import ProjectItemData from "/data/ProjectItemData";
-import Zoom from "next-image-zoom";
+import ProjectItemData from "/data/project/ProjectItemData";
+import ProjectImage from "/components/project/ProjectImage";
 
 export default function analyticsGuide() {
-  const Title = ProjectItemData[2].projects[3].title;
-  const Desc = ProjectItemData[2].projects[3].desc;
-  const [isLoaded, setIsLoaded] = useState(false);
+  const title = ProjectItemData[2].projects[3].title;
+  const desc = ProjectItemData[2].projects[3].desc;
 
   return (
     <>
       <Head>
         <title>
-          {Title} - {siteMetadata.title}
+          {title} - {siteMetadata.title}
         </title>
-        <meta name="author" content={siteMetadata.author} />
-        <meta name="description" content={Desc} />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={desc} />
 
         {/* For Soical Meida (OpenGraph) */}
         <meta property="og:image" content="网站宽屏图（16:9）" />
         <meta property="og:image:alt" content="网站宽屏图的描述" />
-        <meta name="og:type" content="summary" />
-        <meta property="og:title" content={Title} />
-        <meta property="og:description" content={Desc} />
-
-        {/* For Twitter */}
-        <meta name="twitter:site" content="@Pudge_1996" />
-        <meta name="twitter:creator" content="@Pudge_1996" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
       </Head>
       <div className="layout project-v2 flex flex-col gap-6">
         <section className="top-info">
-          <h1 className="">{Title}</h1>
-          <p className="">{Desc}</p>
+          <h1 className="">{title}</h1>
+          <p className="">{desc}</p>
         </section>
-
         <section className="content">
           <h2>背景</h2>
           <p>
@@ -54,26 +44,10 @@ export default function analyticsGuide() {
             所以团队希望能沉淀出一套数据场景的设计规范文档，供各业务设计师使用时参考。
           </p>
           <h2>时间线</h2>
-          <figure>
-            {/* 小图片 */}
-            <div
-              className={`relative max-w-2xl rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/01.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
+          <ProjectImage
+            src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/01.png"
+            size="small"
+          />
           <hr />
           <h2>调研阶段</h2>
           <p>
@@ -91,27 +65,9 @@ export default function analyticsGuide() {
           <figcaption>
             Google 表格：收集到所有数据场景后整理出来的表格，可滚动查看。
           </figcaption>
-          <figure>
-            {/* 大图片，无滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/02.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
-          <figcaption>页面归类，抽象成模版。</figcaption>
+          <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/02.png">
+            页面归类，抽象成模版。
+          </ProjectImage>
           <p>
             <b>2. 查阅数据展示的行业标准：</b>
             <br />
@@ -122,26 +78,7 @@ export default function analyticsGuide() {
             <br />
             了解竞品设计解法，结合自身产品受众和场景，对比不同做法之间的差异。
           </p>
-          <figure>
-            {/* 大图片，无滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/03.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
+          <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/03.png" />
           <hr />
           <h2>初稿阶段</h2>
           <p>
@@ -168,75 +105,22 @@ export default function analyticsGuide() {
               allowfullscreen
             ></iframe>
           </figure>
-          <figure>
-            {/* 大图片，无滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/04.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
-          <p>到了这一步，我先与组长和关键业务设计师同步当前进度，沟通中了解是否有遗漏或未覆盖到的内容。</p>
+          <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/04.png" />
+          <p>
+            到了这一步，我先与组长和关键业务设计师同步当前进度，沟通中了解是否有遗漏或未覆盖到的内容。
+          </p>
           <h2>最终文档</h2>
           <p>最终的产出物包括：</p>
           <ul>
             <li>指导全站的数据展示规范；</li>
             <li>数据业务场景下的设计模式；</li>
             <li>交付给前端的组件文档；</li>
-            <li>通用数据报告页的设计模版（面向设计实习生，用于支援日常数据需求）。</li>
+            <li>
+              通用数据报告页的设计模版（面向设计实习生，用于支援日常数据需求）。
+            </li>
           </ul>
-          <figure>
-            {/* 大图片，无滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/05.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
-          <figure>
-            {/* 大图片，无滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/06.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
+          <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/05.png" />
+          <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/06.png" />
           <p>该专项的内容较多，这里嵌入一份 Figma 设计稿供浏览参考。</p>
           <figure>
             <iframe

@@ -94,6 +94,20 @@ _斜体文字_
 
 This is an array `[1, 2, 3]{:js}` of numbers 1 through 3.
 
+**折叠内容**
+<details>
+<summary>折叠了一段代码</summary>
+``` js title="Name.js" {3-5} /BlogH3/ /props/1 /inline-block/
+const BlogH3 = (props) => {
+  return (
+    <h3 id={props.id}>//示例行高亮
+      <a href={"#" + props.id} className="inline-block group w-full">{props.children} <div className="text-blue-700 dark:text-blue-400 hidden group-hover:inline-block align-[-0.125em]"><FiHash /></div></a>
+    </h3>
+  );
+};
+```
+</details>
+
 ---
 
 ## 魔改过的插件

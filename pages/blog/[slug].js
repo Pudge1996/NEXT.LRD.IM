@@ -1,18 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { useRouter } from "next/router"
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
-import ContactCard from "/components/ContactCard";
-import CopyPageLink from "/components/CopyPageLink";
-import TableContents from "/components/TableContents";
-import Date from "/components/Date";
-import BlogFooter from "/components/BlogFooter";
-import TableContents_Mobile from "/components/TableContents_Mobile";
+import ContactCard from "/components/common/ContactCard";
+import CopyPageLink from "/components/common/CopyPageLink";
+import TableContents from "/components/blog/TableContents";
+import Date from "/components/common/Date";
+import BlogFooter from "/components/blog/BlogFooter";
+import TableContents_Mobile from "/components/blog/TableContents_Mobile";
 
 import { getMDXComponent } from "mdx-bundler/client";
-import { getAllPosts, getSinglePost } from "../../utils/mdx";
-import { IoLogoRss, IoPersonAdd, IoLink, IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
+import { getAllPosts, getSinglePost } from "/utils/mdx";
+import {
+  IoLogoRss,
+  IoPersonAdd,
+  IoLink,
+  IoList,
+  IoReturnDownBack
+} from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
 import Zoom from "next-image-zoom";
@@ -59,12 +66,12 @@ const BlogH3 = (props) => {
 
 const Paragraph = (props) => {
   // 图片脱离p标签，使用 Zoom
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = React.useState(false);
   if (typeof props.children !== "string" && props.children.type === "img") {
     return (
       <figure>
         <div
-          className={`relative rounded-lg min-h-[120px] ${
+          className={`relative min-h-[120px] border border-neutral-200 dark:border-neutral-800 rounded-lg transition-colors ${
             isLoaded ? "" : "img-loading-spin"
           } `}
         >
@@ -72,8 +79,8 @@ const Paragraph = (props) => {
             src={props.children.props.src}
             alt={props.children.props.alt}
             title={props.children.props.title}
-            objectFit="contain"
-            layout="fill"
+            fill
+            sizes="100vw"
             onLoad={() => setIsLoaded(true)}
             onError={() => setIsLoaded(true)}
             backgroundColor="black"
@@ -87,55 +94,64 @@ const Paragraph = (props) => {
   return <p {...props} />;
 };
 
+const codePrefix = `
+if (typeof process === 'undefined') {
+  globalThis.process = { env: {} }
+}
+`;
+
 const Post = ({ code, frontmatter }) => {
   const Component = React.useMemo(() => {
-    return getMDXComponent(code);
+    return getMDXComponent(codePrefix + code);
   }, [code]);
+  const router = useRouter()
   return (
     <>
       <Head>
         <title>
           {frontmatter.title} - {siteMetadata.title}
         </title>
-        <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={frontmatter.description} />
         <meta name="keywords" content={frontmatter.tags} />
-        <link rel="icon" href="/favicon.ico" />
 
-        {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
-        <meta name="og:type" content="summary" />
-        <meta property="og:title" content={`${frontmatter.title} - ${siteMetadata.title}`} />
+        {/* For Soical Meida (openGraph) */}
+        <meta
+          property="og:title"
+          content={`${frontmatter.title} - ${siteMetadata.title}`}
+        />
         <meta property="og:description" content={frontmatter.description} />
-
-        {/* For Twitter */}
-        <meta name="twitter:site" content="@Pudge_1996" />
-        <meta name="twitter:creator" content="@Pudge_1996" />
       </Head>
       <div className="layout blog-content">
-        <div className="flex flex-col gap-4 sm:gap-7">
-          <h1>{frontmatter.title}</h1>
-          <div className="flex xl:hidden gap-3 mb-4 sm:mb-2">
-            <div className="flex gap-3 items-center flex-grow">
-              <div className="w-11 h-11 relative rounded-full overflow-hidden">
+        <div className="flex flex-col gap-0 xl:gap-7">
+          <h1 className="mb-3 sm:mb-4 xl:mb-7 text-3xl sm:text-4xl xl:text-5xl">
+            {frontmatter.title}
+          </h1>
+          <div className="flex xl:hidden gap-3 mb-7">
+            <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
+              <div className="flex shrink-0 w-5 h-5 xl:w-11 xl:h-11 relative rounded-full overflow-hidden">
                 <Image
-                  src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2022-08-17-f2c1f5bfbb8d/01.png"
-                  layout="fill"
-                  objectFit="cover"
+                  src={siteMetadata.authorImg}
+                  alt="我的个人头像"
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
                 />
               </div>
-              <div className="flex flex-col grow gap-2">
-                <div className="font-medium leading-none">李瑞东</div>
+              <div className="flex items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2">
+                <div className="text-sm xl:text-base text-secondary xl:text-primary xl:font-medium leading-none whitespace-nowrap">
+                  李瑞东
+                </div>
                 <div className="text-sm text-secondary leading-none">
                   发布于 <Date dateString={frontmatter.date} />
                 </div>
               </div>
             </div>
             {/* <div className="flex items-center btn-base text-base btn-md bg-neutral-100 dark:bg-neutral-900 sm:hover:bg-neutral-200 relative text-center px-4 whitespace-nowrap">
-              <ContactCard />
-              <span>联系作者</span>
-            </div> */}
+            <ContactCard />
+            <span>联系作者</span>
+          </div> */}
           </div>
 
           <div className="flex flex-row flex-wrap gap-2 mt-2 justify-between items-center hidden">
@@ -147,13 +163,13 @@ const Post = ({ code, frontmatter }) => {
               </span>{" "}
               首发于{" "}
               {/* <Link
-                href={frontmatter.mediumLink}
-                className="text-tertiary force-link hover:link-color"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Medium
-              </Link> */}
+              href={frontmatter.mediumLink}
+              className="text-tertiary force-link hover:link-color"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Medium
+            </Link> */}
             </div>
             <div className="flex-row gap-1 items-center text-tertiary">
               {/* RSS订阅 */}
@@ -181,6 +197,13 @@ const Post = ({ code, frontmatter }) => {
           </div>
         </div>
         <div className="flex">
+          {/* <div className="hidden xl:flex min-w-[216px] flex-col gap-4 mr-12 items-end">
+            <button onClick={() => router.back()} className="flex sticky top-24 items-center btn-base btn-md gap-2 ring-default text-tertiary hover:text-primary">
+              <IoReturnDownBack className="text-lg" />
+              <span className="text-base">返回</span>
+            </button>
+          </div> */}
+
           <div className="min-w-full mdx-bundle">
             <Component
               components={{
@@ -192,16 +215,19 @@ const Post = ({ code, frontmatter }) => {
             />
             <BlogFooter />
           </div>
-          <aside className="hidden xl:flex min-w-[220px] mt-7 flex-col gap-4 ml-12">
+          <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
             <section>
-              {/* <h5>本文作者</h5> */}
               <div className="flex flex-col gap-3 py-1">
                 <div className="flex gap-2 items-center">
                   <div className="w-11 h-11 relative rounded-full overflow-hidden">
                     <Image
                       src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2022-08-17-f2c1f5bfbb8d/01.png"
-                      layout="fill"
-                      objectFit="cover"
+                      alt="我的个人头像"
+                      fill
+                      sizes="100vw"
+                      style={{
+                        objectFit: "cover",
+                      }}
                     />
                   </div>
                   <div className="flex flex-col grow gap-2">
@@ -212,14 +238,14 @@ const Post = ({ code, frontmatter }) => {
                   </div>
                 </div>
                 {/* <div className="min-w-full sm:w-max btn-base text-base btn-md bg-neutral-100 dark:bg-neutral-900 sm:hover:bg-neutral-200 relative text-center whitespace-nowrap">
-                  <ContactCard />
-                  联系作者
-                </div> */}
+                <ContactCard />
+                联系作者
+              </div> */}
               </div>
             </section>
-            <hr />
+            <hr className="my-2"/>
             <section className="sticky top-24">
-              <h5>目录</h5>
+              <h5 className="text-lg font-semibold mb-3">目录</h5>
               <TableContents />
             </section>
           </aside>

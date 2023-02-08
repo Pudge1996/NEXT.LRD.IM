@@ -1,0 +1,370 @@
+---
+title: 用 Next.js 重构个人网站 (三)：MDX 构建博客
+description: 展示站内所有已经支持的 Markdown 格式。
+category: 设计之外
+tags: Next.js, React, JS, JavaScript, MDX, Markdown, 博客, 文章, HTML, mdx-bundler, mdx-remote, 渲染, 格式, 文本, remark, rehype, gfm, 代码高亮, highlight
+author: 李瑞东
+date: "20230103"
+recommend: ""
+recommendLink: ""
+mediumLink: ""
+---
+
+import Cool from "../pages/blog/Cool"
+
+<Cool/>
+
+这一部分我会记录下在重构 [LRD.IM](https://lrd.im) 项目中，部分核心或比较通用功能的实现过程，以及一些我花了点巧思来设计的地方。
+
+博客模块相关的内容我会在下一篇文章里记录。
+
+## 数据源和循环遍历
+
+一个网站中常常会有一些字段是能在多个地方复用的，比如网页 \<head> 标签里的内容，或者作品的信息。
+
+![展示两个示意图。第一个是 \<head> 标签字段应用在很多页面中的示意。第二个是作品集首页字段应用的示意，应用在首页、作品详情页、head 标签、复制链接时的拼接。]()
+
+这些字段会在多个页面中使用，当文案调整时也需要同步改动，影响到所有地方。所以为了达到「一改全改」的效果，改进网站迭代的效率和体验，这里我会用到数据源和循环遍历来做。
+
+#### 数据源
+
+数据源像是一个专门存储数据的库，里面记载了某个模块会被用到的字段名称及其对应的值。这里面本身没有功能、交互和样式，就像一个仓库。作用就是给到具体的页面或者组件来调用。
+
+![数据源截图示意图。指示某一条数据被引用到了多个页面之中。]()
+
+#### 循环遍历
+
+有了数据源之后会需要将其逐个安放进统一的容器里面。容器的样式是一致的，布局和适配也通过 CSS 来统一处理好，只是里面的文本、配图、跳转链接等这些属于数据源的内容有差异，所以这里会用到`map()`来遍历数据，将数据逐一安放进容器里。
+
+![map 遍历的示意图。数据库里面多组数据通过 map 后安放进多个样式一致的容器里面]()
+
+### 功能实现
+
+#### 构建数据源
+
+举个例子，「作品」页面包含了好几个字段：
+
+1. 公司名称；
+2. 公司 LOGO 图片链接；
+3. 公司官网网址；
+4. 公司相关作品：
+    1. 作品名称；
+    2. 作品描述；
+    3. 作品缩略图链接；
+    4. 作品跳转链接。
+
+这其中「公司」和「作品」是一对多的关系，一个公司可以对应有多个作品。所以这里据源的结构是：
+
+```js
+const ProjectItemData = [
+  {
+    name: "公司名称",
+    img: "公司 LOGO 图片链接",
+    url: "公司官网网址",
+    projects: [
+    // 一个公司对应一个作品：
+      {
+        title: "作品名称",
+        desc: "作品描述",
+        img: "作品缩略图链接",
+        url: "作品跳转链接",
+      },
+    ],
+  },
+  {
+    name: "欢聚集团",
+    url: "https://joyy.com/",
+    img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics/joyy_logo.png",
+    projects: [
+    // 一个公司对应多个作品：
+      {
+        title: "SHOPLINE App 组件库构建",
+        desc: "再一次主导构建设计规范/组件时，这次我加入了国际化、设计模式、协作等考量维度。",
+        img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/slapp-components/thumbnail.png",
+        url: "/project/slapp-components",
+      },
+      {
+        title: "数据中心改版方案",
+        desc: "我在屏效布局优化中的设计策略，解决难题的过程和用到的方法。及后续数据的反馈。",
+        img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics/thumbnail.png",
+        url: "/project/analytics",
+      },
+    ],
+  },
+];
+export default ProjectItemData;
+```
+
+#### 应用在实际页面中
+
+数据源在我的网站里有两种使用方式：**直接引用**数据源里的某一个字段，或者通过**遍历循环**来填充进容器里面。
+
+**1. 直接引用字段**
+比如作品详情页里面的 \<head> 标签，需要将作品标题，siteMetadata 里的一个字段拼接，我会直接将他们引用到页面当中。
+
+```js
+// 导入数据
+import siteMetadata from "/data/siteMetadata";
+import ProjectItemData from "/data/ProjectItemData";
+
+// 使用数据
+const title = ProjectItemData[2].projects[0].title; // 指定获取某个字段
+<title>{title} - {siteMetadata.title}</title> // 应用在页面中
+
+// output: <title>SHOPLINE App 组件库构建 - 李瑞东 LRD.IM</title>
+```
+
+**2. 循环遍历，将内容逐一填进容器**
+[LRD.IM](https://lrd.im) 的首页会列出我之前任职公司时的实际项目，实际上这就可以将一组数据按顺序地填入设定好样式和交互的容器当中。
+
+我使用 [Array.prototype.map()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map) 来实现这个循环遍历，关键代码：
+
+```js title="index.js"
+import ProjectItemData from "/data/project/ProjectItemData";  //导入数据源
+
+<>
+    {ProjectItemData.map((company) => (  //查找数据源中的一级数据
+        <div>
+            <Image src={company.img} />   //公司 LOGO 图片
+            <Link href={company.url}> {company.name} </Link>  //公司名称，点击跳转到公司官网网址
+        </div>
+
+        <div>
+            {company.projects.map((project) => (  //查找数据源中的二级数据
+                <Link href={project.url}>  //作品跳转链接
+                    <Image src={project.img} />  //作品缩略图
+                    <h3>{project.title}</h3>  //作品名称
+                    <p>{project.desc}</p>  // 作品描述
+                </Link>
+            ))}
+        </div>
+    ))}
+</>
+```
+
+最终呈现如图所示：
+
+![Project 模块的线上截图。]()
+
+### 影响范围
+
+**数据源和循环遍历**这个做法频繁出现在重构后的个人网站里。除了上面提到的首页作品列表，还有比如网站的 Header 导航栏、作品详情页平铺图片的模块、以及 What's New 页面的内容等等。
+
+![map 遍历用在Header 导航栏、作品详情页平铺图片的模块、以及 What's New 页面的内容的示意图]()
+
+如果后续某一个模块的内容需要增删改，我只要修改数据源里面的内容，操作完之后在具体页面中检查一遍就可以了。再也不用**在编辑器里打开数十个 html 文件逐个修改**了。也不用在一堆代码高亮后的标签内寻找内容了。
+
+一个模块或组件对应一个数据源，然后数据也和页面分离，干干净净 👍🏻。
+
+### 局限性
+
+这个看似完美的功能实际上也会有一个令我有点难受局限性。前文提到一句话：
+
+> 有了数据源之后会需要将其逐个安放进**统一的容器**里面...
+
+这种按部就班，放进「统一的容器」里的做法会丧失灵活性，比如在：一组容器里面我想要特意给某一个容器添加样式，或者某个字段的值是字符串，我想给里面的某个词语设定一个样式。这似乎不容易办到。
+
+具体来说，在我前年写的一篇[文章](http://lrd.im/blog/2021-08-15#%E4%B8%89%E9%81%BF%E5%85%8D%E5%8D%95%E5%AD%97%E6%88%90%E8%A1%8C)里，我学会了给标题或重要文本的最后一个词语和标点设置一个不换行的样式`white-space: nowrap;`来防止出现孤字。这是需要在 html 内对每一句话来设定的样式，而通过数据源来填充文本内容，我似乎没法进行这样的操作了。
+
+所以重构后的网站，一些地方可能会出现无法避免的孤字。
+
+![重构前后的孤字对比图。展示重构前在代码编辑器里编写样式，以及避免孤字的效果；以及重构后，用了数据源填充文本后，可能会出现的孤字。]()
+
+后续我会继续关注这个问题，尝试找到低成本的解决办法。这并非毫无希望，起码最近有了解到 [React Wrap Balancer](https://react-wrap-balancer.vercel.app/) 这个组件似乎能改善孤字的现象，后续我会继续跟进。有新进展也会在博客里更新。
+
+![React Wrap Balancer 的效果预览动图。拖动手柄来改变容器宽度，观察使用该组件前后的效果对比。]()
+
+再一次感叹一下，用 Next.js 来重构之后，科学的框架和完善的生态让我的网站拥有无限的想象力。
+
+---
+
+## 深色模式
+
+重构前的 LRD.IM，网页的深色和浅色模式是只会跟随用户系统设置的，而这次做到的效果是：
+
+1. 默认颜色主题跟随用户系统设置；
+2. 允许有一个按钮来切换深色或浅色模式；
+3. 手动更改过颜色主题后，访问网站内其他页面也会受到影响；
+4. 页面加载、跳转时没有背景色闪烁。
+
+深色模式在 Next.js 和 Tailwind CSS 结合使用的时候会变得无比简单。
+
+### 功能实现
+
+功能上我是跟着 Danilo Leal 博客里的[这篇文章](https://daniloleal.co/my-world/thinking/darkmode-next-tailwind)，一步一步实现适配到深色模式的。主要是使用了 [next-themes](https://github.com/pacocoursey/next-themes) 提供的能力。没什么难度和卡点。
+
+### 样式支持
+
+使用 Tailwind CSS 之后，设计深色模式的样式也变得简单很多了。只要在类名前加上`dark:`，比如这样：`text-neutral-800 dark:text-neutral-100`，`dark:`后面的内容就是当切换成深色模式后的样式。
+
+而且在与媒体查询、:hover、:active 等效果配合使用时候，也可以直接叠加，不需要在 CSS 内过多的声明或嵌套。
+
+比如一个按钮的背景色，在不同的颜色主题和状态（默认或 :hover）下色值会不同。同时我也希望在移动端设备尺寸下，不要有 :hover 改变背景色的效果。那么类名大概会是这样：
+
+```js
+<Button
+    className="
+    bg-neutral-100                //浅色模式时，按钮的默认背景色
+    dark:bg-neutral-900           //深色模式时，按钮的默认背景色
+    sm:hover:bg-neutral-200       //视窗宽度是移动端以上时，:hover 状态的背景色
+    dark:sm:hover:bg-neutral-800  //深色模式且视窗宽度是移动端以上时，:hover 状态的背景色
+    ">...
+</Button>
+```
+
+在我看来，这种做法比传统的 CSS 做法更直观，不用专门语义化一个颜色，或者在冗长的 CSS 里维护两套主题色。所以得益于使用了 Tailwind CSS，我在写样式的时候效率提升了很多。
+
+---
+
+## 组件响应式适配
+
+这里可以记录一个我做成了响应式适配的组件：Header。在宽度足够时会将各页面入口平铺展示；而在移动端尺寸下，会收起在一个按钮中，点击后展开一个菜单，在里面提供页面和功能的入口。
+
+![Header 在宽屏和窄屏时的展示]()
+
+### 功能实现
+
+实际上我是通过媒体查询视窗宽度来实现的响应式适配。Header 操作区会分成两部分，一部分是平铺的按钮，另一部分是菜单功能。即：
+
+1. 当视窗宽度 > 移动端尺寸时，菜单功能的按钮被隐藏；
+2. 而视窗宽度 \<= 移动端尺寸时，平铺的按钮被隐藏。
+
+```js /hidden sm:block/ /sm:hidden/
+<>
+    <div className="hidden sm:block"> // 平铺的按钮
+        <Link>作品</Link>
+        <Link>博客</Link>
+        <Link>关于我</Link>
+    </div>
+    <div className="sm:hidden"> // Headless UI 的菜单组件
+        <Menu> ... </Menu>  
+    </div>
+</>
+```
+
+至于展开的菜单，我是用了 Headless UI 的 [Menu](https://headlessui.com/react/menu) 组件来实现的（经过轻微改造），这里面内置了展开收起的动画，以及无障碍访问相关的特点。组件挺好使的，而且文档也很完善，提供了很多功能和描述。
+
+![Headless UI 的 Menu 组件界面截图]()
+
+> 使用框架来构建网站的好处是：能够很方便地用上各种插件和库。这是在旧版网站里不敢想象的事情。
+
+### 使用图标
+
+虽然说在工作上我做过不少图标，也负责过图标库的管理和迭代。但在这次重构 LRD.IM 的项目中，我没有自己去设计图标，用的都是外部资源。
+
+因为在我看来图标只要能辅助表达出意思就行了，没有必要在这上面花太多功夫。**把时间和精力放在其他更有意义的地方。**
+
+网站中我主要依赖 [React-Icons](https://react-icons.github.io/react-icons/) 这个图标库。里面包含了很多主流图标库的内容，比如：Ant Design、Boostrape、Remix 等等。而我主要使用了 Ionicons 5 系列的图标，比较符合我的设计风格。用起来也很简单快捷：
+
+```js
+import { IoLink, IoList } from "react-icons/io5"; // 加载图标库
+
+<IoLink />  //直接使用图标
+<IoList className="text-xl" />  //为图标添加样式
+```
+
+---
+
+## The Joy of React 课程的收获
+
+上一篇文章中提到在项目后期我参加了 The Joy of React 课程，在系统地学习了一些 React 的知识后对代码做了些改进，这里我句两个例子：**图片组件**和 **Key 值**处理。
+
+### 设计图片组件
+
+在我的作品详情页面中，「图片」是一个会被频繁用到的元素。而图片的呈现又有好几种方式。
+
+![图片组件的多种变量示意。]()
+
+上图中能看到，我的图片组件会有六个属性允许配置或填写。
+
+1. src：填入图片的路径（必须）
+2. alt 文本
+3. 图片尺寸：大 / 小
+4. 图片滚动：允许 / 禁止
+5. 点击放大：允许 / 禁止
+6. 图片描述：内容 / 为空
+
+而其中这几种属性可以互相组合，比如：
+
+1. 大尺寸图片 + 允许滚动 + 禁止点击放大 + 有图片描述
+2. 小尺寸图片 + 禁止滚动 + 允许点击放大 + 无图片描述
+3. 小尺寸图片 + 允许滚动 + 禁止点击放大 + 无图片描述
+4. ...
+
+所以我在设计的图片组件时，开放了这些属性，允许在页面中自由配置某一张图片的样式和功能。同时将常被用到的属性会被设定为默认值，尽量减少在页面中的代码量。得出这样的一个 API：
+
+| 属性 | 说明 | 类型 | 默认值 |
+| :- | :- | :- | :- |
+| src | 图片路径，**必填** | `string` |  |
+| alt | 提供给屏幕阅读器的描述文本 | `string` |  |
+| size | 尺寸 | `small` \| `large` | `large` |
+| scroll | 限制容器高度，并提供滚动交互 | `boolean` | `false` |
+| zoom | 设置点击图片放大查看的效果 | `boolean` | `true` |
+| children | 在图片下方展示一段描述文本 | `string` |  |
+
+关键代码：
+
+```js
+export default function ProjectImage({
+    src, 
+    alt, 
+    size, 
+    scroll, 
+    zoom, 
+    children
+}) {
+  return (
+    <>
+      <figure className={scroll === true ? "scroll" : ""}>  //scroll 为 true 则添加允许图片滚动的样式
+        <div className={`${size === "small" ? "max-w-2xl" : ""}`}>  //scroll 为 small 则添加限制图片容器宽度的样式
+          {zoom === false ? (  //zoom 被设置为 false 时，使用不能点击放大的图片组件
+            <Image  
+            src={src}  //读取外部填写的图片路径
+            alt={alt}  //读取外部填写的图片 alt 文本
+          />
+          ) : (<Zoom //zoom 被设置为 true (默认值)时，使用允许点击放大的图片组件
+            src={src}
+            alt={alt}
+          ></Zoom>
+          )}
+        </div>
+      </figure>
+      {children && <figcaption>{children}</figcaption>}  //children 非空时，将其渲染出来
+    </>
+  );
+}
+```
+
+同时又存在着一个互斥关系，比如：允许滚动的图片，禁止点击放大；禁止滚动的图片，允许点击放大。（因为当下我用到的图片放大[组件](https://www.npmjs.com/package/next-image-zoom)对长图片的支持并没有很完美），补充相应代码：
+
+```js
+zoom = !scroll;
+```
+
+最后在页面中使用该组件时，只需要填上必填的`src`，如果有其他尺寸或滚动上的配置，也传递进去就好了。
+
+```js title="Single Project.js"
+//默认：大尺寸图片 + 禁止滚动 + 允许点击放大 + 无图片描述
+<ProjectImage src="01.png" />  
+
+//配置为：大尺寸图片 + 允许滚动 + 禁止点击放大 + 有图片描述
+<ProjectImage src="02.png" scroll={true}>  
+    一个文本示例。
+</ProjectImage>
+
+//配置为：小尺寸图片 + 禁止滚动 + 允许点击放大 + 有图片描述
+<ProjectImage src="03.png" size="small">
+    另一个文本示例。
+</ProjectImage>
+```
+
+可以对比一下在使用组件前后，源文件的对比。代码可读性提高了许多，同时也更方便管理和迭代了。
+
+后如果我想有什么调整或者新功能，只要改动组件就好，再也不用**在编辑器里打开数十个 html 文件逐个修改**了。也不用在一堆代码高亮后的标签内寻找内容了。
+
+![使用组件前后，源文件的对比。]()
+
+### Key 值
+
+
+

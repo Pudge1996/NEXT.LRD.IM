@@ -1,10 +1,19 @@
 import React from "react";
-import Link from "next/link";
-import ContactCard from "/components/ContactCard";
-import CopyPageLink from "/components/CopyPageLink";
-import { IoPerson, IoLink, IoLogoRss } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
+import ContactCard from "/components/common/ContactCard";
+import CopyPageLink from "/components/common/CopyPageLink";
+import { IoPerson, IoLink } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
+import { event } from "nextjs-google-analytics";
 
 export default function BlogFooter() {
+
+  const handleSubmit = () => {
+
+    event("click_Contact", {
+      category: "Contact",
+      value: "click_Contact",
+    });
+
+  };
   return (
     <>
       <section className="flex flex-col gap-4 sm:gap-6 p-4 sm:p-6 rounded-lg mt-7 sm:mt-14 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-colors">
@@ -16,7 +25,7 @@ export default function BlogFooter() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          <div className="flex-1 btn-base text-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800  sm:hover:bg-neutral-200 relative transition-colors">
+          <div onClick={handleSubmit} className="flex-1 btn-base text-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800  sm:hover:bg-neutral-200 relative transition-colors">
             <ContactCard />
             <div className="flex gap-2 justify-center items-center">
               <IoPerson />

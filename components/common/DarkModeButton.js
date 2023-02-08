@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTheme } from 'next-themes';
 import { IoMoon, IoSunny } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 // 切换浅色和深色模式的按钮
 
 export default function DarkModeButton() {
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = React.useState(false);
   const { theme, setTheme } = useTheme();
-  useEffect(() => setMounted(true), []);
+  React.useEffect(() => setMounted(true), []);
 
   return (
     <button

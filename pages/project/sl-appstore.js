@@ -1,41 +1,32 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
-import ProjectItemData from "/data/ProjectItemData";
-import Zoom from "next-image-zoom";
+import ProjectItemData from "/data/project/ProjectItemData";
+import ProjectImage from "/components/project/ProjectImage";
 
 export default function slAppstore() {
-  const Title = ProjectItemData[2].projects[2].title;
-  const Desc = ProjectItemData[2].projects[2].desc;
-  const [isLoaded, setIsLoaded] = useState(false);
+  const title = ProjectItemData[2].projects[2].title;
+  const desc = ProjectItemData[2].projects[2].desc;
 
   return (
     <>
       <Head>
         <title>
-          {Title} - {siteMetadata.title}
+          {title} - {siteMetadata.title}
         </title>
         <meta name="author" content={siteMetadata.author} />
-        <meta name="description" content={Desc} />
-        <link rel="icon" href="/favicon.ico" />
 
         {/* For Soical Meida (OpenGraph) */}
         <meta property="og:image" content="网站宽屏图（16:9）" />
         <meta property="og:image:alt" content="网站宽屏图的描述" />
-        <meta name="og:type" content="summary" />
-        <meta property="og:title" content={Title} />
-        <meta property="og:description" content={Desc} />
-
-        {/* For Twitter */}
-        <meta name="twitter:site" content="@Pudge_1996" />
-        <meta name="twitter:creator" content="@Pudge_1996" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
       </Head>
       <div className="layout project-v2 flex flex-col gap-6">
         <section className="top-info">
-          <h1 className="">{Title}</h1>
-          <p className="">{Desc}</p>
+          <h1 className="">{title}</h1>
+          <p className="">{desc}</p>
         </section>
 
         <section className="content">
@@ -49,59 +40,27 @@ export default function slAppstore() {
             SHOPLINE 内部研发出来的。随着产品发展，SHOPLINE
             需要更丰富的开放能力来满足商家各种各样的需求，原本的做法已经无法支持业务发展。
           </p>
-          <figure>
-            <div
-              className={`relative max-w-2xl rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/1-1.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
-          <figcaption>
+          <ProjectImage
+            src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/1-1.png"
+            size="small"
+          >
             改版前的 SHOPLINE 应用详情页（左）和列表页（右）。
-          </figcaption>
+          </ProjectImage>
           <p>
             SHOPLINE
             应用商店需要对外开放，提供开发文档，接入第三方开发的应用。后续需要支持订阅（商业化）、评论、智能推荐等，会有一个完整的生态。所以需要将应用商店从管理后台里独立出来，以支持后续的业务发展。
           </p>
-          <hr/>
+          <hr />
           <h2>前期工作</h2>
           <p>
             在工作前我找业务方、产品经理了解了 SHOPLINE
             开放平台的相关背景，同时也着重了解跟该需求相关的 SHOPLINE
             应用商店面向的人群，以及他们使用该服务的目的。简单归纳如下：
           </p>
-          <figure>
-            {/* 小图片 */}
-            <div
-              className={`relative max-w-2xl rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/2-1.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
+          <ProjectImage
+            src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/2-1.png"
+            size="small"
+          />
           <p>
             在正式开展设计之前进行竞品分析，主要对核心功能的交互体验，以及整体的主观感受进行资料整理及聚合分析，辅助设计决策。
           </p>
@@ -128,52 +87,17 @@ export default function slAppstore() {
           <p>
             在走查了现状以及对比过竞品之后，作为该平台的设计师，我认为可以先从应用的素材质量方面去入手。
           </p>
-          <figure>
-            {/* 小图片 */}
-            <div
-              className={`relative max-w-2xl rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-1.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
-          <figcaption>
+          <ProjectImage
+            src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-1.png"
+            size="small"
+          >
             改版前的应用商店现状，文案、图片素材杂乱无章。
-          </figcaption>
+          </ProjectImage>
+
           <p>
             所以我整理了一份上架应用时所需素材的设计指南和模版，给到第三方应用的开发者。帮助开发者更好地在应用商店前台展示自己的应用，同时也保障应用商店内容的整体观感。
           </p>
-          <figure>
-            {/* 大图片，无滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-2.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
+          <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-2.png" />
           <h2>设计发力点（面向开发者）</h2>
           <h3>营造可靠，专业的体验感受</h3>
           <p>
@@ -188,24 +112,13 @@ export default function slAppstore() {
             <li>增加「应用截图」的曝光；</li>
             <li>始终暴露「安装应用」的触点。</li>
           </ol>
-          <figure className="scroll">
-            {/* 大图片，可滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Image
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-3.png"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                layout="fill"
-              />
-            </div>
-          </figure>
-          <figcaption>
+          <ProjectImage
+            src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-3.png"
+            scroll={true}
+          >
             应用详情页的布局结构设计策略。可上下滚动查看。
-          </figcaption>
+          </ProjectImage>
+
           <p>
             <b>策略 2：设计推荐优质应用的模版</b>
             <br />
@@ -218,24 +131,12 @@ export default function slAppstore() {
           <p>
             然后我转变了下思路，提供了一组用于展示推荐应用的模版，给到产品或运营穿插在应用商店内，打破原本冷冰冰的应用列表。一方面是视觉上能让网站整体观感会有起伏和韵律；另一方面恰当地曝光优质的应用能给到商家更多的帮助。
           </p>
-          <figure className="scroll">
-            {/* 大图片，可滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Image
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-4.png"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                layout="fill"
-              />
-            </div>
-          </figure>
-          <figcaption>
-            应用详情页的布局结构设计策略。可上下滚动查看。
-          </figcaption>
+          <ProjectImage
+            src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-4.png"
+            scroll={true}
+          >
+            应用商店首页的布局结构设计策略。可上下滚动查看。
+          </ProjectImage>
           <p>
             <b>策略 3：打磨安装应用流程</b>
             <br />
@@ -246,26 +147,7 @@ export default function slAppstore() {
             <b>登录场景</b>
             的介入。面对这种状况，我尝试去打磨流程中的细节，提供更佳的应用安装体验。
           </p>
-          <figure>
-            {/* 大图片，无滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-5.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
+          <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-5.png" />
           <h2>最终产出</h2>
           <p>「SHOPLINE 开放能力：应用商店独立化」项目最终输出的内容包括：</p>
           <ol>
@@ -274,26 +156,7 @@ export default function slAppstore() {
             <li>面向产品/运营的优质应用展示模版；</li>
             <li>面向产品/运营的应用商店 Banner 素材模版。</li>
           </ol>
-          <figure>
-            {/* 大图片，无滚动 */}
-            <div
-              className={`relative rounded-lg min-h-[120px] ${
-                isLoaded ? "" : "img-loading-spin"
-              } `}
-            >
-              <Zoom
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/4-1.png"
-                alt=""
-                objectFit="contain"
-                layout="fill"
-                onLoad={() => setIsLoaded(true)}
-                onError={() => setIsLoaded(true)}
-                backgroundColor="black"
-                backgroundOpacity="0.8"
-                fill="cover"
-              ></Zoom>
-            </div>
-          </figure>
+          <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/4-1.png" />
           <h2>Think More：还能做到更多吗？</h2>
           <p>
             在有限的时间和资源内完成需求后，我尝试去反问自己哪些地方是能够做得再多一点？提供给用户（商家/开发者）更多价值。

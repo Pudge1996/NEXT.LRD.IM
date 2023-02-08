@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import TableContents from "/components/TableContents";
+import TableContents from "/components/blog/TableContents";
 
 export default function Example() {
   const [open, setOpen] = useState(false);
