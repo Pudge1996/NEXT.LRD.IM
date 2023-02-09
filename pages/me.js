@@ -27,7 +27,7 @@ export default function me() {
           </section>
           <section>
             <h2>教育背景</h2>
-            <p><Link href="/link" target="_blank" rel="noopener noreferrer" title="江汉大学 - 百度百科">江汉⼤学</Link> · 现代数字媒体设计（2014—2018 本科）</p>
+            <p><Link href="https://baike.baidu.com/item/%E6%B1%9F%E6%B1%89%E5%A4%A7%E5%AD%A6/343825" target="_blank" rel="noopener noreferrer" title="江汉大学 - 百度百科">江汉⼤学</Link> · 现代数字媒体设计（2014—2018 本科）</p>
           </section>
           <section className='contact'>
             <h2>联系方式</h2>
@@ -45,16 +45,16 @@ export default function me() {
             <p>2021.9 - 2022.11</p>    
             <div>
             <div>
-              <p><Link href="/link" target="_blank" rel="noopener noreferrer" title="欢聚集团官网">欢聚集团</Link></p>    
+              <p><Link href="https://joyy.com/" target="_blank" rel="noopener noreferrer" title="欢聚集团官网">欢聚集团</Link></p>    
               <p>UI 设计师，广州</p>    
             </div>
             <ul>
-              <li>独立负责 <Link href="/link" target="_blank" rel="noopener noreferrer" title="SHOPLINE 官网">SHOPLINE</Link> 商家后台数据业务和 App 项目的全流程设计。其中数据模块<Link href="/link" target="_blank" rel="noopener noreferrer" title="SHOPLINE 数据概览改版方案">改版</Link>后访客数环比提升近 50%；</li>  
-              <li>主导图表、<Link href="/link" target="_blank" title="SHOPLINE 数据透视表改版方案">表格</Link>等复杂组件的体验升级设计及方案落地。提升后台的整体观感体验和使用屏效，获得内外部正向反馈；</li>  
-              <li>完成 B 端体验标准化<Link href="/link" target="_blank" title="SHOPLINE 数据体验标准化方案">实践</Link>：横向走查平台内所有数据场景，与各域 UX 设计师对齐后归纳数据展示的标准方案，保障基础体验一致性；</li>  
-              <li>App 端基础&业务<Link href="/link" target="_blank" title="SHOPLINE App 组件库方案">组件库</Link>搭建和交互模式探索。拥有基于东南亚地区商家特点而作出对应设计决策的实践经验；</li>
-              <li>支持 SHOPLINE 开放平台：应用商店独立化项目，针对商家和开发者这两个角色的核心诉求找到设计发力点并提供完整<Link href="/link" target="_blank" title="SHOPLINE 开放平台设计方案">方案</Link>；</li>
-              <li>归纳国际化设计规范。结合外部成熟经验和公司业务所需作出合适的指引，并与广州、杭州和港台的设计同事<Link href="/link" target="_blank" title="分享会文稿 - 李瑞东的设计博客">分享设计经验</Link>。</li>
+              <li>独立负责 <Link href="https://shoplineapp.cn/" target="_blank" rel="noopener noreferrer" title="SHOPLINE 官网">SHOPLINE</Link> 商家后台数据业务和 App 项目的全流程设计。其中数据模块<Link href="/project/analytics" target="_blank" rel="noopener noreferrer" title="SHOPLINE 数据概览改版方案">改版</Link>后访客数环比提升近 50%；</li>  
+              <li>主导图表、<Link href="/project/analytics" target="_blank" title="SHOPLINE 数据透视表改版方案">表格</Link>等复杂组件的体验升级设计及方案落地。提升后台的整体观感体验和使用屏效，获得内外部正向反馈；</li>  
+              <li>完成 B 端体验标准化<Link href="/project/analytics-guide" target="_blank" title="SHOPLINE 数据体验标准化方案">实践</Link>：横向走查平台内所有数据场景，与各域 UX 设计师对齐后归纳数据展示的标准方案，保障基础体验一致性；</li>  
+              <li>App 端基础&业务<Link href="/project/slapp-components" target="_blank" title="SHOPLINE App 组件库方案">组件库</Link>搭建和交互模式探索。拥有基于东南亚地区商家特点而作出对应设计决策的实践经验；</li>
+              <li>支持 SHOPLINE 开放平台：应用商店独立化项目，针对商家和开发者这两个角色的核心诉求找到设计发力点并提供完整<Link href="/project/sl-appstore" target="_blank" title="SHOPLINE 开放平台设计方案">方案</Link>；</li>
+              <li>归纳国际化设计规范。结合外部成熟经验和公司业务所需作出合适的指引，并与广州、杭州和港台的设计同事<Link href="/blog/2022-01-02" target="_blank" title="分享会文稿 - 李瑞东的设计博客">分享设计经验</Link>。</li>
             </ul>    
             </div>
           </section>
@@ -62,14 +62,14 @@ export default function me() {
             <p>2020.7 - 2021.9</p>    
             <div>
             <div>
-              <p><Link href="/link" target="_blank" rel="noopener noreferrer" title="千聊官网">千聊</Link></p>
+              <p><Link href="https://pc.qlchat.com/" target="_blank" rel="noopener noreferrer" title="千聊官网">千聊</Link></p>
               <p>UI 设计师，广州</p>
             </div>
             <ul>
-              <li>建立千聊首个成型且落地的自研 UI <Link href="/link" target="_blank" title="千聊组件库方案">组件库</Link>，探索出高效的组件交付流程，提升设计/验收、跨部门合作的效率；</li>  
-              <li>负责千聊讲师端和<Link href="/link" target="_blank" title="千聊 PPT 课程优化方案">课堂业务</Link>，以及内部工作流程规范化；</li>  
-              <li>负责从零开始设计 SaaS 平台「<Link href="/link" target="_blank" title="鱼棠 SCRM 官网">鱼棠 SCRM</Link>」。在 Ant Design 的生态下制定并落实设计规范。根据数据反馈，提出并落地更符合用户预期的<Link href="/link" target="_blank" title="鱼棠 SCRM 海报改版方案">设计方案</Link>（已验证）；</li>  
-              <li>以<Link href="/link" target="_blank" title="分享会文稿 - 李瑞东的设计博客">分享会</Link>或 wiki 文档的方式沉淀设计经验，与团队一起进步。</li>  
+              <li>建立千聊首个成型且落地的自研 UI <Link href="/project/qlchat" target="_blank" title="千聊组件库方案">组件库</Link>，探索出高效的组件交付流程，提升设计/验收、跨部门合作的效率；</li>  
+              <li>负责千聊讲师端和<Link href="/project/qlchat" target="_blank" title="千聊 PPT 课程优化方案">课堂业务</Link>，以及内部工作流程规范化；</li>  
+              <li>负责从零开始设计 SaaS 平台「<Link href="/project/ytscrm" target="_blank" title="鱼棠 SCRM 官网">鱼棠 SCRM</Link>」。在 Ant Design 的生态下制定并落实设计规范。根据数据反馈，提出并落地更符合用户预期的<Link href="/project/ytscrm" target="_blank" title="鱼棠 SCRM 海报改版方案">设计方案</Link>（已验证）；</li>  
+              <li>以<Link href="/blog/2021-04-09" target="_blank" title="分享会文稿 - 李瑞东的设计博客">分享会</Link>或 wiki 文档的方式沉淀设计经验，与团队一起进步。</li>  
             </ul>    
             </div>
           </section>
@@ -77,13 +77,13 @@ export default function me() {
             <p>2018.3 - 2020.4</p>    
             <div>
             <div>
-              <p><Link href="/link" target="_blank" rel="noopener noreferrer" title="屈臣氏中国官网">屈臣氏集团</Link></p>       
+              <p><Link href="https://www.watsons.com.cn/" target="_blank" rel="noopener noreferrer" title="屈臣氏中国官网">屈臣氏集团</Link></p>       
               <p>UI 设计师，广州</p>
             </div>
             <ul>
               <li>参与屈臣氏 app、小程序的界面设计。包括产品基础功能迭代、动效设计、深色模式、维护 UI 规范等；</li>  
-              <li>负责部分<Link href="/link" target="_blank" title="千聊 PPT 课程优化方案">活动落地页</Link>的设计。主导<Link href="/link" target="_blank" title="千聊 PPT 课程优化方案">试用中心改版</Link>，点击渗透率环比提升近 70%，活动参与率环比提升 30.5%；</li>  
-              <li>负责<Link href="/link" target="_blank" title="千聊 PPT 课程优化方案">内部取数平台</Link>的交互&界面设计。</li> 
+              <li>负责部分<Link href="/project/watsons" target="_blank" title="银联双十二活动设计方案">活动落地页</Link>的设计。主导<Link href="/project/watsons" target="_blank" title="屈臣氏试用中心改版方案">试用中心改版</Link>，点击渗透率环比提升近 70%，活动参与率环比提升 30.5%；</li>  
+              <li>负责<Link href="/project/watsons" target="_blank" title="屈臣氏BI平台设计方案">内部取数平台</Link>的交互&界面设计。</li> 
             </ul>    
             </div>
           </section>
@@ -113,15 +113,15 @@ export default function me() {
             </section>
             <section>
               <strong>动效设计</strong>
-              <p>掌握 AE / Principle，丰富的 Lottie 动效设计<Link href="/link" target="_blank" title="博客《最近用 Bodymovin 导出动画遇到的问题和解决方法》">经验</Link>，是 LottieFiles 社区的<Link href="/link" target="_blank" rel="noopener noreferrer" title="受 LottieFiles.com 委托设计的多组图标">创作者</Link></p>
+              <p>掌握 AE / Principle，丰富的 Lottie 动效设计<Link href="/blog/2019-06-11" target="_blank" title="博客《最近用 Bodymovin 导出动画遇到的问题和解决方法》">经验</Link>，是 LottieFiles 社区的<Link href="https://dribbble.com/Pudge1996/projects/1084892-Animation-LottieFiles" target="_blank" rel="noopener noreferrer" title="受 LottieFiles.com 委托设计的多组图标">创作者</Link></p>
             </section>
             <section>
               <strong>数据分析</strong>
-              <p>有基础的体验度量能力，能够结合数据反馈来调整设计策略，探索设计<Link href="/link" target="_blank" title="打开鱼棠 SCRM 设计项目方案">方案</Link></p>
+              <p>有基础的体验度量能力，能够结合数据反馈来调整设计策略，探索设计<Link href="/project/ytscrm" target="_blank" title="打开鱼棠 SCRM 设计项目方案">方案</Link></p>
             </section>
             <section>
               <strong>前端实现</strong>
-              <p>了解网页实现方式，基于 Next.js 和 Tailwind&nbsp;CSS 搭建个人网站 <Link href="/link" target="_blank" title="李瑞东的个人网站">LRD.IM</Link></p>
+              <p>了解网页实现方式，基于 Next.js 和 Tailwind&nbsp;CSS 搭建个人网站 <Link href="/" target="_blank" title="李瑞东的个人网站">LRD.IM</Link></p>
             </section>
           </section>
 
