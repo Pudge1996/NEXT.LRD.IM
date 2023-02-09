@@ -15,6 +15,7 @@
     "@mdx-js/loader": "^2.2.1",
     "@mdx-js/react": "^2.2.1",
     "@next/mdx": "^13.0.7",
+    "@tailwindcss/container-queries": "^0.1.0",
     "date-fns": "^2.29.3",
     "esbuild": "^0.14.54",
     "fs": "^0.0.1-security",

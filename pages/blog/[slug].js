@@ -221,7 +221,7 @@ const Post = ({ code, frontmatter }) => {
                 <div className="flex gap-2 items-center">
                   <div className="w-11 h-11 relative rounded-full overflow-hidden">
                     <Image
-                      src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2022-08-17-f2c1f5bfbb8d/01.png"
+                      src={siteMetadata.authorImg}
                       alt="我的个人头像"
                       fill
                       sizes="100vw"

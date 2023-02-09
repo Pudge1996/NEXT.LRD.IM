@@ -143,7 +143,7 @@ import ProjectItemData from "/data/ProjectItemData";  //导入数据源
 
 后续我会继续关注这个问题，尝试找到低成本的解决办法。这并非毫无希望，起码最近有了解到 [React Wrap Balancer](https://react-wrap-balancer.vercel.app/) 这个组件似乎能改善孤字的现象，后续我会继续跟进。有新进展也会在博客里更新。
 
-<figure><video width="100%" autoplay="autoplay" loop="loop" muted alt="React Wrap Balancer 的效果预览动图。拖动手柄来改变容器宽度，观察使用该组件前后的效果对比。" src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-02/05.mp4" /></figure>
+<figure><video width="100%" autoPlay loop="loop" muted alt="React Wrap Balancer 的效果预览动图。拖动手柄来改变容器宽度，观察使用该组件前后的效果对比。" src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-02/05.mp4" /></figure>
 
 > 当前的解决方案：关键内容/复用较少的内容会写在 JSX 中，而不使用数据源，给到最大的灵活性。而像大标题或副标题，则是使用了 `word-break: keep-all;` 的方式减少孤字出现的可能性（[参考此处](/blog/2021-11-07#三在展示型网站中使用)）。其他更细的情况无处理。
 
