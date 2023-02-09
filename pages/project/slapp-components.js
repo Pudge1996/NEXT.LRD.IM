@@ -167,7 +167,7 @@ export default function slappComponents() {
           </p>
           <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/slapp-components/w_1920/5-1.png" />
         </section>
-        <ProjectFooter />
+        {/* <ProjectFooter /> */}
       </div>
     </>
   );
