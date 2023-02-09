@@ -96,7 +96,7 @@ export default function Header() {
                           </div>
                           <div className="flex justify-center">
                             <Link
-                              href="https://lrd.im/feed"
+                              href="https://lrd.im/feed.xml"
                               target="blank"
                               className="btn-base btn-icon"
                             >

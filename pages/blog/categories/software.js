@@ -27,7 +27,7 @@ export default function cateSoftware({ posts }) {
 
         <hr />
 
-        <div className="flex flex-col-reverse gap-8">
+        <div className="flex flex-col gap-8">
         {posts.map((post, index) => (
             <section key={index} className="flex flex-col">
               <Link

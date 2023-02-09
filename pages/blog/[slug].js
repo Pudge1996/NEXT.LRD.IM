@@ -174,7 +174,7 @@ const Post = ({ code, frontmatter }) => {
             <div className="flex-row gap-1 items-center text-tertiary">
               {/* RSS订阅 */}
               <Link
-                href="https://lrd.im/feed"
+                href="https://lrd.im/feed.xml"
                 target="_blank"
                 aria-label="订阅博客 RSS"
                 title="订阅博客 RSS"

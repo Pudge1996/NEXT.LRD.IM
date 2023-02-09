@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[李瑞东的设计博客]]></title>
+        <description><![CDATA[记录我的设计生涯。]]></description>
+        <link>https://lrd.im</link>
+        <image>
+            <url>https://lrdim.oss-cn-shenzhen.aliyuncs.com/avatar.jpeg</url>
+            <title>李瑞东的设计博客</title>
+            <link>https://lrd.im</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Thu, 09 Feb 2023 15:24:36 GMT</lastBuildDate>
+        <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Thu, 09 Feb 2023 15:24:36 GMT</pubDate>
+        <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
+        <managingEditor><![CDATA[李瑞东]]></managingEditor>
+        <webMaster><![CDATA[李瑞东]]></webMaster>
+        <ttl>60</ttl>
+        <item>
+            <title><![CDATA[博客实现 RSS 订阅能力全记录]]></title>
+            <description><![CDATA[我的个人网站 LRD.IM 从 2018 年元旦发布至今，已经持续维护 4 年了。从最开始根据一个网站模板替换图文，到现在全面的「自主研发」，这是我最骄傲的一款作品。接下来要开始尝试将我的博客内容输出成 RSS 源。]]></description>
+            <link>https://lrd.im/blog/2022-11-11</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-11-11</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Thu, 10 Nov 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[网页布局设计和适配（分享会文稿）]]></title>
+            <description><![CDATA[公司前段时间新来了不少交互设计师， Leader 邀请我做一次网页布局相关的分享会，来帮助以往比较少界面设计经验的交互设计师能够更好地完成设计方案产出和交付。现在我将文稿记录在这里。]]></description>
+            <link>https://lrd.im/blog/2022-10-31</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-10-31</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sun, 30 Oct 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[App 表单校验时机探索]]></title>
+            <description><![CDATA[我在最近的工作中发现表单的校验时机通常是在三种方式内取舍：输入中、失焦后、提交时。这其中的差异还是挺耐人寻味的，有必要探索三者之间的各自优劣势和适用场景，于是乎就有了这篇文章。]]></description>
+            <link>https://lrd.im/blog/2022-08-17</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-08-17</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Tue, 16 Aug 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[【译文】如何突破设计系统的极限]]></title>
+            <description><![CDATA[公司前段时间新来了不少交互设计师， Leader 邀请我做一次网页布局相关的分享会，来帮助以往比较少界面设计经验的交互设计师能够更好地完成设计方案产出和交付。现在我将文稿记录在这里。]]></description>
+            <link>https://lrd.im/blog/2022-08-12</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-08-12</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Thu, 11 Aug 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[SL 图标库改良实践]]></title>
+            <description><![CDATA[公司前段时间新来了不少交互设计师， Leader 邀请我做一次网页布局相关的分享会，来帮助以往比较少界面设计经验的交互设计师能够更好地完成设计方案产出和交付。现在我将文稿记录在这里。]]></description>
+            <link>https://lrd.im/blog/2022-07-16</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-07-16</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 15 Jul 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[【译文】下一代主题设计：我们如何让 Dawn 主题变得响应快、可扩展和更美观]]></title>
+            <description><![CDATA[我们在线商店的默认主题 Debut 在五年前发布时是一个很棒的主题，但经过 Web 标准和 UX 最佳实践这几年的发展，Debut 的缺点开始显现。我们需要一个不仅能满足最新的 Web 和 UX 标准，还要能促进在线商店进入下一个世代的解决方案。]]></description>
+            <link>https://lrd.im/blog/2022-06-15</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-06-15</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Tue, 14 Jun 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[【译文】在技术与产品设计的合作中寻求像素完美]]></title>
+            <description><![CDATA[在前几年，设计和开发一个主题最多需要六个月的时间。今天，我们平均只需要 8~10 周。我们如何做到的呢？作为 Shopfiy 标杆性的主题团队高级用户体验经理，我将分享我们团队中网页设计和跨专业协作方法中的秘密。]]></description>
+            <link>https://lrd.im/blog/2022-05-28</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-05-28</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 27 May 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[【译文】我们如何重建 Shopify 的开发者文档]]></title>
+            <description><![CDATA[在前几年，设计和开发一个主题最多需要六个月的时间。今天，我们平均只需要 8~10 周。我们如何做到的呢？作为 Shopfiy 标杆性的主题团队高级用户体验经理，我将分享我们团队中网页设计和跨专业协作方法中的秘密。]]></description>
+            <link>https://lrd.im/blog/2022-05-24</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-05-24</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Mon, 23 May 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[高级排版功能：Case-Sensitive Forms 是什么？]]></title>
+            <description><![CDATA[自从转换到 Figma 工作后，我发现在部分字体下的字体设置里，有一个选项叫「Case-Sensitive Forms」，来回切换后，发现了一些有意思的现象。经过一段时间的查阅资料和实践后，获得了新的认识，遂写下这篇笔记来记录这有趣的现象。]]></description>
+            <link>https://lrd.im/blog/2022-05-14</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-05-14</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 13 May 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[笔记：表格宽度的计算规则]]></title>
+            <description><![CDATA[自从 2020 年下半年我在千聊做 B 端设计师开始，我就开始了与 Table 组件打交道。从那时候我就发现了，表格的布局，好像永远都跟我的设想不符，也很难判断到造成这个后果的原因是我提出的设计需求太奇葩，还是前端老哥压根没按我说的去还原。]]></description>
+            <link>https://lrd.im/blog/2022-02-09</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-02-09</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Tue, 08 Feb 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[细数 Pingfang SC 的七宗罪]]></title>
+            <description><![CDATA[我经过这几年工作，发现了更多不应该在网页中使用 Pingfang SC 的理由。所以通过阅读这篇文章，读者们会认识到 Pingfang SC 作为网页字体的更多缺点。以及对比之下，用系统字体作为网页字体的优点。]]></description>
+            <link>https://lrd.im/blog/2022-01-17</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-01-17</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sun, 16 Jan 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[多语言设计分享（分享会记录）]]></title>
+            <description><![CDATA[公司项目最近要接入东南亚的相关业务，Admin 后台里需要支持到 7 种语言。我负责了这次多语言适配专项的设计规范更新、设计指南的整理输出以及团队内设计经验分享。]]></description>
+            <link>https://lrd.im/blog/2022-01-02</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2022-01-02</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 01 Jan 2022 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[keep-all 断词换行规则的两个使用案例分享（含实践）]]></title>
+            <description><![CDATA[前段时间我对网页的断词换行规则做了一次深入的学习，当时我对一个不常见的规则 word-break: keep-all; 感到疑惑，想象不到什么情况下该使用它。这几个月以来我一直带着这个问题来工作，刚好发现了这个规则的两个适用场景，于是写下这篇文章来做记录。]]></description>
+            <link>https://lrd.im/blog/2021-11-07</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-11-07</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 06 Nov 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[在千聊成功实践移动端 UI 组件库]]></title>
+            <description><![CDATA[一转眼来到千聊已经一年多了，对比起上一份工作，千聊UED更有挑战性，也确实让我有了一些进步和突破。得益于前人们的努力，千聊的设计师们在流程内还是颇有话语权的。在迭代过程中，UI 设计师完全可以提出更好的方案，并推动它落地，甚至由设计来主导某些改版项目，只要方案有理有据，能带来正面影响。]]></description>
+            <link>https://lrd.im/blog/2021-09-11</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-09-11</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 10 Sep 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Apple 官网里三个令我惊叹的中文排版细节]]></title>
+            <description><![CDATA[无论是软件还是硬件，Apple 公司对于细节上面的执着程度可以说无人能出其右。我作为一名设计师，时常也会翻阅 Apple 的官网，拜读、细品，每次都会有点新发现。]]></description>
+            <link>https://lrd.im/blog/2021-08-15</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-08-15</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 10 Sep 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[SF Pro SC 是什么字体？]]></title>
+            <description><![CDATA[苹果悄悄地在官网上用了一款名为 "SF Pro SC" 的中文字体。下图是在苹果官网截下来图片，你能发现它与我们平常在设计软件中使用的 PingFang SC 或者 SF Pro Display 有什么区别吗？如果想知道其中的差别，请看下文。]]></description>
+            <link>https://lrd.im/blog/2021-07-28</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-07-28</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Tue, 27 Jul 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[在 Sketch 组件外更改文字颜色最简单的方法]]></title>
+            <description><![CDATA[这篇博客会介绍 Sketch 组件外更改文字颜色最简便的方法，以及探讨其优势和局限性。操作非常简单，所以篇幅很短。]]></description>
+            <link>https://lrd.im/blog/2021-05-30</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-05-30</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 29 May 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[一个特殊字符，打开 Sketch 组件新世界的大门]]></title>
+            <description><![CDATA[公司内 B 端项目的表单比较多，经常有各种编辑页、功能配置页等。所以最近在做到一个编辑页调整的需求时，也和前端老哥沟通了一波，把公司项目里常用到的表单做成了组件。后续我打算做成 Sketch Symbol，同步到组件库内。这时出现了一些耐人寻味的问题。]]></description>
+            <link>https://lrd.im/blog/2021-05-03</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-05-03</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sun, 02 May 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[信息无障碍与我们的距离 · 分享会记录]]></title>
+            <description><![CDATA[公司的设计、产品组一直有分享会的传统，一般是每两周一次（当然如果那段时间特别忙也会延后）。我从去年七月入职到现在，已经大半年了，总共分享过 3 次，这次是 2020 年 4 月 2 日，清明假期前在公司设计组内的一次分享会《信息无障碍与我们的距离》。]]></description>
+            <link>https://lrd.im/blog/2021-04-09</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-04-09</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Thu, 08 Apr 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[探索 Web 网页内字符的换行规则]]></title>
+            <description><![CDATA[前不久在验收公司项目内一个讨论区相关需求时，看到界面的样式出现这种问题，让从业界面设计两年多的我感到意外和不安...这篇文章将会记录我对 Web 网页内换行规则的理解、实际应用中的解决方案，以及一个突破性新发现。]]></description>
+            <link>https://lrd.im/blog/2021-03-14</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-03-14</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 13 Mar 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[维护 Dribbble 深色模式一年，我最大的收获竟然是学会了使用 DevTools]]></title>
+            <description><![CDATA[2019年10月份，我在 Medium 发表了一篇文章《关于深色模式的一些发现和思考》，从那时候开始我便着手去找个网站做成深色模式，练练手，于是便开始将 Dribbble.com 进行深色模式的尝试。]]></description>
+            <link>https://lrd.im/blog/2021-01-21</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2021-01-21</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Wed, 20 Jan 2021 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[等宽数字 Monospaced Numbers 在界面中的使用]]></title>
+            <description><![CDATA[在上一篇文章的3.2章节里，提到了 AntD 组件会全局默认使用等宽数字。这对我来说是比较新的概念，所以也花了点时间观察、总结了等宽数字在界面上的几个使用场景，以及普遍的实现方式，正好也可以作为文章记录下来。]]></description>
+            <link>https://lrd.im/blog/2020-12-25</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2020-12-25</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Thu, 24 Dec 2020 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[用 Ant Design 组件做设计，你可能不知道的细节]]></title>
+            <description><![CDATA[使用 Ant Design 组件做设计一段时间，踩过不少坑。在这里分享一部分出来。如果你也是之前没怎么使用过 AntD 组件来进行设计，那么这篇文章也许会对你有点帮助。]]></description>
+            <link>https://lrd.im/blog/2020-10-04</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2020-10-04</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 03 Oct 2020 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[互联网设计师白嫖图片和字体的旁门左道]]></title>
+            <description><![CDATA[转眼间在互联网行业从事设计工作已经两年多了，工作中发现了几个可以白嫖高清图片、App 图标、收费字体的小技巧，在这里做一番记录，也希望能对正在看文章的你有所帮助。]]></description>
+            <link>https://lrd.im/blog/2020-08-02</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2020-08-02</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 01 Aug 2020 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dribbble 大改版，顺势记录下我对近期 UI 设计趋势和一些细节的观察]]></title>
+            <description><![CDATA[2020 年 3 月下旬，知名设计网站 Dribbble.com 在过去十年中首次做了彻底的重新设计。借着这次机会，并结合近期其他互联网产品的更新迭代，在此记录一下近半年来我观察到的一些设计趋势变化。]]></description>
+            <link>https://lrd.im/blog/2020-04-07</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2020-04-07</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Mon, 06 Apr 2020 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[用 AE 制作 Display P3 广色域动图的三个方法]]></title>
+            <description><![CDATA[前段时间写了篇文章记录如何导出 P3 广色域静态图片，恰好最近工作上有需求要用到动画来完成，利用这次机会也记录一下制作支持 Display P3 广色域的 PNG 序列帧、CSS 精灵图和 APNG 三种格式动画的方法。]]></description>
+            <link>https://lrd.im/blog/2020-01-18</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2020-01-18</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 17 Jan 2020 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[PingFang SC 不应该作为移动端网页字体的首选项]]></title>
+            <description><![CDATA[我在做设计时会经常观察市面上各类应用，途中一个字体使用的问题使我陷入了沉思...]]></description>
+            <link>https://lrd.im/blog/2019-11-17</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2019-11-17</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 16 Nov 2019 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[关于深色模式的一些发现和思考]]></title>
+            <description><![CDATA[近期更新的 iOS 13 重磅推出深色模式，作为一名设计师当然也要蹭下热度把个人网站也适配上深色模式。这篇文章记录了我最近为网站做深色模式时的一些发现和思考。]]></description>
+            <link>https://lrd.im/blog/2019-10-04</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2019-10-04</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Thu, 03 Oct 2019 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[在 Sketch/PS 中导出 Display P3 广色域图片的方法]]></title>
+            <description><![CDATA[前一段时间换上了 iPhone 之后，我一直对官网上的描述里的 “Display P3” 挺好奇的，然后上网搜了下，发现了里面大有学问。下面放上在 Sketch/PS里导出 Display P3 色域图片的方法，供参考]]></description>
+            <link>https://lrd.im/blog/2019-07-02</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2019-07-02</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Mon, 01 Jul 2019 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[最近用 Bodymovin 导出动画遇到的问题和解决方法]]></title>
+            <description><![CDATA[本文记录作者用 Bodymovin 导出动画时遇到的各种各样奇怪问题，并提供可行的解决方案。持续更新]]></description>
+            <link>https://lrd.im/blog/2019-06-11</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2019-06-11</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Mon, 10 Jun 2019 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[在 iPhone 上安装旧版 Dribbble App]]></title>
+            <description><![CDATA[Dribbble 官方在今年的 3 月份更新了 iOS 版客户端，但体验并不好，比如没有适配好全面屏、不能切换显示模式、卡等等。]]></description>
+            <link>https://lrd.im/blog/2019-04-14</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2019-04-14</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 13 Apr 2019 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sketch Tips — 2个技巧让你在 Mirror 上更好地预览设计稿]]></title>
+            <description><![CDATA[用 Sketch 做 UI 设计的小伙伴都会用 Mirror App 来实时预览设计稿，看看设计稿在手机上的显示效果，方便调整设计稿。这里列出小伙伴们在用 Mirror App 时可能遇到的两个问题（起码我遇到过😄），并提供解决方案，让你在 Mirror App 上更好地预览设计稿！]]></description>
+            <link>https://lrd.im/blog/2019-03-31</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2019-03-31</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 30 Mar 2019 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[分享发现：AE中制作矢量动画图标的四款效率工具]]></title>
+            <description><![CDATA[最近在做一些动画图标的过程中发现了四款能提高工作效率的AE插件，分别是 Motion2、Flow、Overlord、gifGun，下面为大家逐一介绍。]]></description>
+            <link>https://lrd.im/blog/2019-02-07</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2019-02-07</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Wed, 06 Feb 2019 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[SVG 路径代码转换成对应的 SVG 图像]]></title>
+            <description><![CDATA[在网页上看到一些精致的图标想要保存下来，但是右键没有另存为选项（如图1），审查元素后发现是嵌入式的 SVG 图标（如图2）。那么如何将这一段代码转换成对应的 svg 图片？]]></description>
+            <link>https://lrd.im/blog/2018-12-09</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-12-09</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 08 Dec 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[前端笔记：Transfrom: Matrix() 参数配置笔记]]></title>
+            <description><![CDATA[最近在学一些前端知识，学到 Martrix 可以用一行来将 Transfrom 的所有属性表达出来，就打算在网上找找如何操作，发现大部分都是讲一些高等数学的计算，或者一两个属性的转换，翻了好久才找到讲4个属性同时应用在 Matrix 上的教程。鉴于花了差不多5个小时才勉强弄懂 Matrix 的属性，我决定做一篇 Matrix 参数配置笔记。]]></description>
+            <link>https://lrd.im/blog/2018-07-19</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-07-19</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Wed, 18 Jul 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[毕业设计《刁角武汉》改版计划]]></title>
+            <description><![CDATA[寒假与其他朋友交流设计心得，我向他们展示了我的毕业设计《刁角武汉》，他们用了一会儿之后给了一些意见我，我也根据用户容易产生疑惑的地方做了一些总结，接下来会花一段时间进行改版，优化使用体验]]></description>
+            <link>https://lrd.im/blog/2018-04-01</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-04-01</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 31 Mar 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[利用预置动画在 Mugeda 中制作顺畅的左右滑动切换卡片效果]]></title>
+            <description><![CDATA[前在做《刁角武汉》的时候对如何选择景点这个问题做了好几个方案，一个是画一张大地图，另一个是做垂直的列表选择，但我还是选择了左右滑动来切换景点。因为在多次尝试之后发现发现在手机屏上似乎不适合做可以上下左右滑动的大地图]]></description>
+            <link>https://lrd.im/blog/2018-03-31</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-03-31</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 30 Mar 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[macOS 安装 AE 插件 Flow 无法打开的修复方法]]></title>
+            <description><![CDATA[以前一直在 AE2015 里使用 Flow，最近下载了 AE2018，安装好 Flow后点击 Window-Extensions-Flow 却没有任何反应，几经波折找到了解决方法。]]></description>
+            <link>https://lrd.im/blog/2018-03-17</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-03-17</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 16 Mar 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[大四下学期学习计划]]></title>
+            <description><![CDATA[因为以前选课忽略了一些必要的规则，导致我大四仍然在学校上一些选修课，错过了一些挺好的实习岗位。在此期间要保持学习，利用大学最后一个学期（03/2018~06/2018）提升自己的能力。]]></description>
+            <link>https://lrd.im/blog/2018-03-02</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-03-02</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Thu, 01 Mar 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[在 AI 中导出更干净的 SVG 图形！]]></title>
+            <description><![CDATA[当我们做好一些图标准备导出成 SVG 文件时都要轮廓化描边，但是草率地轮廓化描边经常会产生多余的锚点，我在做相关工作的过程中找到了一些方法，或许可以帮助您导出更干净的 SVG 图形。]]></description>
+            <link>https://lrd.im/blog/2018-02-01</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-02-01</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Wed, 31 Jan 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[重燃动效激情之 AE 动效导出为 JSON！]]></title>
+            <description><![CDATA[今天正想把毕设的一些图标动效做好，突然间想到可以用 Bodymovin 导出 JSON 还没试过，于是就现场捣鼓了一番。现在发现其实非常方便！]]></description>
+            <link>https://lrd.im/blog/2018-01-18</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-01-18</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Wed, 17 Jan 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[使用 Netlify 托管个人网站 详细步骤]]></title>
+            <description><![CDATA[最近狠下心把域名买了下来，终于把一直想弄的个人网站正式放上了互联网。一路摸索过来，其实也没多难。]]></description>
+            <link>https://lrd.im/blog/2018-01-02</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2018-01-02</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Mon, 01 Jan 2018 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[分享：如何让 Sketch 默认在多标签页中打开新文档]]></title>
+            <description><![CDATA[常用 Sketch 的都知道，窗口模式下的 Sketch 打开新文档是默认打开一个新窗口，如果要打开的文档比较多，整个桌面就容易乱。]]></description>
+            <link>https://lrd.im/blog/2017-12-17</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2017-12-17</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 16 Dec 2017 16:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

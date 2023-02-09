@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && node server.js",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "pm2start": "pm2 start npm --name lrdnext -- run start"
+    "lint": "next lint"
   },
   "dependencies": {
     "@fec/remark-a11y-emoji": "^3.1.0",
@@ -18,6 +17,7 @@
     "@tailwindcss/container-queries": "^0.1.0",
     "date-fns": "^2.29.3",
     "esbuild": "^0.14.54",
+    "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^9.0.1",
@@ -39,6 +39,7 @@
     "remark-rehype": "^10.1.0",
     "remark-sub-super": "^1.0.20",
     "remark-wiki-link": "^1.0.4",
+    "rss": "^1.2.2",
     "shiki": "^0.12.1",
     "styled-jsx": "^5.1.2",
     "unified": "^10.1.2"

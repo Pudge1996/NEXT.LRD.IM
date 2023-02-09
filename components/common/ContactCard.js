@@ -1,7 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import Image from "next/image";
-import wechatPic from "/public/qr-code.png";
 // 个人微信的弹窗
 
 export default function MyModal() {
@@ -55,7 +54,7 @@ export default function MyModal() {
                 <div className={` relative flex w-full aspect-square rounded-md select-none h-full max-h-[35vh] img-loading-bg`}>
                   <Image
                     // 项目图片
-                    src={wechatPic}
+                    src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/qr-code.png"
                     alt="微信号：18925001685"
                     className="object-contain rounded-md"
                     // onLoad={() => setIsLoaded(true)}

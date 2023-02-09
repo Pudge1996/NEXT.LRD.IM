@@ -5,6 +5,7 @@ import { getCategoriesTypographic } from "/utils/mdx";
 import siteMetadata from "/data/siteMetadata";
 import blogCategoriesData from "/data/blog/blogCategoriesData";
 
+
 import Date from "/components/common/Date"
 
 export default function cateTypographic({ posts }) {
@@ -27,7 +28,7 @@ export default function cateTypographic({ posts }) {
 
         <hr />
 
-        <div className="flex flex-col-reverse gap-8">
+        <div className="flex flex-col gap-8">
         {posts.map((post, index) => (
             <section key={index} className="flex flex-col">
               <Link

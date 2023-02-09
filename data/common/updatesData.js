@@ -15,7 +15,7 @@ const updatesData = [
     img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2022-11-08.png",
     desc: "使用 RSSHub 的能力，为我的设计博客添加了 RSS 订阅源。并完善了博客详情页的功能，提供了复制链接、订阅 RSS、取得联系三个功能入口。",
     linkText: "订阅 RSS",
-    linkURL: "https://lrd.im/feed",
+    linkURL: "https://lrd.im/feed.xml",
   },
   {
     title: "首页改版",
@@ -28,7 +28,7 @@ const updatesData = [
   {
     title: "作品页支持宽屏看图",
     date: "2022-02-12",
-    img: "/2022-02-12.png",
+    img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2022-02-12.png",
     desc: "纯图片的作品详情页右下角提供了「放大镜」的按钮。等比扩大图片容器，能够更清晰地看到作品内容。",
     linkText: "体验一下",
     linkURL: "/",

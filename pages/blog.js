@@ -6,6 +6,8 @@ import { getAllPosts } from "/utils/mdx";
 import siteMetadata from "/data/siteMetadata";
 import blogCategoriesData from "/data/blog/blogCategoriesData";
 import Date from "/components/common/Date";
+import generateRssFeed from '/utils/generateRSSFeed';
+
 
 export default function blog({ posts }) {
   return (
@@ -74,7 +76,7 @@ export default function blog({ posts }) {
           </span>
           <hr className="my-0 w-full" />
         </div>
-        <div className="flex flex-col-reverse gap-8">
+        <div className="flex flex-col gap-8">
           {posts.map((post, index) => (
             <section key={index} className="flex flex-col">
               <Link
@@ -113,6 +115,8 @@ export default function blog({ posts }) {
 
 export const getStaticProps = async () => {
   const posts = getAllPosts().posts;
+  await generateRssFeed();
+
   return {
     props: { posts },
   };

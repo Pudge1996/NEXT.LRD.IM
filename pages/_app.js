@@ -19,15 +19,10 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="twitter:site" content="@Pudge_1996" />
         <meta name="twitter:creator" content="@Pudge_1996" />
       </Head>
-      <GoogleAnalytics
-        trackPageViews={{ ignoreHashChange: true }}
-        gaMeasurementId="G-8X76MNPDC2"
-        strategy="beforeInteractive"
-      />
 
       <ThemeProvider attribute="class" storageKey="theme">
         <Layout>
-          <Component {...pageProps} />
+          <Component {...pageProps}/>
         </Layout>
       </ThemeProvider>
     </>

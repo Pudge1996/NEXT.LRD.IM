@@ -49,7 +49,7 @@ if (process.platform === "win32") {
 //     });
 // };
 
-export const getAllPosts = () => { // 想用来获取分类的 getAllPosts
+export const getAllPosts = () => {
   const posts = fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path) && !path.startsWith("draft_"))
@@ -62,26 +62,14 @@ export const getAllPosts = () => { // 想用来获取分类的 getAllPosts
         frontmatter: data,
         slug: slug,
       };
-    });
+    })
+    .reverse();
 
-  // 统计category的数量
-  const categories = posts.reduce((result, post) => {
-    if (post.frontmatter.category) {
-      if (!result[post.frontmatter.category]) {
-        result[post.frontmatter.category] = 1;
-      } else {
-        result[post.frontmatter.category] += 1;
-      }
-    }
-    return result;
-  }, {});
-
-  return { posts, categories };
+  return { posts };
 };
 
-
 export const getCategoriesTypographic = () => {
-  const posts =  fs
+  const posts = fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path) && !path.startsWith("draft_"))
     .map((fileName) => {
@@ -95,8 +83,9 @@ export const getCategoriesTypographic = () => {
         };
       }
     })
+    .reverse()
     .filter((post) => post !== undefined);
-    return posts;
+  return posts;
 };
 export const getCategoriesExperience = () => {
   return fs
@@ -113,8 +102,10 @@ export const getCategoriesExperience = () => {
         };
       }
     })
+    .reverse()
     .filter((post) => post !== undefined);
 };
+
 export const getCategoriesSharing = () => {
   return fs
     .readdirSync(POSTS_PATH)
@@ -130,8 +121,10 @@ export const getCategoriesSharing = () => {
         };
       }
     })
+    .reverse()
     .filter((post) => post !== undefined);
 };
+
 export const getCategoriesTranslate = () => {
   return fs
     .readdirSync(POSTS_PATH)
@@ -147,8 +140,10 @@ export const getCategoriesTranslate = () => {
         };
       }
     })
+    .reverse()
     .filter((post) => post !== undefined);
 };
+
 export const getCategoriesSoftware = () => {
   return fs
     .readdirSync(POSTS_PATH)
@@ -164,8 +159,10 @@ export const getCategoriesSoftware = () => {
         };
       }
     })
+    .reverse()
     .filter((post) => post !== undefined);
 };
+
 export const getCategoriesOthers = () => {
   return fs
     .readdirSync(POSTS_PATH)
@@ -181,9 +178,9 @@ export const getCategoriesOthers = () => {
         };
       }
     })
+    .reverse()
     .filter((post) => post !== undefined);
 };
-
 
 export const getSinglePost = async (slug) => {
   const codeOptions = {
@@ -207,7 +204,7 @@ export const getSinglePost = async (slug) => {
   const source = getSourceOfFile(slug + ".mdx");
   const { code, frontmatter } = await bundleMDX({
     source: source,
-    
+
     mdxOptions(options) {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
@@ -220,7 +217,7 @@ export const getSinglePost = async (slug) => {
         rehypeSlug,
         [rehypePrettyCode, codeOptions],
       ];
-      
+
       return options;
     },
   });

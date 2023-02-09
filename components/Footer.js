@@ -17,7 +17,7 @@ export default function Footer() {
         
         <span> · </span>
         <Link
-          href="https://lrd.im/feed"
+          href="https://lrd.im/feed.xml"
           title="订阅李瑞东的设计博客"
           target="_blank"
           className="flex justify-between items-center gap-1 ring-default"
