@@ -18,9 +18,9 @@ export default function BlogFooter() {
     <>
       <section className="flex flex-col gap-4 sm:gap-6 p-4 sm:p-6 rounded-lg mt-7 sm:mt-14 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-colors">
         <div className="flex flex-col gap-1">
-          <div className="text-lg font-semibold">🤷‍♂️ 你觉得这篇文章怎样？</div>
+          <div className="text-lg font-semibold">🎉 你觉得这篇文章怎样？</div>
           <div className="text-secondary md:break-keep">
-            <span className="hidden sm:inline">有带给你一些启发或引起共鸣吗？或者你有其他看法？我在这里留下了联系<span className="whitespace-nowrap">方式。</span>如果觉得这篇文章还不错，欢迎分享给<span className="whitespace-nowrap">朋友！</span></span>
+            <span className="hidden sm:inline">有带给你一些启发或引起共鸣吗？如果你有其他看法，我在这里留下了联系<span className="whitespace-nowrap">方式。</span>觉得这篇文章还不错，欢迎分享给<span className="whitespace-nowrap">朋友！</span></span>
             <span className="inline sm:hidden">我在这里留下了联系<span className="whitespace-nowrap">方式。</span>如果觉得这篇文章还不错，欢迎分享给<span className="whitespace-nowrap">朋友！</span></span>
           </div>
         </div>

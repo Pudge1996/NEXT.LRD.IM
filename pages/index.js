@@ -47,10 +47,9 @@ export default function index() {
                     aria-label={company.name}
                     className="group flex flex-col ring-default"
                   >
-                    <div className={` relative aspect-video mb-3 rounded-lg select-none  overflow-hidden img-loading-bg ${isLoaded ? '' : 'img-loading-spin'}`}>
+                    <div className={`relative aspect-video mb-3 rounded-lg select-none  overflow-hidden img-loading-bg ${isLoaded ? '' : 'img-loading-spin'}`}>
                       <Image
                         // 项目图片
-                        // 待办 src={project.img}
                         src={project.img}
                         alt={project.title}
                         onLoad={() => setIsLoaded(true)}

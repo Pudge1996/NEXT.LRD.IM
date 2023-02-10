@@ -30,7 +30,7 @@
     @apply text-lg my-7 leading-[1.8];
   }
   .text-primary {
-    @apply text-neutral-800 dark:text-neutral-100;
+    @apply text-neutral-900 dark:text-neutral-100;
   }
   .text-secondary {
     @apply text-neutral-600 dark:text-neutral-300;
@@ -133,13 +133,13 @@
   /* 博客详情页 */
   .mdx-bundle{
     h2{
-      @apply leading-tight text-2xl font-semibold mb-5 mt-10 sm:mt-14;
+      @apply leading-tight text-3xl font-semibold mb-5 mt-10 sm:mt-14;
       &:first-child{
         @apply mt-7;
       }
     }
     h3{
-      @apply leading-tight text-[22px] font-semibold mt-4 sm:mt-7 mb-2;
+      @apply leading-tight text-2xl font-semibold mt-4 sm:mt-7 mb-2;
     }
     h4{
       @apply leading-tight text-xl font-semibold mt-4 sm:mt-7 mb-2;
@@ -517,3 +517,6 @@ li a[target="_blank"]:focus::after,
 .blog-toc .toc-h3 a{
   @apply pl-6 sm:text-sm;
 }
+
+/* 修复 Safari Image 错误 https://nextjs.org/docs/api-reference/next/image */
+@supports (font: -apple-system-body) and (-webkit-appearance: none) { img[loading="lazy"] { clip-path: inset(0.6px) } }
