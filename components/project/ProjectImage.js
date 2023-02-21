@@ -40,7 +40,6 @@ export default function ProjectImage({
             backgroundColor="black"
             backgroundOpacity="0.8"
           ></Zoom>
-            
           )}
         </div>
       </figure>

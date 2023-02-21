@@ -213,7 +213,7 @@ const Post = ({ code, frontmatter }) => {
                 h3: BlogH3,
               }}
             />
-            <BlogFooter />
+            <BlogFooter pageTitle={frontmatter.title} />
           </div>
           <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
             <section>
