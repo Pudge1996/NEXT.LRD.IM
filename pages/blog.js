@@ -22,7 +22,7 @@ export default function blog({ posts }) {
         {/* 置顶博文 */}
         <div className="flex flex-col">
           <Link
-            href="/blog/2022-08-17"
+            href="/blog/2022-05-14"
             className="flex flex-col group ring-default"
             alt="1"
           >
@@ -30,7 +30,7 @@ export default function blog({ posts }) {
             isLoaded ? "" : "img-loading-spin"
           }`}>
               <Image
-                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2022-08-17-f2c1f5bfbb8d/01.png"
+                src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2022-05-14-e0efbeed2ca0/01.png"
                 alt=""
                 onLoad={() => setIsLoaded(true)}
                 onError={() => setIsLoaded(true)}
@@ -43,10 +43,10 @@ export default function blog({ posts }) {
               />
             </div>
             <p className="text-[22px] font-semibold my-0 group-hover:text-blue-700 group-active:text-blue-900 dark:group-active:text-blue-500 dark:group-hover:text-blue-400 leading-snug">
-              App 表单校验时机探索
+              高级排版功能：Case-Sensitive Forms 是什么？
             </p>
             <p className="mt-1 mb-0 text-secondary text-base elis-2">
-              我在最近的工作中发现表单的校验时机通常是在三种方式内取舍：输入中、失焦后、提交时。这其中的差异还是挺耐人寻味的，有必要探索三者之间的各自优劣势和适用场景，于是乎就有了这篇文章。
+            自从转换到 Figma 工作后，我发现在部分字体下的字体设置里，有一个选项叫「Case-Sensitive Forms」，来回切换后，发现了一些有意思的现象。经过一段时间的查阅资料和实践后，获得了新的认识，遂写下这篇笔记来记录这有趣的现象。
             </p>
           </Link>
         </div>

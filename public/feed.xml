@@ -9,16 +9,16 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 21 Feb 2023 05:07:54 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 21 Feb 2023 05:15:22 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 21 Feb 2023 05:07:54 GMT</pubDate>
+        <pubDate>Tue, 21 Feb 2023 05:15:22 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
         <item>
             <title><![CDATA[用 Next.js 重构个人网站 (一)：概述]]></title>
-            <description><![CDATA[展示站内所有已经支持的 Markdown 格式。]]></description>
+            <description><![CDATA[2023 年我用 Next.js  重构了个人网站，会分几篇网站来记录我在重构个人网站的原因、过程和结果。]]></description>
             <link>https://lrd.im/blog/2023-02-21</link>
             <guid isPermaLink="true">https://lrd.im/blog/2023-02-21</guid>
             <dc:creator><![CDATA[李瑞东]]></dc:creator>
