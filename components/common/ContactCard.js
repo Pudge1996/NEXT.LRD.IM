@@ -1,11 +1,12 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
+import React from "react";
 import Image from "next/image";
 // 个人微信的弹窗
 
 export default function MyModal() {
-  // const [isLoaded, setIsLoaded] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
   function closeModal() {
     setIsOpen(false);
   }
@@ -51,16 +52,19 @@ export default function MyModal() {
           >
             <Dialog.Panel className="w-64 sm:w-72  max-w-md transform overflow-hidden rounded-xl bg-color dark:border dark:border-neutral-800 p-6 text-center text-lg sm:text-[22px] shadow-xl transition-all">
               <div className="flex flex-col gap-3">
-                <div className={` relative flex w-full aspect-square rounded-md select-none h-full max-h-[35vh] img-loading-bg`}>
+                <div className={`relative flex w-full aspect-square rounded-md select-none h-full max-h-[35vh] img-loading-bg ${isLoaded ? '' : 'img-loading-spin'}`}>
                   <Image
                     // 项目图片
                     src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/qr-code.png"
                     alt="微信号：18925001685"
                     className="object-contain rounded-md"
-                    // onLoad={() => setIsLoaded(true)}
-                    // onError={() => setIsLoaded(true)}
-                    fill
-                    sizes="100vw" />
+                    onLoad={() => setIsLoaded(true)}
+                    onError={() => setIsLoaded(true)}
+                    // fill
+                    // sizes="100vw"
+                    width={240}
+                    height={240}
+                     />
                 </div>
                 <Dialog.Title
                   as="h3"
