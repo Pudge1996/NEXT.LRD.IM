@@ -74,8 +74,11 @@ export default function updates() {
                     onLoad={() => setIsLoaded(true)}
                     onError={() => setIsLoaded(true)}
                     className="select-none object-cover"
-                    fill
-                    sizes="100vw" />
+                    // fill
+                    // sizes="100vw"
+                    width={992}
+                    height={558}
+                     />
                 </div>
               )}
               <div className="flex flex-col gap-2">

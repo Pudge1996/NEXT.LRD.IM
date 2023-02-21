@@ -6,8 +6,8 @@ const updatesData = [
     date: "2022-11-16",
     img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2022-11-16.png",
     desc: "新增了一种作品展示方式，以图文+嵌入 iframe 的方式呈现作品；并且为所有作品添加了导航栏，现在能够快速定位至关键位置了。",
-    linkText: "体验一下",
-    linkURL: "/",
+    linkText: "",
+    linkURL: "",
   },
   {
     title: "博客支持 RSS 订阅",
@@ -30,8 +30,8 @@ const updatesData = [
     date: "2022-02-12",
     img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2022-02-12.png",
     desc: "纯图片的作品详情页右下角提供了「放大镜」的按钮。等比扩大图片容器，能够更清晰地看到作品内容。",
-    linkText: "体验一下",
-    linkURL: "/",
+    linkText: "",
+    linkURL: "",
   },
   {
     title: "博客文章支持目录",
@@ -39,7 +39,7 @@ const updatesData = [
     img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2021-12-05.png",
     desc: "现在博客文章能够抓取 H3、H4 标题，并在侧边展示目录栏了。也能够通过该功能复制某个锚点链接，以快速定位到文章的某个地方。",
     linkText: "体验一下",
-    linkURL: "/",
+    linkURL: "/blog",
   },
   {
     title: "全面重构",
