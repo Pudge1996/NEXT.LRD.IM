@@ -4,6 +4,7 @@ import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "nextjs-google-analytics";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -23,6 +24,7 @@ export default function MyApp({ Component, pageProps }) {
       <ThemeProvider attribute="class" storageKey="theme">
         <Layout>
           <Component {...pageProps}/>
+          <Analytics />
         </Layout>
       </ThemeProvider>
     </>
