@@ -1,6 +1,6 @@
 import React from "react";
 import ContactCard from "/components/common/ContactCard";
-import CopyPageLink from "/components/common/CopyPageLink";
+import CopyPageLink from "/components/blog/CopyPageLink";
 import ProjectItemData from "/data/project/ProjectItemData";
 import { IoPerson, IoLink } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 
@@ -41,7 +41,7 @@ export default function ProjectFooter() {
             </div>
           </div>
           <div className="flex-1 btn-base text-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800  sm:hover:bg-neutral-200 relative transition-colors">
-            <CopyPageLink />
+            {/* <CopyPageLink /> */}
             <div className="flex gap-2 justify-center items-center">
               <IoLink />
               复制链接

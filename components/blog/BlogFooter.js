@@ -1,6 +1,6 @@
 import React from "react";
 import ContactCard from "/components/common/ContactCard";
-import CopyPageLink from "/components/common/CopyPageLink";
+import CopyPageLink from "/components/blog/CopyPageLink";
 import { IoPerson, IoLink } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { event } from "nextjs-google-analytics";
 

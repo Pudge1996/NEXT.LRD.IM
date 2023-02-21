@@ -1,11 +1,11 @@
 import React from "react";
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 import ContactCard from "/components/common/ContactCard";
-import CopyPageLink from "/components/common/CopyPageLink";
+import CopyPageLink from "/components/blog/CopyPageLink";
 import TableContents from "/components/blog/TableContents";
 import Date from "/components/common/Date";
 import BlogFooter from "/components/blog/BlogFooter";
@@ -18,7 +18,7 @@ import {
   IoPersonAdd,
   IoLink,
   IoList,
-  IoReturnDownBack
+  IoReturnDownBack,
 } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
@@ -104,7 +104,7 @@ const Post = ({ code, frontmatter }) => {
   const Component = React.useMemo(() => {
     return getMDXComponent(codePrefix + code);
   }, [code]);
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -146,52 +146,6 @@ const Post = ({ code, frontmatter }) => {
                 <div className="text-sm text-secondary leading-none">
                   发布于 <Date dateString={frontmatter.date} />
                 </div>
-              </div>
-            </div>
-            {/* <div className="flex items-center btn-base text-base btn-md bg-neutral-100 dark:bg-neutral-900 sm:hover:bg-neutral-200 relative text-center px-4 whitespace-nowrap">
-            <ContactCard />
-            <span>联系作者</span>
-          </div> */}
-          </div>
-
-          <div className="flex flex-row flex-wrap gap-2 mt-2 justify-between items-center hidden">
-            <div className="text-tertiary">
-              <span>{frontmatter.author}</span> ·{" "}
-              <span>
-                {" "}
-                <Date dateString={frontmatter.date} />
-              </span>{" "}
-              首发于{" "}
-              {/* <Link
-              href={frontmatter.mediumLink}
-              className="text-tertiary force-link hover:link-color"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Medium
-            </Link> */}
-            </div>
-            <div className="flex-row gap-1 items-center text-tertiary">
-              {/* RSS订阅 */}
-              <Link
-                href="https://lrd.im/feed.xml"
-                target="_blank"
-                aria-label="订阅博客 RSS"
-                title="订阅博客 RSS"
-                className="ring-default sm:hover:text-primary active:text-primary relative btn-base btn-icon"
-              >
-                <IoLogoRss className="text-lg" />
-              </Link>
-
-              {/* 联系方式 */}
-              <div className="ring-default sm:hover:text-primary active:text-primary relative btn-base btn-icon">
-                <IoPersonAdd className="text-xl" />
-                <ContactCard />
-              </div>
-
-              <div className="ring-default sm:hover:text-primary active:text-primary relative btn-base btn-icon">
-                <IoLink className="text-xl" />
-                <CopyPageLink />
               </div>
             </div>
           </div>
@@ -243,7 +197,7 @@ const Post = ({ code, frontmatter }) => {
               </div> */}
               </div>
             </section>
-            <hr className="my-2"/>
+            <hr className="my-2" />
             <section className="sticky top-24">
               <h5 className="text-lg font-semibold mb-3">目录</h5>
               <TableContents />
