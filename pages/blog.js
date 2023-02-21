@@ -34,12 +34,15 @@ export default function blog({ posts }) {
                 alt=""
                 onLoad={() => setIsLoaded(true)}
                 onError={() => setIsLoaded(true)}
-                fill
                 priority
-                sizes="100vw"
-                style={{
-                  objectFit: "cover",
-                }}
+                width={678}
+                height={300}
+                className='absolute top-[50%] translate-y-[-50%]'
+                // fill
+                // sizes="100vw"
+                // style={{
+                //   objectFit: "cover",
+                // }}
               />
             </div>
             <p className="text-[22px] font-semibold my-0 group-hover:text-blue-700 group-active:text-blue-900 dark:group-active:text-blue-500 dark:group-hover:text-blue-400 leading-snug">
