@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,6 +11,8 @@ import generateRssFeed from '/utils/generateRSSFeed';
 
 
 export default function blog({ posts }) {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
   return (
     <>
       <Head>
@@ -20,13 +23,17 @@ export default function blog({ posts }) {
         <div className="flex flex-col">
           <Link
             href="/blog/2022-08-17"
-            className="flex flex-col gap-4hover:no-underline group ring-default"
+            className="flex flex-col group ring-default"
             alt="1"
           >
-            <div className="relative aspect-video mb-5 rounded-lg select-none h-[200px] sm:h-[300px] overflow-hidden img-loading-bg ">
+            <div className={`relative mb-5 rounded-lg select-none h-[165px] sm:h-[300px] overflow-hidden img-loading-bg ${
+            isLoaded ? "" : "img-loading-spin"
+          }`}>
               <Image
                 src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2022-08-17-f2c1f5bfbb8d/01.png"
                 alt=""
+                onLoad={() => setIsLoaded(true)}
+                onError={() => setIsLoaded(true)}
                 fill
                 priority
                 sizes="100vw"

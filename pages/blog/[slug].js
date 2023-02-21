@@ -128,10 +128,10 @@ const Post = ({ code, frontmatter }) => {
           </h1>
           <div className="flex xl:hidden gap-3 mb-7">
             <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
-              <div className="flex shrink-0 w-5 h-5 xl:w-11 xl:h-11 relative rounded-full overflow-hidden">
+              <div className="flex shrink-0 w-5 h-5 xl:w-11 xl:h-11 relative rounded-full overflow-hidden img-loading-bg">
                 <Image
                   src={siteMetadata.authorImg}
-                  alt="我的个人头像"
+                  alt="头像"
                   fill
                   sizes="100vw"
                   style={{
@@ -173,10 +173,10 @@ const Post = ({ code, frontmatter }) => {
             <section>
               <div className="flex flex-col gap-3 py-1">
                 <div className="flex gap-2 items-center">
-                  <div className="w-11 h-11 relative rounded-full overflow-hidden">
+                  <div className="w-11 h-11 relative rounded-full overflow-hidden img-loading-bg">
                     <Image
                       src={siteMetadata.authorImg}
-                      alt="我的个人头像"
+                      alt="头像"
                       fill
                       sizes="100vw"
                       style={{
@@ -191,10 +191,6 @@ const Post = ({ code, frontmatter }) => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="min-w-full sm:w-max btn-base text-base btn-md bg-neutral-100 dark:bg-neutral-900 sm:hover:bg-neutral-200 relative text-center whitespace-nowrap">
-                <ContactCard />
-                联系作者
-              </div> */}
               </div>
             </section>
             <hr className="my-2" />
