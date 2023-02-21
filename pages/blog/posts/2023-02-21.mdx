@@ -4,19 +4,19 @@ description: 展示站内所有已经支持的 Markdown 格式。
 category: 设计之外
 tags: Next.js, Tailwind CSS, MDX, mdx-bundler, React, JS, JavaScript, 重构, 改版, 迭代, 个人网站, 构建, 研发, 前端, 效率, 技术栈, ChatGPT, LRD.IM
 author: 李瑞东
-date: "20230101"
+date: "20230221"
 recommend: ""
 recommendLink: ""
 mediumLink: ""
 ---
 
-![封面图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/01.png "封面图：Maxime Bourgeois")
+![封面图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/01.png "封面图：Maxime Bourgeois")
 
 我的个人网站从 2017 年底（大四上学期的期末）进行 “研发”，2018 年初部署运行，现在已经过去了 5 年。中途经过大大小小近 300 次迭代和内容更新。
 
 从原本只是用来放置我做 Side Project 成果的内容，到后来变成我对外展示的窗口，用来展示我在实际工作中的项目，以及设计博客和翻译的文章等。LRD.IM 的页面布局、风格样式、内容、功能等等随着我的设计生涯发展有着很大变化。
 
-![个人网站的发展过程图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/02.png)
+![个人网站的发展过程图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/02.png)
 
 > 互联网档案馆 [Internet Archive](https://web.archive.org/web/20230000000000*/lrd.im) 保留了 2019 年之后的存档。之后每一次改版我也会在该网站留下存档。不知 5 年后又会是啥样呢。🤔
 
@@ -24,13 +24,13 @@ mediumLink: ""
 
 网站内部没有组件，没有数据源。改动一个公用的地方，如页面顶部导航栏或博客的文章添加一个模块时，**我需要在编辑器里打开数十个 html 文件逐个修改**。
 
-自己一直有想着改造一波，但自己当前的水平，想做出一个现代化的个人网站还差很多。而且在前司工作强度和压力巨大，无限制的压榨和 PUSH 使我难以喘息。所以这个计划也就一直搁置，自己日常中最多是观察下其他优秀的个人网站及其实现方式，储备点灵感。
+自己一直有想着改造一波，但自己当前的水平，想做出一个现代化的个人网站还差很多。所以这个计划也就一直搁置，自己日常中最多是观察下其他优秀的个人网站及其实现方式，储备点灵感。
 
 直到两个动机和一个条件的出现，我觉得是时候了。
 
 ## 动机和条件
 
-### 迭代效率
+### 动机：迭代效率
 
 最开始我的博客页面只是一个列表，点击里面的文章都会跳转到 Medium 平台里面。后面我觉得这样做体验巨差，原因：
 
@@ -42,7 +42,7 @@ mediumLink: ""
 
 **但这个转换的过程并不简单**，Medium 导出的 HTML 是带有他们的一些标签和样式的，当时我是将每一篇文章的 HTML 都筛掉没用的内容，然后 CSS 里编写了一套自己的格式文本的样式，使其适应网站的设计风格。由于步骤太多我甚至还将做法[记录](https://github.com/Pudge1996/LRD.IM#%E4%B8%83%E5%90%8C%E6%AD%A5-medium-%E6%96%87%E7%AB%A0 "Github 中我将处理方法记录了下来")了下来，发布文章之前任何一步有纰漏都会出问题。
 
-![Github 中我对 Medium 导出文章的处理方法](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/03.png)
+![Github 中我对 Medium 导出文章的处理方法](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/03.png)
 
 这套混乱的秩序维持了至少一年半，这期间我的每一篇文章都经过这样的处理。包括后面添加的「目录功能」、「博客功能区」等有新增或调整代码的时候，我都要在每一篇文章（40+ 篇）的对应位置里增删改。
 
@@ -50,27 +50,30 @@ mediumLink: ""
 
 比如某篇博客的功能区，本身应该所有页面的这块内容都应该长得一样，只是日期不同，但就是因为我将**数十个 html 文件逐个修改**的时候出现了纰漏，导致某些页面的样式异常。
 
-![博客功能区异常和正常的对比](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/04.png "我将某段代码复制到该页面时可能某个地方没弄好，就出现了样式异常。但懒得改了，放在这警钟长鸣。⏰")
+![博客功能区异常和正常的对比](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/04.png "我将某段代码复制到该页面时可能某个地方出现了疏漏，就出现了样式异常。")
+
 
 > 这次重构我抛弃了 HTML，改成了用 MDX 来支持我的博客内容。之后的文章会介绍到我是如何用 mdx-bundler 来重构整个博客功能模块。以及我为了提升阅读体验所做的工作。
 
-### 体验问题
+### 动机：体验问题
 
 我对网站里面有一个非常刺眼的体验问题一直耿耿于怀。
 
 #### 暗色主题下刷新页面会出现闪烁
 
-原本的做法下，亮/暗主题色的切换功能是写在 JS 文件里面。而用户在跳转页面时会重新加载一次文件，所以偶尔会出现令人难以接受的闪烁。我也带着这个问题咨询了前端工程师朋友，他认为如果将网站做成 SPA，应该就能解决这个问题。
+原本的做法下，亮/暗主题色的切换功能是写在 JS 文件里面。而用户在跳转页面时会重新加载一次文件，偶尔会出现令人难以接受的闪烁。
 
-<figure><video width="100%" autoplay="autoplay" loop="loop" muted src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/05.mp4" /></figure>
+<figure><video width="100%" autoplay="autoplay" loop="loop" muted src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/05.mp4" /><figcaption>留意页面切换时的背景色闪烁问题。</figcaption></figure>
+
+我也带着这个问题咨询了前端工程师朋友，他认为如果将网站做成 SPA，应该就能解决这个问题。
 
 > 单页应用（英语：single-page application，缩写SPA）是一种网络应用程序或网站的模型，它通过动态重写当前页面来与用户交互，**而非传统的从服务器重新加载整个新页面**。 —— [维基百科](https://zh.wikipedia.org/zh-hans/%E5%8D%95%E9%A1%B5%E5%BA%94%E7%94%A8 "维基百科对 SPA 的介绍")
 
 而且对于主题色，其实最好是能给用户手动来切换，并且记录上次更改后的结果。但这个功能要做在静态网站上，而且想到有代码更改的话又得将**数十个 html 文件逐个修改**，实在是没有研究的动力了。
 
-### 离职之后
+### 条件：离职之后
 
-去年 11 月我离开了欢聚，有充足的时间给我去学习这方面的知识，以及相关的实践。我也回到老家，暂时离开城市和朋友圈。
+2022 年 11 月我从欢聚离职，回到老家，暂时离开城市和朋友圈。有充足的时间给我去学习这方面的知识，以及去做相关的实践。
 
 ---
 
@@ -80,25 +83,25 @@ mediumLink: ""
 
 ### Next.js
 
-整个 2022 年，通过 Next.js 构建的网站挤满了我的推特信息流。时不时都会看到有些设计师/开发者在推特上发布自己的个人网站。也发现许多设计得挺好的网站都是通过 Next.js 来做的，比如 [Linear](https://linear.app/)、[Pipe](https://pipe.com/)、[Fey](https://www.feyapp.com)、[Frame.io](https://frame.io/) 等。
+整个 2022 年，通过 Next.js 构建的网站挤满了我的推特信息流。时不时都会看到有些设计师/开发者在推特上发布自己的个人网站。也发现许多充满设计感的网站都是通过 Next.js 来做的，比如 [Linear](https://linear.app/)、[Pipe](https://pipe.com/)、[Fey](https://www.feyapp.com)、[Frame.io](https://frame.io/) 等。
 
-![设计的较好的网站截图示意](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/06.png)
+![设计的较好的网站截图示意](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/06.png)
 
-在一众先驱者的引导之下，我也去了解了下相关介绍，甚至还看了点[Next.js 初学者教程](https://stackdiary.com/next-js-tutorial-getting-started)，里面大部分内容我大部分都能够 Get 到。感觉上手难度不大，又有这么多大佬级的网站做背书，于是乎，就是你了——Next.js!。
+在一众先驱者的引导之下，我也去了解了下相关介绍，甚至还看了点 [Next.js 初学者教程](https://stackdiary.com/next-js-tutorial-getting-started)，里面大部分内容我大部分都能够 Get 到。感觉上手难度不大，又有这么多大佬级的网站做背书，于是乎，就是你了——Next.js!。
 
 ### Tailwind CSS
 
 我选择使用 [Tailwind CSS](https://tailwindcss.com/) 的原因主要有两个：
 
-第一个是这个网站做得很好看，包括它给出来的 Template，这就让我有了进一步了解的兴趣；
+第一个是这个网站做得很好看，包括它给出来的 Template，这让我有了进一步了解的兴趣；
 
 第二个原因是这确实有效解决了在迭代原网站时让我烦恼的地方：
 
 1. 我基本上再也不用绞尽脑汁去想某一个元素的类名（还得是英文的，时间久了想不起来哪个样式用在哪）；
-2. 在实际写代码的过程中也不用经常在页面和 CSS 文件中来回切换了。现在写`hover`效果、媒体查询、深色样式时很方便；
-3. 最关键：我再也不用维护一个 **2,000+** 行的层叠样式表了！重构后的 CSS 文件轻量了很多，只有几百行。
+2. 在实际写代码的过程中也不用经常在页面和 CSS 文件中来回切换了。现在写反馈效果、媒体查询、深色样式时很方便；
+3. 最关键：我再也不用维护一个 **2,000+** 行的层叠样式表了！重构后的 CSS 文件轻量了很多，因为都写进网页和组件中了。
 
-![使用 TailwindCSS 前后的代码量对比](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/07.png)
+![使用 TailwindCSS 前后的代码量对比](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/07.png)
 
 ### mdx-bundler
 
@@ -106,13 +109,13 @@ mediumLink: ""
 
 然后我是在 Tailwind CSS 的 [Protocol](https://tailwindui.com/templates/protocol) 模版介绍当中了解到原来 MDX 是可以让 Markdown 和 Next.js 联动起来，然后也在 Josh 介绍自己的博客时。也有介绍到[相关内容](https://www.joshwcomeau.com/blog/how-i-built-my-blog/#mdx-the-secret-ingredient-2)，于是就选择了 mdx-bundler 来实现我的博客模块。
 
-![Protocol 和 Josh 博客的截图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/08.png)
+![Protocol 和 Josh 博客的截图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/08.png)
 
 MDX 允许我们安装各种插件来增强博客的能力。比如支持到 Github Markdown 语法的插件 [remark-gfm](https://github.com/remarkjs/remark-gfm) 和代码高亮插件 [Rehype Pretty Code](https://rehype-pretty-code.netlify.app/) 等。
 
-![remark-gfm 和 Rehype Pretty Code 的截图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/09.png)
+![remark-gfm 和 Rehype Pretty Code 的截图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/09.png)
 
-同时也能够**嵌入自己编写的 React 组件**，这是让人震惊的能力。这意味着我的博客文章可以不仅是图文、视频和 iframe 了，还能有一些互动元素，有很大的想象空间。
+而且还能**嵌入自己编写的 React 组件**，这是让人感到惊奇的能力。这意味着我的博客文章可以不仅是图文、视频和 iframe 了，还能有一些互动元素，有很大的想象空间。
 
 ---
 
@@ -120,7 +123,7 @@ MDX 允许我们安装各种插件来增强博客的能力。比如支持到 Git
 
 由于我属于边做边学，所以整个重构的过程并非从头到尾一次性完成的。而是一个螺旋式上升的过程。
 
-![路线图：核心功能（设定通用布局和主要的样式、数据源和遍历、mdx-bundler 渲染博客文章） -> 填充内容（填充列表所需的文本、配图、URL等数据、用 Markdown 重写博客文章，并填入元数据、填充作品详情的内容） -> 带着过程中遇到的卡点和问题，在课程或其他开发者博客中学习理论知识 -> 将理论知识运运动到实际网站开发当中，解决问题和优化代码。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/10.png "插图素材来自 egghead.io")
+![路线图：核心功能（设定通用布局和主要的样式、数据源和遍历、mdx-bundler 渲染博客文章） -> 填充内容（填充列表所需的文本、配图、URL等数据、用 Markdown 重写博客文章，并填入元数据、填充作品详情的内容） -> 带着过程中遇到的卡点和问题，在课程或其他开发者博客中学习理论知识 -> 将理论知识运运动到实际网站开发当中，解决问题和优化代码。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/10.png "插图素材来自 egghead.io")
 
 #### 第一步：核心功能
 当时先完成核心或通用的功能部分（遇到难搞的功能先记录并跳过），然后将原站点的所有内容填充进去。
@@ -155,11 +158,9 @@ MDX 允许我们安装各种插件来增强博客的能力。比如支持到 Git
 
 ### 搜索引擎和编程社区
 
-一些广泛的问题我会找 Google 来帮忙，比如我想看看别人是怎么做亮/暗模式切换的，我会搜索类似 "next.js darkmode switch"，搜索结果中可能会出现一些其他开发者的博客，里面有记录他们的实现方式，这些内容是我可以拿来参考的。
+一些广泛的问题我会找 Google 来帮忙，比如我想看看别人是怎么做亮/暗模式切换的，我会搜索类似 "next.js darkmode switch"，搜索结果中可能会出现一些开发者的博客、Stack Overflow 或  Github Issue 中提出相似问题的人，这些内容是我可以拿来参考的。
 
-![搜索+实践的示意图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/11.png)
-
-或者我在使用 mdx-bundler 来构建博客模块时，中途遇到了一些报错，想看看其他人有没类似情况和解决方式时，我会去搜索 "mdx-bundler Invalid \<Link> with \<a> child error"。搜索结果可能会出现某个 Github Issue，或者 Stack Overflow 里面有人提出了类似问题，这时或许能从帖子中找到问题的解法。
+![搜索+实践的示意图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/11.png)
 
 ### ChatGPT
 
@@ -167,7 +168,7 @@ MDX 允许我们安装各种插件来增强博客的能力。比如支持到 Git
 
 我也利用上这股强大的力量，用 ChatGPT 来解决一些具体的问题。比如现在博客文章里面的目录，会查找页面内所有的`H2` `H3`标签并生成为一个列表，这就是我向 ChatGPT 提出我的需求之后，它来帮我写出来的。
 
-![ChatGPT 帮我实现博客文章目录功能的回答](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/12.png)
+![ChatGPT 帮我实现博客文章目录功能的回答](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/12.png)
 
 另外我也会让 ChatGPT 帮忙解释某段代码的意思或作用。我从搜索引擎或编程社区里获得的一些解决方案，有时候某些语句自己没看懂的时候，会需要 ChatGPT 来帮忙解释一下，好让我针对自己网站的特点作出些许改造，或者了解报错原因和解决方法。
 
@@ -179,9 +180,9 @@ MDX 允许我们安装各种插件来增强博客的能力。比如支持到 Git
 
 但稍微再具体一点的问题，比如根据某个条件来更改样式，或者甚至想直接做一个需要传递参数来改变展示方式的组件，这些特别个性化的内容想要光靠搜索引擎和 ChatGPT，效率太低了。很可能搜半天还是一头雾水，浪费光阴。
 
-刚好在今年 1 月 24 日，前端大佬 Josh W. Comeau 发布了 [The Joy of React](https://twitter.com/JoshWComeau/status/1617553220242661377 "Josh 发布 Joy of React 课程的推文") 的教程，这是一份面向初学者的 React 教程。在里面我能系统地学到一些 React 相关的知识，甚至是 JavaScript 的基础等。
+刚好在今年 1 月 24 日，前端大佬 Josh W. Comeau 发布了 [The Joy of React](https://twitter.com/JoshWComeau/status/1617553220242661377 "Josh 发布 Joy of React 课程的推文") 的教程，这是一份面向初学者的 React 教程。在里面我能系统地学到一些 React 相关的知识，或者课程中会用到的 JavaScript 的基础等。
 
-![Joy of React 课程介绍页](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/13.png "The Joy of React 的课程封面")
+![Joy of React 课程介绍页](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/13.png "The Joy of React 的课程封面")
 
 这门课程对我的网站重构项目起了很大的帮助，学习后我弄清楚了一些 React 的运行规则，也确实做出了一些实用的组件，改进了页面的代码质量。之前一直卡住的、很具体的问题也在学习之后得到了解决。
 
@@ -196,10 +197,10 @@ MDX 允许我们安装各种插件来增强博客的能力。比如支持到 Git
 
 除了现实中认识的朋友以外，其实也可以咨询网络上的一些开发者。如果一个开发者将他的经验分享出来后，其他人使用过程中遇到问题，大部分都乐意帮忙解决的。
 
-![联系两位站长后帮忙解决问题的邮件](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-01/14.png)
+![联系两位站长后帮忙解决问题的邮件](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-02-21/14.png)
 
 ---
 
 ## 未完待续...
 
-这一篇文章记录了重构我的个人网站 [LRD.IM](https://lrd.im) 时的经历，计划后面会有多几篇文章来记录具体我做到某个模块时的一些过程，或者说重构之后一些我认为比较有意思的改良等等，算是给这次重构计划写上一个句号。
+这一篇文章记录了重构我的个人网站 [LRD.IM](https://lrd.im) 时的经历，计划后面会有多几篇文章来记录具体我做到某个模块时的一些过程，或者说重构之后一些我认为比较有意思的改良等等，算是给这次重构计划一个交代。

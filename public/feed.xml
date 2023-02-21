@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 21 Feb 2023 03:29:21 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 21 Feb 2023 03:35:17 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 21 Feb 2023 03:29:21 GMT</pubDate>
+        <pubDate>Tue, 21 Feb 2023 03:35:17 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[用 Next.js 重构个人网站 (一)：概述]]></title>
+            <description><![CDATA[展示站内所有已经支持的 Markdown 格式。]]></description>
+            <link>https://lrd.im/blog/2023-02-21</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2023-02-21</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Mon, 20 Feb 2023 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[博客实现 RSS 订阅能力全记录]]></title>
             <description><![CDATA[我的个人网站 LRD.IM 从 2018 年元旦发布至今，已经持续维护 4 年了。从最开始根据一个网站模板替换图文，到现在全面的「自主研发」，这是我最骄傲的一款作品。接下来要开始尝试将我的博客内容输出成 RSS 源。]]></description>
