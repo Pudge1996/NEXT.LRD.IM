@@ -141,7 +141,7 @@ const Post = ({ code, frontmatter }) => {
             </button>
           </div> */}
 
-          <div className="min-w-full mdx-bundle">
+          <div className="min-w-full mdx-bundler">
             <Component
               components={{
                 a: BlogLink,

@@ -131,7 +131,7 @@
   }
 
   /* 博客详情页 */
-  .mdx-bundle{
+  .mdx-bundler{
     h2{
       @apply leading-tight text-3xl font-semibold mb-5 mt-10 sm:mt-14;
       &:first-child{
