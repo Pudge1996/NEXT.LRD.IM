@@ -19,7 +19,7 @@ export default function BlogFooter({pageTitle}) {
         <div className="flex flex-col gap-1">
           <div className="text-lg font-semibold">🎉 你觉得这篇文章怎样？</div>
           <div className="text-secondary md:break-keep">
-            <span className="hidden sm:inline">有带给你一些启发或引起共鸣吗？如果你有其他看法，我在这里留下了联系<span className="whitespace-nowrap">方式。</span>觉得这篇文章还不错，欢迎分享给<span className="whitespace-nowrap">朋友！</span></span>
+            <span className="hidden sm:inline">有没有引起你灵魂深处的共鸣？如果有其他看法，我在这里留下了联系<span className="whitespace-nowrap">方式。</span>觉得这篇文章还不错，欢迎分享给<span className="whitespace-nowrap">朋友！</span></span>
             <span className="inline sm:hidden">我在这里留下了联系<span className="whitespace-nowrap">方式。</span>如果觉得这篇文章还不错，欢迎分享给<span className="whitespace-nowrap">朋友！</span></span>
           </div>
         </div>
