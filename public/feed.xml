@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 21 Feb 2023 07:27:13 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 12 Mar 2023 06:07:16 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 21 Feb 2023 07:27:13 GMT</pubDate>
+        <pubDate>Sun, 12 Mar 2023 06:07:16 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[用 Next.js 重构个人网站 (二)：核心和通用模块]]></title>
+            <description><![CDATA[这一篇主要介绍我在重构时学习到的一些通用解决方法。比如数据源和遍历循环、借助 Tailwind CSS 实现深色模式、外部组件/图标库的使用，以及通过课程学习到的组件开发方法。]]></description>
+            <link>https://lrd.im/blog/2023-03-12</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2023-03-12</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 11 Mar 2023 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[用 Next.js 重构个人网站 (一)：概述]]></title>
             <description><![CDATA[原本的个人网站在迭代、体验层面的表现都差强人意。于是在 2023 年我用 Next.js 重构了个人网站，会分几篇博客文章来记录我重构个人网站从研发到部署上线的过程。]]></description>
