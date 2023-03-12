@@ -26,7 +26,7 @@ export default function blog({ posts }) {
             className="flex flex-col group ring-default"
             alt="1"
           >
-            <div className={`relative mb-5 rounded-lg select-none h-[165px] sm:h-[300px] overflow-hidden img-loading-bg ${
+            <div className={`relative mb-5 rounded-lg select-none h-[144px] sm:h-[300px] overflow-hidden img-loading-bg ${
             isLoaded ? "" : "img-loading-spin"
           }`}>
               <Image
