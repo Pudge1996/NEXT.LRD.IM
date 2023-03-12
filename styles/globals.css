@@ -250,7 +250,7 @@
         @apply mt-6 sm:mt-9;
       }
       pre{
-        @apply py-4 sm:py-6 border-slate-700 dark:border-neutral-800 leading-[26px] overflow-auto;
+        @apply py-4 sm:py-6 border-slate-700 dark:border-neutral-800 leading-[22px] overflow-auto text-sm;
         code{
           @apply grid;
           & > span{ /* 行 */
