@@ -8,7 +8,7 @@ export default function CopyPageLink({ pageTitle }) {
       // 获取当前页面的超链接
       const currentURL = window.location.href;
       // const currentPageTitle = document.title;
-      const copyText = pageTitle + currentURL;
+      const copyText = pageTitle + ' ' + currentURL;
 
       // 将文本写入剪贴板
       navigator.clipboard.writeText(copyText).then(
