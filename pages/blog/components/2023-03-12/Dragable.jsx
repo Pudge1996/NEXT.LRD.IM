@@ -1,18 +1,18 @@
 import React, { Fragment } from "react";
-import { IoMenu, IoLogoRss, IoPerson, IoMoon, IoSunny } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
+import { IoMenu, IoLogoRss, IoPerson, IoSunny } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { Menu, Transition } from "@headlessui/react";
 import headerNavLinks from "../../../../data/common/headerNavLinks";
 import { ResizableBox } from "react-resizable"; //https://github.com/react-grid-layout/react-resizable
 
-export default function Cool() {
+export default function Dragable() {
   
   return (
     
     <React.Fragment>
       <ResizableBox
-        width={678}
+        width={400}
         height={220}
-        minConstraints={[220, 220]}
+        minConstraints={[180, 220]}
         maxConstraints={[678, 220]}
         resizeHandles={["e"]}
         className="mx-auto max-w-[100%]"
@@ -96,15 +96,16 @@ export default function Cool() {
         </div>
       </ResizableBox>
       <figcaption>
-        这是一个可交互的组件，拖动右侧手柄查看响应式适配的效果。
+        拖动右侧手柄，缩小容器宽度来查看适配的效果。
       </figcaption>
       <style jsx="true">{`
         .react-resizable {
           position: relative;
+          user-select: none;
         }
         .react-resizable-handle {
           position: absolute;
-          width: 14px;
+          width: 16px;
           height: 32px;
           background-color: #FFFFFF;
           border-radius: 4px;
@@ -132,6 +133,8 @@ export default function Cool() {
           top: 50%;
           transform: translate(50%, -50%);
           cursor: ew-resize;
+          user-select: none;
+
         }
       `}</style>
     </React.Fragment>

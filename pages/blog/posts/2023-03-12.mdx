@@ -1,16 +1,16 @@
 ---
 title: 用 Next.js 重构个人网站 (二)：核心和通用模块
-description: 展示站内所有已经支持的 Markdown 格式。
+description: 这一篇主要介绍我在重构时学习到的一些通用解决方法。比如数据源和遍历循环、借助 Tailwind CSS 实现深色模式、外部组件/图标库的使用，以及通过课程学习到的组件开发方法。
 category: 设计之外
 tags: Next.js, React, JS, JavaScript, map, map(),iteration, 循环, 遍历, 迭代, 数据源, data, 组件, props, API, 图片组件, key, 个人网站, 构建, 研发, 效率, 代码可读性, 优化, 改进
 author: 李瑞东
-date: "20230102"
+date: "20230312"
 recommend: ""
 recommendLink: ""
 mediumLink: ""
 ---
 
-import Cool from "../pages/blog/components/2023-01-02/Cool"
+import Dragable from "../pages/blog/components/2023-03-12/Dragable"
 
 ![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-02/01.png)
 
@@ -127,7 +127,7 @@ import ProjectItemData from "/data/ProjectItemData";  //导入数据源
 
 一个模块或组件对应一个数据源，然后数据也和页面分离，👍🏻。
 
-### 局限性
+### 不得不接受的局限性
 
 这个看似完美的功能实际上也会有一个令我有点难受局限性。前文提到一句话：
 
@@ -135,7 +135,7 @@ import ProjectItemData from "/data/ProjectItemData";  //导入数据源
 
 这种按部就班，放进「统一的容器」里的做法会**丧失灵活性**，比如在：一组容器里面我想要特意给某一个容器添加样式，或者某个字段的值是字符串，我想给里面的某个词语设定一个样式。这似乎不容易办到。
 
-具体来说，在我前年写的一篇[文章](/blog/2021-08-15#%E4%B8%89%E9%81%BF%E5%85%8D%E5%8D%95%E5%AD%97%E6%88%90%E8%A1%8C)里，我学会了给标题或重要文本的最后一个词语和标点设置一个不换行的样式`white-space: nowrap;`来防止出现孤字，这是需要在 HTML 内对单独每一句话来设定的样式。
+具体来说，在我前年写的一篇「[Apple 官网里三个令我惊叹的中文排版细节](/blog/2021-08-15#%E4%B8%89%E9%81%BF%E5%85%8D%E5%8D%95%E5%AD%97%E6%88%90%E8%A1%8C)」里，我学会了给标题或重要文本的最后一个词语和标点设置一个不换行的样式`white-space: nowrap;`来防止出现孤字，这是需要在 HTML 内对单独每一句话来设定的样式。
 
 ![重构前后避免出现孤字的做法](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-02/04.png)
 
@@ -189,13 +189,13 @@ import ProjectItemData from "/data/ProjectItemData";  //导入数据源
 
 ---
 
-## 组件响应式适配
+## 使用外部组件/图标库
 
 这里可以记录一个我做成了响应式适配的组件：Header。在宽度足够时会将各页面入口平铺展示；而在移动端尺寸下，会收起在一个按钮中，点击后展开一个菜单，在里面提供页面和功能的入口。
 
-<Cool/>
+<Dragable/>
 
-### 功能实现
+### 组件
 
 实际上我是通过媒体查询视窗宽度来实现的响应式适配。Header 操作区会分成两部分，一部分是平铺的按钮，另一部分是菜单功能。即：
 
@@ -219,9 +219,9 @@ import ProjectItemData from "/data/ProjectItemData";  //导入数据源
 
 ![Headless UI 的 Menu 组件界面截图](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-02/07.png)
 
-重构后博客文章里的目录，我也是用类似的方法来做响应式适配的。这个在下一篇文章中会有写到。
+重构后博客文章里的目录，我也是用类似的方法来做响应式适配的。这部分的内容在下一篇文章中呈现。
 
-### 使用图标
+### 图标
 
 虽然说在工作上我做过不少图标，也负责过图标库的管理和迭代。但在这次重构 LRD.IM 的项目中，我没有自己去设计图标，用的都是外部资源。
 
@@ -340,7 +340,7 @@ export default function ProjectImage({
 
 最后在页面中使用该组件时，只需要填上必填的`src`，如果有其他尺寸或滚动上的属性配置，也传递进去就好了。
 
-```js title="Single Project.js"
+```js title="project.js"
 //默认：大尺寸图片 + 禁止滚动 + 允许点击放大 + 无图片描述
 <ProjectImage src="01.png" />  
 
@@ -361,7 +361,10 @@ export default function ProjectImage({
 
 ![使用组件前后，源文件的对比。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-01-02/10.png)
 
-### Key 值
+图片组件比较常用，后面也会根据具体用途的变动和个人能力的长进来不断优化。
 
+---
 
+## 预告
 
+下一篇文章将会介绍我是如何使用 [mdx-bundler](https://github.com/kentcdodds/mdx-bundler) 来重构整个博客功能模块，包括 mdx-remark 插件、内容生成方式、目录组件、RSS 生成等内容。以及我为了增强阅读体验所做的工作。敬请期待吧~（自说自话 🙄）

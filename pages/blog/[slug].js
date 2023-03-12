@@ -4,8 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
-import ContactCard from "/components/common/ContactCard";
-import CopyPageLink from "/components/blog/CopyPageLink";
 import TableContents from "/components/blog/TableContents";
 import Date from "/components/common/Date";
 import BlogFooter from "/components/blog/BlogFooter";
@@ -14,11 +12,7 @@ import TableContents_Mobile from "/components/blog/TableContents_Mobile";
 import { getMDXComponent } from "mdx-bundler/client";
 import { getAllPosts, getSinglePost } from "/utils/mdx";
 import {
-  IoLogoRss,
-  IoPersonAdd,
-  IoLink,
-  IoList,
-  IoReturnDownBack,
+  IoList
 } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
@@ -71,7 +65,7 @@ const Paragraph = (props) => {
     return (
       <figure>
         <div
-          className={`relative min-h-[120px] border border-neutral-200 dark:border-neutral-800 rounded-lg transition-colors ${
+          className={`relative min-h-[120px] sm:border border-neutral-200 dark:border-neutral-800 rounded-lg transition-colors ${
             isLoaded ? "" : "img-loading-spin"
           } `}
         >
@@ -128,22 +122,11 @@ const Post = ({ code, frontmatter }) => {
           </h1>
           <div className="flex xl:hidden gap-3 mb-7">
             <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
-              <div className="flex shrink-0 w-5 h-5 xl:w-11 xl:h-11 relative rounded-full overflow-hidden img-loading-bg">
-                <Image
-                  src={siteMetadata.authorImg}
-                  alt="头像"
-                  fill
-                  sizes="100vw"
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="flex items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2">
-                <div className="text-sm xl:text-base text-secondary xl:text-primary xl:font-medium leading-none whitespace-nowrap">
-                  李瑞东
+              <div className="flex items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-secondary">
+                <div className="whitespace-nowrap">
+                {siteMetadata.author}
                 </div>
-                <div className="text-sm text-secondary leading-none">
+                <div className="">
                   发布于 <Date dateString={frontmatter.date} />
                 </div>
               </div>
