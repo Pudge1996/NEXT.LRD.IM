@@ -2,6 +2,14 @@
 
 const updatesData = [
   {
+    title: "全面重构 🎉",
+    date: "2023-02-12",
+    img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2023-02-12.png",
+    desc: "使用 Next.js 和 Tailwind CSS 重构了网站。并通过 Vercel 部署。",
+    linkText: "",
+    linkURL: "",
+  },
+  {
     title: "全新的作品呈现方式",
     date: "2022-11-16",
     img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2022-11-16.png",
