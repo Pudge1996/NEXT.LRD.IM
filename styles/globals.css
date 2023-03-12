@@ -244,13 +244,13 @@
       @apply bg-slate-900 dark:bg-neutral-900 rounded-lg my-4 sm:my-7 text-base overflow-hidden transition-colors;
       
       div:first-child{ /* 文件标题 */
-        @apply pt-3 pb-2 ml-4 sm:ml-6 inline-block text-sky-500 border-b-2 border-sky-500 font-medium text-[13px];
+        @apply pt-3 pb-2 pl-4 sm:pl-6 block text-sky-500 border-b font-medium text-[13px] underline underline-offset-[14px] decoration-2 decoration-sky-500 border-slate-700 dark:border-neutral-800 select-none;
       }
       &+h4{
         @apply mt-6 sm:mt-9;
       }
       pre{
-        @apply py-4 sm:py-6 border-t border-slate-700 dark:border-neutral-800 leading-[26px] overflow-auto;
+        @apply py-4 sm:py-6 border-slate-700 dark:border-neutral-800 leading-[26px] overflow-auto;
         code{
           @apply grid;
           & > span{ /* 行 */
