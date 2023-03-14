@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
-import TableContents from "/components/blog/TableContents";
+// import TableContents from "/components/blog/TableContents";
 import Date from "/components/common/Date";
 import BlogFooter from "/components/blog/BlogFooter";
 import TableContents_Mobile from "/components/blog/TableContents_Mobile";
@@ -116,11 +116,11 @@ const Post = ({ code, frontmatter }) => {
         <meta property="og:description" content={frontmatter.description} />
       </Head>
       <div className="layout blog-content">
-        <div className="flex flex-col gap-0 xl:gap-7">
-          <h1 className="mb-3 sm:mb-4 xl:mb-7 text-3xl sm:text-4xl xl:text-5xl">
+        <div className="flex flex-col gap-0">
+          <h1 className="mb-3 text-3xl sm:text-4xl xl:text-5xl">
             {frontmatter.title}
           </h1>
-          <div className="flex xl:hidden gap-3 mb-7">
+          <div className="flex gap-3 mb-7">
             <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
               <div className="flex items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-tertiary">
                 <div className="whitespace-nowrap">
@@ -143,7 +143,7 @@ const Post = ({ code, frontmatter }) => {
             />
             <BlogFooter pageTitle={frontmatter.title} />
           </div>
-          <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
+          {/* <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
             <section>
               <div className="flex flex-col gap-3 py-1">
                 <div className="flex gap-2 items-center">
@@ -172,10 +172,10 @@ const Post = ({ code, frontmatter }) => {
               <h5 className="text-lg font-semibold mb-3">目录</h5>
               <TableContents />
             </section>
-          </aside>
+          </aside> */}
         </div>
       </div>
-      <div className="fixed block xl:hidden bg-color right-8 bottom-20 sm:right-12 sm:bottom-24 ring-default sm:hover:text-primary active:text-primary btn-base btn-icon border border-neutral-200 dark:border-neutral-800 transition-colors">
+      <div className="fixed bg-color right-8 bottom-20 sm:right-12 sm:bottom-24 ring-default sm:hover:text-primary active:text-primary btn-base btn-icon border border-neutral-200 dark:border-neutral-800 transition-colors">
         <IoList className="text-xl" />
         <TableContents_Mobile />
       </div>
