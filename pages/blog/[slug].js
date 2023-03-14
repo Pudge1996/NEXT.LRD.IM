@@ -122,25 +122,16 @@ const Post = ({ code, frontmatter }) => {
           </h1>
           <div className="flex xl:hidden gap-3 mb-7">
             <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
-              <div className="flex items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-secondary">
+              <div className="flex items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-tertiary">
                 <div className="whitespace-nowrap">
-                {siteMetadata.author}
+                {siteMetadata.author} 发布于 <Date dateString={frontmatter.date} />
                 </div>
-                <div className="">
-                  发布于 <Date dateString={frontmatter.date} />
-                </div>
+                  
               </div>
             </div>
           </div>
         </div>
         <div className="flex">
-          {/* <div className="hidden xl:flex min-w-[216px] flex-col gap-4 mr-12 items-end">
-            <button onClick={() => router.back()} className="flex sticky top-24 items-center btn-base btn-md gap-2 ring-default text-tertiary hover:text-primary">
-              <IoReturnDownBack className="text-lg" />
-              <span className="text-base">返回</span>
-            </button>
-          </div> */}
-
           <div className="min-w-full mdx-bundler">
             <Component
               components={{
@@ -169,7 +160,7 @@ const Post = ({ code, frontmatter }) => {
                   </div>
                   <div className="flex flex-col grow gap-2">
                     <div className="font-medium leading-none">李瑞东</div>
-                    <div className="text-sm text-secondary leading-none">
+                    <div className="text-sm text-tertiary leading-none">
                       发布于 <Date dateString={frontmatter.date} />
                     </div>
                   </div>
