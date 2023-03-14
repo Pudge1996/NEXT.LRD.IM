@@ -1,7 +1,5 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
-import Image from "next/image";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 // import TableContents from "/components/blog/TableContents";
@@ -11,9 +9,7 @@ import TableContents_Mobile from "/components/blog/TableContents_Mobile";
 
 import { getMDXComponent } from "mdx-bundler/client";
 import { getAllPosts, getSinglePost } from "/utils/mdx";
-import {
-  IoList
-} from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
+import { IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
 import Zoom from "next-image-zoom";
@@ -98,7 +94,6 @@ const Post = ({ code, frontmatter }) => {
   const Component = React.useMemo(() => {
     return getMDXComponent(codePrefix + code);
   }, [code]);
-  const router = useRouter();
   return (
     <>
       <Head>
@@ -143,6 +138,7 @@ const Post = ({ code, frontmatter }) => {
             />
             <BlogFooter pageTitle={frontmatter.title} />
           </div>
+          {/* 桌面端侧栏目录，因内存占用较大而注释掉 */}
           {/* <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
             <section>
               <div className="flex flex-col gap-3 py-1">
