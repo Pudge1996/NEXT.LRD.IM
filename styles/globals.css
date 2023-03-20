@@ -291,27 +291,41 @@
       }
     }
     details summary{
-      @apply inline-flex w-full items-center cursor-pointer btn-base btn-lg px-4 border border-neutral-200 dark:border-neutral-800;
+      @apply inline-block relative w-full items-center cursor-pointer btn-base btn-lg px-4 pl-10 border border-neutral-200 dark:border-neutral-800;
       &+*{
         @apply mt-4 !important;
       }
       &::before{
-      content: "展开";
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 1rem;
       margin-right: .5em;
       mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16a.999.999 0 01-.707-1.707L11.586 10 7.293 5.707a.999.999 0 111.414-1.414l5 5a.999.999 0 010 1.414l-5 5A.997.997 0 018 16z' fill='%235C5F62'/%3E%3C/svg%3E") no-repeat 50% 50%/1.2em 1.2em;
-      display: inline-block;
-      flex-shrink: 0;
+      display: inline;
       height: 1.2em;
       width: 1.2em;
       background-color: currentColor;
       vertical-align: -0.125em;
+      display: inline-block;
       }
+      
     }
+    
     details[open] summary::before{
       mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 14a.997.997 0 01-.707-.293l-5-5a.999.999 0 111.414-1.414L10 11.586l4.293-4.293a.999.999 0 111.414 1.414l-5 5A.997.997 0 0110 14z' fill='%235C5F62'/%3E%3C/svg%3E")
    no-repeat 50% 50%/1.2em 1.2em;
     }
+    details>summary {
+      list-style: none;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    
   }
+
 }
 
 .project-v2{ /* 作品模版v2 */
