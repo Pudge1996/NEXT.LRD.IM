@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { IoMenu, IoLogoRss, IoPerson, IoSunny } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
-import { Menu, Transition } from "@headlessui/react";
+import { Menu } from "@headlessui/react";
 import headerNavLinks from "../../../../data/common/headerNavLinks";
 import { ResizableBox } from "react-resizable"; //https://github.com/react-grid-layout/react-resizable
 
@@ -44,15 +44,7 @@ export default function Dragable() {
                     <IoMenu className="text-2xl" />
                   </Menu.Button>
                 </div>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95 hidden"
-                >
+
                   <Menu.Items className="absolute top-12 right-0 rtl:left-0 rtl:right-auto rounded-xl bg-color shadow-lg border border-neutral-200 dark:border-2 dark:border-neutral-800">
                     <div className="p-2 w-40 w-max-48 flex flex-col">
                       {headerNavLinks.map((link) => (
@@ -89,7 +81,6 @@ export default function Dragable() {
                       </Menu.Item>
                     </div>
                   </Menu.Items>
-                </Transition>
               </Menu>
             </div>
           </div>
