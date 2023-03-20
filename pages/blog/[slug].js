@@ -75,6 +75,7 @@ const Paragraph = (props) => {
             onError={() => setIsLoaded(true)}
             backgroundColor="black"
             backgroundOpacity="0.8"
+            unoptimized={true}
           ></Zoom>
         </div>
         <figcaption>{props.children.props.title}</figcaption>
