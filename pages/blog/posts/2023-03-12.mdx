@@ -137,13 +137,13 @@ import ProjectItemData from "/data/ProjectItemData";  //导入数据源
 
 具体来说，在我前年写的一篇「[Apple 官网里三个令我惊叹的中文排版细节](/blog/2021-08-15#%E4%B8%89%E9%81%BF%E5%85%8D%E5%8D%95%E5%AD%97%E6%88%90%E8%A1%8C)」里，我学会了给标题或重要文本的最后一个词语和标点设置一个不换行的样式`white-space: nowrap;`来防止出现孤字，这是需要在 HTML 内对单独每一句话来设定的样式。
 
-![重构前后避免出现孤字的做法](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/04.png)
+![重构前避免出现孤字的做法](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/04.png)
 
 而通过数据源来填充文本内容，我似乎没法进行这样的操作了。所以重构后的网站，一些地方可能会出现无法避免的孤字。
 
 后续我会继续关注这个问题，尝试找到低成本的解决办法。这并非毫无希望，起码最近有了解到 [React Wrap Balancer](https://react-wrap-balancer.vercel.app/) 这个组件似乎能改善孤字的现象，后续我会继续跟进。有新进展也会在博客里更新。
 
-<figure><video width="100%" autoPlay loop="loop" muted alt="React Wrap Balancer 的效果预览动图。拖动手柄来改变容器宽度，观察使用该组件前后的效果对比。" src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/05.mp4" /></figure>
+<figure><video width="100%" autoPlay loop="loop" muted alt="React Wrap Balancer 的效果预览动图。" src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/05.mp4" /></figure>
 
 > 当前的解决方案：关键内容/复用较少的内容会写在 JSX 中，而不使用数据源，给到最大的灵活性。而像大标题或副标题，则是使用了 `word-break: keep-all;` 的方式减少孤字出现的可能性（[参考此处](/blog/2021-11-07#三在展示型网站中使用)）。其他更细的情况无处理。
 
@@ -166,7 +166,7 @@ import ProjectItemData from "/data/ProjectItemData";  //导入数据源
 
 ### 样式支持
 
-![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/06.png "图片来自 Tailwind CSS")
+![](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/06.png "标题是 Tailwind CSS 3.2 的配图，使用科技风格的蓝紫色渐变作为背景，图片来自 Tailwind CSS 官方。")
 
 使用 Tailwind CSS 之后，设计深色模式的样式也变得简单很多了。只要在类名前加上`dark:`，比如这样：`text-neutral-800 dark:text-neutral-100`，`dark:`后面的内容就是当切换成深色模式后的样式。
 
@@ -252,7 +252,7 @@ import { IoLink, IoList } from "react-icons/io5"; // 加载图标库
 
 在我的作品详情页面中，「图片」是一个会被频繁用到的媒体。而图片的呈现又有多种方式。
 
-![图片组件的多种变量示意。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/09.png)
+![用三张截图分别展示图片组件的多种变量。从上至下分别是图片尺寸、图片描述、长图滚动和图片放大。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/09.png)
 
 上图中能看到，我的图片组件会有六个属性允许配置或填写。
 
@@ -359,7 +359,7 @@ export default function ProjectImage({
 
 后如果我想有什么调整或者新功能，只要改动组件就好，再也不用**在编辑器里打开数十个 html 文件逐个修改**了。也不用在一堆代码高亮后的标签内寻找内容了。
 
-![使用组件前后，源文件的对比。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/10.png)
+![用两张在代码编辑器里的截图展示使用组件前后，源文件代码量的对比。左侧是使用前，用红框标记代码量，一共 43 行代码；右侧是使用后，用绿框标记代码量，一共是 11 行代码。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-03-12/10.png)
 
 图片组件比较常用，后面也会根据具体用途的变动和个人能力的长进来不断优化。
 
