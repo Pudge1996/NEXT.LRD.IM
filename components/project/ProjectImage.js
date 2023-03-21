@@ -15,9 +15,9 @@ export default function ProjectImage({
   zoom = !scroll;
   return (
     <>
-      <figure className={scroll === true ? "scroll" : ""} key={index}>
+      <figure className={`${scroll === true ? "scroll" : ""} ${size === "small" ? "max-w-2xl" : ""}`} key={index}>
         <div
-          className={`${size === "small" ? "max-w-2xl" : ""}${
+          className={`${
             isLoaded ? "" : "img-loading-spin"
           }${zoom === false ? "overflow-hidden" : ""}`}
         >
@@ -29,6 +29,7 @@ export default function ProjectImage({
             onError={() => setIsLoaded(true)}
             fill
             sizes="100vw"
+            unoptimized={true}
           />
           ) : (<Zoom
             src={src}
@@ -39,6 +40,7 @@ export default function ProjectImage({
             onError={() => setIsLoaded(true)}
             backgroundColor="black"
             backgroundOpacity="0.8"
+            unoptimized={true}
           ></Zoom>
           )}
         </div>
