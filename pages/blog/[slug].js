@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import siteMetadata from "/data/siteMetadata";
-// import TableContents from "/components/blog/TableContents";
 import Date from "/components/common/Date";
 import BlogFooter from "/components/blog/BlogFooter";
+import TableContents from "/components/blog/TableContents";
 import TableContents_Mobile from "/components/blog/TableContents_Mobile";
 
 import { getMDXComponent } from "mdx-bundler/client";
@@ -113,7 +114,7 @@ const Post = ({ code, frontmatter }) => {
       </Head>
       <div className="layout blog-content">
         <div className="flex flex-col gap-0">
-          <h1 className="mb-3 text-3xl sm:text-4xl xl:text-5xl">
+          <h1 className="mb-3 text-3xl sm:text-4xl xl:text-5xl xl:leading-[1.1]">
             {frontmatter.title}
           </h1>
           <div className="flex gap-3 mb-7">
@@ -140,7 +141,7 @@ const Post = ({ code, frontmatter }) => {
             <BlogFooter pageTitle={frontmatter.title} />
           </div>
           {/* 桌面端侧栏目录，因内存占用较大而注释掉 */}
-          {/* <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
+          <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
             <section>
               <div className="flex flex-col gap-3 py-1">
                 <div className="flex gap-2 items-center">
@@ -169,10 +170,10 @@ const Post = ({ code, frontmatter }) => {
               <h5 className="text-lg font-semibold mb-3">目录</h5>
               <TableContents />
             </section>
-          </aside> */}
+          </aside>
         </div>
       </div>
-      <div className="fixed bg-color right-8 bottom-20 sm:right-12 sm:bottom-24 ring-default sm:hover:text-primary active:text-primary btn-base btn-icon border border-neutral-200 dark:border-neutral-800 transition-colors">
+      <div className="block xl:hidden fixed bg-color right-6 bottom-6 sm:right-4 sm:bottom-16 ring-default text-tertiary sm:hover:text-primary active:text-primary btn-base btn-icon bg-neutral-100 dark:bg-neutral-800 transition-colors">
         <IoList className="text-xl" />
         <TableContents_Mobile />
       </div>

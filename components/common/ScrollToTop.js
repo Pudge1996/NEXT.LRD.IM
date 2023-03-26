@@ -18,7 +18,7 @@ export default function ScrollToTopButton() {
 
   function handleScroll() {
     if (window.pageYOffset > 400) {
-      setButtonClass("block");
+      setButtonClass("hidden sm:block");
     } else {
       setButtonClass("hidden");
     }
@@ -28,7 +28,7 @@ export default function ScrollToTopButton() {
     <>
       <button
         onClick={scrollToTop}
-        className={` fixed ${buttonClass} bg-color right-8 bottom-8 sm:right-12 sm:bottom-10 ring-default sm:hover:text-primary active:text-primary btn-base btn-icon border border-neutral-200 dark:border-neutral-800 transition-colors `}
+        className={` fixed ${buttonClass} right-4 bottom-4 ring-default sm:hover:text-primary active:text-primary btn-base btn-icon text-tertiary bg-neutral-100 dark:bg-neutral-800 transition-colors `}
       >
         <span className="sr-only">回到顶部</span>
         <IoArrowUp className="text-xl" title="回到顶部" />
