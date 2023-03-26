@@ -133,7 +133,7 @@
   /* 博客详情页 */
   .mdx-bundler{
     h2{
-      @apply leading-tight text-3xl font-semibold mb-5 mt-10 sm:mt-14;
+      @apply leading-tight text-3xl font-semibold mb-5 mt-10;
       &:first-child{
         @apply mt-7;
       }
@@ -148,7 +148,7 @@
       @apply leading-tight font-semibold mt-4 sm:mt-7 mb-2;
     }
     p{
-      @apply my-4 sm:my-7;
+      @apply my-4 xl:my-7;
     }
     h3+p{
       @apply mt-2;
