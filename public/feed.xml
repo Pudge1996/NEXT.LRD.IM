@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 12 Mar 2023 08:06:51 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 26 Mar 2023 03:15:03 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 12 Mar 2023 08:06:51 GMT</pubDate>
+        <pubDate>Sun, 26 Mar 2023 03:15:03 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[探索让新用户更容易上手的产品设计策略]]></title>
+            <description><![CDATA[通过探索 Jira, Asana, Notion 这三款软件的新用户旅程、上下文帮助、模板、帮助中心的产品设计，寻找帮助新用户更容易上手的产品设计策略。]]></description>
+            <link>https://lrd.im/blog/2023-03-26</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2023-03-26</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 25 Mar 2023 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[用 Next.js 重构个人网站 (二)：核心和通用模块]]></title>
             <description><![CDATA[这一篇主要介绍我在重构时学习到的一些通用解决方法。比如数据源和遍历循环、借助 Tailwind CSS 实现深色模式、外部组件/图标库的使用，以及通过课程学习到的组件开发方法。]]></description>
