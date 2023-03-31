@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 26 Mar 2023 03:15:03 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Mar 2023 15:28:30 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 26 Mar 2023 03:15:03 GMT</pubDate>
+        <pubDate>Fri, 31 Mar 2023 15:28:30 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[【译文】无障碍设计：三个 Jira 图标的故事]]></title>
+            <description><![CDATA[Atlassian UX 团队的设计师 Hannah McKenzie 分享了一个优化图标的小案例。主要目的是使图标对色盲人士也具有良好的可访问性。]]></description>
+            <link>https://lrd.im/blog/2023-04-01</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2023-04-01</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 31 Mar 2023 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[探索让新用户更容易上手的产品设计策略]]></title>
             <description><![CDATA[通过探索 Jira, Asana, Notion 这三款软件的新用户旅程、上下文帮助、模板、帮助中心的产品设计，寻找帮助新用户更容易上手的产品设计策略。]]></description>
