@@ -26,7 +26,7 @@ const blogCategoriesData = [
       name: "翻译好文",
       desc: "为了学习到别人先进的实践经验，我尝试翻译文章来让自己精读某篇文章。主要从工作中竞品公司的 UX 博客来尝试入门。",
       url: "translate",
-      num: "4",
+      num: "5",
     },
     {
       name: "软件插件",

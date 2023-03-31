@@ -1,0 +1,79 @@
+---
+title: 【译文】无障碍设计：三个 Jira 图标的故事
+description: Atlassian UX 团队的设计师 Hannah McKenzie 分享了一个优化图标的小案例。主要目的是使图标对色盲人士也具有良好的可访问性。
+category: 翻译好文
+tags: 无障碍, 可访问性, 可访问, Jira, Atalssian, 图标设计, 图标, icon, 翻译
+author: 李瑞东
+date: "20230401"
+recommend: ""
+recommendLink: ""
+mediumLink: ""
+---
+
+> 导读：Atlassian UX 团队的设计师 Hannah McKenzie 分享了一个优化图标的小案例。主要目的是使图标对色盲人士也具有良好的可访问性。
+
+![一个被镜头照的很近的眼镜，被彩虹光线覆盖。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/01.webp "Photo by Harry Quan on Unsplash:")
+
+## 小细节会产生巨大的影响
+
+你知道世界上有很多种不同类型的色盲吗？在澳洲，有大约 50 万人生活在某种程度的色盲当中。在美国，这个数字接近 1200 万。而在全世界，估计有 3 亿人生活在某种程度的色盲当中，网上的一些资料显示，这个数字甚至接近 3.5 亿。
+
+> 其中红绿色盲占据了大多数，他们难以区分红色和绿色。
+
+现在 Jira 的 Pull request 的图标是通过用灰色、绿色和红色来区分 Open, Merged, Declined 这三种状态。
+
+![原本的图标，灰色代表 Open，绿色代表 Merged，红色代表 Declined。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/02.png "原本的图标，灰色代表 Open，绿色代表 Merged，红色代表 Declined。")
+
+红绿色盲人士看到的图标就像这样：
+
+![红绿色盲人士看到的图标。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/03.png "")
+
+在 Jira 的软件项目管理看板当中，这些图标很小，并且与每个缺陷中其他小元素一起出现。比如故事点、负责人头像和缺陷 ID。
+
+这是一个 Jira iOS app 项目看板的例子。其中 Pull request 图标用红色圆圈高亮起来作为示意。
+
+![Jira 软件项目管理看板在 Jira iOS app 里。4 个在优化前的 Pull request 图标被红色圈住了。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/04.png "")
+
+虽然图标很小，但这些图标确实在传达有用的信息。
+
+在 2021 年末，我开始进行优化开发状态图标的工作，并让色盲用户可以访问它们。它开始于一则我在无障碍团队 Slack 频道里的消息：
+
+> “我们最近有改进 Jira pull request 图标计划吗？现在这些图标是完全相同的，只能通过颜色来区分。”
+
+![用手拿起红色图钉在地图上进行标记的近镜。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/05.webp "Photo by GeoJango Maps on Unsplash")
+
+在 2022 年初，几位设计师和研发在 Slack 的讨论中尝试了一个粗略的方案：
+
+![让这几个 Pull request 图标具有可访问性的早期粗略方案。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/06.png "")
+
+设计师开始尝试多种概念，产生了更多的方案：
+
+![让这几个 Pull request 图标具有可访问性的初步设计。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/07.png "")
+
+在几个发散性的讨论和设计环节之后，全新的，具有可访问性的 Pull request 图标诞生了！
+
+![重新设计的图标：Open, merged, declined。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/08.png "")
+
+虽然这些图标仍然由灰色、绿色和红色来分别代表 Open, Merged 和 Declined，但同时，使用了打勾代表 Merged，打叉代表 Decline。而且 Merged 的图标用线条连接在一起（表示合并到分支），Declined 的图标线条则没有与任何东西连接。
+
+![Jira 软件项目管理看板在 iOS app 里。4个在优化后的Pull request 图标被红色圈住了。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/09.png "")
+
+## 这段经历教会了我...
+
+- **即使过程很棘手，但也请坚持下去。** 如果你面向的是比较复杂的产品，或者在大型的机构中，你需要主动去在不同团队去联系到合适的同事；
+- **一些看起来很小的设计往往会涉及到很多不同的人。** 通常是很多件小事（就像在这个案例当中，有许多交流和发散性会议）汇聚成一件大事，以最终呈现在用户面前；
+- **设计一个支持无障碍的产品对很多人来说是至关重要的，小细节真的很重要。** 每个人都会受益，包括自认为是并非残障群体的的人士。比如电话和电动牙刷，最开始就是为残障人士而设计的。
+
+Atlassian 里几位没有色盲的设计师和工程师对于新设计图标的看法：
+
+> “我不是色盲的，但这些图标让我一眼就能看懂。”
+
+> “这简直是宝藏。原本同样的图标，不同的颜色让我感到疑惑。我经常想，这是对应着什么分支状态？这是一个非常惊人的优化。”
+
+**所以这篇文章用来提醒大家关注细节——即便是小细节也会产生巨大的影响。**
+
+![在 iPad 中展示了一组关于无障碍的图标库，其他图标展示在下方。](https://lrdim.oss-cn-shenzhen.aliyuncs.com/blogimg/2023-04-01/10.webp "Photo by Balázs Kétyi on Unsplash")
+
+> 原文：[Accessible design: A story of three Jira icons](https://medium.com/designing-atlassian/a-story-of-three-jira-icons-77503ac7c59b)
+> 作者：Hannah McKenzie
+> 译者：李瑞东

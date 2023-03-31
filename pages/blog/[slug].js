@@ -119,7 +119,7 @@ const Post = ({ code, frontmatter }) => {
           </h1>
           <div className="flex gap-3 mb-7">
             <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
-              <div className="flex xl:hidden items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-tertiary">
+              <div className="flex Óxl:hidden items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-tertiary">
                 <div className="whitespace-nowrap">
                 {siteMetadata.author} 发布于 <Date dateString={frontmatter.date} />
                 </div>
