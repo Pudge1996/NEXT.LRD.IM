@@ -9,9 +9,9 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 31 Mar 2023 15:32:16 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Mar 2023 16:11:36 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 31 Mar 2023 15:32:16 GMT</pubDate>
+        <pubDate>Fri, 31 Mar 2023 16:11:36 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
@@ -74,15 +74,15 @@
         </item>
         <item>
             <title><![CDATA[【译文】如何突破设计系统的极限]]></title>
-            <description><![CDATA[公司前段时间新来了不少交互设计师， Leader 邀请我做一次网页布局相关的分享会，来帮助以往比较少界面设计经验的交互设计师能够更好地完成设计方案产出和交付。现在我将文稿记录在这里。]]></description>
+            <description><![CDATA[为了跟上需求，设计系统需要不断发展。讽刺的是，设计系统的进化似乎有点像先有鸡还是先有蛋的问题。如果不知道产品业务需要什么，专门负责设计系统迭代的团队就无法进一步发展。另一方面，大多数业务设计团队只在系统的现有规范和组件内完成工作，这不利于进一步推动系统的发展。这样看上去像是僵住了…]]></description>
             <link>https://lrd.im/blog/2022-08-12</link>
             <guid isPermaLink="true">https://lrd.im/blog/2022-08-12</guid>
             <dc:creator><![CDATA[李瑞东]]></dc:creator>
             <pubDate>Thu, 11 Aug 2022 16:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[SL 图标库改良实践]]></title>
-            <description><![CDATA[公司前段时间新来了不少交互设计师， Leader 邀请我做一次网页布局相关的分享会，来帮助以往比较少界面设计经验的交互设计师能够更好地完成设计方案产出和交付。现在我将文稿记录在这里。]]></description>
+            <title><![CDATA[SHOPLINE 图标库改良实践]]></title>
+            <description><![CDATA[现在的图标库已经年久失修（虽然才一两年），我需要基于「日益发展的业务」和「不同职位设计师的诉求」来改良图标库的做法，以及优化更新图标的流程。 这篇文章主要是记录我是如何确定要做哪些改良，以及怎么落地实施的。]]></description>
             <link>https://lrd.im/blog/2022-07-16</link>
             <guid isPermaLink="true">https://lrd.im/blog/2022-07-16</guid>
             <dc:creator><![CDATA[李瑞东]]></dc:creator>
