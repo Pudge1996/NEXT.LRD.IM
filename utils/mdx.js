@@ -11,6 +11,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 
 export const POSTS_PATH = path.join(process.cwd(), "/pages/blog/posts"); //存放 mdx 文件的文件夹
+// 对多语言的支持可能需要根据语言来改变查找路径
 
 export const getSourceOfFile = (fileName) => {
   return fs.readFileSync(path.join(POSTS_PATH, fileName), "utf8");

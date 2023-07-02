@@ -9,15 +9,23 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 May 2023 13:30:18 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 02 Jul 2023 09:57:06 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 28 May 2023 13:30:18 GMT</pubDate>
+        <pubDate>Sun, 02 Jul 2023 09:57:06 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
         <item>
-            <title><![CDATA[一次 AIGC Hackathon 参赛经历和收获]]></title>
+            <title><![CDATA[面向产品设计的 Web 前端分享会（分享会记录）]]></title>
+            <description><![CDATA[最近听说部门里面的产品或本地化运营对 Web 前端相关的内容比较感兴趣，正好我有相关的实践经验，所以在公司做了一个 Web 前端相关的分享会。]]></description>
+            <link>https://lrd.im/blog/2023-07-02</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2023-07-02</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sat, 01 Jul 2023 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[记录一次 AIGC Hackathon 参赛经历和收获]]></title>
             <description><![CDATA[公司在 5 月上旬的时候举办了一场 AIGC Hackathon 比赛，我也参与到了这次 AIGC 的浪潮当中。]]></description>
             <link>https://lrd.im/blog/2023-05-28</link>
             <guid isPermaLink="true">https://lrd.im/blog/2023-05-28</guid>

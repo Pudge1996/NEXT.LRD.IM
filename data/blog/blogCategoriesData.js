@@ -20,7 +20,7 @@ const blogCategoriesData = [
       name: "分享会文稿",
       desc: "在公司的分享会我通常会准备一份文稿，正好可以放到我的博客上面。（不包含更早期没有准备文稿的分享会。）",
       url: "sharing",
-      num: "4",
+      num: "5",
     },
     {
       name: "翻译好文",
