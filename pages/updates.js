@@ -30,7 +30,7 @@ export default function updates() {
     <div className="layout updates">
       <h1 className="">What's New</h1>
       <p className="mt-3 sm:mt-6 my-1">
-        了解 LRD.IM 的的新变化，以及发展历程。
+        了解 LRD.IM 的新变化，以及发展历程。
       </p>
       <p className="flex mt-2 mb-0">
         <Link
