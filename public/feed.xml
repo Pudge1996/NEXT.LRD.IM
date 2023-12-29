@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 02 Jul 2023 09:57:06 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 Dec 2023 13:32:19 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 02 Jul 2023 09:57:06 GMT</pubDate>
+        <pubDate>Fri, 29 Dec 2023 13:32:19 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2023]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[我在 2023 年结束之前完成了一件大事]]></title>
+            <description><![CDATA[在 2023 年初的时候，我拿到一个深圳互联网公司的 Offer，当时给出了一个让我无法拒绝的待遇，我曾经想过在那里做到退休。直到年中，事情发生了变化。]]></description>
+            <link>https://lrd.im/blog/2023-12-29</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2023-12-29</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Thu, 28 Dec 2023 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[面向产品设计的 Web 前端分享会（分享会记录）]]></title>
             <description><![CDATA[最近听说部门里面的产品或本地化运营对 Web 前端相关的内容比较感兴趣，正好我有相关的实践经验，所以在公司做了一个 Web 前端相关的分享会。]]></description>
