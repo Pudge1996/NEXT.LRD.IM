@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImgList from "/data/project/ProjectImgList";
-import ProjectImage from "/components/project/ProjectImage";
+import ProjectTemplateV1 from "/components/project/ProjectTemplateV1";
 
 export default function ytscrm() {
   const title = ProjectItemData[1].projects[1].title;
@@ -13,7 +13,13 @@ export default function ytscrm() {
   )
     .map(({ images }) => images)
     .flat();
-
+  const items = [
+    { buttonName: '官网设计', imageLink: '2' },
+    { buttonName: '数据驱动', imageLink: '4' },
+    { buttonName: '表格优化', imageLink: '11' },
+    { buttonName: '搭建组件库', imageLink: '15' },
+  ];
+  
   return (
     <>
       <Head>
@@ -29,17 +35,7 @@ export default function ytscrm() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
       </Head>
-      <div className="layout project-v2 flex flex-col gap-4 md:gap-12">
-        <section className="top-info">
-          <h1 className="">{title}</h1>
-          <p className="">{desc}</p>
-        </section>
-        <section className="content">
-          {Images.map((img, index) => (
-            <ProjectImage src={img} id={index} key={index} />
-          ))}
-        </section>
-      </div>
+      <ProjectTemplateV1 title={title} desc={desc} Images={Images} items={items}/>
     </>
   );
 }

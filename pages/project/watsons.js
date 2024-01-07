@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImgList from "/data/project/ProjectImgList";
-import ProjectImage from "/components/project/ProjectImage";
+import ProjectTemplateV1 from "/components/project/ProjectTemplateV1";
 
 export default function watsons() {
   const title = ProjectItemData[0].projects[0].title;
@@ -13,7 +13,12 @@ export default function watsons() {
   )
     .map(({ images }) => images)
     .flat();
-
+    const items = [
+      { buttonName: '双十二视觉', imageLink: '1' },
+      { buttonName: '试用中心改版', imageLink: '6' },
+      { buttonName: 'BI 平台优化', imageLink: '12' },
+    ];
+  
   return (
     <>
       <Head>
@@ -29,17 +34,7 @@ export default function watsons() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
       </Head>
-      <div className="layout project-v2 flex flex-col gap-4 md:gap-12">
-        <section className="top-info">
-          <h1 className="">{title}</h1>
-          <p className="">{desc}</p>
-        </section>
-        <section className="content">
-          {Images.map((img, index) => (
-            <ProjectImage src={img} id={index} key={index} />
-          ))}
-        </section>
-      </div>
+      <ProjectTemplateV1 title={title} desc={desc} Images={Images} items={items}/>
     </>
   );
 }

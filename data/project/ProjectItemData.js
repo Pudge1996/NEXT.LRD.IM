@@ -64,6 +64,19 @@ const ProjectItemData = [
       },
     ],
   },
+  {
+    name: "ONES",
+    img: "https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/ones_logo.png",
+    url: "https://ones.cn/",
+    projects: [
+      {
+        title: "title",
+        desc: "desc",
+        img: "1",
+        url: "1",
+      },
+    ],
+  },
 ];
 
 export default ProjectItemData;

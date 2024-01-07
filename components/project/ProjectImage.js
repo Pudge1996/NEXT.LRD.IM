@@ -10,12 +10,13 @@ export default function ProjectImage({
   zoom, // 默认允许放大，需要禁止放大则填入 zoom={false}。（PS: 允许 scroll 的都需要禁止放大）
   children, // figcaption 文本
   index,
+  id,
 }) {
   const [isLoaded, setIsLoaded] = React.useState(false);
   zoom = !scroll;
   return (
     <>
-      <figure className={`${scroll === true ? "scroll" : ""} ${size === "small" ? "max-w-2xl" : ""}`} key={index}>
+      <figure className={`${scroll === true ? "scroll" : ""} ${size === "small" ? "max-w-2xl" : ""}`} key={index}  id={id}>
         <div
           className={`${
             isLoaded ? "" : "img-loading-spin"

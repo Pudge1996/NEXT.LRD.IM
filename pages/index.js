@@ -27,7 +27,7 @@ export default function index() {
                 sizes="100vw" />
             </div>
             <Link
-              href={company.url} // 待办
+              href={company.url}
               aria-label={company.name}
               target="_blank"
               rel="noopener noreferrer"
@@ -87,11 +87,11 @@ export default function index() {
         <section className="mb-14">
           <h1 className="">李瑞东</h1>
           <p className="mb-3 mt-3 sm:mt-6">
-            4 年工作经验的 UI 设计师，曾就职于欢聚集团 SHOPLINE 商家后台设计
+            5 年工作经验的 UI/UX 设计师，曾就职于 ONES 国际化业务和欢聚集团 SHOPLINE 商家后台设计
             <span className="whitespace-nowrap">团队。</span>
           </p>
           <p className="mt-3">
-            拥有国际化、App、自研组件/图标库搭建、数据可视化和体验度量等实践经验，同时也有音视频互动场景和 B / C 端跨境电商的业务
+          拥有国际化、自研组件/图标库搭建、数据可视化和体验度量等实践经验，同时也有<span className="whitespace-nowrap">大型</span>企业服务产品和跨境电商的业务
             <span className="whitespace-nowrap">背景。</span>
           </p>
           <div className="flex items-center flex-col sm:flex-row gap-3 text-lg">
@@ -130,6 +130,11 @@ export default function index() {
             作品
           </h2>
           <ProjectItems />
+        </section>
+        <section className="mt-6 sm:mt-0">
+          <h2 className="mb-3 hidden text-4xl sm:text-5xl font-semibold">
+            联系方式
+          </h2>
         </section>
       </div>
     </>
