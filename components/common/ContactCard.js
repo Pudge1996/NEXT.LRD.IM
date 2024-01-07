@@ -7,14 +7,40 @@ import Image from "next/image";
 export default function MyModal() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
+  const [buttonCopyMobile, setButtonCopyMobile] = React.useState("复制我的手机号");
+  const [buttonCopyEmail, setButtonCopyEmail] = React.useState("复制我的 Email");
   function closeModal() {
     setIsOpen(false);
   }
 
   function openModal() {
     setIsOpen(true);
+    setButtonCopyEmail('复制我的 Email');
+    setButtonCopyMobile('复制我的手机号');
   }
+  
 
+  const copyMobile = () => {
+    navigator.clipboard.writeText("18925001685")
+      .then(() => {
+        setButtonCopyMobile('已复制手机号 ✅');
+        setButtonCopyEmail('复制我的 Email');
+      })
+      .catch(err => {
+        console.error("Could not copy text: ", err);
+      });
+  };
+  const copyEmail = () => {
+    navigator.clipboard.writeText("lrdbuff@gmail.com")
+      .then(() => {
+        setButtonCopyMobile('复制我的手机号');
+        setButtonCopyEmail('已复制 Email ✅');
+      })
+      .catch(err => {
+        console.error("Could not copy text: ", err);
+      });
+  };
+  
   return (<>
     <button
       type="button"
@@ -50,7 +76,7 @@ export default function MyModal() {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Dialog.Panel className="w-64 sm:w-72  max-w-md transform overflow-hidden rounded-xl bg-color dark:border dark:border-neutral-800 p-6 text-center text-lg sm:text-[22px] shadow-xl transition-all">
+            <Dialog.Panel className="w-64 sm:w-72  max-w-md transform overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 text-center text-lg sm:text-[22px] shadow-xl transition-all">
               <div className="flex flex-col gap-3">
                 <div className={`relative flex w-full aspect-square rounded-md select-none h-full max-h-[35vh] img-loading-bg ${isLoaded ? '' : 'img-loading-spin'}`}>
                   <Image
@@ -73,6 +99,9 @@ export default function MyModal() {
                   <span className="hidden sm:block">扫一扫加我微信</span>
                   <span className="sm:hidden">长按识别加我微信</span>
                 </Dialog.Title>
+                <p className="p-0 m-0 text-tertiary text-sm">或</p>
+                <button onClick={copyMobile} className="m-0 text-tertiary text-base flex-1 btn-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800 sm:hover:bg-neutral-200 transition-colors">{buttonCopyMobile}</button>
+                <button onClick={copyEmail} className="m-0 text-tertiary text-base flex-1 btn-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800 sm:hover:bg-neutral-200 transition-colors">{buttonCopyEmail}</button>
               </div>
             </Dialog.Panel>
           </Transition.Child>
