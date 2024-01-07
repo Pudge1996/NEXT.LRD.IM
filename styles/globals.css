@@ -88,14 +88,14 @@
       section{
         @apply flex flex-col sm:flex-row gap-1 sm:gap-2 md:gap-10;
       }
-      section>p{ /* 工作时间 */
-        @apply font-medium sm:min-w-[9rem] whitespace-nowrap text-neutral-500 dark:text-neutral-400 mb-0;
+      section>h2{ /* 工作时间 */
+        @apply font-medium text-base mt-2 mb-3 text-secondary sm:min-w-[9rem] whitespace-nowrap text-neutral-500 dark:text-neutral-400 mb-0;
       }
       section>div{ /* 公司名+岗位+地点，和工作成果的组 */
         @apply flex flex-col gap-1 sm:gap-0;
       }
       section div p:first-of-type{ /* 公司名称 */
-        @apply font-semibold mb-0 sm:mb-1 mt-1 sm:mt-2 text-primary;
+        @apply font-semibold mb-0 sm:mb-1 mt-1 sm:mt-2 text-xl sm:text-base text-primary;
       }
       section div p a:first-of-type{ /* 公司名称（带有超链接的名称） */
         @apply font-semibold mb-1 no-underline text-xl sm:text-base text-primary sm:hover:text-blue-700 active:text-blue-900 sm:active:text-blue-900 dark:sm:hover:text-blue-400 dark:active:text-blue-500 dark:sm:active:text-blue-500;
