@@ -43,7 +43,7 @@ export default function me() {
         {/* 工作经验 */}
         <section className='resume-exp flex flex-col gap-6 sm:gap-8'>
         <section>
-            <p>2023.2 - 2023.8</p>    
+            <h2>2023.2 - 2023.8</h2>    
             <div>
             <div>
               <p><Link href="https://ones.cn/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES</Link></p>    
@@ -57,7 +57,7 @@ export default function me() {
             </div>
           </section>
           <section>
-            <p>2021.9 - 2022.11</p>    
+            <h2>2021.9 - 2022.11</h2>    
             <div>
             <div>
               <p><Link href="https://joyy.com/" target="_blank" rel="noopener noreferrer" title="欢聚集团官网">欢聚集团</Link></p>    
@@ -74,7 +74,7 @@ export default function me() {
             </div>
           </section>
           <section>
-            <p>2020.7 - 2021.9</p>    
+            <h2>2020.7 - 2021.9</h2>    
             <div>
             <div>
               <p><Link href="https://pc.qlchat.com/" target="_blank" rel="noopener noreferrer" title="千聊官网">千聊</Link></p>
@@ -89,7 +89,7 @@ export default function me() {
             </div>
           </section>
           <section>
-            <p>2018.3 - 2020.4</p>    
+            <h2>2018.3 - 2020.4</h2>    
             <div>
             <div>
               <p><Link href="https://www.watsons.com.cn/" target="_blank" rel="noopener noreferrer" title="屈臣氏中国官网">屈臣氏集团</Link></p>       
@@ -103,7 +103,7 @@ export default function me() {
             </div>
           </section>
           <section>
-            <p>2017.7 - 2017.9</p>    
+            <h2>2017.7 - 2017.9</h2>    
             <div>
             <div>
               <p className="text-neutral-900 dark:text-neutral-50">华南农业大学</p>    
@@ -136,7 +136,7 @@ export default function me() {
             </section>
             <section>
               <strong>英语能力</strong>
-              <p>基础读写顺畅，<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 总分 86（听 89 · 读 80 · 说 79 · 写 90）</p>
+              <p>基础读写顺畅，<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 总分 86（<span className='whitespace-nowrap'>听 89</span> · <span className='whitespace-nowrap'>读 80</span> · <span className='whitespace-nowrap'>说 79</span> · <span className='whitespace-nowrap'>写 90</span>）</p>
             </section>
             <section>
               <strong>前端实现</strong>
