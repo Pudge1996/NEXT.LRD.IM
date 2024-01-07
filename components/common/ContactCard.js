@@ -2,29 +2,32 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import React from "react";
 import Image from "next/image";
+import { IoCall, IoMail } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons/io5/
 // 个人微信的弹窗
 
 export default function MyModal() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
-  const [buttonCopyMobile, setButtonCopyMobile] = React.useState("复制我的手机号");
-  const [buttonCopyEmail, setButtonCopyEmail] = React.useState("复制我的 Email");
+  const copyMobileText = <span className="flex gap-2 justify-center items-center"><IoCall /> 复制我的手机号</span>
+  const copyMobileMail = <span className="flex gap-2 justify-center items-center"><IoMail /> 复制我的 Email</span>
+  const [buttonCopyMobile, setButtonCopyMobile] = React.useState(copyMobileText);
+  const [buttonCopyEmail, setButtonCopyEmail] = React.useState(copyMobileMail);
   function closeModal() {
     setIsOpen(false);
   }
 
   function openModal() {
     setIsOpen(true);
-    setButtonCopyEmail('复制我的 Email');
-    setButtonCopyMobile('复制我的手机号');
+    setButtonCopyMobile(copyMobileText);
+    setButtonCopyEmail(copyMobileMail);
   }
   
 
   const copyMobile = () => {
     navigator.clipboard.writeText("18925001685")
       .then(() => {
-        setButtonCopyMobile('已复制手机号 ✅');
-        setButtonCopyEmail('复制我的 Email');
+        setButtonCopyMobile('✅ 已复制手机号');
+        setButtonCopyEmail(copyMobileMail);
       })
       .catch(err => {
         console.error("Could not copy text: ", err);
@@ -33,8 +36,8 @@ export default function MyModal() {
   const copyEmail = () => {
     navigator.clipboard.writeText("lrdbuff@gmail.com")
       .then(() => {
-        setButtonCopyMobile('复制我的手机号');
-        setButtonCopyEmail('已复制 Email ✅');
+        setButtonCopyMobile(copyMobileText);
+        setButtonCopyEmail('✅ 已复制 Email');
       })
       .catch(err => {
         console.error("Could not copy text: ", err);
@@ -100,7 +103,7 @@ export default function MyModal() {
                   <span className="sm:hidden">长按识别加我微信</span>
                 </Dialog.Title>
                 <p className="p-0 m-0 text-tertiary text-sm">或</p>
-                <button onClick={copyMobile} className="m-0 text-tertiary text-base flex-1 btn-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800 sm:hover:bg-neutral-200 transition-colors">{buttonCopyMobile}</button>
+                <button onClick={copyMobile} className="w-full m-0 text-tertiary text-base flex-1 btn-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800 sm:hover:bg-neutral-200 transition-colors">{buttonCopyMobile}</button>
                 <button onClick={copyEmail} className="m-0 text-tertiary text-base flex-1 btn-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800 sm:hover:bg-neutral-200 transition-colors">{buttonCopyEmail}</button>
               </div>
             </Dialog.Panel>
