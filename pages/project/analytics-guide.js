@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImage from "/components/project/ProjectImage";
+import ProjectFooter from "/components/project/ProjectFooter";
+import ProjectNav from "/components/project/ProjectNav";
 
 export default function analyticsGuide() {
   const title = ProjectItemData[2].projects[3].title;
   const desc = ProjectItemData[2].projects[3].desc;
+  const items = [
+    { buttonName: "背景", imageLink: "0" },
+    { buttonName: "时间线", imageLink: "1" },
+    { buttonName: "调研", imageLink: "2" },
+    { buttonName: "初稿", imageLink: "3" },
+    { buttonName: "最终文档", imageLink: "4" },
+  ];
 
   return (
     <>
@@ -28,8 +36,9 @@ export default function analyticsGuide() {
           <h1 className="">{title}</h1>
           <p className="">{desc}</p>
         </section>
+        <ProjectNav items={items} />
         <section className="content">
-          <h2>背景</h2>
+          <h2 id="0">背景</h2>
           <p>
             随着 SHOPLINE
             数据基建和业务逐步发展，站内越来越多业务需要有数据概览和分析的能力。
@@ -43,13 +52,13 @@ export default function analyticsGuide() {
           <p>
             所以团队希望能沉淀出一套数据场景的设计规范文档，供各业务设计师使用时参考。
           </p>
-          <h2>时间线</h2>
+          <h2 id="1">时间线</h2>
           <ProjectImage
             src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/01.png"
             size="small"
           />
           <hr />
-          <h2>调研阶段</h2>
+          <h2 id="2">调研阶段</h2>
           <p>
             <b>1. 收集主站所有业务线的数据场景：</b>
             <br />
@@ -80,7 +89,7 @@ export default function analyticsGuide() {
           </p>
           <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/w_1920/03.png" />
           <hr />
-          <h2>初稿阶段</h2>
+          <h2 id="3">初稿阶段</h2>
           <p>
             基于当前站内的现状以及竞品资料分析，我希望文档能够帮助设计师了解：数据展示的通用规则、高频组件的使用方式、常见页面如何布局和适配等。确保数据模块的展示能够准确和一致。所以，该专项会由两个模块组成：
           </p>
@@ -109,7 +118,7 @@ export default function analyticsGuide() {
           <p>
             到了这一步，我先与组长和关键业务设计师同步当前进度，沟通中了解是否有遗漏或未覆盖到的内容。
           </p>
-          <h2>最终文档</h2>
+          <h2 id="4">最终文档</h2>
           <p>最终的产出物包括：</p>
           <ul>
             <li>指导全站的数据展示规范；</li>
@@ -130,6 +139,7 @@ export default function analyticsGuide() {
             ></iframe>
           </figure>
         </section>
+        <ProjectFooter />
       </div>
     </>
   );

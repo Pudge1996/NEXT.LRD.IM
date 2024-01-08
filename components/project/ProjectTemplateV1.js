@@ -3,8 +3,7 @@ import ProjectImage from "/components/project/ProjectImage";
 import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectNav from "/components/project/ProjectNav";
 
-export default function watsons({title, desc, Images, items}) {
-    
+export default function watsons({ title, desc, Images, items }) {
   return (
     <>
       <div className="layout project-v2 flex flex-col gap-4 md:gap-10">
@@ -12,7 +11,7 @@ export default function watsons({title, desc, Images, items}) {
           <h1 className="">{title}</h1>
           <p className="">{desc}</p>
         </section>
-          
+
         <ProjectNav items={items} />
 
         <section className="content">
@@ -21,10 +20,7 @@ export default function watsons({title, desc, Images, items}) {
           ))}
         </section>
       </div>
-      <section className="max-w-2xl mx-auto px-5 md:px-0 relative">
-        <ProjectFooter />
-    </section>
-      
+      <ProjectFooter />
     </>
   );
 }

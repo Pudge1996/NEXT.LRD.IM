@@ -13,11 +13,11 @@ export default function watsons() {
   )
     .map(({ images }) => images)
     .flat();
-    const items = [
-      { buttonName: '双十二视觉', imageLink: '1' },
-      { buttonName: '试用中心改版', imageLink: '6' },
-      { buttonName: 'BI 平台优化', imageLink: '12' },
-    ];
+  const items = [
+    { buttonName: '双十二视觉', imageLink: '1' },
+    { buttonName: '试用中心改版', imageLink: '6' },
+    { buttonName: 'BI 平台优化', imageLink: '12' },
+  ];
   
   return (
     <>
