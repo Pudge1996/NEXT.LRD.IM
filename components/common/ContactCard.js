@@ -3,15 +3,19 @@ import { Fragment } from "react";
 import React from "react";
 import Image from "next/image";
 import { IoCall, IoMail } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons/io5/
+import { FaCheck } from "react-icons/fa6"; //https://react-icons.github.io/react-icons/icons/fa6/
+
 // 个人微信的弹窗
 
 export default function MyModal() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
   const copyMobileText = <span className="flex gap-2 justify-center items-center"><IoCall /> 复制我的手机号</span>
-  const copyMobileMail = <span className="flex gap-2 justify-center items-center"><IoMail /> 复制我的 Email</span>
+  const copyMailText = <span className="flex gap-2 justify-center items-center"><IoMail /> 复制我的 Email</span>
+  const copyMobileTextSucceed = <span className="flex gap-2 justify-center items-center"><FaCheck /> 已复制手机号</span>
+  const copyMailTextSucceed = <span className="flex gap-2 justify-center items-center"><FaCheck /> 已复制 Email</span>
   const [buttonCopyMobile, setButtonCopyMobile] = React.useState(copyMobileText);
-  const [buttonCopyEmail, setButtonCopyEmail] = React.useState(copyMobileMail);
+  const [buttonCopyEmail, setButtonCopyEmail] = React.useState(copyMailText);
   function closeModal() {
     setIsOpen(false);
   }
@@ -19,15 +23,15 @@ export default function MyModal() {
   function openModal() {
     setIsOpen(true);
     setButtonCopyMobile(copyMobileText);
-    setButtonCopyEmail(copyMobileMail);
+    setButtonCopyEmail(copyMailText);
   }
   
 
   const copyMobile = () => {
     navigator.clipboard.writeText("18925001685")
       .then(() => {
-        setButtonCopyMobile('✅ 已复制手机号');
-        setButtonCopyEmail(copyMobileMail);
+        setButtonCopyMobile(copyMobileTextSucceed);
+        setButtonCopyEmail(copyMailText);
       })
       .catch(err => {
         console.error("Could not copy text: ", err);
@@ -37,7 +41,7 @@ export default function MyModal() {
     navigator.clipboard.writeText("lrdbuff@gmail.com")
       .then(() => {
         setButtonCopyMobile(copyMobileText);
-        setButtonCopyEmail('✅ 已复制 Email');
+        setButtonCopyEmail(copyMailTextSucceed);
       })
       .catch(err => {
         console.error("Could not copy text: ", err);
