@@ -148,7 +148,7 @@ export default function ProjectNav({ items }) {
                 <Link
                   href={`#${item.imageLink}`}
                   data-index={item.imageLink}
-                  className={`${highlightedIndex === index ? 'text-primary font-medium bg-neutral-200 dark:bg-neutral-800' : 'text-tertiary'} flex-1 text-center btn-base hover:text-primary hover:no-underline btn-md sm:btn-lg sm:text-base sm:py-1 sm:px-3 sm:rounded relative transition-colors`}
+                  className={`${highlightedIndex === index ? 'text-primary font-medium bg-neutral-200 dark:bg-neutral-800' : 'text-tertiary sm:font-normal'} flex-1 text-center btn-base hover:text-primary hover:no-underline btn-md sm:btn-lg text-base sm:py-1 sm:px-3 sm:rounded relative transition-colors`}
                 >
                   {item.buttonName}
                 </Link>
