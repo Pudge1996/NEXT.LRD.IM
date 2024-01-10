@@ -108,9 +108,9 @@ export default function appSubscription() {
             <thead>
               <tr>
                 <th className="w-[100px]">功能</th>
-                <th className="w-max-[350px]">JIRA</th>
-                <th className="w-max-[350px]">Monday</th>
-                <th className="w-max-[350px]">Shopify</th>
+                <th className="w-[350px] w-min-[250px]">JIRA</th>
+                <th className="w-[350px] w-min-[250px]">Monday</th>
+                <th className="w-[350px] w-min-[250px]">Shopify</th>
               </tr>
             </thead>
             <tbody>
