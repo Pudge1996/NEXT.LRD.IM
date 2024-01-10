@@ -10,7 +10,7 @@ export default function ProjectFooter() {
           <div className="text-lg font-semibold">李瑞东</div>
           <div className="text-secondary">
             <span>
-              5 年工作经验的 UI/UX 设计师，拥有<strong>国际化</strong>、
+              5 年工作经验的 UI/UX 设计师，拥有 <strong>国际化 SaaS</strong>、
               <strong>自研组件/图标库搭建</strong>、<strong>数据可视化</strong>
               和<strong>体验度量</strong>
               等实践经验，同时也有大型企业服务产品和跨境电商的业务
