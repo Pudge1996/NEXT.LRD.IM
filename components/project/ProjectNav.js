@@ -140,8 +140,8 @@ export default function ProjectNav({ items }) {
     );
   } else {
     return (
-      <nav className="sticky top-[52px] z-[1]">
-        <ul className="w-fit flex items-center m-auto mt-0 sm:mt-4 justify-center gap-1 p-1 rounded-md bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-colors">
+      <nav className="sticky top-[52px] z-[1] w-fit mx-auto">
+        <ul className="w-fit flex items-center mt-0 sm:mt-4 justify-center gap-1 p-1 rounded-md bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-colors">
           {items.map((item, index) => {
             return(
                 <><li className="flex" key={index}>
