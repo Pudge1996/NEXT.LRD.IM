@@ -396,9 +396,55 @@
     }
     figcaption{ /* 图片描述 */
         @apply text-center text-secondary block text-sm mt-2 leading-tight md:leading-relaxed mx-auto max-w-2xl;
+        a{
+          @apply underline hover:no-underline;
+        }
       }
     figure.scroll{
       @apply h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll w-fit;
+    }
+  }
+  
+  table{ /* 表格 */ 
+    @apply mx-auto border-collapse border-spacing-0 table-auto text-sm;
+    /* thead{ /* 表头 
+      @apply sticky top-[60px];
+    } 
+    */
+    td{ /* 所有单元格 */
+      @apply text-sm break-words;
+      a{
+        @apply link-color;
+      }
+      code{
+        @apply mx-1 px-1 py-[2px] border bg-neutral-100 border-neutral-300 dark:bg-neutral-800 dark:border-neutral-600 rounded  transition-colors text-sm;
+      }
+      ul{
+        @apply text-sm leading-5 py-0 my-0 !important;
+        li{
+          @apply my-1 !important;
+        }
+      }
+    }
+    td[align="right"]{
+      @apply whitespace-nowrap;
+    }
+    th, td{
+      @apply py-2 px-2 sm:px-4 border border-neutral-200 dark:border-neutral-800 min-w-[136px] sm:min-w-fit;
+    }
+    th{ /* 表头单元格 */
+      @apply text-sm bg-neutral-100 dark:bg-neutral-900 break-keep after:bg-neutral-200 dark:after:bg-neutral-800;
+    }
+    th::after{ /* 表头单元格，吸顶后的底部描边 */
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -.5px;
+      width: 100%;
+      height: 1px;
+    }
+    tbody tr:nth-child(even){
+      @apply bg-neutral-100 dark:bg-neutral-900;
     }
   }
 
@@ -486,6 +532,8 @@ span a[target="_blank"]:hover::after,
 span a[target="_blank"]:focus::after,
 li a[target="_blank"]:hover::after,
 li a[target="_blank"]:focus::after,
+figure ~ figcaption a[target="_blank"]:hover::after,
+figure ~ figcaption a[target="_blank"]:focus::after,
 .force-link:hover::after,
 .force-link:focus::after {
   content: "";

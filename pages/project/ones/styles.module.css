@@ -1,0 +1,25 @@
+.container {
+    section{
+        p, ul{
+            @apply my-1 text-base !important;
+        }
+        ul{
+        @apply pl-6 !important;
+        }
+        b{
+            @apply my-1 text-lg font-bold !important;
+        }
+    }
+}
+.mask::after {
+    content: "";
+    display: block;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    height: 100px; /* 遮罩矩形的高度 */
+    background: linear-gradient(to bottom, transparent, white); /* 垂直渐变 */
+    pointer-events: none; /* 防止遮挡点击 */
+}
+
+

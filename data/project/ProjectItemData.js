@@ -40,13 +40,13 @@ const ProjectItemData = [
     projects: [
       {
         title: "SHOPLINE App 组件库构建",
-        desc: "再一次主导构建设计规范/组件时，这次我加入了国际化、设计模式、协作等考量维度。",
+        desc: "再一次主导构建设计规范/组件时，我加入了国际化、设计模式、团队协作等考量。",
         img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/slapp-components/thumbnail.png",
         url: "/project/slapp-components",
       },
       {
         title: "数据中心改版方案",
-        desc: "我在屏效布局优化中的设计策略，解决难题的过程和用到的方法。及后续数据的反馈。",
+        desc: "我在屏效布局优化中的设计策略、解决难题的过程和用到的方法。及后续数据的反馈。",
         img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics/thumbnail.png",
         url: "/project/analytics",
       },
@@ -58,7 +58,7 @@ const ProjectItemData = [
       },
       {
         title: "数据体验标准化实践",
-        desc: "了解指导站内数十条个业务域的数据规范探索的过程，以及最终呈现。",
+        desc: "了解我如何探索并制定指导平台内数十条业务的数据展示规范。",
         img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/thumbnail.png",
         url: "/project/analytics-guide",
       },
@@ -70,10 +70,16 @@ const ProjectItemData = [
     url: "https://ones.cn/",
     projects: [
       {
-        title: "title",
-        desc: "desc",
-        img: "1",
-        url: "1",
+        title: "应用中心订阅功能流程设计",
+        desc: "查看 ONES 应用订阅功能流程设计，了解我如何处理涉及多角色的业务。",
+        img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/thumbnail.png",
+        url: "/project/ones/app-subscription",
+      },
+      {
+        title: "应用中心订阅功能流程设计",
+        desc: "查看 ONES 应用订阅功能流程设计，了解我是如何处理涉及多角色的业务。",
+        img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/thumbnail.png",
+        url: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/thumbnail.png",
       },
     ],
   },
