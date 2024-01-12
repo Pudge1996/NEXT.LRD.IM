@@ -390,6 +390,9 @@
       iframe{
         @apply h-[285px] sm:h-[585px] max-h-[50vh] img-loading-bg border dark:border-none rounded-lg;
       }
+      video{
+        @apply rounded-lg;
+      }
     }
     img{
       @apply my-0 mx-auto;
