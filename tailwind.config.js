@@ -13,6 +13,10 @@ module.exports = {
       screens: {
         'sm': '490px',
       },
+      backgroundImage: {
+        'white-b': 'linear-gradient(to bottom, transparent, white)',
+        'black-b': 'linear-gradient(to bottom, transparent, black)',
+      },
     },
   },
   plugins: [

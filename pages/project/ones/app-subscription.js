@@ -6,45 +6,30 @@ import ProjectImage from "/components/project/ProjectImage";
 import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectNav from "/components/project/ProjectNav";
 import styles from './styles.module.css'
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
+
 
 export default function appSubscription() {
+  // const showTableButton = <><FaAngleDown />展开表格</>;
+  // const hideTableButton = <><FaAngleUp />收起表格</>;
   const [tableShow, setTableShow] = React.useState('展开表格');
+  const [tableIcon, setTableIcon] = React.useState(<FaAngleDown />);
   const [tableHight, setTableHeight] = React.useState('h-[300px]');
   const [isMaskVisible, setIsMaskVisible] = React.useState(true);
-  const [elementHeight, setElementHeight] = React.useState(null);
   const elementRef = React.useRef(null);
   const closedTableRef = React.useRef(null);
-  const updateElementHeight = () => {
-    if (elementRef.current) {
-      const height = elementRef.current.clientHeight;
-      setElementHeight(height);
-    }
-  };
-
-  React.useEffect(() => {
-    // 初始化时计算一次高度
-    updateElementHeight();
-
-    // 添加窗口大小改变时的监听器
-    window.addEventListener('resize', updateElementHeight);
-
-    // 清除监听器以防止内存泄漏
-    return () => {
-      window.removeEventListener('resize', updateElementHeight);
-    };
-  }, []);
-  const tableTrueHeight = `h-[${elementHeight}px]`;
   const handleClick = () => {
     if (tableShow === '展开表格') {
-      setTableShow('收起');
-      setTableHeight(tableTrueHeight);
-      setIsMaskVisible(!isMaskVisible)
+      setTableShow('收起表格');
+      setTableHeight('h-auto');
+      setIsMaskVisible(!isMaskVisible);
+      setTableIcon(<FaAngleUp />);
     } else {
       setTableShow('展开表格');
       setTableHeight('h-[300px]');
-      setIsMaskVisible(!isMaskVisible)
+      setIsMaskVisible(!isMaskVisible);
+      setTableIcon(<FaAngleDown />);
       // 在else分支中聚焦到DOM元素
-    const closedTable = document.getElementById('closedTable');
     if (closedTableRef.current) {
       closedTableRef.current.scrollIntoView({ behavior: 'auto' });
     }
@@ -83,7 +68,6 @@ export default function appSubscription() {
         <ProjectNav items={items} />
         <section className="content">
           <h2 id="0">背景</h2>
-          <p>{tableTrueHeight}</p>
           <p>
             ONES
             是一款企业级研发管理平台，提供全面的项目管理和流程优化解决方案。平台内的应用商店专门为
@@ -103,11 +87,11 @@ export default function appSubscription() {
           <p>
             在需求前期，我针对核心功能的交互体验及遇到的主要设计挑战进行竞品资料整理及聚合分析，分析对象包含 ONES 的直接竞品 JIRA 和 Monday，同时也有其他体量较大的 SaaS 公司如 Shopify。
           </p>
-          <div className={`${tableHight} ${isMaskVisible ? styles.mask : ''} transition-[height] w-full mx-auto overflow-x-auto overflow-y-hidden relative`}>
-          <table ref={elementRef} className="table-fixed">
+          <div className={`${tableHight} ${isMaskVisible ? styles.mask : ''} after:bg-white-b after:dark:bg-black-b transition-[height] w-full mx-auto overflow-x-auto overflow-y-hidden relative`}>
+          <table ref={elementRef} className={`${styles.table} table-fixed`}>
             <thead>
               <tr>
-                <th className="w-[100px]">功能</th>
+                <th className="w-[100px]" ref={closedTableRef}>功能</th>
                 <th className="w-[350px] w-min-[250px]">JIRA</th>
                 <th className="w-[350px] w-min-[250px]">Monday</th>
                 <th className="w-[350px] w-min-[250px]">Shopify</th>
@@ -122,7 +106,7 @@ export default function appSubscription() {
               </tr>
               <tr>
                 <td>试用</td>
-                <td>交互方式：弹窗<br />展示应用基础信息：<ul><li>名称、开发者、评分、下载量</li><li>应用描述</li><li>安装即同意政策和条款</li></ul>操作：App详情、开始试用、取消<br />试用期间不能进行付费订阅</td>
+                <td>交互方式：弹窗<br />展示应用基础信息：<ul><li>名称、开发者、评分、下载量</li><li>应用描述</li><li >安装即同意政策和条款</li></ul>操作：App详情、开始试用、取消<br />试用期间不能进行付费订阅</td>
                 <td>交互方式：当前页面，全屏弹窗<br />展示安装信息：<ul><li>所需权限</li><li>应用描述</li><li>安装即同意政策和条款</li></ul>操作：安装、取消<br />试用期间可以进行付费订阅</td>
                 <td>交互方式：跳转页面<br />展示安装信息：<ul><li>所需权限</li><li>安装即同意政策和条款</li></ul>操作：App详情、安装、取消<br />试用期间可以进行付费订阅</td>
               </tr>
@@ -156,7 +140,7 @@ export default function appSubscription() {
           {/* <div className={styles.mask}></div> */}
           </div>
           
-          <div className="w-full" ref={closedTableRef}><button onClick={handleClick} className="block text-secondary text-base sm:text-sm btn-base btn-md min-w-[76px] mt-2 mx-auto font-medium">{tableShow}</button></div>
+          <div className="w-full" ><button onClick={handleClick} className="flex gap-1 items-center text-secondary text-base sm:text-sm btn-base btn-md min-w-[76px] mt-2 mx-auto font-medium">{tableIcon}{tableShow}</button></div>
           <p>
           根据分析对比的结果，再结合 ONES 平台的特点以及本次需求的业务目标，可以为设计决策提供一些依据，比如：
           </p>
@@ -198,7 +182,7 @@ export default function appSubscription() {
           <p>
             下面展示我们方案概况，重点描述符合我们预期的方案，如何提供更好的用户体验和达到业务目标。
           </p>
-          <ProjectImage src="1" />
+          <ProjectImage src="1">*注：当时 ONES 要求工作中用英文交付设计稿。</ProjectImage>
           <h3>1. 用户体验的平滑过渡</h3>
           <p>
             应用支持付费订阅模式后，系统会给所有用户一个14天的试用期予以过渡，主要影响到以下两类用户：
@@ -232,10 +216,18 @@ export default function appSubscription() {
           <p>
             <b>安装应用前的提示</b>
             <br />
-            用户下一次尝试安装该应用时会出现试用期相关的提示，并需要勾选同意我们的条款和策略方可进入为期
-            14 天的试用期。
+            用户下一次尝试安装该应用时会出现试用期相关的提示，并需要勾选同意我们的条款和策略方可进入为期 14 天的试用期（同时颁发试用许可）。而由于应用可以被安装或被卸载，所以我对有试用许可但未安装应用情况下的弹窗做了差异化。
           </p>
-          <ProjectImage src="1" size="small" />
+          <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
+          <section><ProjectImage
+            src="/P/4-2.png"
+            size="small"
+          >初次试用（颁发试用许可）</ProjectImage></section>
+          <section><ProjectImage
+            src="/P/4-3.png"
+            size="small"
+          >卸载后重新安装（不涉及应用许可变更）</ProjectImage></section>
+          </section>
           <p>
             <b>系统常驻试用结束提示</b>
             <br />
@@ -244,49 +236,63 @@ export default function appSubscription() {
           <p>
             期间尝试了多种布局样式和交互形式。最终综合各方面因素（用户体验连贯性、用户习惯、交互成本和开发成本等）选取了顶部常驻的形式。
           </p>
-          <ProjectImage src="1" />
+          <ProjectImage
+            src="/P/4-4.png"
+          />
           <p>
             在实践中观察到这种提示与页面渲染完成时间并不同步——即先完成页面大体的框架和布局渲染后，再根据条件判断是否出现试用结束提示——所以有可能出现
             <a
-              href="http://localhost:3000/blog/2023-07-02#%E7%BD%91%E9%A1%B5%E6%80%A7%E8%83%BD"
+              href="https://web.dev/articles/cls"
               target="_blank"
             >
               布局偏移
             </a>
             的现象。为了避免此现象，我设计了一个简单的出现动画。
           </p>
-          <ProjectImage src="1" size="small">
-            *这种策略在{" "}
+          
+          <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
+          <section><ProjectImage src="/P/4-5.mp4" type="video" size="small">
+            布局偏移可能会影响用户操作
+          </ProjectImage></section>
+          <section><ProjectImage src="/P/4-6.mp4" type="video" size="small">
+            加入出现动画（这个策略在{" "}
             <a href="1" target="_blank">
               Aftership
             </a>{" "}
-            里也出现过。
-          </ProjectImage>
+            里也出现过）
+          </ProjectImage></section>
+          </section>
           <h2>高效便捷的支付流程</h2>
           <p>
             在订阅和续费的过程中会涉及到支付流程。为了更好地达到商业化目标，我们在支付流程中做了个性化推荐，根据用户的历史行为来展示推荐内容。
           </p>
           <p>
-            <b>当前没有付费订阅的应用</b>
+            <b>存在其他可订阅应用</b>
             <br />
-            对于当前当前没有付费订阅的应用的用户，我们提供支付方式选项：年付或月付。由于这些应用通常是可以互相联动和互补的，所以我们也对此类用户展示推荐应用捆绑包。
+            在 ONES 系统里，同一类型应用是通常是可以联动使用的，比如：
           </p>
-          <ProjectImage src="1" />
-          <p>
-            <b>当前已有付费订阅的应用</b>
-            <br />
-            在进入结算页面之前展示一个列表，里面列出其他可订阅应用，便于用户按需订阅。
-          </p>
+          <ul>
+            <li>DevOps 相关应用：Pipeline（流水线）、 Code Integration（代码集成）和 Bitbucket 连接器；</li>
+            <li>知识库协同相关应用：Wiki（文档）和 Xmind（思维导图）。</li>
+          </ul>
+          <p>所以如果当前用户帐号内有其他可订阅应用，我们会在结算之前——即支付页面（或者叫购物车页面）——提供一个应用列表给用户选购。</p>
+          <ProjectImage
+            src="/P/4-7.png"
+            size="small"
+          >在支付流程加入可选购的应用列表</ProjectImage>
           <p>
             同时我们也对列表顺序进行了设计，根据用户当前选择续费的应用，优先展示与该应用相关的其他应用。
           </p>
-          <ProjectImage src="1" />
+          <ProjectImage
+            src="/P/4-8.png"
+            size="small"
+          >可根据用户当前选择续费的应用而改变顺序的列表</ProjectImage>
           <p>
             <b>仅剩下该应用没有订阅</b>
             <br />
-            直接进入结算页走结算流程。
+            如果当前用户帐号内已经没有其他可订阅应用了（可能是正在订阅中，或者手动取消订阅等多种原因形成），那么将直接进入结算页走结算流程。
           </p>
-          <ProjectImage src="1" size="small" />
+          <ProjectImage src="/P/4-9.png" size="small" />
           <h2 id="4">系统思维</h2>
           <p>
             接下来的这一部份不涉及到设计图，主要是分享一些我在处理这种涉及多角色业务的流程设计时的思考方式以及锻炼到的能力。
@@ -349,9 +355,22 @@ export default function appSubscription() {
             所以——回到具体的表现——培养起这种系统思维的能力之后，我的设计方案会比以往有些不同：增加了各个流程对状态转换的描述，以及适当地使用
             “状态机”。
           </p>
-          <ProjectImage src="1" />
+          <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
+          <section><ProjectImage
+            src="/P/5-2.png"
+            size="small"
+          >流程中对状态变更的描述</ProjectImage></section>
+          <section><ProjectImage
+            src="/P/5-3.png"
+            size="small"
+          >流程中对状态变更的描述</ProjectImage></section>
+          <section><ProjectImage
+            src="/P/5-4.png"
+            size="small"
+          >状态机图示</ProjectImage></section>
+          </section>
           <h2 id="5">项目收获</h2>
-          <p>在支持应用付费的过程中，我的主要收获包括</p>
+          <p>在支持应用付费的过程中，我的主要收获包括：</p>
           <ul>
             <li>
               学会从新角度审视设计方案，超越以往仅针对单一角色的设计思维；

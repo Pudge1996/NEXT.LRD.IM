@@ -1,25 +1,43 @@
 .container {
-    section{
-        p, ul{
-            @apply my-1 text-base !important;
+        figure{
+            @apply mt-0 !important;
         }
-        ul{
-        @apply pl-6 !important;
-        }
-        b{
-            @apply my-1 text-lg font-bold !important;
+        section{
+            p, ul{
+                @apply my-1 text-base !important;
+            }
+            ul{
+            @apply pl-6 !important;
+            }
+            b{
+                @apply my-1 text-lg font-bold !important;
+            }
         }
     }
-}
-.mask::after {
-    content: "";
-    display: block;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    height: 100px; /* 遮罩矩形的高度 */
-    background: linear-gradient(to bottom, transparent, white); /* 垂直渐变 */
-    pointer-events: none; /* 防止遮挡点击 */
-}
-
-
+    
+    .table{
+        ul{
+            @apply pl-6 md:pl-8 my-1 !important;
+            li{
+                @apply my-0 !important;
+            }
+        }
+    }
+    
+    .mask::after {
+        content: "";
+        display: block;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        height: 100px; /* 遮罩矩形的高度 */
+        pointer-events: none; /* 防止遮挡点击 */
+    }
+    
+    /* .mask{
+        @apply after:bg-white-b after:dark:bg-black-b;
+    } */
+    
+    /* .mask::after {
+        background-image: linear-gradient(to bottom, transparent, black); 
+    } */
