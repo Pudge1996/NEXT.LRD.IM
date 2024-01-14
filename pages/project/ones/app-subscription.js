@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImage from "/components/project/ProjectImage";
@@ -40,10 +41,9 @@ export default function appSubscription() {
   const items = [
     { buttonName: "背景", imageLink: "0" },
     { buttonName: "竞品分析", imageLink: "1" },
-    { buttonName: "逻辑梳理", imageLink: "2" },
-    { buttonName: "方案概况", imageLink: "3" },
-    { buttonName: "系统思维", imageLink: "4" },
-    { buttonName: "项目收获", imageLink: "5" },
+    { buttonName: "方案概况", imageLink: "2" },
+    { buttonName: "系统思维", imageLink: "3" },
+    { buttonName: "项目收获", imageLink: "4" },
   ];
 
   return (
@@ -70,7 +70,7 @@ export default function appSubscription() {
           <h2 id="0">背景</h2>
           <p>
             ONES
-            是一款企业级研发管理平台，提供全面的项目管理和流程优化解决方案。平台内的应用商店专门为
+            是一款企业级研发管理平台，提供全面的项目管理和流程优化解决方案。平台内的应用中心专门为
             ONES
             用户提供各种插件和应用，包括流程自动化、流水线工具、飞书/钉钉连接器等，旨在扩展
             ONES 的功能，从而帮助用户更高效地管理项目和流程。
@@ -126,7 +126,7 @@ export default function appSubscription() {
                 <td>取消订阅</td>
                 <td>交互方式：弹窗<br />告知取消订阅的后果<br />取消订阅后，提供恢复订阅和卸载应用的入口</td>
                 <td>不支持单独取消订阅<br />只能在卸载应用的同时取消订阅</td>
-                <td>？？？</td>
+                <td>在应用内部完成</td>
               </tr>
               <tr>
                 <td>总结差异</td>
@@ -150,18 +150,6 @@ export default function appSubscription() {
             <li>Shopify 在卸载应用时会出现简单表单允许用户提交一些反馈给开发者。ONES 也可以在退订或卸载流程中做一些策略，但由于应用中心内都是自研应用，具体策略会和 Shopify 不一样。</li>
             <li>...</li>
           </ul>
-          <h2 id="2">逻辑梳理</h2>
-          <p>
-            由于此需求涉及多个业务模块、多个角色以及不同的 ONES
-            版本，功能覆盖广泛。作为新同事，这里面有一些旧逻辑（或以前埋下的坑）我是没有接触过的。
-          </p>
-          <p>
-            所以在开始具体设计工作之前，我尝试去梳理相关业务逻辑，并针对一些关键点进行了预先的提问和记录，这样便于之后与
-            PM
-            及设计团队进行深入沟通和方案探讨。除此之外，在分析业务逻辑的过程中，我还补充了一些产品经理未涉及的边缘场景。
-          </p>
-          <p>下面是对业务逻辑的初步梳理草图。</p>
-          <ProjectImage src="1" />
           <p>结合上述的资料，在该项目的设计过程中需要关注以下几点：</p>
           <p>
             <b>1. 用户体验的平滑过渡</b>
@@ -174,15 +162,26 @@ export default function appSubscription() {
             结合业务目标设计支付流程，在支持个性化推荐和减少付费阻碍中找到平衡。
           </p>
           <p>
-            <b>3. 取消订阅和重新订阅的流程</b>
+            <b>3. 取消订阅流程</b>
             <br />
             清晰的取消订阅流程，可以帮助维护品牌的正面形象，减少客户焦虑情绪。
           </p>
-          <h2 id="3">方案概况</h2>
+          <h2 id="2">方案概况</h2>
           <p>
-            下面展示我们方案概况，重点描述符合我们预期的方案，如何提供更好的用户体验和达到业务目标。
+            下面展示我们方案概况，重点描述在流程中设计师如何提供更好的用户体验和帮助达到业务目标。
           </p>
-          <ProjectImage src="1">*注：当时 ONES 要求工作中用英文交付设计稿。</ProjectImage>
+          <figure className="relative w-full h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll bg-neutral-100 rounded-lg">
+            <div className="w-[2240px] h-[1056px] overflow-x-auto overflow-y-hidden">
+              <Image
+                src="/P/4-0.png"
+                alt="方案概况，可滚动查看"
+                width={2240}
+                height={1056}
+                style={{objectFit: "cover", overflow: 'scroll'}}
+              />
+            </div>
+          </figure>
+            <figcaption>展示主要的运作流程，可滚动查看图片。（当时公司要求用英文做设计稿）</figcaption>
           <h3>1. 用户体验的平滑过渡</h3>
           <p>
             应用支持付费订阅模式后，系统会给所有用户一个14天的试用期予以过渡，主要影响到以下两类用户：
@@ -190,10 +189,10 @@ export default function appSubscription() {
           <ul>
             <li>未安装该应用（在下一次安装时会提供 14 天试用期）</li>
             <li>
-              已安装该应用（颁发一个“试用 License”，直接提供 14 天试用期）
+              已安装该应用（颁发一个“试用许可”，直接提供 14 天试用期）
             </li>
           </ul>
-          <p>依据用户当前的状态，我们主要使用以下策略来使过渡期的体验更平滑：</p>
+          <p>依据用户当前的状态，我们主要使用以下三种策略来使过渡期的体验更平滑：</p>
           <ProjectImage
             src="/P/4-1.png"
             size="small"
@@ -216,7 +215,7 @@ export default function appSubscription() {
           <p>
             <b>安装应用前的提示</b>
             <br />
-            用户下一次尝试安装该应用时会出现试用期相关的提示，并需要勾选同意我们的条款和策略方可进入为期 14 天的试用期（同时颁发试用许可）。而由于应用可以被安装或被卸载，所以我对有试用许可但未安装应用情况下的弹窗做了差异化。
+            用户在初次安装该应用时会出现试用期相关的提示，并需要勾选同意我们的条款和策略方可进入为期 14 天的试用期（同时颁发试用许可）。而由于应用可以被安装或被卸载，所以我对有试用许可但未安装应用情况下的弹窗做了差异化。
           </p>
           <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
           <section><ProjectImage
@@ -247,7 +246,7 @@ export default function appSubscription() {
             >
               布局偏移
             </a>
-            的现象。为了避免此现象，我设计了一个简单的出现动画。
+            的现象。为了尽可能避免布局偏移导致的误操作，我加入了一个简单的出现动画。
           </p>
           
           <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
@@ -262,7 +261,7 @@ export default function appSubscription() {
             里也出现过）
           </ProjectImage></section>
           </section>
-          <h2>高效便捷的支付流程</h2>
+          <h3>2. 高效便捷的支付流程</h3>
           <p>
             在订阅和续费的过程中会涉及到支付流程。为了更好地达到商业化目标，我们在支付流程中做了个性化推荐，根据用户的历史行为来展示推荐内容。
           </p>
@@ -276,10 +275,22 @@ export default function appSubscription() {
             <li>知识库协同相关应用：Wiki（文档）和 Xmind（思维导图）。</li>
           </ul>
           <p>所以如果当前用户帐号内有其他可订阅应用，我们会在结算之前——即支付页面（或者叫购物车页面）——提供一个应用列表给用户选购。</p>
-          <ProjectImage
+          {/* <ProjectImage
             src="/P/4-7.png"
             size="small"
-          >在支付流程加入可选购的应用列表</ProjectImage>
+          >在支付流程加入可选购的应用列表</ProjectImage> */}
+          <figure className="relative w-full h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll bg-neutral-100 rounded-lg">
+            <div className="w-[2240px] h-[360px] overflow-x-auto overflow-y-hidden">
+              <Image
+                src="/P/4-7.png"
+                alt="在支付流程加入可选购的应用列表"
+                width={2240}
+                height={360}
+                style={{objectFit: "cover", overflow: 'scroll'}}
+              />
+            </div>
+          </figure>
+            <figcaption>在支付流程加入可选购的应用列表（横向滚动查看）</figcaption>
           <p>
             同时我们也对列表顺序进行了设计，根据用户当前选择续费的应用，优先展示与该应用相关的其他应用。
           </p>
@@ -292,8 +303,28 @@ export default function appSubscription() {
             <br />
             如果当前用户帐号内已经没有其他可订阅应用了（可能是正在订阅中，或者手动取消订阅等多种原因形成），那么将直接进入结算页走结算流程。
           </p>
-          <ProjectImage src="/P/4-9.png" size="small" />
-          <h2 id="4">系统思维</h2>
+          {/* <ProjectImage src="/P/4-9.png" size="small" /> */}
+          <figure className="relative w-full h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll bg-neutral-100 rounded-lg">
+            <div className="w-[1708px] h-[360px] overflow-x-auto overflow-y-hidden">
+              <Image
+                src="/P/4-9.png"
+                alt="在支付流程加入可选购的应用列表"
+                width={1708}
+                height={360}
+                style={{objectFit: "cover", overflow: 'scroll'}}
+              />
+            </div>
+          </figure>
+          <p></p>
+          <h3>3. 取消订阅流程</h3>
+          <p>
+          用户取消订阅意味着一个曾经为此付费过的用户不再继续为该应用付费，这是一个很好的信号表明我们提供的服务距离用户预期还有一段距离，同时也是一个很好的机会给我们持续改进体验。
+          </p>
+          <p>
+          所以我在用户取消订阅的二次确认弹窗中增加了一个接收用户反馈的机会。这样，即便真的流失了一个用户，我们也能从中获取到一些东西来帮助我们改进产品体验。
+          </p>
+          <ProjectImage src="/P/4-10.png" size="small" />
+          <h2 id="3">系统思维</h2>
           <p>
             接下来的这一部份不涉及到设计图，主要是分享一些我在处理这种涉及多角色业务的流程设计时的思考方式以及锻炼到的能力。
           </p>
@@ -369,7 +400,7 @@ export default function appSubscription() {
             size="small"
           >状态机图示</ProjectImage></section>
           </section>
-          <h2 id="5">项目收获</h2>
+          <h2 id="4">项目收获</h2>
           <p>在支持应用付费的过程中，我的主要收获包括：</p>
           <ul>
             <li>

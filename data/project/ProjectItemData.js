@@ -46,7 +46,7 @@ const ProjectItemData = [
       },
       {
         title: "数据中心改版方案",
-        desc: "我在屏效布局优化中的设计策略、解决难题的过程和用到的方法。及后续数据的反馈。",
+        desc: "我在屏效布局优化中的设计策略、解决难题的过程和用到的方法，以及相关数据反馈。",
         img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics/thumbnail.png",
         url: "/project/analytics",
       },
@@ -70,17 +70,12 @@ const ProjectItemData = [
     url: "https://ones.cn/",
     projects: [
       {
-        title: "应用中心订阅功能流程设计",
-        desc: "查看 ONES 应用订阅功能流程设计，了解我如何处理涉及多角色的业务。",
-        img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/thumbnail.png",
+        title: "ONES 应用支持订阅",
+        desc: "通过该体验设计项目，了解我如何找到设计机会点并使用系统思维解决问题。",
+        img: "/P/thumbnail.png",
         url: "/project/ones/app-subscription",
       },
-      {
-        title: "应用中心订阅功能流程设计",
-        desc: "查看 ONES 应用订阅功能流程设计，了解我是如何处理涉及多角色的业务。",
-        img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/thumbnail.png",
-        url: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/analytics-guide/thumbnail.png",
-      },
+      
     ],
   },
 ];
