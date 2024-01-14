@@ -47,11 +47,11 @@ export default function me() {
             <div>
             <div>
               <p><Link href="https://ones.cn/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES</Link></p>    
-              <p>UI/UX 设计师，深圳</p>    
+              <p>B 端 UI/UX 设计师，深圳</p>    
             </div>
             <ul>
-              <li>负责 ONES 国际化业务体验设计，包含新用户引导流程、应用商店付费流程优化及系统多语言功能等功能的持续迭代等；</li>  
-              <li>负责团队协同与任务管理工具 <Link href="https://ones.cn/products/task" target="_blank" rel="noopener noreferrer" title="ONES Task 产品介绍页">ONES Task</Link> 的前期需求挖掘和迭代，涉及 Design&nbsp;Token 实践和权限系统改造等；</li>  
+              <li>负责 ONES 国际化业务体验设计，包含新用户引导流程、应用商店付费流程优化及系统多语言功能等功能的持续迭代；</li>  
+              <li>负责团队协同与任务管理工具 <Link href="https://ones.cn/products/task" target="_blank" rel="noopener noreferrer" title="ONES Task 产品介绍页">ONES Task</Link> 的前期需求挖掘和迭代，涉及权限系统改造和 Design&nbsp;Token 实践等；</li>  
               <li>发起部门分享会，分享内容包含：竞品本地化设计策略分析、网页性能优化等。</li>
             </ul>    
             </div>
@@ -61,7 +61,7 @@ export default function me() {
             <div>
             <div>
               <p><Link href="https://joyy.com/" target="_blank" rel="noopener noreferrer" title="欢聚集团官网">欢聚集团</Link></p>    
-              <p>UI 设计师，广州</p>    
+              <p>B 端 UI 设计师，广州</p>    
             </div>
             <ul>
               <li>独立负责 <Link href="https://shoplineapp.cn/" target="_blank" rel="noopener noreferrer" title="SHOPLINE 官网">SHOPLINE</Link> 商家后台数据业务和 App 项目的全流程设计；</li>  
@@ -78,7 +78,7 @@ export default function me() {
             <div>
             <div>
               <p><Link href="https://pc.qlchat.com/" target="_blank" rel="noopener noreferrer" title="千聊官网">千聊</Link></p>
-              <p>UI 设计师，广州</p>
+              <p>B 端 UI 设计师，广州</p>
             </div>
             <ul>
               <li>负责千聊 B 端及<Link href="/project/qlchat" target="_blank" title="千聊 PPT 课程优化方案">课堂</Link>（音视频互动）业务。把控线上效果的质量，协助达成产品目标；</li>  
@@ -93,7 +93,7 @@ export default function me() {
             <div>
             <div>
               <p><Link href="https://www.watsons.com.cn/" target="_blank" rel="noopener noreferrer" title="屈臣氏中国官网">屈臣氏集团</Link></p>       
-              <p>UI 设计师，广州</p>
+              <p>C 端 UI 设计师，广州</p>
             </div>
             <ul>
               <li>参与屈臣氏 App 界面设计，涉及产品迭代、深色模式、动效及制定维护 UI 规范等；</li>  
@@ -107,7 +107,7 @@ export default function me() {
             <div>
             <div>
               <p className="text-neutral-900 dark:text-neutral-50">华南农业大学</p>    
-              <p>UI&thinsp;&&thinsp;视觉设计师 (实习)，广州</p>
+              <p>实习 UI&thinsp;&&thinsp;视觉设计师，广州</p>
             </div>
             <ul>
               <li>负责「飞滴送水」App 项目的设计，完成用户端和配送端的原型及界面 UI 设计；</li>  
@@ -124,23 +124,23 @@ export default function me() {
           <section className="resume-skill flex flex-col md:flex-row flex-wrap gap-4 md:gap-8">
             <section>
               <strong>界面设计</strong>
-              <p>熟练使用 Figma 和 Sketch 等设计软件，丰富的响应式适配和网页文字排版实践经验，熟悉 Win/Mac 平台浏览器差异</p>
+              <p>熟练 Figma 和 Sketch 等软件，丰富的响应式布局、网页文字排版和国际化&nbsp;SaaS 实践经验，熟悉 Win/Mac 平台浏览器差异</p>
+            </section>
+            <section>
+              <strong>交互设计</strong>
+              <p>擅长将复杂系统简化为用户友好界面，通过竞品分析场景分析洞察设计机会点。掌握定量分析方法，以数据驱动优化产品体验</p>
             </section>
             <section>
               <strong>动效设计</strong>
-              <p>拥有丰富的 Lottie 和 Framer 动效设计经验，以及基础的 After Effects / Principle 设计界面动画的能力</p>
-            </section>
-            <section>
-              <strong>数据分析</strong>
-              <p>拥有基础的定量分析能力，能够结合数据反馈和业务目标来调整设计策略、探索<Link href="/project/ytscrm" target="_blank" title="打开鱼棠 SCRM 设计项目方案">设计方案</Link></p>
+              <p>拥有基础的 After Effects / Principle / Lottie 界面动画设计能力</p>
             </section>
             <section>
               <strong>英语能力</strong>
-              <p>基础读写顺畅，<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 总分 86（<span className='whitespace-nowrap'>听 89</span> · <span className='whitespace-nowrap'>读 80</span> · <span className='whitespace-nowrap'>说 79</span> · <span className='whitespace-nowrap'>写 90</span>）</p>
+              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" target="_blank" title="尼尔森诺曼集团">NN/g</Link>。<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE</Link> 86 分 <span className='whitespace-nowrap'>(听 89</span> · <span className='whitespace-nowrap'>读 80</span> · <span className='whitespace-nowrap'>说 79</span> · <span className='whitespace-nowrap'>写 90)</span></p>
             </section>
             <section>
               <strong>前端实现</strong>
-              <p>了解基础前端知识如 React、Next.js 和 Tailwind CSS，有开发并维护<Link href="/" target="_blank" title="李瑞东的个人网站">个人网站</Link>和 Chrome 浏览器插件的经验</p>
+              <p>了解并应用基础 React (State, Hooks)，善于在设计还原和构建设计系统的过程中打破设计与前端的壁垒</p>
             </section>
           </section>
 

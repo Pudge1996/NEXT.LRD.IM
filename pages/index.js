@@ -91,7 +91,7 @@ export default function index() {
             <span className="whitespace-nowrap">团队。</span>
           </p>
           <p className="mt-3">
-          拥有国际化、自研组件/图标库搭建、数据可视化和体验度量等实践经验，同时也有<span className="whitespace-nowrap">大型</span>企业服务产品和跨境电商的业务
+          拥有国际化、自研组件/图标库搭建、数据可视化和体验度量等实践经验，同时也有<span className="whitespace-nowrap">大型</span>企业服务和跨境电商 SaaS 产品的业务
             <span className="whitespace-nowrap">背景。</span>
           </p>
           <div className="flex items-center flex-col sm:flex-row gap-3 text-lg">
