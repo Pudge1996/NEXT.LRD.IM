@@ -11,7 +11,7 @@ export default function ProjectImage({
   children, // figcaption 文本
   index,
   id,
-  type,
+  type, // 空或 video
 }) {
   if (type === 'video'){
     return(
