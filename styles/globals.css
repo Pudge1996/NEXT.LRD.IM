@@ -222,6 +222,9 @@
       li{
         @apply my-1 sm:my-2;
       }
+      code{
+        @apply mx-1 px-1 py-[2px] border bg-neutral-100 border-neutral-300 dark:bg-neutral-800 dark:border-neutral-600 rounded  transition-colors text-base;
+      }
     }
     ul{
       @apply text-lg pl-[2ch] my-4 sm:my-7 list-disc marker:text-gray-400 dark:marker:text-gray-600;
@@ -230,6 +233,9 @@
       }
       li{
         @apply my-1 sm:my-2;
+      }
+      code{
+        @apply mx-1 px-1 py-[2px] border bg-neutral-100 border-neutral-300 dark:bg-neutral-800 dark:border-neutral-600 rounded  transition-colors text-base;
       }
     }
     p code{ /* 行内代码 */
