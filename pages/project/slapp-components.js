@@ -3,13 +3,20 @@ import Head from "next/head";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
-import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectImage from "/components/project/ProjectImage";
+import ProjectFooter from "/components/project/ProjectFooter";
+import ProjectNav from "/components/project/ProjectNav";
 
 export default function slappComponents() {
   const title = ProjectItemData[2].projects[0].title;
   const desc = ProjectItemData[2].projects[0].desc;
-
+  const items = [
+    { buttonName: "背景", imageLink: "0" },
+    { buttonName: "文档结构", imageLink: "1" },
+    { buttonName: "国际化适配", imageLink: "2" },
+    { buttonName: "设计模式推导", imageLink: "3" },
+    { buttonName: "项目成果", imageLink: "4" },
+  ];
   return (
     <>
       <Head>
@@ -30,9 +37,9 @@ export default function slappComponents() {
           <h1 className="">{title}</h1>
           <p className="">{desc}</p>
         </section>
-
+        <ProjectNav items={items} />
         <section className="content">
-          <h2>背景</h2>
+          <h2 id="0">背景</h2>
           <p>
             SHOPLINE app 从今年 Q2
             开始投入资源发展。定位是为东南亚中小型商家提供轻量高效的移动端网站管理工具。这意味着里面会承载经过简化的
@@ -55,7 +62,7 @@ export default function slappComponents() {
           >
             我接手之前的组件库文档
           </ProjectImage>
-          <h2>文档结构</h2>
+          <h2 id="1">文档结构</h2>
           <p>
             为了确保组件库足够可靠和好用，不能够简单地罗列
             Components，而是需要有清晰和完整的设计说明、用法指引等内容。
@@ -77,7 +84,7 @@ export default function slappComponents() {
           >
             组件文档结构示例，可上下滚动查看。
           </ProjectImage>
-          <h2>国际化适配</h2>
+          <h2 id="2">国际化适配</h2>
           <p>
             App 在东南亚市场投放，会支持到七种语言的切换。在年初的一次部门分享「
             <Link href="/blog/2022-01-02" target="_blank">
@@ -102,7 +109,7 @@ export default function slappComponents() {
             <b>产品特点</b>和<b>设计目标</b>的做法，之后作为标准去执行。
           </p>
           <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/slapp-components/w_1920/3-3.png" />
-          <h2>设计模式</h2>
+          <h2 id="3">设计模式推导</h2>
           <p>与前几次做组件库不同，这次我对「设计模式」展开了探索。</p>
           <p>
             App
@@ -130,7 +137,7 @@ export default function slappComponents() {
             里面。
           </p>
           <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/slapp-components/w_1920/4-3.png" />
-          <h2>最终成果</h2>
+          <h2 id="4">项目成果</h2>
           <p>
             最终这一阶段的组件库包含六大类，共18个组件和4个设计模式。由于内容较多，附上
             Figma 供参考查看。
@@ -167,7 +174,7 @@ export default function slappComponents() {
           </p>
           <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/slapp-components/w_1920/5-1.png" />
         </section>
-        {/* <ProjectFooter /> */}
+        <ProjectFooter />
       </div>
     </>
   );

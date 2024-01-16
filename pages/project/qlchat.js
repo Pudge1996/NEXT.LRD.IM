@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImgList from "/data/project/ProjectImgList";
-import ProjectImage from "/components/project/ProjectImage";
+import ProjectTemplateV1 from "/components/project/ProjectTemplateV1";
 
 export default function qlchat() {
   const title = ProjectItemData[1].projects[0].title;
@@ -13,13 +13,20 @@ export default function qlchat() {
   )
     .map(({ images }) => images)
     .flat();
-
+  const items = [
+    { buttonName: '备课改版', imageLink: '2' },
+    { buttonName: '数据反馈', imageLink: '9' },
+    { buttonName: '组件库流程', imageLink: '12' },
+    { buttonName: '图标交付规范', imageLink: '20' },
+  ];
+  
   return (
     <>
       <Head>
         <title>
           {title} - {siteMetadata.title}
         </title>
+        <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={desc} />
 
         {/* For Soical Meida (OpenGraph) */}
@@ -28,17 +35,7 @@ export default function qlchat() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
       </Head>
-      <div className="layout project-v2 flex flex-col gap-4 md:gap-12">
-        <section className="top-info">
-          <h1 className="">{title}</h1>
-          <p className="">{desc}</p>
-        </section>
-        <section className="content">
-          {Images.map((img, index) => (
-            <ProjectImage src={img} id={index} key={index} />
-          ))}
-        </section>
-      </div>
+      <ProjectTemplateV1 title={title} desc={desc} Images={Images} items={items}/>
     </>
   );
 }

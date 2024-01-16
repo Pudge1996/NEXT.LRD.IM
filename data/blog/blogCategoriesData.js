@@ -38,7 +38,7 @@ const blogCategoriesData = [
       name: "设计之外",
       desc: "留一点空间记录设计之外的内容，比如本站的建设，或者其他奇思妙想（如有）...",
       url: "others",
-      num: "5",
+      num: "6",
     },
   ];
   

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImgList from "/data/project/ProjectImgList";
-import ProjectImage from "/components/project/ProjectImage";
+import ProjectTemplateV1 from "/components/project/ProjectTemplateV1";
 
 export default function analytics() {
   const title = ProjectItemData[2].projects[1].title;
@@ -13,13 +13,21 @@ export default function analytics() {
   )
     .map(({ images }) => images)
     .flat();
-
+  const items = [
+    { buttonName: '改版背景', imageLink: '1' },
+    { buttonName: '设计思路和方案', imageLink: '4' },
+    { buttonName: '数据反馈', imageLink: '13' },
+    { buttonName: '表格优化', imageLink: '16' },
+    { buttonName: '布局优化', imageLink: '30' },
+  ];
+  
   return (
     <>
       <Head>
         <title>
           {title} - {siteMetadata.title}
         </title>
+        <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={desc} />
 
         {/* For Soical Meida (OpenGraph) */}
@@ -28,24 +36,7 @@ export default function analytics() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
       </Head>
-      <div className="layout project-v2 flex flex-col gap-4 md:gap-10">
-        <section className="top-info">
-          <h1 className="">{title}</h1>
-          <p className="">{desc}</p>
-        </section>
-        {/* <div className="mx-auto sticky top-[96px] z-[1] hidden sm:block transition-[background-colors] mb-3">
-          <div className="px-[6px] py-1 flex gap-2 rounded-lg bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 items-center">
-            <Link href="#2" className="project-anchor btn-base btn-md text-base text-tertiary py-1 block hover:text-primary hover:font-medium ">背景和思路</Link>
-            <div className="w-[2px] h-[0.8em] rounded-full bg-neutral-200 dark:bg-neutral-800"></div>
-            <Link href="#4" className="project-anchor btn-base btn-md text-base text-tertiary py-1 block hover:text-primary hover:font-medium">设计策略</Link>
-          </div>
-        </div> */}
-        <section className="content">
-          {Images.map((img, index) => (
-            <ProjectImage src={img} id={index} key={index} />
-          ))}
-        </section>
-      </div>
+      <ProjectTemplateV1 title={title} desc={desc} Images={Images} items={items}/>
     </>
   );
 }

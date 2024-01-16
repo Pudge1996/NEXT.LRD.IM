@@ -10,42 +10,60 @@ export default function ProjectImage({
   zoom, // 默认允许放大，需要禁止放大则填入 zoom={false}。（PS: 允许 scroll 的都需要禁止放大）
   children, // figcaption 文本
   index,
+  id,
+  type, // 空或 video
 }) {
-  const [isLoaded, setIsLoaded] = React.useState(false);
-  zoom = !scroll;
-  return (
-    <>
-      <figure className={`${scroll === true ? "scroll" : ""} ${size === "small" ? "max-w-2xl" : ""}`} key={index}>
-        <div
-          className={`${
-            isLoaded ? "" : "img-loading-spin"
-          }${zoom === false ? "overflow-hidden" : ""}`}
+  if (type === 'video'){
+    return(
+      <><figure className={`${size === "small" ? "max-w-2xl" : ""}`} key={index}  id={id}>
+      <video
+          controls // 显示播放控制器
+          muted
         >
-          {zoom === false ? (
-            <Image
-            src={src}
-            alt={alt}
-            onLoad={() => setIsLoaded(true)}
-            onError={() => setIsLoaded(true)}
-            fill
-            sizes="100vw"
-            unoptimized={true}
-          />
-          ) : (<Zoom
-            src={src}
-            alt={alt}
-            fill
-            sizes="100vw"
-            onLoad={() => setIsLoaded(true)}
-            onError={() => setIsLoaded(true)}
-            backgroundColor="black"
-            backgroundOpacity="0.8"
-            unoptimized={true}
-          ></Zoom>
-          )}
-        </div>
+          <source src={src} type="video/mp4" />
+          {/* 添加其他视频源，例如WebM或Ogg */}
+        </video>  
       </figure>
-      {children && <figcaption>{children}</figcaption>}
-    </>
-  );
+      {children && <figcaption>{children}</figcaption>}</>
+    )
+  } else {
+    const [isLoaded, setIsLoaded] = React.useState(false);
+    zoom = !scroll;
+    return (
+      <>
+        <figure className={`${scroll === true ? "scroll" : ""} ${size === "small" ? "max-w-2xl" : ""}`} key={index}  id={id}>
+          <div
+            className={`${
+              isLoaded ? "" : "img-loading-spin"
+            }${zoom === false ? "overflow-hidden" : ""}`}
+          >
+            {zoom === false ? (
+              <Image
+              src={src}
+              alt={alt}
+              onLoad={() => setIsLoaded(true)}
+              onError={() => setIsLoaded(true)}
+              fill
+              sizes="100vw"
+              unoptimized={true}
+            />
+            ) : (<Zoom
+              src={src}
+              alt={alt}
+              fill
+              sizes="100vw"
+              onLoad={() => setIsLoaded(true)}
+              onError={() => setIsLoaded(true)}
+              backgroundColor="black"
+              backgroundOpacity="0.8"
+              unoptimized={true}
+            ></Zoom>
+            )}
+          </div>
+        </figure>
+        {children && <figcaption>{children}</figcaption>}
+      </>
+    );
+  }
+
 }

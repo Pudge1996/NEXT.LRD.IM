@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImage from "/components/project/ProjectImage";
+import ProjectFooter from "/components/project/ProjectFooter";
+import ProjectNav from "/components/project/ProjectNav";
 
 export default function slAppstore() {
   const title = ProjectItemData[2].projects[2].title;
   const desc = ProjectItemData[2].projects[2].desc;
+  const items = [
+    { buttonName: '项目概述', imageLink: '0' },
+    { buttonName: '前期工作', imageLink: '1' },
+    { buttonName: '设计发力点', imageLink: '2' },
+    { buttonName: '项目产出', imageLink: '3' },
+  ];
 
   return (
     <>
@@ -28,17 +35,14 @@ export default function slAppstore() {
           <h1 className="">{title}</h1>
           <p className="">{desc}</p>
         </section>
-
+        <ProjectNav items={items} />
         <section className="content">
-          <h2>项目概述</h2>
+          <h2 id="0">项目概述</h2>
           <p>
-            对于 SHOPLINE
-            店铺来说，功能是有限的，而应用商店允许商家以安装插件的方式，扩展自己商店的能力，比如通过插件来实现智能选品、物流管理、深度自定义网店样式等。
+            SHOPLINE 平台的功能是有限的。而应用商店允许商家以安装插件的方式，扩展自己商店的能力，比如通过插件来实现智能选品、物流管理、深度自定义网店样式等。
           </p>
           <p>
-            原本的应用商店是内嵌在 SHOLINE 商家后台内，而且里面的应用都是
-            SHOPLINE 内部研发出来的。随着产品发展，SHOPLINE
-            需要更丰富的开放能力来满足商家各种各样的需求，原本的做法已经无法支持业务发展。
+            原本的应用商店是内嵌在 SHOLINE 商家后台内，而且里面的应用都是 SHOPLINE 内部研发出来的。随着产品发展，SHOPLINE 需要更丰富的开放能力来满足商家各种各样的需求，原本的做法已经无法支持业务发展。
           </p>
           <ProjectImage
             src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/1-1.png"
@@ -51,7 +55,7 @@ export default function slAppstore() {
             应用商店需要对外开放，提供开发文档，接入第三方开发的应用。后续需要支持订阅（商业化）、评论、智能推荐等，会有一个完整的生态。所以需要将应用商店从管理后台里独立出来，以支持后续的业务发展。
           </p>
           <hr />
-          <h2>前期工作</h2>
+          <h2 id="1">前期工作</h2>
           <p>
             在工作前我找业务方、产品经理了解了 SHOPLINE
             开放平台的相关背景，同时也着重了解跟该需求相关的 SHOPLINE
@@ -76,7 +80,7 @@ export default function slAppstore() {
             在分析过程中能比较明确感受到 Shopify
             的整体感受要比店匠好得多，结合自身业务，我也找到几个设计发力点。
           </p>
-          <h2>设计发力点（面向开发者）</h2>
+          <h2 id="2">设计发力点（面向开发者）</h2>
           <h3>帮助开发者提供优质素材</h3>
           <p>
             <b>策略 1：向开发者提供素材模版示例，提升网站整体品质</b>
@@ -148,7 +152,7 @@ export default function slAppstore() {
             的介入。面对这种状况，我尝试去打磨流程中的细节，提供更佳的应用安装体验。
           </p>
           <ProjectImage src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/projectimg/sl-appstore/w_1920/3-5.png" />
-          <h2>最终产出</h2>
+          <h2 id="3">项目产出</h2>
           <p>「SHOPLINE 开放能力：应用商店独立化」项目最终输出的内容包括：</p>
           <ol>
             <li>完整的 SHOPLINE 应用商店设计方案和响应式布局适配方案；</li>
@@ -174,6 +178,7 @@ export default function slAppstore() {
             </li>
           </ol>
         </section>
+        <ProjectFooter />
       </div>
     </>
   );
