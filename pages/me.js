@@ -23,13 +23,13 @@ export default function me() {
         <section className='resume-info flex flex-col gap-6 sm:gap-8'>
           <section>
             <h2>个人简介</h2>
-            <p>5 年 UI/UX 设计工作经验 <Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
+            <p>5 年 UI/UX 设计工作经验 <Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips><span className='inline sm:hidden'>（2 年 C 端 UI 设计师 + 3 年 B 端 UI/UX 设计师）</span>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
             <p>工作期间积累了<strong>国际化、设计系统搭建、数据可视化和体验度量等</strong>实践经验，并独立挖掘流程中的设计机会点，完成多个设计专项探索和设计自驱项目。</p>
           </section>
           <section>
             <h2>教育背景</h2>
             <p>艺术学学士，主修现代数字媒体设计</p>
-            <p>毕业于<Link href="https://baike.baidu.com/item/%E6%B1%9F%E6%B1%89%E5%A4%A7%E5%AD%A6/343825" target="_blank" rel="noopener noreferrer" title="江汉大学 - 百度百科">江汉⼤学</Link>（2014 - 2018）</p>
+            <p>毕业于<Link href="https://baike.baidu.com/item/%E6%B1%9F%E6%B1%89%E5%A4%A7%E5%AD%A6/343825" target="_blank" rel="noopener noreferrer" title="江汉大学 - 百度百科">江汉⼤学</Link> (2014-2018)</p>
           </section>
           <section className='contact'>
             <h2>联系方式</h2>
