@@ -72,7 +72,7 @@ const ProjectItemData = [
       {
         title: "ONES 应用支持订阅",
         desc: "通过该体验设计项目，了解我如何找到设计机会点并使用系统思维解决问题。",
-        img: "/P/thumbnail.png",
+        img: "https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/thumbnail.png",
         url: "/project/ones/app-subscription",
       },
       
