@@ -87,7 +87,7 @@ export default function index() {
         <section className="mb-14">
           <h1 className="">李瑞东</h1>
           <p className="mb-3 mt-3 sm:mt-6">
-            5 年工作经验的 UI/UX 设计师 <Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips><span className='inline sm:hidden'>（2 年 C 端 UI 设计师 + 3 年 B 端 UI/UX 设计师）</span>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计
+            5 年工作经验的 UI/UX 设计师<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips><span className='inline sm:hidden'>（2 年 C 端 UI 设计师 + 3 年 B 端 UI/UX 设计师）</span>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计
             <span className="whitespace-nowrap">团队。</span>
           </p>
           <p className="mt-3">
