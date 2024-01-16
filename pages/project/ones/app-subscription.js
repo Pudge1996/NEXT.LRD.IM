@@ -80,7 +80,7 @@ export default function appSubscription() {
             现在需要支持应用付费功能：将原本免费使用的核心应用，转为付费订阅制，提升平台的盈利能力和产品价值。
           </p>
           <ProjectImage
-            src="/P/1-1.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/1-1.png"
             size="small"
           />
           <h2 id="1">竞品分析</h2>
@@ -157,7 +157,7 @@ export default function appSubscription() {
             尽量确保从免费模式到付费订阅模式的过渡对用户来说尽可能平滑，避免引起用户的困惑或不满。
           </p>
           <p>
-            <b>2. 高效便捷的支付流程</b>
+            <b>2. 个性化的支付流程</b>
             <br />
             结合业务目标设计支付流程，在支持个性化推荐和减少付费阻碍中找到平衡。
           </p>
@@ -173,7 +173,7 @@ export default function appSubscription() {
           <figure className="relative w-full h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll bg-neutral-100 rounded-lg">
             <div className="w-[2240px] h-[1056px] overflow-x-auto overflow-y-hidden">
               <Image
-                src="/P/4-0.png"
+                src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-0.png"
                 alt="方案概况，可滚动查看"
                 width={2240}
                 height={1056}
@@ -194,7 +194,7 @@ export default function appSubscription() {
           </ul>
           <p>依据用户当前的状态，我们主要使用以下三种策略来使过渡期的体验更平滑：</p>
           <ProjectImage
-            src="/P/4-1.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-1.png"
             size="small"
           />
           <p>
@@ -219,11 +219,11 @@ export default function appSubscription() {
           </p>
           <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
           <section><ProjectImage
-            src="/P/4-2.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-2.png"
             size="small"
           >初次试用（颁发试用许可）</ProjectImage></section>
           <section><ProjectImage
-            src="/P/4-3.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-3.png"
             size="small"
           >卸载后重新安装（不涉及应用许可变更）</ProjectImage></section>
           </section>
@@ -236,10 +236,10 @@ export default function appSubscription() {
             期间尝试了多种布局样式和交互形式。最终综合各方面因素（用户体验连贯性、用户习惯、交互成本和开发成本等）选取了顶部常驻的形式。
           </p>
           <ProjectImage
-            src="/P/4-4.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-4.png"
           />
           <p>
-            在实践中观察到这种提示与页面渲染完成时间并不同步——即先完成页面大体的框架和布局渲染后，再根据条件判断是否出现试用结束提示——所以有可能出现
+            在实践中观察到这种提示与页面渲染完成时间并不同步——即会出现先完成页面布局渲染后，再出现试用结束提示的情况——所以有可能出现
             <a
               href="https://web.dev/articles/cls"
               target="_blank"
@@ -250,18 +250,18 @@ export default function appSubscription() {
           </p>
           
           <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
-          <section><ProjectImage src="/P/4-5.mp4" type="video" size="small">
-            布局偏移可能会影响用户操作
+          <section><ProjectImage src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-5.mp4" type="video" size="small">
+            ❌ 布局偏移可能会影响用户操作
           </ProjectImage></section>
-          <section><ProjectImage src="/P/4-6.mp4" type="video" size="small">
-            加入出现动画（这个策略在{" "}
-            <a href="1" target="_blank">
+          <section><ProjectImage src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-6.mp4" type="video" size="small">
+            ✅ 加入出现动画（这个策略在{" "}
+            <a href="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/Aftership.mp4" target="_blank">
               Aftership
             </a>{" "}
             里也出现过）
           </ProjectImage></section>
           </section>
-          <h3>2. 高效便捷的支付流程</h3>
+          <h3>2. 个性化的支付流程</h3>
           <p>
             在订阅和续费的过程中会涉及到支付流程。为了更好地达到商业化目标，我们在支付流程中做了个性化推荐，根据用户的历史行为来展示推荐内容。
           </p>
@@ -274,15 +274,11 @@ export default function appSubscription() {
             <li>DevOps 相关应用：Pipeline（流水线）、 Code Integration（代码集成）和 Bitbucket 连接器；</li>
             <li>知识库协同相关应用：Wiki（文档）和 Xmind（思维导图）。</li>
           </ul>
-          <p>所以如果当前用户帐号内有其他可订阅应用，我们会在结算之前——即支付页面（或者叫购物车页面）——提供一个应用列表给用户选购。</p>
-          {/* <ProjectImage
-            src="/P/4-7.png"
-            size="small"
-          >在支付流程加入可选购的应用列表</ProjectImage> */}
+          <p>所以如果当前用户帐号内有其他可订阅应用，我们会在结算之前——即支付页面（或者叫购物车页面）——将相关应用曝光。</p>
           <figure className="relative w-full h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll bg-neutral-100 rounded-lg">
             <div className="w-[2240px] h-[360px] overflow-x-auto overflow-y-hidden">
               <Image
-                src="/P/4-7.png"
+                src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-7.png"
                 alt="在支付流程加入可选购的应用列表"
                 width={2240}
                 height={360}
@@ -292,10 +288,10 @@ export default function appSubscription() {
           </figure>
             <figcaption>在支付流程加入可选购的应用列表（横向滚动查看）</figcaption>
           <p>
-            同时我们也对列表顺序进行了设计，根据用户当前选择续费的应用，优先展示与该应用相关的其他应用。
+            同时我也对列表顺序进行了设计，根据用户当前选择续费的应用，优先展示与该应用相关的其他应用。
           </p>
           <ProjectImage
-            src="/P/4-8.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-8.png"
             size="small"
           >可根据用户当前选择续费的应用而改变顺序的列表</ProjectImage>
           <p>
@@ -303,11 +299,10 @@ export default function appSubscription() {
             <br />
             如果当前用户帐号内已经没有其他可订阅应用了（可能是正在订阅中，或者手动取消订阅等多种原因形成），那么将直接进入结算页走结算流程。
           </p>
-          {/* <ProjectImage src="/P/4-9.png" size="small" /> */}
           <figure className="relative w-full h-[285px] sm:h-[640px] max-h-[80vh] overflow-scroll bg-neutral-100 rounded-lg">
             <div className="w-[1708px] h-[360px] overflow-x-auto overflow-y-hidden">
               <Image
-                src="/P/4-9.png"
+                src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-9.png"
                 alt="在支付流程加入可选购的应用列表"
                 width={1708}
                 height={360}
@@ -323,7 +318,16 @@ export default function appSubscription() {
           <p>
           所以我在用户取消订阅的二次确认弹窗中增加了一个接收用户反馈的机会。这样，即便真的流失了一个用户，我们也能从中获取到一些东西来帮助我们改进产品体验。
           </p>
-          <ProjectImage src="/P/4-10.png" size="small" />
+          <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
+          <section><ProjectImage
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-10.png"
+            size="small"
+          >原本做法：只提供信息</ProjectImage></section>
+          <section><ProjectImage
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/4-11.png"
+            size="small"
+          >改进做法：收集反馈并提供联系方式</ProjectImage></section>
+          </section>
           <h2 id="3">系统思维</h2>
           <p>
             接下来的这一部份不涉及到设计图，主要是分享一些我在处理这种涉及多角色业务的流程设计时的思考方式以及锻炼到的能力。
@@ -331,13 +335,13 @@ export default function appSubscription() {
           <p>
             在最初了解到这个需求的时候，我发现这里面涉及到挺多设计考量因素的，如下图所示：
           </p>
-          <ProjectImage src="/P/5-1.png" />
+          <ProjectImage src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/5-1.png" />
           <p>
             因为流程和变量实在太多，在做这种类型的设计时已经不能依赖于界面或 PRD
             里面的线框图进行设计了。
           </p>
           <p>
-            所以我做了改变，从关注界面上的操作步骤，转为从状态变更反推出具体的操作路径。举两个例子：
+            所以我做了思维上的改变：从关注界面上的操作步骤，转为从状态变更反推出具体的操作路径。举两个例子：
           </p>
           <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
             <section className="flex-1 p-4 sm:p-6 md:p-8 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 transition-colors">
@@ -388,15 +392,15 @@ export default function appSubscription() {
           </p>
           <section className={`${styles.container} w-full flex md:flex-row flex-col gap-2 sm:gap-4 rounded-lg`}>
           <section><ProjectImage
-            src="/P/5-2.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/5-2.png"
             size="small"
           >流程中对状态变更的描述</ProjectImage></section>
           <section><ProjectImage
-            src="/P/5-3.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/5-3.png"
             size="small"
           >流程中对状态变更的描述</ProjectImage></section>
           <section><ProjectImage
-            src="/P/5-4.png"
+            src="https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/5-4.png"
             size="small"
           >状态机图示</ProjectImage></section>
           </section>
