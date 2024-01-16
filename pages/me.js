@@ -22,8 +22,8 @@ export default function me() {
         <section className='resume-info flex flex-col gap-6 sm:gap-8'>
           <section>
             <h2>个人简介</h2>
-            <p>我是一名 5 年工作经验的 UI/UX 设计师，曾就职于 ONES 国际化业务团队和欢聚集团 SHOPLINE 商家管理后台设计团队。拥有<strong>国际化、自研组件/图标库搭建、数据可视化和体验度量等</strong>实践经验，同时也有大型企业服务产品和跨境电商的业务背景。</p>
-            <p>在职期间独立挖掘产品设计的机会点，完成多个 UI 专项探索，并推动多个设计自驱项目。对提升产品的用户体验，以及产研降本提效作出自己的贡献。</p>
+            <p>我是一名 5 年工作经验的 UI/UX 设计师，曾就职于 ONES 国际化业务团队和欢聚集团 SHOPLINE 商家管理后台设计团队。拥有<strong>国际化、设计系统搭建、数据可视化和体验度量等</strong>实践经验，同时也有企业服务、研发管理和跨境电商的业务背景。</p>
+            <p>在职期间独立挖掘产品设计的机会点，完成多个设计专项探索，并推动多个设计自驱项目。对提升产品的用户体验，以及产研降本提效作出自己的贡献。</p>
           </section>
           <section>
             <h2>教育背景</h2>
@@ -50,7 +50,7 @@ export default function me() {
               <p>B 端 UI/UX 设计师，深圳</p>    
             </div>
             <ul>
-              <li>负责 ONES 国际化业务体验设计，包含新用户引导流程、应用商店付费流程优化及系统多语言功能等功能的持续迭代；</li>  
+              <li>负责 <Link href="https://ones.com/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES 国际化</Link>业务体验设计，包含新用户引导流程、应用商店付费流程设计及系统多语言功能等功能的持续迭代；</li>  
               <li>负责团队协同与任务管理工具 <Link href="https://ones.cn/products/task" target="_blank" rel="noopener noreferrer" title="ONES Task 产品介绍页">ONES Task</Link> 的前期需求挖掘和迭代，涉及权限系统改造和 Design&nbsp;Token 实践等；</li>  
               <li>发起部门分享会，分享内容包含：竞品本地化设计策略分析、网页性能优化等。</li>
             </ul>    
@@ -128,7 +128,7 @@ export default function me() {
             </section>
             <section>
               <strong>交互设计</strong>
-              <p>擅长将复杂系统简化为用户友好界面，通过竞品分析场景分析洞察设计机会点。掌握定量分析方法，以数据驱动优化产品体验</p>
+              <p>擅长通过竞品分析场景分析洞察设计机会点，将复杂系统简化为用户友好界面。掌握定量分析方法，以数据驱动优化产品体验</p>
             </section>
             <section>
               <strong>动效设计</strong>
@@ -136,7 +136,8 @@ export default function me() {
             </section>
             <section>
               <strong>英语能力</strong>
-              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" target="_blank" title="尼尔森诺曼集团">NN/g</Link>。<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE</Link> 86 分 <span className='whitespace-nowrap'>(听 89</span> · <span className='whitespace-nowrap'>读 80</span> · <span className='whitespace-nowrap'>说 79</span> · <span className='whitespace-nowrap'>写 90)</span></p>
+              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link> 等文章。<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 86 分</p>
+              {/* <span className='whitespace-nowrap'>(听 89</span> · <span className='whitespace-nowrap'>读 80</span> · <span className='whitespace-nowrap'>说 79</span> · <span className='whitespace-nowrap'>写 90)</span> */}
             </section>
             <section>
               <strong>前端实现</strong>
