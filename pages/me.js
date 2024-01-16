@@ -23,7 +23,7 @@ export default function me() {
         <section className='resume-info flex flex-col gap-6 sm:gap-8'>
           <section>
             <h2>个人简介</h2>
-            <p>5 年 UI/UX 设计工作经验 <Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips><span className='inline sm:hidden'>（2 年 C 端 UI 设计师 + 3 年 B 端 UI/UX 设计师）</span>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
+            <p>5 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips><span className='inline sm:hidden'>（2 年 C 端 UI 设计师 + 3 年 B 端 UI/UX 设计师）</span>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
             <p>工作期间积累了<strong>国际化、设计系统搭建、数据可视化和体验度量等</strong>实践经验，并独立挖掘流程中的设计机会点，完成多个设计专项探索和设计自驱项目。</p>
           </section>
           <section>
@@ -53,7 +53,7 @@ export default function me() {
             <ul>
               <li>负责 <Link href="https://ones.com/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES 国际化</Link>业务体验设计，包含新用户引导流程、应用商店付费流程设计及系统多语言功能等功能的持续迭代；</li>  
               <li>负责团队协同与任务管理工具 <Link href="https://ones.cn/products/task" target="_blank" rel="noopener noreferrer" title="ONES Task 产品介绍页">ONES Task</Link> 的前期需求挖掘和迭代，涉及权限系统改造和 Design&nbsp;Token 实践等；</li>  
-              <li>发起部门分享会，分享内容包含：竞品本地化设计策略分析、网页性能优化等。</li>
+              <li>发起部门分享会，分享内容包含：竞品在日本和北美地区的本地化设计策略分析、网页性能优化等。</li>
             </ul>    
             </div>
           </section>
@@ -133,11 +133,11 @@ export default function me() {
             </section>
             <section>
               <strong>动效设计</strong>
-              <p>拥有基础的 After Effects / Principle / Lottie 界面动画设计能力</p>
+              <p>熟练使用 After Effects / Principle / Lottie 设计界面动画，清楚网页动画实现方式</p>
             </section>
             <section>
               <strong>英语能力</strong>
-              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link> 等文章。<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 86 分</p>
+              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link>。<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 86 分</p>
               {/* <span className='whitespace-nowrap'>(听 89</span> · <span className='whitespace-nowrap'>读 80</span> · <span className='whitespace-nowrap'>说 79</span> · <span className='whitespace-nowrap'>写 90)</span> */}
             </section>
             <section>

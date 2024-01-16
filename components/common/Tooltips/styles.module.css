@@ -23,7 +23,7 @@
 }
 
 .IconButton{
-  @apply hidden sm:inline-flex cursor-default;
+  @apply hidden sm:inline-flex cursor-default mx-1;
 }
 
 
