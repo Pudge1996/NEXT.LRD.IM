@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import siteMetadata from "/data/siteMetadata";
 import Link from "next/link";
+import Tooltips from "/components/common/Tooltips";
 
 
 export default function me() {
@@ -22,7 +23,7 @@ export default function me() {
         <section className='resume-info flex flex-col gap-6 sm:gap-8'>
           <section>
             <h2>个人简介</h2>
-            <p>5 年设计工作经验（2 年 C 端 UI 设计师 + 3 年 B 端 UI/UX 设计师），曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
+            <p>5 年 UI/UX 设计工作经验 <Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
             <p>工作期间积累了<strong>国际化、设计系统搭建、数据可视化和体验度量等</strong>实践经验，并独立挖掘流程中的设计机会点，完成多个设计专项探索和设计自驱项目。</p>
           </section>
           <section>
