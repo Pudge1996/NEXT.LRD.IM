@@ -55,6 +55,7 @@
   p a,
   span a,
   li a,
+  .styles_TooltipContent__ARGta a,
   .link-color {
     @apply text-blue-700 dark:text-blue-400 hover:underline underline-offset-2 active:no-underline sm:hover:text-blue-700 active:text-blue-900 sm:active:text-blue-900 dark:sm:hover:text-blue-400 dark:active:text-blue-500 dark:sm:active:text-blue-500 ring-default;
   }
@@ -544,7 +545,9 @@ li a[target="_blank"]:focus::after,
 figure ~ figcaption a[target="_blank"]:hover::after,
 figure ~ figcaption a[target="_blank"]:focus::after,
 .force-link:hover::after,
-.force-link:focus::after {
+.force-link:focus::after,
+.styles_TooltipContent__ARGta a:hover::after,
+.styles_TooltipContent__ARGta a:focus::after {
   content: "";
   margin-left: 0.125em;
   margin-right: 0.125em;
