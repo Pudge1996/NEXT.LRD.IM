@@ -23,7 +23,7 @@
 }
 
 .IconButton{
-  @apply hidden sm:inline-flex cursor-default mx-1;
+  @apply hidden sm:inline-flex cursor-default mx-0.5;
 }
 
 
@@ -31,8 +31,8 @@
   font-family: inherit;
   vertical-align: -0.15em;
   border-radius: 100%;
-  height: 1em;
-  width: 1em;
+  height: .9em;
+  width: .9em;
   align-items: center;
   justify-content: center;
 }
