@@ -62,7 +62,7 @@ export default function me() {
             <div>
             <div>
               <p><Link href="https://joyy.com/" target="_blank" rel="noopener noreferrer" title="欢聚集团官网">欢聚集团</Link></p>    
-              <p>B 端 UI 设计师，广州</p>    
+              <p>B 端 UI/UX 设计师，广州</p>    
             </div>
             <ul>
               <li>独立负责 <Link href="https://shoplineapp.cn/" target="_blank" rel="noopener noreferrer" title="SHOPLINE 官网">SHOPLINE</Link> 商家后台数据业务和 App 项目的全流程设计；</li>  
@@ -133,7 +133,7 @@ export default function me() {
             </section>
             <section>
               <strong>动效设计</strong>
-              <p>熟练使用 After Effects / Principle / Lottie 设计界面动画，清楚网页动画实现方式</p>
+              <p>熟练使用 After Effects / Principle / Lottie 设计界面动画，了解网⻚动画实现方式</p>
             </section>
             <section>
               <strong>英语能力</strong>
