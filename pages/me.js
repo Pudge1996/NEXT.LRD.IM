@@ -137,8 +137,7 @@ export default function me() {
             </section>
             <section>
               <strong>英语能力</strong>
-              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link>。<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 86 分</p>
-              {/* <span className='whitespace-nowrap'>(听 89</span> · <span className='whitespace-nowrap'>读 80</span> · <span className='whitespace-nowrap'>说 79</span> · <span className='whitespace-nowrap'>写 90)</span> */}
+              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" rel="noopener noreferrer" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link>。<Link href="https://www.pearsonpte.com/pte-academic" rel="noopener noreferrer" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 86 分<Tooltips>考试时间：2023-12-26<br/>小分：听 89 读 80 说 79 写 90<br/><Link href="https://www.pearsonpte.com/research/scoring" rel="noopener noreferrer" target="_blank" title="PTE Academic 与雅思和托福的成绩换算表">查看成绩换算表</Link></Tooltips></p>
             </section>
             <section>
               <strong>前端实现</strong>
