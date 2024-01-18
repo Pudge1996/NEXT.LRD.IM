@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 16 Jan 2024 14:57:54 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 18 Jan 2024 06:44:05 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 16 Jan 2024 14:57:54 GMT</pubDate>
+        <pubDate>Thu, 18 Jan 2024 06:44:05 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2024]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[English speaking skills for PTE test]]></title>
+            <description><![CDATA[In this post, I will detail the English-speaking skills I learned during my three-month learning journey, which especially met the PTE test criteria.]]></description>
+            <link>https://lrd.im/blog/2024-01-17</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2024-01-17</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Mon, 15 Jan 2024 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[English speaking skills for PTE test]]></title>
             <description><![CDATA[In this post, I will detail the English-speaking skills I learned during my three-month learning journey, which especially met the PTE test criteria.]]></description>
