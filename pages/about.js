@@ -13,9 +13,9 @@ export default function about() {
         <section>
         <h1 className="">关于我</h1>
         <p className="mb-3 mt-3 sm:mt-6">
-          仍然存在某种执念的设计师...
+          还有很多事情要做的设计师...
           <br />
-          了解我过往的工作经历，请访问<Link href="/me" target="_blank" title="李瑞东简历">个人简历</Link>。联系我：<span className="select-all whitespace-nowrap">lrdbuff@gmail.com</span>
+          了解我的工作经历，请访问<Link href="/me" target="_blank" title="李瑞东简历">个人简历</Link>。联系我：<span className="select-all whitespace-nowrap">lrdbuff@gmail.com</span>
         </p>
         </section>
         <section>
