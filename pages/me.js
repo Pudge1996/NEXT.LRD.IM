@@ -51,7 +51,7 @@ export default function me() {
               <p>B 端 UI/UX 设计师，深圳</p>    
             </div>
             <ul>
-              <li>负责 <Link href="https://ones.com/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES 国际化</Link>业务体验设计，包含新用户引导流程、应用商店付费流程设计及系统多语言功能等功能的持续迭代；</li>  
+              <li>负责 <Link href="https://ones.com/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES 国际化</Link>业务体验设计，包含新用户引导流程、<Link href="/project/ones/app-subscription" target="_blank" title="ONES 应用支持订阅项目详情">应用商店付费流程设计</Link>及系统多语言功能等功能的持续迭代；</li>  
               <li>负责团队协同与任务管理工具 <Link href="https://ones.cn/products/task" target="_blank" rel="noopener noreferrer" title="ONES Task 产品介绍页">ONES Task</Link> 的前期需求挖掘和迭代，涉及权限系统改造和 Design&nbsp;Token 实践等；</li>  
               <li>发起部门分享会，分享内容包含：竞品的的本地化设计策略分析（日本和北美）、网页性能指标及其改进方式等。</li>
             </ul>    
@@ -111,7 +111,7 @@ export default function me() {
               <p>实习 UI&thinsp;&&thinsp;视觉设计师，广州</p>
             </div>
             <ul>
-              <li>负责「飞滴送水」App 项目的设计，完成用户端和配送端的原型及界面 UI 设计；</li>  
+              <li>在<Link href="https://info.scau.edu.cn/" target="_blank" rel="noopener noreferrer" title="华农数信学院">华农数信学院研究生团队</Link>中负责项目的设计，根据原型图完成安卓端 App 界面设计；</li>  
               <li>使用 Element UI 组件库完成后台管理系统界面设计。</li> 
             </ul>    
             </div>
