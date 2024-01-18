@@ -85,7 +85,7 @@ export default function me() {
               <li>负责千聊 B 端及<Link href="/project/qlchat" target="_blank" title="千聊 PPT 课程优化方案">课堂</Link>（音视频互动）业务。把控线上效果的质量，协助达成产品目标；</li>  
               <li>建立千聊首个成型且落地的自研 UI <Link href="/project/qlchat" target="_blank" title="千聊组件库方案">组件库</Link>，推进高效的组件交付流程，提升设计、验收、跨部门合作的效率</li>  
               <li>负责从零开始设计 SaaS 平台「<Link href="/project/ytscrm" target="_blank" title="鱼棠 SCRM 官网">鱼棠 SCRM</Link>」。在 Ant Design 的生态下制定并落实设计规范。根据数据反馈，提出并落地更符合用户预期的<Link href="/project/ytscrm" target="_blank" title="鱼棠 SCRM 海报改版方案">设计方案</Link>；</li>  
-              <li>以<Link href="/blog/2021-04-09" target="_blank" title="分享会文稿 - 李瑞东的设计博客">分享会</Link>或 wiki 文档的方式沉淀设计经验，与团队一起进步。</li>  
+              <li>以<Link href="/blog/2021-04-09" target="_blank" title="分享会文稿 - 李瑞东的设计博客">分享会</Link>或文档的方式沉淀设计经验，与团队一起进步。</li>  
             </ul>    
             </div>
           </section>
