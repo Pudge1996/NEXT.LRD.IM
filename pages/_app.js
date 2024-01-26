@@ -17,11 +17,12 @@ export default function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content={siteMetadata.title} />
         <meta property="og:description" content={siteMetadata.description} />
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
+        <meta property="og:image" content="https://lrdim.oss-accelerate.aliyuncs.com/resources/og_image.png" />
+        <meta property="og:image:alt" content="Capturing the works, experiences, and insights from my design journey." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={siteMetadata.title} />
         <meta name="twitter:description" content={siteMetadata.description} />
+        <meta name="twitter:image" content="https://lrdim.oss-accelerate.aliyuncs.com/resources/og_image.png" />
         <meta name="twitter:site" content="@Pudge_1996" />
         <meta name="twitter:creator" content="@Pudge_1996" />
       </Head>
