@@ -23,13 +23,13 @@ export default function me() {
         <section className='resume-info flex flex-col gap-6 sm:gap-8'>
           <section>
             <h2>个人简介</h2>
-            <p>5 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips><span className='inline sm:hidden'>（2 年 C 端 UI 设计师 + 3 年 B 端 UI/UX 设计师）</span>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
+            <p>5 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
             <p>工作期间积累了<strong>国际化、设计系统搭建、数据可视化和体验度量等</strong>实践经验，并独立挖掘流程中的设计机会点，完成多个设计专项探索和设计自驱项目。</p>
           </section>
           <section>
             <h2>教育背景</h2>
-            <p>艺术学学士，主修现代数字媒体设计</p>
             <p>毕业于<Link href="https://baike.baidu.com/item/%E6%B1%9F%E6%B1%89%E5%A4%A7%E5%AD%A6/343825" target="_blank" rel="noopener noreferrer" title="江汉大学 - 百度百科">江汉⼤学</Link> (2014-2018)</p>
+            <p>艺术学学士，主修现代数字媒体设计</p>
           </section>
           <section className='contact'>
             <h2>联系方式</h2>
@@ -51,7 +51,7 @@ export default function me() {
               <p>B 端 UI/UX 设计师，深圳</p>    
             </div>
             <ul>
-              <li>负责 <Link href="https://ones.com/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES 国际化</Link>业务体验设计，包含新用户引导流程、应用商店付费流程设计及系统多语言功能等功能的持续迭代；</li>  
+              <li>负责 <Link href="https://ones.com/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES 国际化</Link>业务体验设计，包含新用户引导流程、<Link href="/project/ones/app-subscription" target="_blank" title="ONES 应用支持订阅项目详情">应用商店付费流程设计</Link>及系统多语言功能等功能的持续迭代；</li>  
               <li>负责团队协同与任务管理工具 <Link href="https://ones.cn/products/task" target="_blank" rel="noopener noreferrer" title="ONES Task 产品介绍页">ONES Task</Link> 的前期需求挖掘和迭代，涉及权限系统改造和 Design&nbsp;Token 实践等；</li>  
               <li>发起部门分享会，分享内容包含：竞品的的本地化设计策略分析（日本和北美）、网页性能指标及其改进方式等。</li>
             </ul>    
@@ -62,7 +62,7 @@ export default function me() {
             <div>
             <div>
               <p><Link href="https://joyy.com/" target="_blank" rel="noopener noreferrer" title="欢聚集团官网">欢聚集团</Link></p>    
-              <p>B 端 UI 设计师，广州</p>    
+              <p>B 端 UI/UX 设计师，广州</p>    
             </div>
             <ul>
               <li>独立负责 <Link href="https://shoplineapp.cn/" target="_blank" rel="noopener noreferrer" title="SHOPLINE 官网">SHOPLINE</Link> 商家后台数据业务和 App 项目的全流程设计；</li>  
@@ -85,7 +85,7 @@ export default function me() {
               <li>负责千聊 B 端及<Link href="/project/qlchat" target="_blank" title="千聊 PPT 课程优化方案">课堂</Link>（音视频互动）业务。把控线上效果的质量，协助达成产品目标；</li>  
               <li>建立千聊首个成型且落地的自研 UI <Link href="/project/qlchat" target="_blank" title="千聊组件库方案">组件库</Link>，推进高效的组件交付流程，提升设计、验收、跨部门合作的效率</li>  
               <li>负责从零开始设计 SaaS 平台「<Link href="/project/ytscrm" target="_blank" title="鱼棠 SCRM 官网">鱼棠 SCRM</Link>」。在 Ant Design 的生态下制定并落实设计规范。根据数据反馈，提出并落地更符合用户预期的<Link href="/project/ytscrm" target="_blank" title="鱼棠 SCRM 海报改版方案">设计方案</Link>；</li>  
-              <li>以<Link href="/blog/2021-04-09" target="_blank" title="分享会文稿 - 李瑞东的设计博客">分享会</Link>或 wiki 文档的方式沉淀设计经验，与团队一起进步。</li>  
+              <li>以<Link href="/blog/2021-04-09" target="_blank" title="分享会文稿 - 李瑞东的设计博客">分享会</Link>或文档的方式沉淀设计经验，与团队一起进步。</li>  
             </ul>    
             </div>
           </section>
@@ -111,7 +111,7 @@ export default function me() {
               <p>实习 UI&thinsp;&&thinsp;视觉设计师，广州</p>
             </div>
             <ul>
-              <li>负责「飞滴送水」App 项目的设计，完成用户端和配送端的原型及界面 UI 设计；</li>  
+              <li>在<Link href="https://info.scau.edu.cn/" target="_blank" rel="noopener noreferrer" title="华农数信学院">华农数信学院研究生团队</Link>中负责项目的设计，根据原型图完成安卓端 App 界面设计；</li>  
               <li>使用 Element UI 组件库完成后台管理系统界面设计。</li> 
             </ul>    
             </div>
@@ -133,16 +133,15 @@ export default function me() {
             </section>
             <section>
               <strong>动效设计</strong>
-              <p>熟练使用 After Effects / Principle / Lottie 设计界面动画，清楚网页动画实现方式</p>
+              <p>熟练使用 After Effects / Principle / Lottie 设计界面动画，了解网⻚动画实现方式</p>
             </section>
             <section>
               <strong>英语能力</strong>
-              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link>。<Link href="https://www.pearsonpte.com/pte-academic" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 86 分</p>
-              {/* <span className='whitespace-nowrap'>(听 89</span> · <span className='whitespace-nowrap'>读 80</span> · <span className='whitespace-nowrap'>说 79</span> · <span className='whitespace-nowrap'>写 90)</span> */}
+              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" rel="noopener noreferrer" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link>。<Link href="https://www.pearsonpte.com/pte-academic" rel="noopener noreferrer" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 86 分<Tooltips>考试时间：2023-12-26<br/>小分：听 89 读 80 说 79 写 90<br/><Link href="https://www.pearsonpte.com/research/scoring" rel="noopener noreferrer" target="_blank" title="PTE Academic 与雅思和托福的成绩换算表">查看成绩换算表</Link></Tooltips></p>
             </section>
             <section>
               <strong>前端实现</strong>
-              <p>了解并应用基础 React (State, Hooks)，善于在设计还原和构建设计系统的过程中打破设计与前端的壁垒</p>
+              <p>了解基础 React (State, Hooks)，善于在设计还原和构建设计系统的过程中打破设计与前端的壁垒，有相关实践经验</p>
             </section>
           </section>
 
