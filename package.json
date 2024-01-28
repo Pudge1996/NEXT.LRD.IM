@@ -23,6 +23,7 @@
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
+    "js-cookie": "^3.0.5",
     "mdx-bundler": "^9.0.1",
     "next": "13.3.0",
     "next-image-zoom": "^1.1.7",
