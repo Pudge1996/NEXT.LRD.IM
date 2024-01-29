@@ -12,9 +12,9 @@ export default function index() {
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
-    <div className="flex flex-col-reverse gap-8">
+    <div className=" flex flex-col-reverse gap-8">
       {ProjectItemData.map((company, index) => (
-        <div key={index}>
+        <div key={index} className="last:hidden">
           {/* 公司 Company 列表 */}
           <div className="flex gap-3 py-3 sm:py-4 text-lg sm:text-[22px] items-center font-medium  bg-color  top-[62px] sm:top-[58px] transition-[background-color] z-[1]">
             <div className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] relative overflow-hidden rounded border-[0.5px] dark:border-transparent img-loading-bg transition-colors">
