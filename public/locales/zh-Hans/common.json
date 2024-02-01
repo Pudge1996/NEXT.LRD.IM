@@ -2,7 +2,8 @@
   "common": {
     "information": {
       "author": "李瑞东",
-      "desc": "李瑞东的个人网站"
+      "site": "李瑞东的个人网站 LRD.IM",
+      "desc": "李瑞东的个人网站，记录我在设计路上的作品、经验和观点。"
     },
     "header": {
       "projects": "作品",

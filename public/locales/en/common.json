@@ -2,7 +2,8 @@
   "common": {
     "information": {
       "author": "Michael LEE",
-      "desc": "Michael's Website"
+      "site": "Michael's Website · LRD.IM",
+      "desc": "Michael's personal website, capturing the works, experiences, and insights from my design journey."
     },
     "header": {
       "projects": "Projects",
