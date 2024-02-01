@@ -1,28 +1,14 @@
 import React, { Fragment } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { Menu, Transition } from "@headlessui/react";
 import { IoLanguage } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 const SwitchLanguages = () => {
-
   const router = useRouter();
-  // const changeLanguage = (locale) => {
-  //   // 存储 locale 到 localStorage
-  //   if (typeof window !== 'undefined') {
-  //     localStorage.setItem('MY_LANGUAGE', locale);
-  //   }
-  
-  //   // 只更新 locale 状态，不改变 URL
-  //   // if (router.locale !== locale) { 
-  //     router.push(router.pathname, router.asPath, {
-  //       shallow: true,
-  //     });
-  //   // }
-  // };
-
   const changeLanguage = (locale) => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('MY_LANGUAGE', locale); // 更新 localStorage 中的语言设置
+    if (typeof window !== "undefined") {
+      localStorage.setItem("MY_LANGUAGE", locale); // 更新 localStorage 中的语言设置
       document.documentElement.lang = locale; // 更新 html 的 lang 属性
 
       // 使用浅层路由进行语言切换，避免页面刷新
@@ -32,24 +18,28 @@ const SwitchLanguages = () => {
 
   // 组件挂载时读取 localStorage 中的语言设置，并更新页面
   React.useEffect(() => {
-    const savedLocale = localStorage.getItem('MY_LANGUAGE') || 'zh-Hans'; // 默认为 'en'
+    const savedLocale = localStorage.getItem("MY_LANGUAGE") || "zh-Hans"; // 默认为 'en'
     changeLanguage(savedLocale);
   }, []);
-  
-
 
   const languages = [
     { id: "zh-Hans", value: "中文（简体）" },
     { id: "zh-Hant", value: "中文（繁体）" },
     { id: "en", value: "英语" },
   ];
+
+  const { t } = useTranslation("common");
+
   return (
     <div>
       <Menu as="div" className="relative text-left ">
         <div>
-          <Menu.Button className="flex gap-1 items-center text-tertiary hover:text-primary" title="切换语言">
+          <Menu.Button
+            className="flex gap-1 items-center text-tertiary hover:text-primary"
+            title={t('common.footer.switchLanguages_alt')}
+          >
             <IoLanguage className="text-base" />
-            <span className="text-sm">语言</span>
+            <span className="text-sm">{t('common.footer.switchLanguages')}</span>
           </Menu.Button>
         </div>
         <Transition
@@ -66,7 +56,9 @@ const SwitchLanguages = () => {
               {languages.map((language) => (
                 <Menu.Item key={language.id} as={Fragment}>
                   {({ active }) => (
-                    <button type="button" onClick={() => changeLanguage(language.id)}
+                    <button
+                      type="button"
+                      onClick={() => changeLanguage(language.id)}
                       className={` btn-base text-sm hover:text-primary focus:text-primary btn-md cursor-pointer px-2 py-2 ${
                         active
                           ? "text-primary bg-neutral-200 dark:bg-neutral-800"
@@ -74,7 +66,7 @@ const SwitchLanguages = () => {
                       }`}
                     >
                       {language.value}
-                    </button >
+                    </button>
                   )}
                 </Menu.Item>
               ))}

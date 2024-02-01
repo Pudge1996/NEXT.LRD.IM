@@ -1,14 +1,22 @@
 {
   "common": {
+    "information": {
+      "author": "李瑞东",
+      "desc": "李瑞东的个人网站"
+    },
     "header": {
-      "index": "作品",
+      "projects": "作品",
       "blog": "博客",
       "about": "关于我"
     },
     "footer": {
       "updates": "更新日志",
+      "updates_alt": "查看本站的更新日志",
       "rss": "订阅 RSS",
-      "switchLanguages": "语言"
+      "rss_alt": "通过 RSS 订阅李瑞东的设计博客",
+      "switchLanguages": "语言",
+      "switchLanguages_alt": "切换网页语言",
+      "switchThemes_alt": "切換网站亮暗模式"
     }
   }
 }
