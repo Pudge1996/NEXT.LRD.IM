@@ -1,57 +1,46 @@
 import React, { Fragment } from "react";
-import Link from "next/link";
 import { useRouter } from 'next/router';
 import { Menu, Transition } from "@headlessui/react";
 import { IoLanguage } from "react-icons/io5";
-import Cookie from 'js-cookie';
-
-
-// import { IoMenu } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
-
-import styles from "./styles.module.css";
 
 const SwitchLanguages = () => {
-  // const router = useRouter();
-  // const changeLanguage = (locale) => {
-  //   // 根据 Cookies 改当前语言
-  //   Cookie.set('NEXT_LOCALE', locale, { expires: 365 });
-  
-  //   // 如果选择的语言是默认语言，则不需要在URL中添加语言前缀
-  //   const newAsPath = locale === router.defaultLocale ? router.asPath : `/${locale}${router.asPath}`;
-    
-  //   router.replace(router.pathname, newAsPath, { locale, shallow: true });
-  // };
+
   const router = useRouter();
-
   // const changeLanguage = (locale) => {
-  //   Cookie.set('NEXT_LOCALE', locale, { expires: 365 });
-
-  //   // 这里我们只更新locale状态，不改变URL
-  //   if (router.locale !== locale) {
+  //   // 存储 locale 到 localStorage
+  //   if (typeof window !== 'undefined') {
+  //     localStorage.setItem('MY_LANGUAGE', locale);
+  //   }
+  
+  //   // 只更新 locale 状态，不改变 URL
+  //   // if (router.locale !== locale) { 
   //     router.push(router.pathname, router.asPath, {
-  //       // locale: locale,
   //       shallow: true,
   //     });
-  //   }
+  //   // }
   // };
+
   const changeLanguage = (locale) => {
-    // 存储 locale 到 localStorage
     if (typeof window !== 'undefined') {
-      localStorage.setItem('MY_LANGUAGE', locale);
+      localStorage.setItem('MY_LANGUAGE', locale); // 更新 localStorage 中的语言设置
+      document.documentElement.lang = locale; // 更新 html 的 lang 属性
+
+      // 使用浅层路由进行语言切换，避免页面刷新
+      router.push(router.pathname, router.asPath, { shallow: true });
     }
-  
-    // 只更新 locale 状态，不改变 URL
-    // if (router.locale !== locale) { 
-      router.push(router.pathname, router.asPath, {
-        shallow: true,
-      });
-    // }
   };
+
+  // 组件挂载时读取 localStorage 中的语言设置，并更新页面
+  React.useEffect(() => {
+    const savedLocale = localStorage.getItem('MY_LANGUAGE') || 'zh-Hans'; // 默认为 'en'
+    changeLanguage(savedLocale);
+  }, []);
   
 
 
   const languages = [
-    { id: "zh-Hans", value: "简体中文" },
+    { id: "zh-Hans", value: "中文（简体）" },
+    { id: "zh-Hant", value: "中文（繁体）" },
     { id: "en", value: "英语" },
   ];
   return (
@@ -72,7 +61,7 @@ const SwitchLanguages = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95 hidden"
         >
-          <Menu.Items className="absolute top-[-6.5rem] right-[-2.4rem] rtl:left-0 rtl:right-auto rounded-xl bg-color shadow-lg border border-neutral-200 dark:border-2 dark:border-neutral-800 ">
+          <Menu.Items className="absolute top-[-9rem] right-[-2.4rem] rtl:left-0 rtl:right-auto rounded-xl bg-color shadow-lg border border-neutral-200 dark:border-2 dark:border-neutral-800 ">
             <div className="p-2 w-fit min-w-[120px] whitespace-nowrap flex flex-col gap-1">
               {languages.map((language) => (
                 <Menu.Item key={language.id} as={Fragment}>
