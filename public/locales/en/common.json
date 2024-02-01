@@ -1,0 +1,14 @@
+{
+    "common": {
+      "header": {
+        "index": "Projects",
+        "blog": "Blog",
+        "about": "About"
+      },
+      "footer": {
+        "updates": "Updates",
+        "rss": "RSS",
+        "switchLanguages": "Languages"
+      }
+    }
+  }

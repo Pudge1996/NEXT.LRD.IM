@@ -5,6 +5,7 @@ const nextConfig = {
   i18n: {
     locales: ['zh-Hans', 'en'],
     defaultLocale: 'zh-Hans',
+    localeDetection: false,
   },
   async rewrites() {
     return [

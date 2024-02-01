@@ -1,0 +1,14 @@
+{
+  "common": {
+    "header": {
+      "index": "作品",
+      "blog": "博客",
+      "about": "关于我"
+    },
+    "footer": {
+      "updates": "更新日志",
+      "rss": "订阅 RSS",
+      "switchLanguages": "语言"
+    }
+  }
+}

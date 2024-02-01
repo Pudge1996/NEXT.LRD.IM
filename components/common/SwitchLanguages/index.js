@@ -23,17 +23,31 @@ const SwitchLanguages = () => {
   // };
   const router = useRouter();
 
-  const changeLanguage = (locale) => {
-    Cookie.set('NEXT_LOCALE', locale, { expires: 365 });
+  // const changeLanguage = (locale) => {
+  //   Cookie.set('NEXT_LOCALE', locale, { expires: 365 });
 
-    // 这里我们只更新locale状态，不改变URL
-    if (router.locale !== locale) {
+  //   // 这里我们只更新locale状态，不改变URL
+  //   if (router.locale !== locale) {
+  //     router.push(router.pathname, router.asPath, {
+  //       // locale: locale,
+  //       shallow: true,
+  //     });
+  //   }
+  // };
+  const changeLanguage = (locale) => {
+    // 存储 locale 到 localStorage
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('MY_LANGUAGE', locale);
+    }
+  
+    // 只更新 locale 状态，不改变 URL
+    // if (router.locale !== locale) { 
       router.push(router.pathname, router.asPath, {
-        locale: locale,
         shallow: true,
       });
-    }
+    // }
   };
+  
 
 
   const languages = [

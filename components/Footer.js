@@ -1,8 +1,10 @@
 import Link from "next/link";
 import DarkModeButton from "/components/common/DarkModeButton";
 import SwitchLanguages from "/components/common/SwitchLanguages";
+import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
+  const { t } = useTranslation('common');
   const currentYear = new Date().getFullYear();
   return (
     <div className="flex justify-center sm:justify-between items-center gap-2 max-w-2xl px-3 py-12 sm:pt-4 mx-auto select-none text-tertiary text-sm">
@@ -14,7 +16,7 @@ export default function Footer() {
           title="更新日志"
           className="flex justify-between items-center gap-1 ring-default hover:text-primary"
         >
-          更新日志
+          {t('common.footer.updates')}
         </Link>
         <span> · </span>
         <Link
@@ -23,7 +25,7 @@ export default function Footer() {
           target="_blank"
           className="flex justify-between items-center gap-1 ring-default hover:text-primary"
         >
-          订阅 RSS
+          {t('common.footer.rss')}
         </Link>
         <span> · </span>
         <div className="flex justify-between items-center gap-1">

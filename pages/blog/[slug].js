@@ -193,33 +193,34 @@ export const getInitialProps = async ({}) => {
   return { title };
 };
 
-// export const getStaticPaths = async () => {
-//   const paths = getAllPosts().posts.map(({ slug }) => ({ params: { slug } }));
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
-
 export const getStaticPaths = async () => {
-  const allPosts = getAllPosts(); // 假设这返回一个对象
-  const posts = allPosts.posts;  // 获取对象中的posts数组
-
-  // 确保posts是一个数组
-  if (!Array.isArray(posts)) {
-    throw new Error('Expected an array of posts');
-  }
-
-  const paths = posts.map(({ slug }) => ([
-    { params: { slug }, locale: 'zh-Hans' },
-    { params: { slug }, locale: 'en-US' },
-  ])).flat();
-
+  const paths = getAllPosts().posts.map(({ slug }) => ({ params: { slug } }));
   return {
     paths,
     fallback: false,
   };
 };
+
+// 遗产：使博客 Posts 不受 Next.js 原生多语言切换的影响
+// export const getStaticPaths = async () => {
+//   const allPosts = getAllPosts(); // 假设这返回一个对象
+//   const posts = allPosts.posts;  // 获取对象中的posts数组
+
+//   // 确保posts是一个数组
+//   if (!Array.isArray(posts)) {
+//     throw new Error('Expected an array of posts');
+//   }
+
+//   const paths = posts.map(({ slug }) => ([
+//     { params: { slug }, locale: 'zh-Hans' },
+//     { params: { slug }, locale: 'en-US' },
+//   ])).flat();
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
 
 

@@ -7,6 +7,7 @@ import headerNavLinks from "/data/common/headerNavLinks";
 import { IoMenu, IoLogoRss, IoPerson } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import ContactCard from "/components/common/ContactCard";
 
+
 export default function Header() {
   const router = useRouter();
   return (
