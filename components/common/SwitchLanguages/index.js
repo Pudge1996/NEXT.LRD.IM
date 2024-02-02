@@ -24,8 +24,8 @@ const SwitchLanguages = () => {
 
   const languages = [
     { id: "zh-Hans", value: "中文（简体）" },
-    { id: "zh-Hant", value: "中文（繁体）" },
-    { id: "en", value: "英语" },
+    { id: "zh-Hant", value: "中文（繁體）" },
+    { id: "en", value: "English" },
   ];
 
   const { t } = useTranslation("common");
@@ -51,7 +51,7 @@ const SwitchLanguages = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95 hidden"
         >
-          <Menu.Items className="absolute top-[-9rem] right-[-2.4rem] rtl:left-0 rtl:right-auto rounded-xl bg-color shadow-lg border border-neutral-200 dark:border-2 dark:border-neutral-800 ">
+          <Menu.Items className="absolute top-[-9rem] right-[-1.2rem] rtl:left-0 rtl:right-auto rounded-xl bg-color shadow-lg border border-neutral-200 dark:border-2 dark:border-neutral-800 ">
             <div className="p-2 w-fit min-w-[120px] whitespace-nowrap flex flex-col gap-1">
               {languages.map((language) => (
                 <Menu.Item key={language.id} as={Fragment}>
