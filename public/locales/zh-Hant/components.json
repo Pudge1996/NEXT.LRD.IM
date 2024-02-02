@@ -22,6 +22,13 @@
       "Projects_title": "檢視全部作品",
       "Contact": "聯絡我",
       "Contact_title": "取得聯絡方式"
+    },
+    "ProjectNav": {
+      "icon": "目錄",
+      "icon_title": "開啟項目目錄",
+      "dialogHeading": "跳轉至",
+      "close": "關閉目錄",
+      "close_title": "關閉目錄彈窗"
     }
   }
   

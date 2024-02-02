@@ -2,8 +2,10 @@ import React from "react";
 import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import { IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons/io5/
+import { useTranslation } from "react-i18next";
 
 export default function ProjectNav({ items }) {
+  const { t } = useTranslation("components");
   const [isSmallScreen, setIsSmallScreen] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
@@ -56,10 +58,11 @@ export default function ProjectNav({ items }) {
           <IoList className="text-xl" />
           <button
             type="button"
+            role="button"
             onClick={openModal}
             className="w-full h-full absolute  bg-transparent inset-0 ring-default"
-            aria-label="目录"
-            title="目录"
+            aria-label={t("project.ProjectNav.icon")}
+            title={t("project.ProjectNav.icon_title")}
           ></button>
           <Transition.Root show={open} as={React.Fragment}>
             <Dialog as="div" className="relative z-50" onClose={setOpen}>
@@ -96,10 +99,10 @@ export default function ProjectNav({ items }) {
                               as="h5"
                               className="text-lg font-semibold text-primary"
                             >
-                              跳转至
+                              {t("project.ProjectNav.dialogHeading")}
                             </Dialog.Title>
                           </div>
-                          <div className="py-1 px-3 flex flex-col gap-[6px] max-h-[50vh] sm:max-h-[70vh] gap-[6px] overflow-auto">
+                          <div className="py-1 px-3 flex flex-col max-h-[50vh] sm:max-h-[70vh] gap-[6px] overflow-auto">
                             {/* Replace with your content */}
                             {items.map((item, index) => (
                               <li className="flex btn-base rounded text-base transition-non" key={index}>
@@ -118,13 +121,13 @@ export default function ProjectNav({ items }) {
                           <div className="py-4 sm:pb-6 px-6">
                             <button
                               type="button"
+                              role="button"
                               className="min-w-full sm:w-max btn-base text-base btn-md bg-neutral-100 dark:bg-neutral-900 sm:hover:bg-neutral-200 relative text-center whitespace-nowrap"
                               onClick={() => setOpen(false)}
-                              aria-label="收起目录"
-                              title="收起目录"
+                              title={t("project.ProjectNav.close_title")}
                             >
-                              <span className="sr-only">关闭目录弹窗</span>
-                              收起
+                              <span className="sr-only">{t("project.ProjectNav.close_title")}</span>
+                              {t("project.ProjectNav.close")}
                             </button>
                           </div>
                         </div>

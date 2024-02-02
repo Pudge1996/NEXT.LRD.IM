@@ -21,6 +21,13 @@
       "Projects": "All Projects",
       "Projects_title": "View All Projects",
       "Contact": "Contact Michael"
+    },
+    "ProjectNav": {
+      "icon": "Catalog",
+      "icon_title": "Open Project Catalog",
+      "dialogHeading": "Jump To",
+      "close": "Close",
+      "close_title": "Close Catalog Popup"
     }
   }
 }
