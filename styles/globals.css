@@ -8,7 +8,7 @@
     @apply relative scroll-pt-[88px];
   }
   body {
-    @apply bg-color transition-[background-color] text-primary font-normal antialiased break-words font-sans leading-relaxed relative;
+    @apply bg-color transition-[background-color] text-primary font-normal antialiased break-words font-sans leading-relaxed text-pretty relative;
   }
   .layout {
     @apply max-w-2xl mx-auto pt-8 sm:pb-12 sm:pt-14 px-5 md:px-3 relative min-h-[calc(100vh-182px)] sm:min-h-[calc(100vh-152px)];
