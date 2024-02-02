@@ -7,9 +7,10 @@ import { Analytics } from "@vercel/analytics/react";
 import { appWithI18Next, useSyncLanguage } from "ni18n";
 import { ni18nConfig } from "/ni18n.config";
 import { useTranslation } from "react-i18next";
+import useLanguageSetting from '/utils/useLanguageSetting';
 
 function MyApp({ Component, pageProps }) {
-
+  useLanguageSetting();
   const { t } = useTranslation("common");
   const locale =
     typeof window !== "undefined"
