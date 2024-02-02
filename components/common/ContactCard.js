@@ -54,8 +54,8 @@ export default function ContactCard() {
       type="button"
       onClick={openModal}
       className="w-full h-full absolute bg-transparent inset-0 ring-default"
-      aria-label={t("ContactCard.button_aria")}
-      title={t("ContactCard.button_aria")}
+      aria-label={t("ContactCard.button")}
+      title={t("ContactCard.button_title")}
     >
     </button>
 

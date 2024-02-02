@@ -12,12 +12,12 @@
     },
     "footer": {
       "updates": "更新日志",
-      "updates_alt": "查看本站的更新日志",
+      "updates_title": "查看本站的更新日志",
       "rss": "订阅 RSS",
-      "rss_alt": "通过 RSS 订阅李瑞东的设计博客",
+      "rss_title": "通过 RSS 订阅李瑞东的设计博客",
       "switchLanguages": "Languages",
-      "switchLanguages_alt": "Switch website language",
-      "switchThemes_alt": "切換网站亮暗模式"
+      "switchLanguages_title": "Switch website language",
+      "switchThemes": "切換网站亮暗模式"
     }
   }
 }

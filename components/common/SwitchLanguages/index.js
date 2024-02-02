@@ -55,7 +55,7 @@ const SwitchLanguages = () => {
         <div>
           <Menu.Button
             className="flex gap-1 items-center text-tertiary hover:text-primary"
-            title={t('common.footer.switchLanguages_alt')}
+            title={t('common.footer.switchLanguages_title')}
           >
             <IoLanguage className="text-base" />
             <span className="text-sm">{t('common.footer.switchLanguages')}</span>
@@ -71,12 +71,13 @@ const SwitchLanguages = () => {
           leaveTo="transform opacity-0 scale-95 hidden"
         >
           <Menu.Items className="absolute top-[-9rem] right-[-1.2rem] rtl:left-0 rtl:right-auto rounded-xl bg-color shadow-lg border border-neutral-200 dark:border-2 dark:border-neutral-800 ">
-            <div className="p-2 w-fit min-w-[120px] whitespace-nowrap flex flex-col gap-1">
+            <div role="menubar" className="p-2 w-fit min-w-[120px] whitespace-nowrap flex flex-col gap-1">
               {languages.map((language) => (
                 <Menu.Item key={language.id} as={Fragment}>
                   {({ active }) => (
                     <button
                       type="button"
+                      role="menuitemradio"
                       onClick={() => changeLanguage(language.id)}
                       className={` btn-base text-sm hover:text-primary focus:text-primary btn-md cursor-pointer px-2 py-2 ${
                         active

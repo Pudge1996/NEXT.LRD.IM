@@ -13,5 +13,13 @@
   },
   "ScrollToTop": {
     "button_aria": "回到顶部"
+  },
+  "ProjectFooter": {
+    "Resume": "查看简历",
+    "Resume_title": "查看李瑞东的简历",
+    "Projects": "所有作品",
+    "Projects_title": "查看所有作品",
+    "Contact": "联系我",
+    "Contact_title": "获取联系方式"
   }
 }

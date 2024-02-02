@@ -13,9 +13,10 @@ export default function DarkModeButton() {
 
   return (
     <button
-      aria-label={t('common.footer.switchThemes_alt')}
+      aria-label={t('common.footer.switchThemes')}
+      role="button"
       type="button"
-      title={t('common.footer.switchThemes_alt')}
+      title={t('common.footer.switchThemes')}
       className="flex gap-1 justify-center items-center ring-default"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >

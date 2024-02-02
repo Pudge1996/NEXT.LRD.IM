@@ -1,11 +1,11 @@
 {
   "ContactCard": {
-    "copyPhone": "Copy mobile",
+    "copyPhone": "Copy Mobile",
     "copyEmail": "Copy Email",
-    "copyPhone_succeed": "Mobile copied",
-    "copyEmail_succeed": "Email copied",
+    "copyPhone_succeed": "Mobile Copied",
+    "copyEmail_succeed": "Email Copied",
     "button": "Contact",
-    "button_aria": "Contact Info",
+    "button_title": "Get Contact Information",
     "img_alt": "WeChat ID: 18925001685",
     "scanMe_desktop": "Add me on WeChat",
     "scanMe_mobile": "Long press to scan & add me on WeChat",
@@ -13,5 +13,12 @@
   },
   "ScrollToTop": {
     "button_aria": "Back to top"
+  },
+  "ProjectFooter": {
+    "Resume": "View Resume",
+    "Resume_title": "View Michael's Resume",
+    "Projects": "All Projects",
+    "Projects_title": "View All Projects",
+    "Contact": "Contact Michael"
   }
 }

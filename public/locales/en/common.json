@@ -12,12 +12,12 @@
     },
     "footer": {
       "updates": "Updates",
-      "updates_alt": "View the update log of this site",
+      "updates_title": "View the update log of this site",
       "rss": "RSS",
-      "rss_alt": "Subscribe to Michael's design blog via RSS",
+      "rss_title": "Subscribe to Michael's design blog via RSS",
       "switchLanguages": "Languages",
-      "switchLanguages_alt": "Switch website language",
-      "switchThemes_alt": "Switch website light/dark mode"
+      "switchLanguages_title": "Switch website language",
+      "switchThemes": "Switch website light/dark mode"
     }
   }
 }

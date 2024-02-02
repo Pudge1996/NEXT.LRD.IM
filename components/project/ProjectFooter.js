@@ -1,32 +1,76 @@
 import React from "react";
 import Link from "next/link";
 import ContactCard from "/components/common/ContactCard";
+import { useTranslation, Translation } from "react-i18next";
 
 export default function ProjectFooter() {
+  const { t } = useTranslation(["common", "components"]);
+
   return (
-    <section className="max-w-2xl mx-auto px-5 md:px-0 relative">
+    <section className="w-full max-w-2xl mx-auto px-0">
       <section className="flex flex-col gap-4 sm:gap-6 p-4 mb-6 sm:p-6 rounded-lg mt-4 sm:mt-0 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-colors">
         <div className="flex flex-col gap-1">
-          <div className="text-lg font-semibold">李瑞东</div>
+          <div className="text-lg font-semibold">
+            {t("common.information.author", { ns: "common" })}
+          </div>
+
           <div className="text-secondary">
-            <span>
-              5 年工作经验的 UI/UX 设计师，拥有 <strong>国际化 SaaS</strong>、
-              <strong>自研组件/图标库搭建</strong>、<strong>数据可视化</strong>
-              和<strong>体验度量</strong>
-              等实践经验，同时也有大型企业服务产品和跨境电商的业务
-              <span className="whitespace-nowrap">背景。</span>
-            </span>
+            <Translation>
+              {(t, { i18n }) => (
+                <div>
+                  {i18n.language === "en" && (
+                    <>
+                    <div className="mb-1">
+                      As a UI/UX designer with 5 years of experience, Michael possesses
+                      expertise in{" "}
+                      <strong>designing global SaaS platforms</strong>,{" "}
+                      <strong>building component libraries</strong>,{" "}
+                      <strong>visualizing data</strong> and{" "}
+                      <strong>analyzing UX metrics</strong>.
+                      <br />
+                    </div>
+                    <span>
+                      Additionally, Michael has a solid business background in both
+                      enterprise services and cross-border{" "}</span>
+                      <span className="whitespace-nowrap">
+                        e-commerce products.
+                      </span>
+                    </>
+                  )}
+                  {i18n.language === "zh-Hant" && (
+                    <span>
+                      擁有 5 年工作經驗的 UI/UX 設計師，具備
+                      <strong>國際化 SaaS 平台</strong>、
+                      <strong>系統元件庫架設</strong>、
+                      <strong>資料視覺化</strong>及<strong>用戶體驗測量</strong>
+                      等實務經驗。同時亦具有大型企業服務及跨境電商產品的業務
+                      <span className="whitespace-nowrap">背景。</span>
+                    </span>
+                  )}
+                  {!(i18n.language === "en" || i18n.language === "zh-Hant") && (
+                    <span>
+                      5 年工作经验的 UI/UX 设计师，拥有
+                      <strong>国际化 SaaS 平台</strong>、
+                      <strong>自研组件/图标库搭建</strong>、
+                      <strong>数据可视化</strong>和<strong>体验度量</strong>
+                      等实践经验，同时也有大型企业服务和跨境电商产品的业务
+                      <span className="whitespace-nowrap">背景。</span>
+                    </span>
+                  )}
+                </div>
+              )}
+            </Translation>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col md:flex-row gap-3">
           <Link
             href="/me"
-            title="个人简历"
-            aria-label="点击查看李瑞东的简历"
+            title={t("ProjectFooter.Resume_title", { ns: "components" })}
+            aria-label={t("ProjectFooter.Resume", { ns: "components" })}
             target="_blank"
             className="flex gap-1 justify-center items-center w-full flex-1 sm:w-max btn-base btn-lg bg-neutral-900 dark:bg-white sm:hover:bg-black dark:sm:hover:bg-neutral-200  text-neutral-100 dark:text-neutral-800 select-none text-center"
           >
-            查看简历
+            {t("ProjectFooter.Resume", { ns: "components" })}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -42,15 +86,16 @@ export default function ProjectFooter() {
           </Link>
           <Link
             href="/"
-            title="我查看我的所有作品"
-            aria-label="跳转到首页"
-            className="flex gap-2 justify-center items-center flex-1 btn-base text-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800  sm:hover:bg-neutral-200 relative transition-colors"
+            title={t("ProjectFooter.Projects_title", { ns: "components" })}
+            aria-label={t("ProjectFooter.Projects", { ns: "components" })}
+            className="flex gap-2 justify-center items-center flex-1 btn-base text-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800  sm:hover:bg-neutral-200 relative transition-colors line-clamp-1"
           >
-            所有作品
+            {t("ProjectFooter.Projects", { ns: "components" })}
           </Link>
           <div className="flex-1 btn-base text-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800  sm:hover:bg-neutral-200 relative transition-colors">
-            <ContactCard />
-            <div className="flex gap-2 justify-center items-center">联系我</div>
+            <ContactCard 
+            />
+            <div className="flex gap-2 justify-center items-center">{t("ProjectFooter.Contact", { ns: "components" })}</div>
           </div>
         </div>
       </section>

@@ -13,5 +13,13 @@
   },
   "ScrollToTop": {
     "button_aria": "回到頁首"
+  },
+  "ProjectFooter": {
+    "Resume": "查看履歷",
+    "Resume_title": "查看李瑞東的履歷",
+    "Projects": "全部作品",
+    "Projects_title": "檢視全部作品",
+    "Contact": "聯絡我",
+    "Contact_title": "獲取聯絡方式"
   }
 }

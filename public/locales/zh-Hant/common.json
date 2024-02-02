@@ -12,12 +12,12 @@
     },
     "footer": {
       "updates": "更新日誌",
-      "updates_alt": "檢視本站的更新日誌",
+      "updates_title": "檢視本站的更新日誌",
       "rss": "訂閱 RSS",
-      "rss_alt": "透過 RSS 訂閱李瑞東的設計部落格",
+      "rss_title": "透過 RSS 訂閱李瑞東的設計部落格",
       "switchLanguages": "Languages",
-      "switchLanguages_alt": "Switch website language",
-      "switchThemes_alt": "切換網站亮暗色模式"
+      "switchLanguages_title": "Switch website language",
+      "switchThemes": "切換網站亮暗色模式"
     }
   }
 }
