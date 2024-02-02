@@ -5,7 +5,7 @@
     "copyPhone_succeed": "已複製電話號碼",
     "copyEmail_succeed": "已複製 Email",
     "button": "聯絡方式",
-    "button_aria": "聯絡方式",
+    "button_title": "取得聯絡方式",
     "img_alt": "微信帳號：18925001685",
     "scanMe_desktop": "掃描 QR Code 加我微信",
     "scanMe_mobile": "長按識別 QR Code 加我微信",
@@ -14,12 +14,15 @@
   "ScrollToTop": {
     "button_aria": "回到頁首"
   },
-  "ProjectFooter": {
-    "Resume": "查看履歷",
-    "Resume_title": "查看李瑞東的履歷",
-    "Projects": "全部作品",
-    "Projects_title": "檢視全部作品",
-    "Contact": "聯絡我",
-    "Contact_title": "獲取聯絡方式"
+  "project": {
+    "ProjectFooter": {
+      "Resume": "查看履歷",
+      "Resume_title": "查看李瑞東的履歷",
+      "Projects": "全部作品",
+      "Projects_title": "檢視全部作品",
+      "Contact": "聯絡我",
+      "Contact_title": "取得聯絡方式"
+    }
   }
+  
 }

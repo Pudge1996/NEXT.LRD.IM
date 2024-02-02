@@ -14,11 +14,13 @@
   "ScrollToTop": {
     "button_aria": "Back to top"
   },
-  "ProjectFooter": {
-    "Resume": "View Resume",
-    "Resume_title": "View Michael's Resume",
-    "Projects": "All Projects",
-    "Projects_title": "View All Projects",
-    "Contact": "Contact Michael"
+  "project": {
+    "ProjectFooter": {
+      "Resume": "View Resume",
+      "Resume_title": "View Michael's Resume",
+      "Projects": "All Projects",
+      "Projects_title": "View All Projects",
+      "Contact": "Contact Michael"
+    }
   }
 }

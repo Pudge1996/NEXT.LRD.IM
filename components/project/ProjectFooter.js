@@ -65,12 +65,12 @@ export default function ProjectFooter() {
         <div className="flex flex-col md:flex-row gap-3">
           <Link
             href="/me"
-            title={t("ProjectFooter.Resume_title", { ns: "components" })}
-            aria-label={t("ProjectFooter.Resume", { ns: "components" })}
+            title={t("project.ProjectFooter.Resume_title", { ns: "components" })}
+            aria-label={t("project.ProjectFooter.Resume", { ns: "components" })}
             target="_blank"
             className="flex gap-1 justify-center items-center w-full flex-1 sm:w-max btn-base btn-lg bg-neutral-900 dark:bg-white sm:hover:bg-black dark:sm:hover:bg-neutral-200  text-neutral-100 dark:text-neutral-800 select-none text-center"
           >
-            {t("ProjectFooter.Resume", { ns: "components" })}
+            {t("project.ProjectFooter.Resume", { ns: "components" })}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -86,16 +86,16 @@ export default function ProjectFooter() {
           </Link>
           <Link
             href="/"
-            title={t("ProjectFooter.Projects_title", { ns: "components" })}
-            aria-label={t("ProjectFooter.Projects", { ns: "components" })}
+            title={t("project.ProjectFooter.Projects_title", { ns: "components" })}
+            aria-label={t("project.ProjectFooter.Projects", { ns: "components" })}
             className="flex gap-2 justify-center items-center flex-1 btn-base text-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800  sm:hover:bg-neutral-200 relative transition-colors line-clamp-1"
           >
-            {t("ProjectFooter.Projects", { ns: "components" })}
+            {t("project.ProjectFooter.Projects", { ns: "components" })}
           </Link>
           <div className="flex-1 btn-base text-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800  sm:hover:bg-neutral-200 relative transition-colors">
             <ContactCard 
             />
-            <div className="flex gap-2 justify-center items-center">{t("ProjectFooter.Contact", { ns: "components" })}</div>
+            <div className="flex gap-2 justify-center items-center">{t("project.ProjectFooter.Contact", { ns: "components" })}</div>
           </div>
         </div>
       </section>
