@@ -2,13 +2,14 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import siteMetadata from "/data/siteMetadata";
 import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
+import { useTranslation } from "react-i18next";
+
 
 export default function index() {
-
+  const { t } = useTranslation("common");
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
@@ -81,7 +82,7 @@ export default function index() {
   return (
     <>
       <Head>
-        <title>首页 - {siteMetadata.title}</title>
+        <title>{t("common.pages.homepage")} - {t("common.information.pageTitleSuffix")}</title>
       </Head>
       <div className="layout project">
         <section className="mb-14">

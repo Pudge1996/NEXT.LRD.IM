@@ -2,6 +2,7 @@
   "common": {
     "information": {
       "author": "李瑞東",
+      "pageTitleSuffix": "李瑞東 LRD.IM",
       "site": "李瑞東的個人網站 LRD.IM",
       "desc": "李瑞東的個人網站，記錄著我在設計領域的作品、經驗和觀點。"
     },
@@ -9,6 +10,12 @@
       "projects": "作品",
       "blog": "部落格",
       "about": "關於我"
+    },
+    "pages":{
+      "homepage": "首頁",
+      "404": "404：找不到頁面",
+      "updates": "更新日誌",
+      "resume": "履歷"
     },
     "footer": {
       "updates": "更新日誌",

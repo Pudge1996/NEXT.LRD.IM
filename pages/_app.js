@@ -5,10 +5,11 @@ import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from "@vercel/analytics/react";
 import { appWithI18Next, useSyncLanguage } from "ni18n";
-import { ni18nConfig } from "./../ni18n.config";
+import { ni18nConfig } from "/ni18n.config";
 import { useTranslation } from "react-i18next";
 
 function MyApp({ Component, pageProps }) {
+
   const { t } = useTranslation("common");
   const locale =
     typeof window !== "undefined"

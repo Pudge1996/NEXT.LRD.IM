@@ -2,15 +2,16 @@ import Head from 'next/head'
 import siteMetadata from "/data/siteMetadata";
 import Link from "next/link";
 import Tooltips from "/components/common/Tooltips";
-
+import { useTranslation } from "react-i18next";
 
 export default function me() {
+  const { t } = useTranslation("common");
   const fileUrl = 'https://lrdim.oss-cn-shenzhen.aliyuncs.com/resources/resume-20221123.pdf';
   return (
     
     <div className="">
        <Head>
-        <title>简历 - {siteMetadata.title}</title>
+       <title>{t("common.pages.resume")} - {t("common.information.pageTitleSuffix")}</title>
       </Head>
 
       <main className="resume max-w-2xl mx-auto pt-8 sm:pb-12 sm:pt-14 px-5 md:px-3">

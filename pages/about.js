@@ -1,12 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
-import siteMetadata from "/data/siteMetadata";
-
+import { useTranslation } from "react-i18next";
+  
 export default function about() {
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
-        <title>关于我 - {siteMetadata.title}</title>
+        <title>{t("common.header.about")} - {t("common.information.pageTitleSuffix")}</title>
       </Head>
 
       <div className="layout about flex flex-col gap-6">

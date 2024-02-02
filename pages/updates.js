@@ -2,29 +2,16 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import siteMetadata from "/data/siteMetadata";
 import updatesData from "/data/common/updatesData";
 import ContactCard from "/components/common/ContactCard";
+import { useTranslation } from "react-i18next";
 
 export default function updates() {
+  const { t } = useTranslation("common");
   const [isLoaded, setIsLoaded] = useState(false);
   return <>
     <Head>
-      <title>What's New - {siteMetadata.title}</title>
-      <meta name="author" content={siteMetadata.author} />
-      <meta name="description" content={siteMetadata.description} />
-      <link rel="icon" href="/favicon.ico" />
-
-      {/* For Soical Meida (OpenGraph) */}
-      <meta property="og:image" content="网站宽屏图（16:9）" />
-      <meta property="og:image:alt" content="网站宽屏图的描述" />
-      <meta name="og:type" content="summary" />
-      <meta property="og:title" content={siteMetadata.title} />
-      <meta property="og:description" content={siteMetadata.description} />
-
-      {/* For Twitter */}
-      <meta name="twitter:site" content="@Pudge_1996" />
-      <meta name="twitter:creator" content="@Pudge_1996" />
+      <title>{t("common.pages.updates")} - {t("common.information.pageTitleSuffix")}</title>
     </Head>
 
     <div className="layout updates">

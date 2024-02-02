@@ -1,12 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
-import siteMetadata from "/data/siteMetadata";
+import { useTranslation } from "react-i18next";
+
+
 
 export default function Custom404() {
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
-        <title>404 - Page Not Found - {siteMetadata.title}</title>
+      <title>{t("common.pages.404")} - {t("common.information.pageTitleSuffix")}</title>
       </Head>
 
       <div className="layout text-center h-[600px] flex flex-col items-center justify-center">

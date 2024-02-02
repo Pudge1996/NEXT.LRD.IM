@@ -4,19 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { HiThumbUp } from "react-icons/hi"; //https://react-icons.github.io/react-icons/icons?name=hi
 import { getAllPosts } from "/utils/mdx";
-import siteMetadata from "/data/siteMetadata";
 import blogCategoriesData from "/data/blog/blogCategoriesData";
 import Date from "/components/common/Date";
 import generateRssFeed from '/utils/generateRSSFeed';
-
+import { useTranslation } from "react-i18next";
 
 export default function blog({ posts }) {
+  const { t } = useTranslation("common");
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   return (
     <>
       <Head>
-        <title>博客 - {siteMetadata.title}</title>
+      <title>{t("common.header.blog")} - {t("common.information.pageTitleSuffix")}</title>
       </Head>
       <div className="layout flex flex-col">
         {/* 置顶博文 */}
