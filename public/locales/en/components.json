@@ -10,5 +10,8 @@
     "scanMe_desktop": "Add me on WeChat",
     "scanMe_mobile": "Long press to scan & add me on WeChat",
     "or": "OR"
+  },
+  "ScrollToTop": {
+    "button_aria": "Back to top"
   }
 }

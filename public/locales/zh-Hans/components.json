@@ -10,5 +10,8 @@
     "scanMe_desktop": "扫一扫加我微信",
     "scanMe_mobile": "长按识别加我微信",
     "or": "或"
+  },
+  "ScrollToTop": {
+    "button_aria": "回到顶部"
   }
 }

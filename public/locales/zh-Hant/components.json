@@ -10,5 +10,8 @@
     "scanMe_desktop": "掃描 QR Code 加我微信",
     "scanMe_mobile": "長按識別 QR Code 加我微信",
     "or": "或"
+  },
+  "ScrollToTop": {
+    "button_aria": "回到頁首"
   }
 }
