@@ -21,28 +21,27 @@ export default function ProjectFooter() {
                   {i18n.language === "en" && (
                     <>
                     <div className="mb-1">
-                      As a UI/UX designer with 5 years of experience, Michael possesses
-                      expertise in{" "}
-                      <strong>designing global SaaS platforms</strong>,{" "}
-                      <strong>building component libraries</strong>,{" "}
-                      <strong>visualizing data</strong> and{" "}
-                      <strong>analyzing <span className="whitespace-nowrap">UX metrics</span></strong>.
+                      Michael holds 5 years of expertise in{" "}
+                      <strong>SaaS Product Design</strong>,{" "}
+                      <strong>Component Library Design</strong>,{" "}
+                      <strong>Data Visualization</strong>, and{" "}
+                      <strong>UX Metrics&nbsp;Analysis</strong>.
                       <br />
                     </div>
                     <span>
                       Additionally, Michael has a solid business background in both
-                      enterprise services and cross-border{" "}</span>
+                      Enterprise Services and Cross-Border{" "}</span>
                       <span className="whitespace-nowrap">
-                        e-commerce products.
+                        eCommerce products.
                       </span>
                     </>
                   )}
                   {i18n.language === "zh-Hant" && (
                     <span>
-                      擁有 5 年工作經驗的 UI/UX 設計師，具備
-                      <strong>國際化 SaaS 平台</strong>、
-                      <strong>系統元件庫架設</strong>、
-                      <strong>資料視覺化</strong>及<strong>用戶體驗測量</strong>
+                      具有 5 年工作經驗的 UI/UX 設計師，具備
+                      <strong>國際化 SaaS 產品</strong>、
+                      <strong>系統元件庫建置</strong>、
+                      <strong>資訊視覺化</strong>及<strong>用戶體驗測量</strong>
                       等實務經驗。同時亦具有大型企業服務及跨境電商產品的業務
                       <span className="whitespace-nowrap">背景。</span>
                     </span>
