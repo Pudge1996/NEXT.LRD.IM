@@ -20,27 +20,28 @@ const SwitchLanguages = () => {
 
   // 组件挂载时读取 localStorage 中的语言设置，并更新页面
   React.useEffect(() => {
-    // 首先尝试从localStorage中获取语言设置
-    let savedLocale = localStorage.getItem("MY_LANGUAGE");
-  
-    if (!savedLocale) {
-      // localStorage中没有语言设置，使用浏览器语言
-      let browserLanguage = navigator.language || navigator.userLanguage;
-      savedLocale = "en"; // 默认设置为英文
-  
-      // 对于“Chinese”进行特别处理
-      if (browserLanguage.startsWith("zh")) {
-        savedLocale = browserLanguage.toLowerCase() === "zh-cn" || browserLanguage.toLowerCase() === "zh-sg" ? "zh-Hans" : "zh-Hant";
+    // const savedLocale = localStorage.getItem("MY_LANGUAGE") || "zh-Hans"; // 默认为 'en'
+    // changeLanguage(savedLocale);
+    let browserLanguage = navigator.language || navigator.userLanguage; // 兼容不同浏览器
+    let savedLocale = "en"; // 默认设置为英文
+
+    // 对于通用的“Chinese”进行特别处理
+    if (browserLanguage.startsWith("zh")) {
+      // 针对Chrome设置为"Chinese"的情况，默认为简体中文
+      savedLocale = "zh-Hans"; // 默认设置为简体中文
+
+      if (browserLanguage.toLowerCase() === "zh-cn" || browserLanguage.toLowerCase() === "zh-sg") {
+        savedLocale = "zh-Hans"; // 简体中文
+      } else if (browserLanguage.toLowerCase() === "zh-tw" || browserLanguage.toLowerCase() === "zh-hk") {
+        savedLocale = "zh-Hant"; // 繁体中文
       }
-  
-      // 将从浏览器获取的语言设置保存到localStorage中，以便下次使用
-      localStorage.setItem("MY_LANGUAGE", savedLocale);
     }
-  
-    // 更新语言设置
+
+    // 如果localStorage中有语言设置，则使用该设置，否则使用浏览器语言设置
+    savedLocale = localStorage.getItem("MY_LANGUAGE") || savedLocale;
+
     changeLanguage(savedLocale);
   }, []);
-  
 
   const languages = [
     { id: "zh-Hans", value: "中文（简体）" },

@@ -30,6 +30,14 @@
       "close": "收起目录",
       "close_title": "关闭目录弹窗"
     }
+  },
+  "blog": {
+    "BlogFooter": {
+      "title": "🎉 你觉得这篇文章怎样？",
+      "contact": "联系作者",
+      "copyLink": "复制链接",
+      "copyLink_title": "复制本文链接"
+    }
   }
   
 }
