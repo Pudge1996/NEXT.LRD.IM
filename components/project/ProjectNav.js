@@ -91,7 +91,7 @@ export default function ProjectNav({ items }) {
                       leaveTo="translate-x-full"
                     >
                       {/* Panel整体 */}
-                      <Dialog.Panel className="pointer-events-auto relative w-full m-4 mr-0 pr-4 sm:m-6 sm:mr-0 sm:pr-6">
+                      <Dialog.Panel role="menu" className="pointer-events-auto relative w-full m-4 mr-0 pr-4 sm:m-6 sm:mr-0 sm:pr-6">
                         {/* 弹窗 */}
                         <div className="flex h-fit max-h-[calc(100vh-6rem)] flex-col overflow-y-scroll bg-color dark:border dark:border-neutral-800 shadow-xl rounded-xl">
                           <div className="px-6 pt-6 pb-2">
@@ -102,10 +102,10 @@ export default function ProjectNav({ items }) {
                               {t("project.ProjectNav.dialogHeading")}
                             </Dialog.Title>
                           </div>
-                          <div className="py-1 px-3 flex flex-col max-h-[50vh] sm:max-h-[70vh] gap-[6px] overflow-auto">
+                          <div role="menubar" className="py-1 px-3 flex flex-col max-h-[50vh] sm:max-h-[70vh] gap-[6px] overflow-auto">
                             {/* Replace with your content */}
                             {items.map((item, index) => (
-                              <li className="flex btn-base rounded text-base transition-non" key={index}>
+                              <li role="menuitemradio" className="flex btn-base rounded text-base transition-non" key={index}>
                                 <Link
                                   href={`#${item.imageLink}`}
                                   className="ring-default py-1 px-3 w-full block hover:no-underline hover:text-primary elis-1 text-secondary"

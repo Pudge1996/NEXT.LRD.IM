@@ -40,10 +40,11 @@ function TableContents() {
 
   return (
     <nav className="blog-toc">
-      <ol className="flex flex-col gap-[6px]">
+      <ol role="menu" className="flex flex-col gap-[6px]">
         {toc.map((entry) => (
           <li
             key={entry.id}
+            role="menuitemradio"
             className={`toc-${entry.level.toLowerCase()} btn-base rounded -ml-3 text-base transition-none`}
           >
             <a

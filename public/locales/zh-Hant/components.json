@@ -37,6 +37,13 @@
       "contact": "聯絡作者",
       "copyLink": "複製連結",
       "copyLink_title": "複製本文連結"
+    },
+    "TableContents_Mobile": {
+      "icon": "目錄",
+      "icon_title": "開啟貼文目錄",
+      "dialogHeading": "目錄",
+      "close": "關閉目錄",
+      "close_title": "關閉目錄彈窗"
     }
   }
   

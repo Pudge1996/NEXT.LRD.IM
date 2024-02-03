@@ -37,6 +37,13 @@
       "contact": "联系作者",
       "copyLink": "复制链接",
       "copyLink_title": "复制本文链接"
+    },
+    "TableContents_Mobile": {
+      "icon": "目录",
+      "icon_title": "打开文章目录",
+      "dialogHeading": "目录",
+      "close": "收起目录",
+      "close_title": "关闭目录弹窗"
     }
   }
   

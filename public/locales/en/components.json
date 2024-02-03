@@ -36,6 +36,13 @@
       "contact": "Contact the Author",
       "copyLink": "Copy Link",
       "copyLink_title": "Copy the article link"
+    },
+    "TableContents_Mobile": {
+      "icon": "Catalog",
+      "icon_title": "Open post catalog",
+      "dialogHeading": "Jump To",
+      "close": "Close",
+      "close_title": "Close catalog popup"
     }
   }
 }
