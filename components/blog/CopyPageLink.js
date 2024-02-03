@@ -1,9 +1,11 @@
-import { useEffect, useRef } from "react";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function CopyPageLink({ pageTitle }) {
-  const copyButton = useRef(null);
+  const { t } = useTranslation("components");
+  const copyButton = React.useRef(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     copyButton.current.addEventListener("click", () => {
       // 获取当前页面的超链接
       const currentURL = window.location.href;
@@ -24,9 +26,10 @@ export default function CopyPageLink({ pageTitle }) {
 
   return (
     <button
-      aria-label="复制本页链接"
+      aria-label={t("blog.BlogFooter.copyLink")}
       type="button"
-      title="复制本页链接"
+      role="button"
+      title={t("blog.BlogFooter.copyLink_title")}
       ref={copyButton}
       className="w-full h-full absolute bg-transparent inset-0 ring-default"
     ></button>
