@@ -20,7 +20,7 @@ export default function BlogFooter({pageTitle}) {
       <section className="flex flex-col gap-4 sm:gap-6 p-4 sm:p-6 rounded-lg mt-7 sm:mt-14 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-colors">
         <div className="flex flex-col gap-1">
           <div className="text-lg font-semibold">{t("blog.BlogFooter.title")}</div>
-          <div className="text-secondary md:break-keep">
+          <div className="text-secondary md:break-keep text-wrap">
           <Translation>
               {(t, { i18n }) => (
                 <div>

@@ -14,7 +14,7 @@ export default function ProjectFooter() {
             {t("common.information.author", { ns: "common" })}
           </div>
 
-          <div className="text-secondary">
+          <div className="text-secondary text-wrap">
             <Translation>
               {(t, { i18n }) => (
                 <div>
@@ -26,7 +26,7 @@ export default function ProjectFooter() {
                       <strong>designing global SaaS platforms</strong>,{" "}
                       <strong>building component libraries</strong>,{" "}
                       <strong>visualizing data</strong> and{" "}
-                      <strong>analyzing UX metrics</strong>.
+                      <strong>analyzing <span className="whitespace-nowrap">UX metrics</span></strong>.
                       <br />
                     </div>
                     <span>
