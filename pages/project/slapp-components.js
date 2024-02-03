@@ -6,10 +6,14 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImage from "/components/project/ProjectImage";
 import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectNav from "/components/project/ProjectNav";
+import { useTranslation } from "react-i18next";
 
 export default function slappComponents() {
-  const title = ProjectItemData[2].projects[0].title;
-  const desc = ProjectItemData[2].projects[0].desc;
+  const { t } = useTranslation("common");
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans'];
+  const title = dataForCurrentLanguage[2].projects[0].title;
+  const desc = dataForCurrentLanguage[2].projects[0].desc;
   const items = [
     { buttonName: "背景", imageLink: "0" },
     { buttonName: "文档结构", imageLink: "1" },
@@ -21,7 +25,7 @@ export default function slappComponents() {
     <>
       <Head>
         <title>
-          {title} - {siteMetadata.title}
+          {title} - {t("common.information.pageTitleSuffix")}
         </title>
         <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={desc} />

@@ -8,11 +8,9 @@ import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectNav from "/components/project/ProjectNav";
 import styles from './styles.module.css'
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-
+import { useTranslation } from "react-i18next";
 
 export default function appSubscription() {
-  // const showTableButton = <><FaAngleDown />展开表格</>;
-  // const hideTableButton = <><FaAngleUp />收起表格</>;
   const [tableShow, setTableShow] = React.useState('展开表格');
   const [tableIcon, setTableIcon] = React.useState(<FaAngleDown />);
   const [tableHight, setTableHeight] = React.useState('h-[300px]');
@@ -36,8 +34,11 @@ export default function appSubscription() {
     }
     }
   };
-  const title = ProjectItemData[3].projects[0].title;
-  const desc = ProjectItemData[3].projects[0].desc;
+  const { t } = useTranslation("common");
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans'];
+  const title = dataForCurrentLanguage[3].projects[0].title;
+  const desc = dataForCurrentLanguage[3].projects[0].desc;
   const items = [
     { buttonName: "背景", imageLink: "0" },
     { buttonName: "竞品分析", imageLink: "1" },
@@ -50,13 +51,11 @@ export default function appSubscription() {
     <>
       <Head>
         <title>
-          {title} - {siteMetadata.title}
+          {title} - {t("common.information.pageTitleSuffix")}
         </title>
         <meta name="description" content={desc} />
 
         {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
       </Head>

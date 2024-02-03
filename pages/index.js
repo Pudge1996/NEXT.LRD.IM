@@ -5,19 +5,21 @@ import Link from "next/link";
 import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Translation } from "react-i18next";
 
 
 export default function index() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans']; // 假设默认语言是英语
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
     <div className="flex flex-col-reverse gap-8">
-      {ProjectItemData.map((company, index) => (
+      {dataForCurrentLanguage.map((company, index) => (
         <div key={index}>
           {/* 公司 Company 列表 */}
-          <div className="flex gap-3 py-3 sm:py-4 text-lg sm:text-[22px] items-center font-medium  bg-color  top-[62px] sm:top-[58px] transition-[background-color] z-[1]">
+          <div className="flex gap-2 py-3 sm:py-4 text-lg sm:text-[22px] items-center font-semibold bg-color top-[62px] sm:top-[58px] transition-[background-color] z-[1]">
             <div className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] relative overflow-hidden rounded border-[0.5px] dark:border-transparent img-loading-bg transition-colors">
               <Image
                 // 公司图片
@@ -29,7 +31,7 @@ export default function index() {
             </div>
             <Link
               href={company.url}
-              aria-label={company.name}
+              title={company.name}
               target="_blank"
               rel="noopener noreferrer"
               className="ring-default link-color-none force-link"
@@ -56,17 +58,15 @@ export default function index() {
                         onLoad={() => setIsLoaded(true)}
                         onError={() => setIsLoaded(true)}
                         className="rounded-lg"
-                        // fill
-                        // sizes="100vw"
                         width={608}
                         height={342}
                          />
                     </div>
 
-                    <h3 className="text-lg font-semibold leading-tight mb-1 sm:group-hover:text-blue-600 group-active:text-blue-800 sm:group-active:text-blue-800 dark:sm:group-hover:text-blue-400 dark:group-active:text-blue-500 sm:dark:group-active:text-blue-500">
+                    <h3 title={project.title} className="text-lg font-semibold leading-tight mb-1 sm:group-hover:text-blue-600 group-active:text-blue-800 sm:group-active:text-blue-800 dark:sm:group-hover:text-blue-400 dark:group-active:text-blue-500 sm:dark:group-active:text-blue-500 line-clamp-2">
                       {project.title}
                     </h3>
-                    <div className="leading-snug text-secondary">
+                    <div title={project.desc} className={`${i18n.language === "en" ? "line-clamp-3" : "line-clamp-2"} leading-tight text-secondary`}>
                       {project.desc}
                     </div>
                   </Link>
@@ -82,28 +82,55 @@ export default function index() {
   return (
     <>
       <Head>
-        <title>{t("common.pages.homepage")} - {t("common.information.pageTitleSuffix")}</title>
+        <title>{t("common.pages.homepage", { ns: "common" })} - {t("common.information.pageTitleSuffix", { ns: "common" })}</title>
       </Head>
       <div className="layout project">
         <section className="mb-14">
-          <h1 className="">李瑞东</h1>
-          <p className="mb-3 mt-3 sm:mt-6">
-            5 年工作经验的 UI/UX 设计师<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计
-            <span className="whitespace-nowrap">团队。</span>
-          </p>
-          <p className="mt-3">
-          拥有国际化、自研组件/图标库搭建、数据可视化和体验度量等实践<span className="whitespace-nowrap">经验，</span>同时也有<span className="whitespace-nowrap">企业服务</span>、研发管理和跨境电商 SaaS 产品的业务
-            <span className="whitespace-nowrap">背景。</span>
-          </p>
+          <h1 className="">{t("common.information.author", { ns: "common" })}</h1>
+          <Translation>
+              {(t, { i18n }) => (
+                <div>
+                  {i18n.language === "en" && (
+                    <>
+                    <p className="mb-3 mt-3 sm:mt-6 text-wrap">
+                    As a UI/UX&nbsp;Designer with 5 years of experience&thinsp;<Tooltips>2 Years in B2C UI Design (2018-2020)<br/>3 Years in B2B UI/UX Design (2020-2023)</Tooltips>, Michael worked in the Global Business Department at ONES and in the Design Team at JOYY&nbsp;Inc's SHOPLINE.
+                    </p>
+                    <p className="mt-3 text-wrap">
+                    Michael has expertise in SaaS product design, component library construction, data visualization, and UX metric&nbsp;analysis.
+                    </p>
+                  </>
+                  )}
+                  {i18n.language === "zh-Hant" && (
+                    <>
+                      <p className="mb-3 mt-3 sm:mt-6 text-wrap">
+                      具有&thinsp;5&thinsp;年工作經驗的&thinsp;UI/UX&thinsp;設計師&thinsp;<Tooltips>兩年&thinsp;B2C&thinsp;業務&thinsp;UI&thinsp;設計師 (2018-2020)<br/>三年&thinsp;B2B&thinsp;業務&thinsp;UI/UX&thinsp;設計師 (2020-2023)</Tooltips>，曾任職於&thinsp;ONES&thinsp;國際化業務部門以及&thinsp;JOYY Inc.&thinsp;旗下&thinsp;SHOPLINE&thinsp;產品設計<span className="whitespace-nowrap">團隊。</span>
+                      </p>
+                      <p className="mt-3 text-wrap">
+                      具備國際化、系統元件庫建置、資訊視覺化及用戶體驗測量等實務<span className="whitespace-nowrap">經驗，</span>同時亦具有<span className="whitespace-nowrap">大型企業服務</span>、研發管理和跨境電商&thinsp;SaaS&thinsp;產品的業務<span className="whitespace-nowrap">背景。</span>
+                      </p>
+                    </>
+                  )}
+                  {!(i18n.language === "en" || i18n.language === "zh-Hant") && (
+                    <>
+                      <p className="mb-3 mt-3 sm:mt-6 text-wrap">
+                        5&thinsp;年工作经验的&thinsp;UI/UX&thinsp;设计师&thinsp;<Tooltips>2&thinsp;年&thinsp;C&thinsp;端&thinsp;UI&thinsp;设计师 (2018-2020)<br/>3&thinsp;年&thinsp;B&thinsp;端&thinsp;UI/UX&thinsp;设计师 (2020-2023)</Tooltips>，曾就职于&thinsp;ONES&thinsp;国际化部门和欢聚集团&thinsp;SHOPLINE&thinsp;产品设计<span className="whitespace-nowrap">团队。</span>
+                      </p>
+                      <p className="mt-3 text-wrap">
+                        拥有国际化、自研组件&图标库搭建、数据可视化和体验度量等实践<span className="whitespace-nowrap">经验，</span>同时也有<span className="whitespace-nowrap">大型企业服务</span>、研发管理和跨境电商&thinsp;SaaS&thinsp;产品的业务<span className="whitespace-nowrap">背景。</span>
+                      </p>
+                    </>
+                  )}
+                </div>
+              )}
+            </Translation>
           <div className="flex items-center flex-col sm:flex-row gap-3 text-lg">
             <Link
               href="/me"
-              title="个人简历"
-              aria-label="点击查看李瑞东的简历"
+              title={t("project.resume_title", { ns: "pages" })}
               target="_blank"
               className="flex gap-1 justify-center items-center w-full sm:w-max btn-base btn-lg bg-neutral-900 dark:bg-white sm:hover:bg-black dark:sm:hover:bg-neutral-200  text-neutral-100 dark:text-neutral-800 select-none text-center"
             >
-              查看简历
+              {t("project.resume", { ns: "pages" })}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
@@ -121,21 +148,16 @@ export default function index() {
               className="w-full sm:w-max btn-base btn-lg bg-neutral-100 dark:bg-neutral-900 sm:hover:bg-neutral-200 relative text-center"
             >
             <ContactCard />
-              联系我 👋🏻
+            {t("project.contact", { ns: "pages" })}
             </div>
           </div>
         </section>
         <hr className="hidden sm:block mt-12" />
         <section>
           <h2 className="mb-3 sm:hidden text-4xl sm:text-5xl font-semibold">
-            作品
+          {t("project.projects", { ns: "pages" })}
           </h2>
           <ProjectItems />
-        </section>
-        <section className="mt-6 sm:mt-0">
-          <h2 className="mb-3 hidden text-4xl sm:text-5xl font-semibold">
-            联系方式
-          </h2>
         </section>
       </div>
     </>

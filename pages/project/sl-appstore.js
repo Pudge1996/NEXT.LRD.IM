@@ -5,10 +5,15 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImage from "/components/project/ProjectImage";
 import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectNav from "/components/project/ProjectNav";
+import { useTranslation } from "react-i18next";
+
 
 export default function slAppstore() {
-  const title = ProjectItemData[2].projects[2].title;
-  const desc = ProjectItemData[2].projects[2].desc;
+  const { t } = useTranslation("common");
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans'];
+  const title = dataForCurrentLanguage[2].projects[2].title;
+  const desc = dataForCurrentLanguage[2].projects[2].desc;
   const items = [
     { buttonName: '项目概述', imageLink: '0' },
     { buttonName: '前期工作', imageLink: '1' },
@@ -20,13 +25,11 @@ export default function slAppstore() {
     <>
       <Head>
         <title>
-          {title} - {siteMetadata.title}
+          {title} - {t("common.information.pageTitleSuffix")}
         </title>
         <meta name="author" content={siteMetadata.author} />
 
         {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
       </Head>

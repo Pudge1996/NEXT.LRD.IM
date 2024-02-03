@@ -4,10 +4,14 @@ import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImgList from "/data/project/ProjectImgList";
 import ProjectTemplateV1 from "/components/project/ProjectTemplateV1";
+import { useTranslation } from "react-i18next";
 
 export default function ytscrm() {
-  const title = ProjectItemData[1].projects[1].title;
-  const desc = ProjectItemData[1].projects[1].desc;
+  const { t } = useTranslation("common");
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans'];
+  const title = dataForCurrentLanguage[1].projects[1].title;
+  const desc = dataForCurrentLanguage[1].projects[1].desc;
   const Images = ProjectImgList.filter(
     ({ groupName }) => groupName === "ytscrm"
   )
@@ -24,7 +28,7 @@ export default function ytscrm() {
     <>
       <Head>
         <title>
-          {title} - {siteMetadata.title}
+          {title} - {t("common.information.pageTitleSuffix")}
         </title>
         <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={desc} />
