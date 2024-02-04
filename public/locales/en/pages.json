@@ -6,11 +6,9 @@
     "projects": "Projects"
   },
   "blog": {
-    "copyPhone": "复制手机号",
-    "copyEmail": "复制 Email",
-    "copyPhone_succeed": "已复制手机号",
-    "copyEmail_succeed": "已复制 Email",
-    "button": "联系我"
+    "sortByCategory": "By Category",
+    "sortByDate": "From New to Old",
+    "recommendedText": "Chosen by"
   },
   "about": {
     "copyPhone": "复制手机号",
