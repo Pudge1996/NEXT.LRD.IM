@@ -13,6 +13,7 @@ import { getAllPosts, getSinglePost } from "/utils/mdx";
 import { IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
+import { useTranslation, Translation } from "react-i18next";
 import Zoom from "next-image-zoom";
 
 const BlogLink = ({ as, href, ...otherProps }) => {
@@ -93,6 +94,8 @@ if (typeof process === 'undefined') {
 `;
 
 const Post = ({ code, frontmatter }) => {
+  const { t } = useTranslation(["common", "pages"]);
+  const { i18n } = useTranslation();
   const Component = React.useMemo(() => {
     return getMDXComponent(codePrefix + code);
   }, [code]);
@@ -100,7 +103,7 @@ const Post = ({ code, frontmatter }) => {
     <>
       <Head>
         <title>
-          {frontmatter.title} - {siteMetadata.title}
+          {frontmatter.title} - {t("common.information.pageTitleSuffix", { ns: "common" })}
         </title>
         <meta name="description" content={frontmatter.description} />
         <meta name="keywords" content={frontmatter.tags} />
@@ -108,7 +111,7 @@ const Post = ({ code, frontmatter }) => {
         {/* For Soical Meida (openGraph) */}
         <meta
           property="og:title"
-          content={`${frontmatter.title} - ${siteMetadata.title}`}
+          content={`${frontmatter.title} - ${t("common.information.pageTitleSuffix", { ns: "common" })}`}
         />
         <meta property="og:description" content={frontmatter.description} />
       </Head>
@@ -121,7 +124,7 @@ const Post = ({ code, frontmatter }) => {
             <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
               <div className="flex Óxl:hidden items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-tertiary">
                 <div className="whitespace-nowrap">
-                {siteMetadata.author} 发布于 <Date dateString={frontmatter.date} />
+                {t("common.information.author", { ns: "common" })} · <Date dateString={frontmatter.date} />
                 </div>
                   
               </div>
@@ -145,7 +148,7 @@ const Post = ({ code, frontmatter }) => {
             <section>
               <div className="flex flex-col gap-3 py-1">
                 <div className="flex gap-2 items-center">
-                  <div className="w-11 h-11 relative rounded-full overflow-hidden img-loading-bg">
+                  <div className="w-10 h-10 relative rounded-full overflow-hidden img-loading-bg shrink-0">
                     <Image
                       src={siteMetadata.authorImg}
                       alt="头像"
@@ -156,10 +159,10 @@ const Post = ({ code, frontmatter }) => {
                       }}
                     />
                   </div>
-                  <div className="flex flex-col grow gap-2">
-                    <div className="font-medium leading-none">李瑞东</div>
+                  <div className="flex flex-col gap-2 w-[168px]">
+                    <div className="font-medium leading-none truncate">{t("common.information.author", { ns: "common" })}</div>
                     <div className="text-sm text-tertiary leading-none">
-                      发布于 <Date dateString={frontmatter.date} />
+                      <Date dateString={frontmatter.date} />
                     </div>
                   </div>
                 </div>
@@ -167,14 +170,14 @@ const Post = ({ code, frontmatter }) => {
             </section>
             <hr className="my-2" />
             <section className="sticky top-24">
-              <h5 className="text-lg font-semibold mb-3">目录</h5>
+              <h5 className="text-lg font-semibold mb-3">{t("blog.slug.TOC", { ns: "pages" })}</h5>
               <TableContents />
             </section>
           </aside>
         </div>
       </div>
       <div className="block xl:hidden fixed bg-color right-6 bottom-6 sm:right-4 sm:bottom-16 ring-default text-tertiary sm:hover:text-primary active:text-primary btn-base btn-icon bg-neutral-100 dark:bg-neutral-800 transition-colors">
-        <IoList className="text-xl" />
+        <IoList aria-label={t("blog.TableContents_Mobile.icon")} className="text-xl" />
         <TableContents_Mobile />
       </div>
     </>

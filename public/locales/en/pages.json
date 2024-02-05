@@ -8,7 +8,10 @@
   "blog": {
     "sortByCategory": "By Category",
     "sortByDate": "From New to Old",
-    "recommendedText": "Chosen by"
+    "recommendedText": "Chosen by",
+    "slug": {
+      "TOC": "Table of contents"
+    }
   },
   "about": {
     "copyPhone": "复制手机号",

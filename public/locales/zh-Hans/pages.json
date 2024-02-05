@@ -8,7 +8,10 @@
   "blog": {
     "sortByCategory": "按分类浏览",
     "sortByDate": "从新到旧浏览",
-    "recommendedText": "推荐"
+    "recommendedText": "推荐",
+    "slug": {
+      "TOC": "目录"
+    }
   },
   "about": {
     "copyPhone": "复制手机号",
