@@ -19,7 +19,7 @@ const blogCategoriesData = {
     },
     {
       name: "分享会文稿",
-      desc: "在公司的分享会我通常会准备一份文稿，正好可以放到我的博客上面。（不包含早期没有准备文稿的分享会。）",
+      desc: "在公司的分享会我通常会准备一份文稿，正好可以放到我的博客上面。（不包含早期没有准备文稿的分享会）",
       url: "sharing",
       num: "5",
     },
@@ -57,7 +57,7 @@ const blogCategoriesData = {
     },
     {
       name: "分享會檔案",
-      desc: "在公司的分享會我通常會準備一份文稿，正好可以放到我的部落格上面。（不包含早期沒有準備文稿的分享會。）",
+      desc: "在公司的分享會我通常會準備一份文稿，正好可以放到我的部落格上面。（不包含早期沒有準備文稿的分享會）",
       url: "sharing",
       num: "5",
     },
@@ -83,37 +83,37 @@ const blogCategoriesData = {
   "en": [
     {
       name: "Typography & Layout Strategies",
-      desc: "我對介面內文字的要求相當嚴苛。該分類包含了我在 Web 上的字體特點研究，以及文字排版處理技巧等。隨著探索的深入，一些設計策略甚至成為了我的「教條」。",
+      desc: "I have stringent requirements for text within interfaces. This category includes my research on web typography features and text layout techniques. As my exploration deepened, some design strategies even became my 'dogmas.'",
       url: "typographic",
       num: "7",
     },
     {
       name: "Practical Experiences",
-      desc: "工作中的一些實踐經驗，包括了探索過程和結論。通常是一些有設計機會點的內容，或者踩過坑的案例，充滿了血與淚。",
+      desc: "Real-world experiences from work, including explorations and conclusions. Often involves design opportunities or lessons learned from pitfalls, filled with trials and tribulations.",
       url: "experience",
       num: "7",
     },
     {
-      name: "Sharing Session Documents",
-      desc: "在公司的分享會我通常會準備一份文稿，正好可以放到我的部落格上面。（不包含早期沒有準備文稿的分享會。）",
+      name: "Design Sharing",
+      desc: "I usually prepare a presentation for design sharing, which fits perfectly on my blog. (Excludes earlier sharing without prepared presentations.)",
       url: "sharing",
       num: "5",
     },
     {
       name: "Translated Articles",
-      desc: "為了學習到外部先進的實踐經驗，我嘗試翻譯文章來讓自己精讀某篇文章。主要從工作中競品公司的 UX 部落格來嘗試入門。",
+      desc: "To learn from advanced practices, I've tried translating articles for in-depth reading. Mainly, I start with UX blogs from competitor companies at work.",
       url: "translate",
       num: "5",
     },
     {
       name: "Software and Plugins",
-      desc: "生涯早期比較喜歡研究各種軟體和插件，所以記錄了不少相關技巧。後面發現掌握設計的方法/策略比掌握某款軟體技巧更重要，所以基本不會更新了。",
+      desc: "Early in my career, I was keen on exploring various software and plugins, so I recorded many related tips. Later, I realized mastering design methods/strategies is more important than software skills, so I barely update this anymore.",
       url: "software",
       num: "13",
     },
     {
       name: "Beyond Design",
-      desc: "留一點空間記錄設計之外的內容，比如本站的建設，或者其他奇思妙想（如有...）",
+      desc: "Leaving some space for content beyond design, like the development of this site, or other creative ideas (if any).",
       url: "others",
       num: "6",
     },

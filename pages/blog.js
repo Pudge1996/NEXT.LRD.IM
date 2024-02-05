@@ -12,16 +12,14 @@ import { useTranslation, Translation } from "react-i18next";
 export default function blog({ posts }) {
   const { t } = useTranslation(["common", "pages"]);
   const { i18n } = useTranslation();
-  const dataForCurrentLanguage =
-    blogCategoriesData[i18n.language] || blogCategoriesData["zh-Hans"]; // 假设默认语言是英语
+  const dataForCurrentLanguage = blogCategoriesData[i18n.language] || blogCategoriesData["zh-Hans"];
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   return (
     <>
       <Head>
         <title>
-          {t("common.header.blog", { ns: "common" })} -{" "}
-          {t("common.information.pageTitleSuffix", { ns: "common" })}
+          {t("common.header.blog", { ns: "common" })} - {t("common.information.pageTitleSuffix", { ns: "common" })}
         </title>
       </Head>
       <div className="layout flex flex-col">
@@ -118,13 +116,8 @@ export default function blog({ posts }) {
                 <HiThumbUp className="text-lg" />
                 <Translation>
                   {(t, { i18n }) => (
-                    <>
-                      {i18n.language === "en" && <>{t("blog.recommendedText", { ns: "pages" })} {post.frontmatter.recommend}{" "}
-                </>}
-                      {!(i18n.language === "en") && (
-                        <>{post.frontmatter.recommend}&thinsp;
-                        {t("blog.recommendedText", { ns: "pages" })}</>
-                      )}
+                    <>{i18n.language === "en" && <>{t("blog.recommendedText", { ns: "pages" })} {post.frontmatter.recommend}</>}
+                      {!(i18n.language === "en") && <>{post.frontmatter.recommend}&thinsp;{t("blog.recommendedText", { ns: "pages" })}</>}
                     </>
                   )}
                 </Translation>

@@ -4,27 +4,27 @@ import { HiThumbUp } from "react-icons/hi"; //https://react-icons.github.io/reac
 import { getCategoriesTypographic } from "/utils/mdx";
 import siteMetadata from "/data/siteMetadata";
 import blogCategoriesData from "/data/blog/blogCategoriesData";
-
-
 import Date from "/components/common/Date"
+import { useTranslation, Translation } from "react-i18next"
 
 export default function cateTypographic({ posts }) {
+  const { t } = useTranslation(["common", "pages"]);
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = blogCategoriesData[i18n.language] || blogCategoriesData["zh-Hans"];
   return (
     <>
       <Head>
-        <title>{blogCategoriesData[0].name} - 博客 - {siteMetadata.title}</title>
-        <meta name="description" content={blogCategoriesData[0].desc} />
+        <title>{dataForCurrentLanguage[0].name} - {t("common.header.blog", { ns: "common" })} - {t("common.information.pageTitleSuffix", { ns: "common" })}</title>
+        <meta name="description" content={dataForCurrentLanguage[0].desc} />
 
         {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
-        <meta property="og:title" content={`${blogCategoriesData[0].name} - 博客 - ${siteMetadata.title}`} />
-        <meta property="og:description" content={blogCategoriesData[0].desc} />
+        <meta property="og:title" content={`${dataForCurrentLanguage[0].name} - ${t("common.header.blog", { ns: "common" })} - ${t("common.information.pageTitleSuffix", { ns: "common" })}`} />
+        <meta property="og:description" content={dataForCurrentLanguage[0].desc} />
       </Head>
       <div className="layout series">
         {/* 博客列表 */}
-        <h1>{blogCategoriesData[0].name}</h1>
-        <p>{blogCategoriesData[0].desc}</p>
+        <h1>{dataForCurrentLanguage[0].name}</h1>
+        <p>{dataForCurrentLanguage[0].desc}</p>
 
         <hr />
 
@@ -40,7 +40,13 @@ export default function cateTypographic({ posts }) {
                 rel="noopener noreferrer"
               >
                 <HiThumbUp className="text-lg" />
-                {post.frontmatter.recommend}
+                <Translation>
+                  {(t, { i18n }) => (
+                    <>{i18n.language === "en" && <>{t("blog.recommendedText", { ns: "pages" })} {post.frontmatter.recommend}</>}
+                      {!(i18n.language === "en") && <>{post.frontmatter.recommend}&thinsp;{t("blog.recommendedText", { ns: "pages" })}</>}
+                    </>
+                  )}
+                </Translation>
               </Link>
               <Link
                 href={`/blog/${post.slug}`}

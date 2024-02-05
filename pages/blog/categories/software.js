@@ -2,28 +2,28 @@ import Head from "next/head";
 import Link from "next/link";
 import { HiThumbUp } from "react-icons/hi"; //https://react-icons.github.io/react-icons/icons?name=hi
 import { getCategoriesSoftware } from "/utils/mdx";
-import siteMetadata from "/data/siteMetadata";
 import blogCategoriesData from "/data/blog/blogCategoriesData";
-
 import Date from "/components/common/Date"
+import { useTranslation, Translation } from "react-i18next";
 
 export default function cateSoftware({ posts }) {
+  const { t } = useTranslation(["common", "pages"]);
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = blogCategoriesData[i18n.language] || blogCategoriesData["zh-Hans"];
   return (
     <>
       <Head>
-        <title>{blogCategoriesData[4].name} - 博客 - {siteMetadata.title}</title>
-        <meta name="description" content={blogCategoriesData[4].desc} />
+        <title>{dataForCurrentLanguage[4].name} - {t("common.header.blog", { ns: "common" })} - {t("common.information.pageTitleSuffix", { ns: "common" })}</title>
+        <meta name="description" content={dataForCurrentLanguage[4].desc} />
 
         {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
-        <meta property="og:title" content={`${blogCategoriesData[4].name} - 博客 - ${siteMetadata.title}`} />
-        <meta property="og:description" content={blogCategoriesData[4].desc} />
+        <meta property="og:title" content={`${dataForCurrentLanguage[4].name} - ${t("common.header.blog", { ns: "common" })} - ${t("common.information.pageTitleSuffix", { ns: "common" })}`} />
+        <meta property="og:description" content={dataForCurrentLanguage[4].desc} />
       </Head>
       <div className="layout series">
         {/* 博客列表 */}
-        <h1>{blogCategoriesData[4].name}</h1>
-        <p>{blogCategoriesData[4].desc}</p>
+        <h1>{dataForCurrentLanguage[4].name}</h1>
+        <p>{dataForCurrentLanguage[4].desc}</p>
 
         <hr />
 
@@ -39,7 +39,13 @@ export default function cateSoftware({ posts }) {
                 rel="noopener noreferrer"
               >
                 <HiThumbUp className="text-lg" />
-                {post.frontmatter.recommend}
+                <Translation>
+                  {(t, { i18n }) => (
+                    <>{i18n.language === "en" && <>{t("blog.recommendedText", { ns: "pages" })} {post.frontmatter.recommend}</>}
+                      {!(i18n.language === "en") && <>{post.frontmatter.recommend}&thinsp;{t("blog.recommendedText", { ns: "pages" })}</>}
+                    </>
+                  )}
+                </Translation>
               </Link>
               <Link
                 href={`/blog/${post.slug}`}
