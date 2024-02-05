@@ -20,5 +20,11 @@
     "copyPhone_succeed": "已复制手机号",
     "copyEmail_succeed": "已复制 Email",
     "button": "联系我"
+  },
+  "updates": {
+    "desc": "了解 LRD.IM 的新变化，以及发展历程。",
+    "reportIssues": "功能反馈",
+    "reportIssues_title": "在 Github 中反馈本站功能问题",
+    "contact": "与我联系"
   }
 }
