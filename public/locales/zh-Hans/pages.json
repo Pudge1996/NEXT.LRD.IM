@@ -10,7 +10,8 @@
     "sortByDate": "从新到旧浏览",
     "recommendedText": "推荐",
     "slug": {
-      "TOC": "目录"
+      "TOC": "目录",
+      "avatar": "头像"
     }
   },
   "about": {

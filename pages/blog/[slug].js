@@ -13,7 +13,7 @@ import { getAllPosts, getSinglePost } from "/utils/mdx";
 import { IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
-import { useTranslation, Translation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import Zoom from "next-image-zoom";
 
 const BlogLink = ({ as, href, ...otherProps }) => {
@@ -95,7 +95,6 @@ if (typeof process === 'undefined') {
 
 const Post = ({ code, frontmatter }) => {
   const { t } = useTranslation(["common", "pages"]);
-  const { i18n } = useTranslation();
   const Component = React.useMemo(() => {
     return getMDXComponent(codePrefix + code);
   }, [code]);
@@ -151,7 +150,7 @@ const Post = ({ code, frontmatter }) => {
                   <div className="w-10 h-10 relative rounded-full overflow-hidden img-loading-bg shrink-0">
                     <Image
                       src={siteMetadata.authorImg}
-                      alt="头像"
+                      alt={t("blog.slug.avatar", { ns: "pages" })}
                       fill
                       sizes="100vw"
                       style={{

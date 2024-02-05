@@ -10,7 +10,8 @@
     "sortByDate": "From New to Old",
     "recommendedText": "Chosen by",
     "slug": {
-      "TOC": "Table of contents"
+      "TOC": "Table of contents",
+      "avatar": "Michael's avatar"
     }
   },
   "about": {

@@ -10,7 +10,8 @@
     "sortByDate": "從新到舊瀏覽",
     "recommendedText": "推薦",
     "slug": {
-      "TOC": "目錄"
+      "TOC": "目錄",
+      "avatar": "頭像"
     }
   },
   "about": {
