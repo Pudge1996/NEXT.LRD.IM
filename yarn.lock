@@ -2339,7 +2339,7 @@ i18next-fs-backend@^2.1.1:
   resolved "https://registry.npmjs.org/i18next-fs-backend/-/i18next-fs-backend-2.3.1.tgz"
   integrity sha512-tvfXskmG/9o+TJ5Fxu54sSO5OkY6d+uMn+K6JiUGLJrwxAVfer+8V3nU8jq3ts9Pe5lXJv4b1N7foIjJ8Iy2Gg==
 
-i18next-http-backend@^2.2.0:
+i18next-http-backend@^2.2.0, i18next-http-backend@^2.4.3:
   version "2.4.3"
   resolved "https://registry.npmjs.org/i18next-http-backend/-/i18next-http-backend-2.4.3.tgz"
   integrity sha512-jo2M03O6n1/DNb51WSQ8PsQ0xEELzLZRdYUTbf17mLw3rVwnJF9hwNgMXvEFSxxb+N8dT+o0vtigA6s5mGWyPA==

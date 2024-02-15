@@ -10,6 +10,7 @@ const changeLanguage = (locale) => {
 };
 
 const useLanguageSetting = () => {
+  console.log('222222222222222')
   useEffect(() => {
     const handleRouteChange = () => {
       const savedLocale = localStorage.getItem("MY_LANGUAGE") || navigator.language || "en";
