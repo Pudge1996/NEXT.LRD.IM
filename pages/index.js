@@ -96,7 +96,7 @@ export default function index() {
                     As a UI/UX&nbsp;Designer with 5 years of experience&thinsp;<Tooltips>2 Years in B2C UI Design (2018-2020)<br/>3 Years in B2B UI/UX Design (2020-2023)</Tooltips>, Michael worked in the Global Business Department at ONES and in the Design Team at JOYY&nbsp;Inc's SHOPLINE.
                     </p>
                     <p className="mt-3 text-wrap">
-                    Michael has expertise in SaaS product design, component library construction, data visualization, and UX metric&nbsp;analysis.
+                    Michael has expertise in SaaS product design, component library building, data visualization, and UX metric&nbsp;analysis.
                     </p>
                   </>
                   )}
