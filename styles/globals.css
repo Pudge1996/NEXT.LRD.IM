@@ -8,8 +8,9 @@
     @apply relative scroll-pt-[88px];
   }
   body {
-    @apply bg-color transition-[background-color] text-primary font-normal antialiased break-words font-sans leading-relaxed text-pretty relative;
+    @apply bg-color transition-[background-color] text-primary font-normal antialiased break-words font-display leading-relaxed text-pretty relative;
   }
+  
   .layout {
     @apply max-w-2xl mx-auto pt-8 sm:pb-12 sm:pt-14 px-5 md:px-3 relative min-h-[calc(100vh-182px)] sm:min-h-[calc(100vh-152px)];
   }
@@ -178,7 +179,7 @@
         @apply empty:hidden text-center text-secondary block text-sm mt-2 leading-tight md:leading-relaxed;
       }
       &:first-child+p{ /* 第一个元素是图片时，首字下沉 */
-        @apply first-letter:uppercase first-letter:text-6xl first-letter:font-bold first-letter:mr-1 first-letter:float-left
+        @apply first-letter:uppercase first-letter:text-6xl first-letter:tracking-widest first-letter:font-bold first-letter:mr-1 first-letter:float-left
       }
     }
     figcaption{ /* 通用图片描述，可用在组件或视频下方 */
