@@ -1,0 +1,50 @@
+{
+  "ContactCard": {
+    "copyPhone": "複製電話號碼",
+    "copyEmail": "複製 Email",
+    "copyPhone_succeed": "已複製電話號碼",
+    "copyEmail_succeed": "已複製 Email",
+    "button": "聯絡方式",
+    "button_title": "獲取聯絡方式",
+    "img_alt": "微信帳號：18925001685",
+    "scanMe_desktop": "掃描 QR Code 加我微信",
+    "scanMe_mobile": "長按識別 QR Code 加我微信",
+    "or": "或"
+  },
+  "ScrollToTop": {
+    "button_aria": "回到頁首"
+  },
+  "project": {
+    "ProjectFooter": {
+      "Resume": "查看履歷",
+      "Resume_title": "查看李瑞東的履歷",
+      "Projects": "全部作品",
+      "Projects_title": "檢視全部作品",
+      "Contact": "聯絡我",
+      "Contact_title": "獲取聯絡方式"
+    },
+    "ProjectNav": {
+      "icon": "目錄",
+      "icon_title": "開啟項目目錄",
+      "dialogHeading": "跳轉至",
+      "close": "關閉目錄",
+      "close_title": "關閉目錄彈窗"
+    }
+  },
+  "blog": {
+    "BlogFooter": {
+      "title": "🎉 你覺得這篇貼文怎麼樣？",
+      "contact": "聯絡作者",
+      "copyLink": "複製連結",
+      "copyLink_title": "複製本文連結"
+    },
+    "TableContents_Mobile": {
+      "icon": "目錄",
+      "icon_title": "開啟貼文目錄",
+      "dialogHeading": "目錄",
+      "close": "關閉目錄",
+      "close_title": "關閉目錄彈窗"
+    }
+  }
+  
+}

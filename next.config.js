@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
+const { i18n } = require('./next-i18next.config')
 
 const nextConfig = {
   reactStrictMode: true,
-  i18n: {
-    locales: ['zh-Hans', 'zh-Hant', 'en'],
-    defaultLocale: 'zh-Hans',
-    localeDetection: false,
-  },
+  i18n,
   images: {
     deviceSizes: [960],
     unoptimized: true,

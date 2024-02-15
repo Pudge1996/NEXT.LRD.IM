@@ -1,23 +1,26 @@
 import "/styles/globals.css";
+import React from "react";
 import Layout from "/components/layout";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from '@vercel/analytics/react';
-import { withTranslation } from 'react-i18next';
 import useLanguageSetting from '/utils/useLanguageSetting';
+import { appWithTranslation } from 'next-i18next'
+import nextI18nConfig from '../next-i18next.config'
+
 
 function MyApp({ Component, pageProps, t }) {
   const locale =
   typeof window !== "undefined"
-  ? window.localStorage.getItem("MY_LANGUAGE")
+  ? window.localStorage.getItem("i18nextLng")
   : "zh-Hans";
   
-  useLanguageSetting(locale);
+  // useLanguageSetting(locale);
   // const { t } = useTranslation('common','components', 'pages');
   return (
-    <>
+    <React.Suspense fallback="loading">
       <Head>
         <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={siteMetadata.description} />
@@ -36,8 +39,8 @@ function MyApp({ Component, pageProps, t }) {
           <Analytics />
         </Layout>
       </ThemeProvider>
-    </>
+    </React.Suspense>
   );
 }
 
-export default withTranslation()(MyApp);
+export default appWithTranslation(MyApp, nextI18nConfig)

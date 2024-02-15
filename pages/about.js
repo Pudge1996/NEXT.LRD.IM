@@ -1,17 +1,20 @@
 import Head from "next/head";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export default function about() {
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
-        <title>关于我 - {siteMetadata.title}</title>
+        <title>{t("common.header.about", { ns: 'common' })} - {siteMetadata.title}</title>
       </Head>
 
       <div className="layout about flex flex-col gap-6">
         <section>
-        <h1 className="">关于我</h1>
+        <h1 className="">{t("common.header.about", { ns: 'common' })}</h1>
         <p className="mb-3 mt-3 sm:mt-6">
           还有很多事情要做的设计师...
           <br />
@@ -35,3 +38,9 @@ export default function about() {
     </>
   );
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...await serverSideTranslations(locale, ['common', 'pages']),
+  },
+})

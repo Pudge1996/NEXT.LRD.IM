@@ -1,0 +1,30 @@
+{
+  "project": {
+    "resume": "View Resume",
+    "resume_title": "View Michael's resume",
+    "contact": "Contact Michael 👋🏻",
+    "projects": "Projects"
+  },
+  "blog": {
+    "sortByCategory": "By Category",
+    "sortByDate": "From New to Old",
+    "recommendedText": "Chosen by",
+    "slug": {
+      "TOC": "Table of contents",
+      "avatar": "Michael's avatar"
+    }
+  },
+  "about": {
+    "copyPhone": "复制手机号",
+    "copyEmail": "复制 Email",
+    "copyPhone_succeed": "已复制手机号",
+    "copyEmail_succeed": "已复制 Email",
+    "button": "联系我"
+  },
+  "updates": {
+    "desc": "Discover the latest updates and the development journey of LRD.IM.",
+    "reportIssues": "Feedback",
+    "reportIssues_title": "Report issues on Github",
+    "contact": "Contact"
+  }
+}
