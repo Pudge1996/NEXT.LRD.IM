@@ -231,7 +231,7 @@ const ProjectItemData = {
       projects: [
         {
           title: "ONES Subscription Support",
-          desc: "Explores how I identified opportunities and solved problems with systematic thinking.",
+          desc: "Explores how I identified design opportunities and solved problems with systematic thinking.",
           img: "https://lrdim.oss-accelerate.aliyuncs.com/projectimg/ONES/app-subscription/thumbnail.png",
           url: "/project/ones/app-subscription",
         },

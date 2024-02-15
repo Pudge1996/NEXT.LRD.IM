@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import updatesData from "/data/common/updatesData";
 import ContactCard from "/components/common/ContactCard";
-import { useTranslation, Translation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export default function updates() {
   const { t } = useTranslation(["common", "pages"]);

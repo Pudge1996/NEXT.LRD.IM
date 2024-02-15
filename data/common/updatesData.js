@@ -11,7 +11,7 @@ const updatesData = {
       linkURL: "",
     },
     {
-      title: "全面重构",
+      title: "第二次全面重构",
       date: "2023-02-12",
       img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2023-02-12.png",
       desc: "使用 Next.js 和 Tailwind CSS 重构了网站。并通过 Vercel 部署。",
@@ -59,7 +59,7 @@ const updatesData = {
       linkURL: "/blog",
     },
     {
-      title: "全面重构",
+      title: "第一次全面重构",
       date: "2021-06-20",
       img: "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2021-06-20.png",
       desc: "脱离原本模版里使用的 Bootstrap UI 框架和 jQuery，重新设计了网页样式，拥抱 Sass 和原生 JS。并将所有 Medium 文章同步到本站，创建了一套 Medium 文章导出 → 迁移到本站的流程。",
@@ -101,7 +101,7 @@ const updatesData = {
       "linkURL": ""
     },
     {
-      "title": "全面重構",
+      "title": "第二次全面重構",
       "date": "2023-02-12",
       "img": "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2023-02-12.png",
       "desc": "使用 Next.js 和 Tailwind CSS 重構了網站。並通過 Vercel 部署。",
@@ -149,7 +149,7 @@ const updatesData = {
       "linkURL": "/blog",
     },
     {
-      "title": "全面重構",
+      "title": "第一次全面重構",
       "date": "2021-06-20",
       "desc": "脫離原本模板裡使用的 Bootstrap UI 框架和 jQuery，重新設計了網頁樣式，擁抱 Sass 和原生 JS。並將所有 Medium 文章同步到本站，創建了一套 Medium 文章導出 → 遷移到本站的流程。",
       "img": "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2021-06-20.png",
@@ -239,7 +239,7 @@ const updatesData = {
       "linkURL": "/blog",
     },
     {
-      "title": "Code Refactoring",
+      "title": "Code Refactoring V1",
       "date": "2021-06-20",
       "desc": "Move away from the Bootstrap UI framework and jQuery used in the original template, and redesign the web style using Sass and vanilla JS. Also, migrate all Medium stories to the site, creating a process for exporting stories from Medium to the site.",
       "img": "https://lrdim.oss-cn-shenzhen.aliyuncs.com/updatesimg/2021-06-20.png",
