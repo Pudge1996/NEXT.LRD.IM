@@ -7,13 +7,10 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
 import { useTranslation, Translation } from "react-i18next";
 
-
-export default function index() {
-  const { t } = useTranslation(["common", "pages"]);
+function ProjectItems() {
   const { i18n } = useTranslation();
-  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans']; // 假设默认语言是英语
-  function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
+  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans']; // 假设默认语言是英语
   return (
     <div className="flex flex-col-reverse gap-8">
       {dataForCurrentLanguage.map((company, index) => (
@@ -78,6 +75,46 @@ export default function index() {
     </div>
   );
 }
+function EnIntroduction() {
+  return(
+    <>
+      <p className="mb-3 mt-3 sm:mt-6 text-wrap">
+      As a UI/UX&nbsp;Designer with 5 years of experience&thinsp;<Tooltips>2 Years in B2C UI Design (2018-2020)<br/>3 Years in B2B UI/UX Design (2020-2023)</Tooltips>, Michael worked in the Global Business Department at ONES and in the Design Team at JOYY&nbsp;Inc's SHOPLINE.
+      </p>
+      <p className="mt-3 text-wrap">
+      Michael has expertise in SaaS product design, component library building, data visualization, and UX metric&nbsp;analysis.
+      </p>
+    </>
+  )
+}
+function ZhHantIntroduction() {
+  return(
+    <>
+      <p className="mb-3 mt-3 sm:mt-6 text-wrap">
+      具有&thinsp;5&thinsp;年工作經驗的&thinsp;UI/UX&thinsp;設計師&thinsp;<Tooltips>兩年&thinsp;B2C&thinsp;業務&thinsp;UI&thinsp;設計師 (2018-2020)<br/>三年&thinsp;B2B&thinsp;業務&thinsp;UI/UX&thinsp;設計師 (2020-2023)</Tooltips>，曾任職於&thinsp;ONES&thinsp;國際化業務部門以及&thinsp;JOYY Inc.&thinsp;旗下&thinsp;SHOPLINE&thinsp;產品設計<span className="whitespace-nowrap">團隊。</span>
+      </p>
+      <p className="mt-3 text-wrap">
+      具備國際化、系統元件庫建置、資訊視覺化及用戶體驗測量等實務<span className="whitespace-nowrap">經驗，</span>同時亦具有<span className="whitespace-nowrap">大型企業服務</span>、研發管理和跨境電商&thinsp;SaaS&thinsp;產品的業務<span className="whitespace-nowrap">背景。</span>
+      </p>
+    </>
+  )
+}
+function ZhHansIntroduction() {
+  return(
+    <>
+      <p className="mb-3 mt-3 sm:mt-6 text-wrap">
+        5&thinsp;年工作经验的&thinsp;UI/UX&thinsp;设计师&thinsp;<Tooltips>2&thinsp;年&thinsp;C&thinsp;端&thinsp;UI&thinsp;设计师 (2018-2020)<br/>3&thinsp;年&thinsp;B&thinsp;端&thinsp;UI/UX&thinsp;设计师 (2020-2023)</Tooltips>，曾就职于&thinsp;ONES&thinsp;国际化部门和欢聚集团&thinsp;SHOPLINE&thinsp;产品设计<span className="whitespace-nowrap">团队。</span>
+      </p>
+      <p className="mt-3 text-wrap">
+        拥有国际化、自研组件&图标库搭建、数据可视化和体验度量等实践<span className="whitespace-nowrap">经验，</span>同时也有<span className="whitespace-nowrap">大型企业服务</span>、研发管理和跨境电商&thinsp;SaaS&thinsp;产品的业务<span className="whitespace-nowrap">背景。</span>
+      </p>
+    </>
+  )
+}
+
+export default function index() {
+  const { t } = useTranslation(["common", "pages"]);
+  const { i18n } = useTranslation();
   
   return (
     <>
@@ -91,34 +128,13 @@ export default function index() {
               {(t, { i18n }) => (
                 <div>
                   {i18n.language === "en" && (
-                    <>
-                    <p className="mb-3 mt-3 sm:mt-6 text-wrap">
-                    As a UI/UX&nbsp;Designer with 5 years of experience&thinsp;<Tooltips>2 Years in B2C UI Design (2018-2020)<br/>3 Years in B2B UI/UX Design (2020-2023)</Tooltips>, Michael worked in the Global Business Department at ONES and in the Design Team at JOYY&nbsp;Inc's SHOPLINE.
-                    </p>
-                    <p className="mt-3 text-wrap">
-                    Michael has expertise in SaaS product design, component library building, data visualization, and UX metric&nbsp;analysis.
-                    </p>
-                  </>
+                    <EnIntroduction />
                   )}
                   {i18n.language === "zh-Hant" && (
-                    <>
-                      <p className="mb-3 mt-3 sm:mt-6 text-wrap">
-                      具有&thinsp;5&thinsp;年工作經驗的&thinsp;UI/UX&thinsp;設計師&thinsp;<Tooltips>兩年&thinsp;B2C&thinsp;業務&thinsp;UI&thinsp;設計師 (2018-2020)<br/>三年&thinsp;B2B&thinsp;業務&thinsp;UI/UX&thinsp;設計師 (2020-2023)</Tooltips>，曾任職於&thinsp;ONES&thinsp;國際化業務部門以及&thinsp;JOYY Inc.&thinsp;旗下&thinsp;SHOPLINE&thinsp;產品設計<span className="whitespace-nowrap">團隊。</span>
-                      </p>
-                      <p className="mt-3 text-wrap">
-                      具備國際化、系統元件庫建置、資訊視覺化及用戶體驗測量等實務<span className="whitespace-nowrap">經驗，</span>同時亦具有<span className="whitespace-nowrap">大型企業服務</span>、研發管理和跨境電商&thinsp;SaaS&thinsp;產品的業務<span className="whitespace-nowrap">背景。</span>
-                      </p>
-                    </>
+                    <ZhHantIntroduction />
                   )}
                   {!(i18n.language === "en" || i18n.language === "zh-Hant") && (
-                    <>
-                      <p className="mb-3 mt-3 sm:mt-6 text-wrap">
-                        5&thinsp;年工作经验的&thinsp;UI/UX&thinsp;设计师&thinsp;<Tooltips>2&thinsp;年&thinsp;C&thinsp;端&thinsp;UI&thinsp;设计师 (2018-2020)<br/>3&thinsp;年&thinsp;B&thinsp;端&thinsp;UI/UX&thinsp;设计师 (2020-2023)</Tooltips>，曾就职于&thinsp;ONES&thinsp;国际化部门和欢聚集团&thinsp;SHOPLINE&thinsp;产品设计<span className="whitespace-nowrap">团队。</span>
-                      </p>
-                      <p className="mt-3 text-wrap">
-                        拥有国际化、自研组件&图标库搭建、数据可视化和体验度量等实践<span className="whitespace-nowrap">经验，</span>同时也有<span className="whitespace-nowrap">大型企业服务</span>、研发管理和跨境电商&thinsp;SaaS&thinsp;产品的业务<span className="whitespace-nowrap">背景。</span>
-                      </p>
-                    </>
+                    <ZhHansIntroduction />
                   )}
                 </div>
               )}
