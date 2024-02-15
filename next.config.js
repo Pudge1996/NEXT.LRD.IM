@@ -3,8 +3,9 @@
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
-    locales: ["zh-Hans"],
-    defaultLocale: "zh-Hans",
+    locales: ['zh-Hans', 'zh-Hant', 'en'],
+    defaultLocale: 'zh-Hans',
+    localeDetection: false,
   },
   images: {
     deviceSizes: [960],

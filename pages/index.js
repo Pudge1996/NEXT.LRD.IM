@@ -6,9 +6,11 @@ import siteMetadata from "/data/siteMetadata";
 import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
+import i18n from "/i18N.js";
+import { useTranslation } from "react-i18next";
 
 export default function index() {
-
+  const { t, i18n } = useTranslation();
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
@@ -86,6 +88,7 @@ export default function index() {
       <div className="layout project">
         <section className="mb-14">
           <h1 className="">李瑞东</h1>
+          <h1 className="">{t('Welcome to React')}</h1>
           <p className="mb-3 mt-3 sm:mt-6">
             5 年工作经验的 UI/UX 设计师<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计
             <span className="whitespace-nowrap">团队。</span>

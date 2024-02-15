@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DarkModeButton from "/components/common/DarkModeButton";
+import SwitchLanguages from "/components/common/SwitchLanguages";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,6 +25,10 @@ export default function Footer() {
         >
           RSS 订阅
         </Link>
+        <span> · </span>
+        <div className="flex justify-between items-center gap-1">
+          <SwitchLanguages />
+        </div>
         <span> · </span>
         <div className="flex justify-between items-center gap-1">
           <DarkModeButton />

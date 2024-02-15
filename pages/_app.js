@@ -5,8 +5,17 @@ import siteMetadata from "/data/siteMetadata";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from '@vercel/analytics/react';
+import { withTranslation } from 'react-i18next';
+import useLanguageSetting from '/utils/useLanguageSetting';
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, t }) {
+  const locale =
+  typeof window !== "undefined"
+  ? window.localStorage.getItem("MY_LANGUAGE")
+  : "zh-Hans";
+  
+  useLanguageSetting(locale);
+  // const { t } = useTranslation('common','components', 'pages');
   return (
     <>
       <Head>
@@ -30,3 +39,5 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
+
+export default withTranslation()(MyApp);
