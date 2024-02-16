@@ -1,9 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useTranslation } from 'next-i18next'
 import { parseCookies } from 'nookies';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import acceptLanguageParser from 'accept-language-parser';
-import cookie from 'cookie';
+import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,7 +61,8 @@ function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocal
 
 export default function index() {
   // const { t, i18n } = useTranslation('common', { useSuspense: false })
-  const { t, i18n, ready } = useTranslation(['common'], { bindI18n: 'languageChanged loaded' })
+  const { t, i18n, tReady } = useTranslation(['common'], { bindI18n: 'languageChanged loaded' })
+  // if (!tReady) return (<div>loading...</div>)
   // const namespaces = ['common', 'components'];
 
   // i18n.loadNamespaces(namespaces, () => {
@@ -144,7 +144,7 @@ export default function index() {
 }
   
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Head>
         <title>首页 - {siteMetadata.title}</title>
       </Head>
@@ -202,7 +202,7 @@ export default function index() {
           </h2>
         </section>
       </div>
-      </>
+      </Suspense>
   );
 }
 

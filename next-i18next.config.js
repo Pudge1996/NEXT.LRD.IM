@@ -19,6 +19,9 @@ module.exports = {
     backends: isBrowser ? [LocalStorageBackend, HttpBackend] : [],
   },
   partialBundledLanguages: isBrowser && true,
+  react: {
+    useSuspense: true, // 确保Suspense功能被启用
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['zh-Hans', 'zh-Hant', 'en'],
