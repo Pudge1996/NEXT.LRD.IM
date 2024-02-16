@@ -47,6 +47,9 @@ const useLanguageSetting = () => {
       i18n.changeLanguage(locale).then(() => {
         document.documentElement.lang = locale;
         Cookie.set("NEXT_LOCALE", locale, { path: '/', sameSite: 'strict' }); // 更新Cookie
+        i18n.reloadResources(locale).then(() => {
+            console.log(`Resources reloaded for ${locale}`);
+        });
       });
     };
 
