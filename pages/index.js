@@ -196,11 +196,18 @@ const Project = () => {
 
 const Index = () => {
   // useLanguageSetting(initialLocale);
-  const { ready } = useTranslation('common', { useSuspense: false });
+  const { t, ready } = useTranslation('common', { useSuspense: false });
+  const [loaded, setLoaded] = React.useState(false);
 
-  if (!ready){
-    return (<div>Loading...</div>)
-  };
+  React.useEffect(() => {
+    if (ready) {
+      setLoaded(true);
+    }
+  }, [ready]);
+
+  if (!loaded) {
+    return <div>Loading...</div>; // 或者其他加载指示器
+  }
 
   return (
       <Project />
