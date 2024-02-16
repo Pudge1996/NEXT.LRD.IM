@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { parseCookies } from 'nookies'; // 引入nookies来帮助解析cookies
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +11,7 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
 
 export default function index() {
-  const { t } = useTranslation(['common', 'components', 'pages'])
+  const { t } = useTranslation('common')
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
@@ -143,22 +144,20 @@ export default function index() {
   );
 }
 
-// export const getServerSideProps = async ({ locale }) => {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, ['common', 'components', 'pages'])),
-//     },
-//   };
-// };
+// export const getStaticProps = async ({ locale }) => ({
+//   props: {
+//     ...await serverSideTranslations(locale, ['common', 'components']),
+//   },
+// })
 
-
-export async function getServerSideProps({ req }) {
-  const browserLang = req.headers["accept-language"].split(',')[0].split('-')[0]; // 简化处理，只取首选语言的前两个字符
-  const locale = browserLang || 'en'; // 默认回退到英文
+export const getServerSideProps = async (context) => {
+  const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
+  const cookies = parseCookies(context); // 使用nookies解析cookies
+  const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
 
   return {
     props: {
-      ...await serverSideTranslations(locale, ['common', 'components', 'pages']),
+      ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
     },
   };
-}
+};
