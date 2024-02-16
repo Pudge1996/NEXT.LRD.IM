@@ -155,7 +155,8 @@ export default function index() {
 export const getServerSideProps = async (context) => {
   const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
   const cookies = parseCookies(context); // 使用nookies解析cookies
-  const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
+  const userLocale = locale || cookies['NEXT_LOCALE']; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
+
 
   return {
     props: {
