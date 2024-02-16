@@ -27,7 +27,9 @@ module.exports = {
     interpolation: {
       escapeValue: false, // not needed for react!!
     },
+    loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
   },
+  
   
   
   serializeConfig: false,

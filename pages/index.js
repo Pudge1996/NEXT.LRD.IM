@@ -63,15 +63,15 @@ function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocal
 export default function index() {
   // const { t, i18n } = useTranslation('common', { useSuspense: false })
   const { t, i18n, ready } = useTranslation(['common'], { bindI18n: 'languageChanged loaded' })
-  const namespaces = ['common', 'components'];
+  // const namespaces = ['common', 'components'];
 
-  i18n.loadNamespaces(namespaces, () => {
-    // 命名空间加载完成后，更新状态以允许渲染
-    console.log('Translation namespaces loaded');
-  });
-  if (!ready) {
-    return <div>Loading translations...</div>;
-  }
+  // i18n.loadNamespaces(namespaces, () => {
+  //   // 命名空间加载完成后，更新状态以允许渲染
+  //   console.log('Translation namespaces loaded');
+  // });
+  // if (!ready) {
+  //   return <div>Loading translations...</div>;
+  // }
 
     // i18n.reloadResources(i18n.resolvedLanguage, ['common'])
   function ProjectItems() {
