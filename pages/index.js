@@ -12,6 +12,54 @@ import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
 
+export const getServerSideProps = async (context) => {
+  const cookies = parseCookies(context);
+  const cookieLocale = cookies['NEXT_LOCALE'];
+
+  // 默认情况下使用i18next的defaultLocale
+  let finalLocale = context.locale;
+
+  if (!cookieLocale) {
+    // 如果没有cookie，尝试根据Accept-Language预测
+    const acceptLanguage = context.req.headers['accept-language'];
+    const supportedLocales = ['en', 'zh-Hans', 'zh-Hant']; // 假设这是您支持的语言列表
+    finalLocale = getPreferredLocale(acceptLanguage, supportedLocales, context.locale);
+  } else {
+    // 如果有cookie，优先使用cookie中的语言设置
+    finalLocale = cookieLocale;
+  }
+
+  return {
+    props: {
+      ...(await serverSideTranslations(finalLocale, ['common', 'components', 'pages'])),
+    },
+  };
+};
+
+function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocale) {
+  const locales = acceptLanguageHeader
+    .split(',')
+    .map((lang) => {
+      const [locale, priority] = lang.trim().split(';q=');
+      return { locale: locale.split('-')[0], priority: priority ? parseFloat(priority) : 1 };
+    })
+    .sort((a, b) => b.priority - a.priority);
+
+  for (let { locale } of locales) {
+    // 简化的处理逻辑，您可以根据需要调整
+    if (locale.startsWith("zh")) {
+      if (supportedLocales.includes("zh-Hans") || supportedLocales.includes("zh-Hant")) {
+        // 假设支持"zh-Hans"或"zh-Hant"，您可以根据实际情况调整
+        return locale.includes("CN") || locale.includes("SG") ? "zh-Hans" : "zh-Hant";
+      }
+    } else if (supportedLocales.includes(locale)) {
+      return locale;
+    }
+  }
+
+  return defaultLocale;
+}
+
 export default function index() {
   const { t } = useTranslation('common')
   function ProjectItems() {
@@ -146,53 +194,9 @@ export default function index() {
   );
 }
 
-function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocale) {
-  const locales = acceptLanguageHeader
-    .split(',')
-    .map((lang) => {
-      const [locale, priority] = lang.trim().split(';q=');
-      return { locale: locale.split('-')[0], priority: priority ? parseFloat(priority) : 1 };
-    })
-    .sort((a, b) => b.priority - a.priority);
 
-  for (let { locale } of locales) {
-    // 简化的处理逻辑，您可以根据需要调整
-    if (locale.startsWith("zh")) {
-      if (supportedLocales.includes("zh-Hans") || supportedLocales.includes("zh-Hant")) {
-        // 假设支持"zh-Hans"或"zh-Hant"，您可以根据实际情况调整
-        return locale.includes("CN") || locale.includes("SG") ? "zh-Hans" : "zh-Hant";
-      }
-    } else if (supportedLocales.includes(locale)) {
-      return locale;
-    }
-  }
 
-  return defaultLocale;
-}
 
-export const getServerSideProps = async (context) => {
-  const cookies = parseCookies(context);
-  const cookieLocale = cookies['NEXT_LOCALE'];
-
-  // 默认情况下使用i18next的defaultLocale
-  let finalLocale = context.locale;
-
-  if (!cookieLocale) {
-    // 如果没有cookie，尝试根据Accept-Language预测
-    const acceptLanguage = context.req.headers['accept-language'];
-    const supportedLocales = ['en', 'zh-Hans', 'zh-Hant']; // 假设这是您支持的语言列表
-    finalLocale = getPreferredLocale(acceptLanguage, supportedLocales, context.locale);
-  } else {
-    // 如果有cookie，优先使用cookie中的语言设置
-    finalLocale = cookieLocale;
-  }
-
-  return {
-    props: {
-      ...(await serverSideTranslations(finalLocale, ['common', 'components', 'pages'])),
-    },
-  };
-};
 
 // export const getServerSideProps = async (context) => {
 //   let { locale } = context;
