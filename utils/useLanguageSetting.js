@@ -1,38 +1,3 @@
-// import React from 'react';
-// import { useTranslation } from 'react-i18next';
-// import Cookie from 'js-cookie';
-
-// const useLanguageSetting = () => {
-//     const { i18n } = useTranslation();
-  
-//     React.useEffect(() => {
-//       // 尝试从Cookies获取用户设置的语言
-//       const savedLocale = Cookie.get("NEXT_LOCALE");
-  
-//       // 如果Cookies中有用户设置的语言，则使用该设置
-//       if (savedLocale) {
-//         i18n.changeLanguage(savedLocale).then(() => {
-//           document.documentElement.lang = savedLocale;
-//         });
-//       } else {
-//         // 没有用户设置的语言，则根据浏览器语言进行设置
-//         let browserLanguage = navigator.language || navigator.userLanguage;
-//         let defaultLocale = "en";
-  
-//         if (browserLanguage.startsWith("zh")) {
-//           defaultLocale = browserLanguage.toLowerCase().includes("cn") || browserLanguage.toLowerCase().includes("sg") ? "zh-Hans" : "zh-Hant";
-//         }
-  
-//         i18n.changeLanguage(defaultLocale).then(() => {
-//           document.documentElement.lang = defaultLocale;
-//           Cookie.set("NEXT_LOCALE", defaultLocale, { path: '/', sameSite: 'strict' }); // 将这个逻辑移至这里
-//         });
-//       }
-//     }, [i18n]);
-//   };
-
-//   export default useLanguageSetting;
-
 import { useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
 import Cookie from 'js-cookie';
@@ -56,7 +21,7 @@ const useLanguageSetting = () => {
     const handleRouteChange = () => {
       // 尝试从Cookies获取用户设置的语言
       const cookieLocale = Cookie.get("NEXT_LOCALE");
-      let finalLocale = cookieLocale || "en"; // 如果没有在Cookies找到语言设置，则默认为英文
+      let finalLocale = cookieLocale || "zh-Hans"; // 如果没有在Cookies找到语言设置，则默认为英文
 
       if (!cookieLocale) {
         let browserLanguage = navigator.language || navigator.userLanguage; // 兼容不同浏览器

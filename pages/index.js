@@ -162,20 +162,29 @@ export default function index() {
 //   };
 // };
 
-export const getServerSideProps = async (context) => {
-  let { locale } = context;
-  const cookies = parseCookies(context);
-  let userLocale = cookies['NEXT_LOCALE'];
+// export const getServerSideProps = async (context) => {
+//   let { locale } = context;
+//   const cookies = parseCookies(context);
+//   let userLocale = cookies['NEXT_LOCALE'];
 
-  if (!userLocale) {
-    // 这里是简化的逻辑，您可能需要根据实际情况进行复杂的语言匹配和选择
-    const acceptLanguage = context.req.headers["accept-language"];
-    userLocale = acceptLanguage ? acceptLanguage.split(',')[0].split('-')[0] : locale;
-  }
+//   if (!userLocale) {
+//     // 这里是简化的逻辑，您可能需要根据实际情况进行复杂的语言匹配和选择
+//     const acceptLanguage = context.req.headers["accept-language"];
+//     userLocale = acceptLanguage ? acceptLanguage.split(',')[0].split('-')[0] : locale;
+//   }
 
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(userLocale, ['common', 'pages'])),
+//     },
+//   };
+// };
+
+export async function getServerSideProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(userLocale, ['common', 'pages'])),
+      // 这里使用 locale 确保加载正确的语言资源
+      ...(await serverSideTranslations(locale, ['common', 'pages'])),
     },
   };
-};
+}

@@ -26,7 +26,7 @@ const SwitchLanguages = () => {
     i18n.changeLanguage(lng).then(() => {
         document.documentElement.lang = lng;
         Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
-        router.push(router.pathname, router.asPath, { shallow: false });
+        router.push(router.pathname, router.asPath, { shallow: true });
         i18n.reloadResources(lng).then(() => {
             console.log(`Resources reloaded for ${lng}`);
         });

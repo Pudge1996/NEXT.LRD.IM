@@ -6,7 +6,7 @@ const isBrowser = typeof window !== 'undefined'
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
-  debug: isDev,
+  debug: true,
   backend: {
     backendOptions: [
       { // LocalStorageBackend options
@@ -24,6 +24,7 @@ module.exports = {
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
   },
+  
   serializeConfig: false,
   use: isBrowser ? [ChainedBackend] : [],
 }

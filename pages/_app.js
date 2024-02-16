@@ -15,10 +15,11 @@ import Cookie from 'js-cookie';
 
 
 function MyApp({ Component, pageProps }) {
+  
   useLanguageSetting();
   // const { t } = useTranslation('common','components', 'pages');
   return (
-    <React.Suspense fallback="loading">
+    <>
       <Head>
         <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={siteMetadata.description} />
@@ -37,7 +38,7 @@ function MyApp({ Component, pageProps }) {
           <Analytics />
         </Layout>
       </ThemeProvider>
-    </React.Suspense>
+    </>
   );
 }
 

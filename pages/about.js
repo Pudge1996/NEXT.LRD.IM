@@ -4,6 +4,7 @@ import siteMetadata from "/data/siteMetadata";
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { parseCookies } from 'nookies'; // 引入nookies来帮助解析cookies
+import cookie from 'cookie';
 
 export default function about() {
   const { t } = useTranslation(["common", "pages"]);
@@ -40,16 +41,24 @@ export default function about() {
   );
 }
 
-// export const getStaticProps = async ({ locale }) => ({
-//   props: {
-//     ...await serverSideTranslations(locale, ['common', 'pages']),
-//   },
-// })
+// export async function getServerSideProps({ locale }) {
+//   return {
+//     props: {
+//       // 这里使用 locale 确保加载正确的语言资源
+//       ...(await serverSideTranslations(locale, ['common', 'pages'])),
+//     },
+//   };
+// }
 
 // export const getServerSideProps = async (context) => {
-//   const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
-//   const cookies = parseCookies(context); // 使用nookies解析cookies
-//   const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
+//   let { locale } = context;
+//   const cookies = parseCookies(context);
+//   let userLocale = cookies['NEXT_LOCALE'];
+
+//   if (!userLocale) {
+//     const acceptLanguage = context.req.headers["accept-language"];
+//     userLocale = acceptLanguage ? acceptLanguage.split(',')[0].split('-')[0] : locale;
+//   }
 
 //   return {
 //     props: {
@@ -58,19 +67,17 @@ export default function about() {
 //   };
 // };
 
-export const getServerSideProps = async (context) => {
-  let { locale } = context;
-  const cookies = parseCookies(context);
-  let userLocale = cookies['NEXT_LOCALE'];
+export async function getServerSideProps(context) {
+  const { req } = context;
+  const cookies = cookie.parse(req ? req.headers.cookie || "" : document.cookie);
 
-  if (!userLocale) {
-    const acceptLanguage = context.req.headers["accept-language"];
-    userLocale = acceptLanguage ? acceptLanguage.split(',')[0].split('-')[0] : locale;
-  }
+  // 尝试从Cookies中获取语言设置，如果没有则使用默认语言
+  const locale = cookies['NEXT_LOCALE'] || context.locale || "zh-Hans";
 
+  // 使用serverSideTranslations加载当前语言的翻译资源
   return {
     props: {
-      ...(await serverSideTranslations(userLocale, ['common', 'pages'])),
+      ...(await serverSideTranslations(locale, ['common', 'pages'])),
     },
   };
-};
+}
