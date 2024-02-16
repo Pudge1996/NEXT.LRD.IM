@@ -68,16 +68,17 @@ export default function about() {
 // };
 
 export async function getServerSideProps(context) {
-  const { req } = context;
-  const cookies = cookie.parse(req ? req.headers.cookie || "" : document.cookie);
+  let { locale, req } = context;
+  const cookies = cookie.parse(req.headers.cookie || "");
 
-  // 尝试从Cookies中获取语言设置，如果没有则使用默认语言
-  const locale = cookies['NEXT_LOCALE'] || context.locale || "zh-Hans";
+  // 默认使用Next.js的locale，如果没有，则回退到"zh-Hans"
+  let finalLocale = cookies['NEXT_LOCALE'] || locale || "zh-Hans";
 
-  // 使用serverSideTranslations加载当前语言的翻译资源
+  // 在这里，您可以根据需要进一步处理Accept-Language头部，以更智能地确定默认语言
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'pages'])),
+      ...(await serverSideTranslations(finalLocale, ['common', 'components'])),
     },
   };
 }
