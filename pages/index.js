@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from 'next-i18next'
+import { parseCookies } from 'nookies';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { parseCookies } from 'nookies'; // 引入nookies来帮助解析cookies
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -150,14 +150,32 @@ export default function index() {
 //   },
 // })
 
+// export const getServerSideProps = async (context) => {
+//   const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
+//   const cookies = parseCookies(context); // 使用nookies解析cookies
+//   const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
+
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
+//     },
+//   };
+// };
+
 export const getServerSideProps = async (context) => {
-  const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
-  const cookies = parseCookies(context); // 使用nookies解析cookies
-  const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
+  let { locale } = context;
+  const cookies = parseCookies(context);
+  let userLocale = cookies['NEXT_LOCALE'];
+
+  if (!userLocale) {
+    // 这里是简化的逻辑，您可能需要根据实际情况进行复杂的语言匹配和选择
+    const acceptLanguage = context.req.headers["accept-language"];
+    userLocale = acceptLanguage ? acceptLanguage.split(',')[0].split('-')[0] : locale;
+  }
 
   return {
     props: {
-      ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
+      ...(await serverSideTranslations(userLocale, ['common', 'pages'])),
     },
   };
 };

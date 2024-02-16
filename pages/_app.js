@@ -16,21 +16,6 @@ import Cookie from 'js-cookie';
 
 function MyApp({ Component, pageProps }) {
   useLanguageSetting();
-  // const router = useRouter();
-  // React.useEffect(() => {
-  //   const handleRouteChange = () => {
-  //     const nextLocale = Cookie.get('NEXT_LOCALE') || 'en';
-  //     document.documentElement.lang = nextLocale;
-  //   };
-
-  //   // 监听路由变化
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-
-  //   // 组件卸载时移除监听器
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //   };
-  // }, [router.events]);
   // const { t } = useTranslation('common','components', 'pages');
   return (
     <React.Suspense fallback="loading">
