@@ -23,7 +23,7 @@ module.exports = {
     useSuspense: true, // 确保Suspense功能被启用
   },
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'zh-Hans',
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
     fallbackNS: 'common',

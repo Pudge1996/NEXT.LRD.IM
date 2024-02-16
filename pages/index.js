@@ -20,7 +20,7 @@ export const getServerSideProps = async (context) => {
   if (!cookieLocale) {
     // 如果没有cookie，尝试根据Accept-Language预测
     const acceptLanguage = context.req.headers['accept-language'];
-    const supportedLocales = ['en', 'zh-Hans', 'zh-Hant']; // 假设这是您支持的语言列表
+    const supportedLocales = ['zh-Hans', 'zh-Hant', 'en']; // 假设这是您支持的语言列表
     finalLocale = getPreferredLocale(acceptLanguage, supportedLocales, context.locale);
   } else {
     // 如果有cookie，优先使用cookie中的语言设置
@@ -29,7 +29,7 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(finalLocale, ['common'])),
+      ...(await serverSideTranslations(finalLocale, ['common'], null, ['zh-Hans', 'zh-Hant', 'en'])),
     },
   };
 };
