@@ -20,7 +20,7 @@ module.exports = {
   },
   partialBundledLanguages: isBrowser && true,
   i18n: {
-    defaultLocale: 'zh-Hans',
+    defaultLocale: 'en',
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
     fallbackNS: 'common',

@@ -13,7 +13,7 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
 
 export default function index() {
-  // const { t } = useTranslation('common')
+  const { t } = useTranslation('common')
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
@@ -146,24 +146,68 @@ export default function index() {
   );
 }
 
-// export const getStaticProps = async ({ locale }) => ({
-//   props: {
-//     ...await serverSideTranslations(locale, ['common', 'components']),
-//   },
-// })
+function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocale) {
+  const locales = acceptLanguageHeader
+    .split(',')
+    .map((lang) => {
+      const [locale, priority] = lang.trim().split(';q=');
+      return { locale: locale.split('-')[0], priority: priority ? parseFloat(priority) : 1 };
+    })
+    .sort((a, b) => b.priority - a.priority);
+
+  for (let { locale } of locales) {
+    // 简化的处理逻辑，您可以根据需要调整
+    if (locale.startsWith("zh")) {
+      if (supportedLocales.includes("zh-Hans") || supportedLocales.includes("zh-Hant")) {
+        // 假设支持"zh-Hans"或"zh-Hant"，您可以根据实际情况调整
+        return locale.includes("CN") || locale.includes("SG") ? "zh-Hans" : "zh-Hant";
+      }
+    } else if (supportedLocales.includes(locale)) {
+      return locale;
+    }
+  }
+
+  return defaultLocale;
+}
 
 export const getServerSideProps = async (context) => {
-  const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
-  const cookies = parseCookies(context); // 使用nookies解析cookies
-  const userLocale = locale || cookies['NEXT_LOCALE']; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
+  const cookies = parseCookies(context);
+  const cookieLocale = cookies['NEXT_LOCALE'];
 
+  // 默认情况下使用i18next的defaultLocale
+  let finalLocale = context.locale;
+
+  if (!cookieLocale) {
+    // 如果没有cookie，尝试根据Accept-Language预测
+    const acceptLanguage = context.req.headers['accept-language'];
+    const supportedLocales = ['en', 'zh-Hans', 'zh-Hant']; // 假设这是您支持的语言列表
+    finalLocale = getPreferredLocale(acceptLanguage, supportedLocales, context.locale);
+  } else {
+    // 如果有cookie，优先使用cookie中的语言设置
+    finalLocale = cookieLocale;
+  }
 
   return {
     props: {
-      ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
+      ...(await serverSideTranslations(finalLocale, ['common', 'components', 'pages'])),
     },
   };
 };
+
+// export const getServerSideProps = async (context) => {
+//   let { locale } = context;
+//   const cookies = parseCookies(context);
+//   const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用Cookie中的语言设置
+
+//   // 这里不再需要额外的逻辑来调整userLocale，
+//   // 因为我们假设在客户端设置的NEXT_LOCALE总是有效的
+
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
+//     },
+//   };
+// };
 
 // export const getServerSideProps = async (context) => {
 //   let { locale } = context;

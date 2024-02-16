@@ -18,6 +18,7 @@ const useLanguageSetting = () => {
         
       });
     };
+    
 
     const handleRouteChange = () => {
         // 尝试从Cookies获取用户设置的语言
@@ -55,8 +56,6 @@ const useLanguageSetting = () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [i18n, router.events]); // 添加router.events作为依赖项
-
-  // 注意：这里不需要返回任何内容
 };
 
 export default useLanguageSetting;

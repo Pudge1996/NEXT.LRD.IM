@@ -17,6 +17,7 @@ import { useTranslation } from 'next-i18next';
 function MyApp({ Component, pageProps }) {
   
   useLanguageSetting();
+
   return (
     <>
       <Head>
