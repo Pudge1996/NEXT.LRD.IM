@@ -1,8 +1,7 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { useTranslation } from 'next-i18next'
 import { parseCookies } from 'nookies';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +9,6 @@ import siteMetadata from "/data/siteMetadata";
 import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
-import useLanguageSetting from '/utils/useLanguageSetting';
 
 export const getServerSideProps = async (context) => {
   const cookies = parseCookies(context);
@@ -31,7 +29,7 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(finalLocale, ['common', 'components', 'pages'])),
+      ...(await serverSideTranslations(finalLocale, ['common'])),
     },
   };
 };
