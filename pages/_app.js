@@ -11,6 +11,7 @@ import useLanguageSetting from '/utils/useLanguageSetting';
 import { appWithTranslation } from 'next-i18next'
 import nextI18nConfig from '../next-i18next.config'
 import Cookie from 'js-cookie';
+import { useTranslation } from 'next-i18next';
 
 
 
@@ -18,6 +19,27 @@ function MyApp({ Component, pageProps }) {
   
   useLanguageSetting();
   // const { t } = useTranslation('common','components', 'pages');
+  const { i18n } = useTranslation();
+  const [initialized, setInitialized] = React.useState(i18n.isInitialized);
+
+  React.useEffect(() => {
+    if (!i18n.isInitialized) {
+      // 如果i18n未初始化，则监听初始化事件
+      const handleI18nInitialized = () => {
+        setInitialized(true);
+      };
+
+      i18n.on('initialized', handleI18nInitialized);
+      return () => {
+        i18n.off('initialized', handleI18nInitialized);
+      };
+    }
+    // 如果i18n已经初始化，则无需添加监听器
+  }, []);
+
+  if (!initialized) {
+    return <div>Loading...</div>; // 或其他加载指示
+  }
   return (
     <>
       <Head>

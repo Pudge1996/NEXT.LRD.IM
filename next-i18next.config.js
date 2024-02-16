@@ -23,9 +23,9 @@ module.exports = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
+    fallbackNS: 'common',
   },
-  fallbackNS: 'common',
-  initImmediate: false,
+  
   
   serializeConfig: false,
   use: isBrowser ? [ChainedBackend] : [],
