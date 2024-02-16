@@ -13,7 +13,7 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
 
 export default function index() {
-  const { t } = useTranslation('common')
+  // const { t } = useTranslation('common')
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (

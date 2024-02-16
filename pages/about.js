@@ -1,13 +1,15 @@
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { parseCookies } from 'nookies'; // 引入nookies来帮助解析cookies
+import nookies, { parseCookies } from 'nookies';
 import cookie from 'cookie';
 
 export default function about() {
   const { t } = useTranslation(["common", "pages"]);
+
   return (
     <>
       <Head>

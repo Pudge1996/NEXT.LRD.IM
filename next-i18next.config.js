@@ -24,6 +24,9 @@ module.exports = {
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
     fallbackNS: 'common',
+    interpolation: {
+      escapeValue: false, // not needed for react!!
+    },
   },
   
   

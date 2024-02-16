@@ -5,7 +5,6 @@ import { IoLanguage } from "react-icons/io5";
 import { useTranslation } from 'next-i18next';
 import Cookie from 'js-cookie'; // 引入js-cookie
 
-
 const SwitchLanguages = () => {
   const router = useRouter();
   const { i18n } = useTranslation();
@@ -15,17 +14,6 @@ const SwitchLanguages = () => {
     { id: "en", value: "English" },
   ];
 
-//   const changeLanguage = (lng) => {
-//     i18n.changeLanguage(lng).then(() => {
-//         i18n.reloadResources(lng).then(() => {
-//             console.log(`Resources reloaded for ${lng}`);
-//         });
-//         document.documentElement.lang = lng;
-//         Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
-//         router.push(router.pathname, router.asPath, { shallow: true });
-        
-//     });
-// };
 const changeLanguage = (lng) => {
     i18n.changeLanguage(lng).then(() => {
         document.documentElement.lang = lng;
@@ -34,9 +22,6 @@ const changeLanguage = (lng) => {
         
     });
 };
-
-
-  
 
   return (
     <div>
