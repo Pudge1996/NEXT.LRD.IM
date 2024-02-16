@@ -64,7 +64,6 @@ export const getServerSideProps = async (context) => {
   let userLocale = cookies['NEXT_LOCALE'];
 
   if (!userLocale) {
-    // 这里是简化的逻辑，您可能需要根据实际情况进行复杂的语言匹配和选择
     const acceptLanguage = context.req.headers["accept-language"];
     userLocale = acceptLanguage ? acceptLanguage.split(',')[0].split('-')[0] : locale;
   }

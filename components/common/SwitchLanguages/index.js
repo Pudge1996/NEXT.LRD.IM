@@ -15,13 +15,24 @@ const SwitchLanguages = () => {
     { id: "en", value: "English" },
   ];
 
+  // const changeLanguage = (lng) => {
+  //   i18n.changeLanguage(lng).then(() => {
+  //     document.documentElement.lang = lng; // 确保这行代码能够立即执行
+  //     Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
+  //     router.push(router.pathname, router.asPath, { shallow: false }); // 使用浅层路由避免页面完全刷新
+  //   });
+  // };
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng).then(() => {
-      document.documentElement.lang = lng; // 确保这行代码能够立即执行
-      Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
-      router.push(router.pathname, router.asPath, { shallow: true }); // 使用浅层路由避免页面完全刷新
+        document.documentElement.lang = lng;
+        Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
+        router.push(router.pathname, router.asPath, { shallow: true });
+        i18n.reloadResources(lng).then(() => {
+            console.log(`Resources reloaded for ${lng}`);
+        });
     });
-  };
+};
+
   
 
   return (
