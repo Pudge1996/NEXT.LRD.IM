@@ -59,23 +59,9 @@ function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocal
   return defaultLocale;
 }
 
-export default function index() {
-  // const { t, i18n } = useTranslation('common', { useSuspense: false })
-  const { t, i18n, tReady } = useTranslation(['common'], { bindI18n: 'languageChanged loaded' })
-  // if (!tReady) return (<div>loading...</div>)
-  // const namespaces = ['common', 'components'];
-
-  // i18n.loadNamespaces(namespaces, () => {
-  //   // 命名空间加载完成后，更新状态以允许渲染
-  //   console.log('Translation namespaces loaded');
-  // });
-  // if (!ready) {
-  //   return <div>Loading translations...</div>;
-  // }
-
-    // i18n.reloadResources(i18n.resolvedLanguage, ['common'])
-  function ProjectItems() {
+const ProjectItems = () => {
   const [isLoaded, setIsLoaded] = React.useState(false);
+
   return (
     <div className=" flex flex-col-reverse gap-8">
       {ProjectItemData.map((company, index) => (
@@ -141,10 +127,81 @@ export default function index() {
       ))}
     </div>
   );
-}
+};
+
+const Project = () => {
+  const { t } = useTranslation(['common'])
+//   function ProjectItems() {
+//   const [isLoaded, setIsLoaded] = React.useState(false);
+//   return (
+//     <div className=" flex flex-col-reverse gap-8">
+//       {ProjectItemData.map((company, index) => (
+//         <div key={index} className="last:hidden">
+//           {/* 公司 Company 列表 */}
+//           <div className="flex gap-3 py-3 sm:py-4 text-lg sm:text-[22px] items-center font-medium  bg-color  top-[62px] sm:top-[58px] transition-[background-color] z-[1]">
+//             <div className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] relative overflow-hidden rounded border-[0.5px] dark:border-transparent img-loading-bg transition-colors">
+//               <Image
+//                 // 公司图片
+//                 src={company.img}
+//                 alt={company.name}
+//                 className="select-none"
+//                 fill
+//                 sizes="100vw" />
+//             </div>
+//             <Link
+//               href={company.url}
+//               aria-label={company.name}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="ring-default link-color-none force-link"
+//             >
+//               {company.name}
+//             </Link>
+//           </div>
+
+//           {/* 作品 Project 列表 */}
+//           <div className="flex flex-wrap gap-8 sm:max-md:gap-6 mt-0 sm:mt-2">
+//             {company.projects &&
+//               company.projects.map((project, index) => (
+//                 <div className="sm:w-[calc(50%-1rem)]" key={index}>
+//                   <Link
+//                     href={project.url} // 待办
+//                     aria-label={company.name}
+//                     className="group flex flex-col ring-default"
+//                   >
+//                     <div className={`relative aspect-video mb-3 rounded-lg select-none  overflow-hidden img-loading-bg ${isLoaded ? '' : 'img-loading-spin'}`}>
+//                       <Image
+//                         // 项目图片
+//                         src={project.img}
+//                         alt={project.title}
+//                         onLoad={() => setIsLoaded(true)}
+//                         onError={() => setIsLoaded(true)}
+//                         className="rounded-lg"
+//                         // fill
+//                         // sizes="100vw"
+//                         width={608}
+//                         height={342}
+//                          />
+//                     </div>
+
+//                     <h3 className="text-lg font-semibold leading-tight mb-1 sm:group-hover:text-blue-600 group-active:text-blue-800 sm:group-active:text-blue-800 dark:sm:group-hover:text-blue-400 dark:group-active:text-blue-500 sm:dark:group-active:text-blue-500">
+//                       {project.title}
+//                     </h3>
+//                     <div className="leading-snug text-secondary">
+//                       {project.desc}
+//                     </div>
+//                   </Link>
+//                 </div>
+//               ))}
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
   
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
       <Head>
         <title>首页 - {siteMetadata.title}</title>
       </Head>
@@ -202,9 +259,17 @@ export default function index() {
           </h2>
         </section>
       </div>
-      </Suspense>
+      </>
   );
 }
+
+const Index = () => (
+  <Suspense fallback={<div>Loading...</div>}> {/* 在资源加载时显示的占位内容 */}
+    <Project />
+  </Suspense>
+);
+
+export default Index;
 
 
 
