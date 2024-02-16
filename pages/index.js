@@ -264,21 +264,11 @@ const Project = () => {
 }
 
 const Index = () => {
-  const { i18n } = useTranslation();
-  const [namespacesLoaded, setNamespacesLoaded] = React.useState(false);
+  const { ready } = useTranslation('common', { useSuspense: false });
 
-  React.useEffect(() => {
-    const namespaces = ['common', 'components'];
-    i18n.loadNamespaces(namespaces, () => {
-      // 命名空间加载完成后，更新状态以允许渲染
-      console.log('Translation namespaces loaded');
-      setNamespacesLoaded(true);
-    });
-  }, [i18n]);
-
-  if (!namespacesLoaded) {
-    return <div>Loading translations...</div>;
-  }
+  if (!ready){
+    return (<div>Loading...</div>)
+  };
 
   return (
     <Suspense fallback={<div>Loading...</div>}> {/* 在资源加载时显示的占位内容 */}
