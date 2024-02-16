@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
-import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { parseCookies } from 'nookies'; // 引入nookies来帮助解析cookies
 
 export default function about() {
   const { t } = useTranslation(["common", "pages"]);
@@ -39,8 +40,20 @@ export default function about() {
   );
 }
 
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...await serverSideTranslations(locale, ['common', 'pages']),
-  },
-})
+// export const getStaticProps = async ({ locale }) => ({
+//   props: {
+//     ...await serverSideTranslations(locale, ['common', 'pages']),
+//   },
+// })
+
+export const getServerSideProps = async (context) => {
+  const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
+  const cookies = parseCookies(context); // 使用nookies解析cookies
+  const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
+
+  return {
+    props: {
+      ...(await serverSideTranslations(userLocale, ['common', 'pages'])),
+    },
+  };
+};

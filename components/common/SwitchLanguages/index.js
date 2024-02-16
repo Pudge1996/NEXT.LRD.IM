@@ -3,54 +3,26 @@ import { useRouter } from "next/router";
 import { Menu, Transition } from "@headlessui/react";
 import { IoLanguage } from "react-icons/io5";
 import { useTranslation } from 'next-i18next';
+import Cookie from 'js-cookie'; // 引入js-cookie
+
 
 const SwitchLanguages = () => {
-  // const router = useRouter();
-  // console.log('Toggled!');
-  // const changeLanguage = (locale) => {
-  //   if (typeof window !== "undefined") {
-  //     localStorage.setItem("i18nextLng", locale); // 更新 localStorage 中的语言设置
-  //     document.documentElement.lang = locale; // 更新 html 的 lang 属性
-
-  //     // 使用浅层路由进行语言切换，避免页面刷新
-  //     // router.push(router.pathname, router.asPath, { shallow: true });
-      
-  //   }
-  // };
-
-  // // 组件挂载时读取 localStorage 中的语言设置，并更新页面
-  // React.useEffect(() => {
-  //   let browserLanguage = navigator.language || navigator.userLanguage; // 兼容不同浏览器
-  //   let savedLocale = "en"; // 默认设置为英文
-
-  //   // 对于通用的“Chinese”进行特别处理
-  //   if (browserLanguage.startsWith("zh")) {
-  //     // 针对Chrome设置为"Chinese"的情况，默认为简体中文
-  //     savedLocale = "zh-Hans"; // 默认设置为简体中文
-
-  //     if (browserLanguage.toLowerCase() === "zh-cn" || browserLanguage.toLowerCase() === "zh-sg") {
-  //       savedLocale = "zh-Hans"; // 简体中文
-  //     } else if (browserLanguage.toLowerCase() === "zh-tw" || browserLanguage.toLowerCase() === "zh-hk") {
-  //       savedLocale = "zh-Hant"; // 繁体中文
-  //     }
-  //   }
-
-  //   // 如果localStorage中有语言设置，则使用该设置，否则使用浏览器语言设置
-  //   savedLocale = localStorage.getItem("i18nextLng") || savedLocale;
-
-  //   changeLanguage(savedLocale);
-  // }, []);
+  const router = useRouter();
   const { i18n } = useTranslation();
   const languages = [
     { id: "zh-Hans", value: "中文（简体）" },
     { id: "zh-Hant", value: "中文（繁體）" },
     { id: "en", value: "English" },
   ];
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
 
-  // const { t } = useTranslation("common");
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng).then(() => {
+      document.documentElement.lang = lng; // 确保这行代码能够立即执行
+      Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
+      router.push(router.pathname, router.asPath, { shallow: true }); // 使用浅层路由避免页面完全刷新
+    });
+  };
+  
 
   return (
     <div>

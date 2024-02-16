@@ -1,5 +1,6 @@
 import "/styles/globals.css";
 import React from "react";
+import { useRouter } from 'next/router';
 import Layout from "/components/layout";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
@@ -9,15 +10,27 @@ import { Analytics } from '@vercel/analytics/react';
 import useLanguageSetting from '/utils/useLanguageSetting';
 import { appWithTranslation } from 'next-i18next'
 import nextI18nConfig from '../next-i18next.config'
+import Cookie from 'js-cookie';
 
 
-function MyApp({ Component, pageProps, t }) {
-  const locale =
-  typeof window !== "undefined"
-  ? window.localStorage.getItem("i18nextLng")
-  : "zh-Hans";
-  
-  // useLanguageSetting(locale);
+
+function MyApp({ Component, pageProps }) {
+  useLanguageSetting();
+  // const router = useRouter();
+  // React.useEffect(() => {
+  //   const handleRouteChange = () => {
+  //     const nextLocale = Cookie.get('NEXT_LOCALE') || 'en';
+  //     document.documentElement.lang = nextLocale;
+  //   };
+
+  //   // 监听路由变化
+  //   router.events.on('routeChangeComplete', handleRouteChange);
+
+  //   // 组件卸载时移除监听器
+  //   return () => {
+  //     router.events.off('routeChangeComplete', handleRouteChange);
+  //   };
+  // }, [router.events]);
   // const { t } = useTranslation('common','components', 'pages');
   return (
     <React.Suspense fallback="loading">
