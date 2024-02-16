@@ -2,6 +2,8 @@ import React from "react";
 import { useTranslation } from 'next-i18next'
 import { parseCookies } from 'nookies';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import acceptLanguageParser from 'accept-language-parser';
+import cookie from 'cookie';
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -150,17 +152,17 @@ export default function index() {
 //   },
 // })
 
-// export const getServerSideProps = async (context) => {
-//   const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
-//   const cookies = parseCookies(context); // 使用nookies解析cookies
-//   const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
+export const getServerSideProps = async (context) => {
+  const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
+  const cookies = parseCookies(context); // 使用nookies解析cookies
+  const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
 
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
-//     },
-//   };
-// };
+  return {
+    props: {
+      ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
+    },
+  };
+};
 
 // export const getServerSideProps = async (context) => {
 //   let { locale } = context;
@@ -180,11 +182,31 @@ export default function index() {
 //   };
 // };
 
-export async function getServerSideProps({ locale }) {
-  return {
-    props: {
-      // 这里使用 locale 确保加载正确的语言资源
-      ...(await serverSideTranslations(locale, ['common', 'pages'])),
-    },
-  };
-}
+// export async function getServerSideProps({ locale }) {
+//   return {
+//     props: {
+//       // 这里使用 locale 确保加载正确的语言资源
+//       ...(await serverSideTranslations(locale, ['common', 'pages'])),
+//     },
+//   };
+// }
+
+// export async function getServerSideProps({ req }) {
+//   const cookies = cookie.parse(req.headers.cookie || "");
+//   let finalLocale = cookies['NEXT_LOCALE'];
+
+//   if (!finalLocale) {
+//     const acceptLanguageHeader = req.headers['accept-language'];
+//     const parsedLanguages = acceptLanguageParser.parse(acceptLanguageHeader);
+//     const supportedLanguages = ['zh-Hans', 'zh-Hant', 'en'];
+//     const matchedLanguage = parsedLanguages.find(lang => supportedLanguages.includes(lang.code));
+
+//     finalLocale = matchedLanguage ? matchedLanguage.code : 'zh-Hant'; // 'en'作为回退语言
+//   }
+
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(finalLocale, ['common', 'components'])),
+//     },
+//   };
+// }

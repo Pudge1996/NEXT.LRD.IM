@@ -10,23 +10,24 @@ const useLanguageSetting = () => {
   useEffect(() => {
     const setLanguage = (locale) => {
       i18n.changeLanguage(locale).then(() => {
-        document.documentElement.lang = locale;
-        Cookie.set("NEXT_LOCALE", locale, { path: '/', sameSite: 'strict' }); // 更新Cookie
         i18n.reloadResources(locale).then(() => {
             console.log(`Resources reloaded for ${locale}`);
         });
+        document.documentElement.lang = locale;
+        Cookie.set("NEXT_LOCALE", locale, { path: '/', sameSite: 'strict' }); // 更新Cookie
+        
       });
     };
 
     const handleRouteChange = () => {
-      // 尝试从Cookies获取用户设置的语言
-      const cookieLocale = Cookie.get("NEXT_LOCALE");
-      let finalLocale = cookieLocale || "zh-Hans"; // 如果没有在Cookies找到语言设置，则默认为英文
-
-      if (!cookieLocale) {
-        let browserLanguage = navigator.language || navigator.userLanguage; // 兼容不同浏览器
-        // 对于通用的“Chinese”进行特别处理
-        if (browserLanguage.startsWith("zh")) {
+        // 尝试从Cookies获取用户设置的语言
+        const cookieLocale = Cookie.get("NEXT_LOCALE");
+        let finalLocale = cookieLocale || "en"; // 修改默认语言为英文
+      
+        if (!cookieLocale) {
+          let browserLanguage = navigator.language || navigator.userLanguage; // 兼容不同浏览器
+          // 对于以“zh”开头的语言进行特别处理
+          if (browserLanguage.startsWith("zh")) {
             // 针对不同地区的中文设置不同的默认值
             if (browserLanguage.toLowerCase().includes("cn") || browserLanguage.toLowerCase().includes("sg")) {
               finalLocale = "zh-Hans"; // 简体中文
@@ -36,12 +37,12 @@ const useLanguageSetting = () => {
               // 如果无法明确判断为简体或繁体中文的其他情况，默认使用简体中文
               finalLocale = "zh-Hans";
             }
-          }
-      }
-
-      // 根据最终确定的Locale设置语言
-      setLanguage(finalLocale);
-    };
+          } // 如果不是以"zh"开头，则已经在初始设置中将finalLocale设为"en"
+        }
+      
+        // 根据最终确定的Locale设置语言
+        setLanguage(finalLocale);
+      };
 
     // 监听路由变化
     router.events.on('routeChangeComplete', handleRouteChange);

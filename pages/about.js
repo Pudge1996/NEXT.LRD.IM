@@ -67,18 +67,30 @@ export default function about() {
 //   };
 // };
 
-export async function getServerSideProps(context) {
-  let { locale, req } = context;
-  const cookies = cookie.parse(req.headers.cookie || "");
+// export async function getServerSideProps(context) {
+//   let { locale, req } = context;
+//   const cookies = cookie.parse(req.headers.cookie || "");
 
-  // 默认使用Next.js的locale，如果没有，则回退到"zh-Hans"
-  let finalLocale = cookies['NEXT_LOCALE'] || locale || "zh-Hans";
+//   // 默认使用Next.js的locale，如果没有，则回退到"zh-Hans"
+//   let finalLocale = cookies['NEXT_LOCALE'] || locale || "zh-Hans";
 
-  // 在这里，您可以根据需要进一步处理Accept-Language头部，以更智能地确定默认语言
+//   // 在这里，您可以根据需要进一步处理Accept-Language头部，以更智能地确定默认语言
+
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(finalLocale, ['common', 'components'])),
+//     },
+//   };
+// }
+
+export const getServerSideProps = async (context) => {
+  const { locale } = context; // Next.js自动提供locale基于用户的语言偏好
+  const cookies = parseCookies(context); // 使用nookies解析cookies
+  const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用cookie中的语言设置，如果没有则使用Next.js的locale
 
   return {
     props: {
-      ...(await serverSideTranslations(finalLocale, ['common', 'components'])),
+      ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
     },
   };
-}
+};
