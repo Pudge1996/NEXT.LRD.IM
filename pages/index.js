@@ -61,24 +61,21 @@ function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocal
 }
 
 export default function index() {
-  const { t, i18n } = useTranslation('common')
+  const { t, i18n, ready } = useTranslation('common', { useSuspense: false })
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
-  const [loading, setLoading] = React.useState(true);
 
-  React.useEffect(() => {
-    // 指定需要确保加载的命名空间
-    const namespaces = ['common', 'components'];
+  // const namespaces = ['common', 'components'];
 
-    i18n.loadNamespaces(namespaces, () => {
-      // 命名空间加载完成后，更新状态以允许渲染
-      setLoading(false);
-    });
-  }, [i18n]);
-  if (loading) {
-    // 显示加载状态或占位符
+  // i18n.loadNamespaces(namespaces, () => {
+  //   // 命名空间加载完成后，更新状态以允许渲染
+  //   console.log('Translation namespaces loaded');
+  // });
+  if (!ready) {
     return <div>Loading translations...</div>;
   }
+
+
   return (
     <div className=" flex flex-col-reverse gap-8">
       {ProjectItemData.map((company, index) => (
