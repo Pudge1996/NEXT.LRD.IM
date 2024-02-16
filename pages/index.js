@@ -271,9 +271,7 @@ const Index = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}> {/* 在资源加载时显示的占位内容 */}
       <Project />
-    </Suspense>
   );
 };
 
