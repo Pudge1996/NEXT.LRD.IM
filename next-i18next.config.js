@@ -25,6 +25,7 @@ module.exports = {
     localeDetection: false,
   },
   fallbackNS: 'common',
+  initImmediate: false,
   
   serializeConfig: false,
   use: isBrowser ? [ChainedBackend] : [],
