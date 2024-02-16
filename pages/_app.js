@@ -9,10 +9,15 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from '@vercel/analytics/react';
 import useLanguageSetting from '/utils/useLanguageSetting';
 import { appWithTranslation } from 'next-i18next'
-import nextI18nConfig from '../next-i18next.config'
-import nookies from 'nookies';
-import { useTranslation } from 'next-i18next';
+import nextI18NextConfig from '../next-i18next.config'
+import { UserConfig } from 'next-i18next';
 
+const emptyInitialI18NextConfig = {
+  i18n: {
+    defaultLocale: nextI18NextConfig.i18n.defaultLocale,
+    locales: nextI18NextConfig.i18n.locales,
+  },
+};
 
 function MyApp({ Component, pageProps }) {
   useLanguageSetting();
@@ -40,4 +45,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default appWithTranslation(MyApp, nextI18nConfig)
+export default appWithTranslation(MyApp, emptyInitialI18NextConfig)

@@ -30,6 +30,9 @@ module.exports = {
     interpolation: {
       escapeValue: false, // not needed for react!!
     },
+    fallbackLng: {
+      default: ['zh-Hans'],
+    },
     loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
   },
   
