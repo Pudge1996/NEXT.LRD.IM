@@ -31,7 +31,6 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      initialLocale: finalLocale,
       ...(await serverSideTranslations(finalLocale, ['common', 'components', 'pages'])),
     },
   };
@@ -198,7 +197,7 @@ const Project = () => {
 }
 
 const Index = () => {
-  useLanguageSetting();
+  // useLanguageSetting(initialLocale);
   const { ready } = useTranslation('common', { useSuspense: false });
 
   if (!ready){
@@ -211,69 +210,3 @@ const Index = () => {
 };
 
 export default Index;
-
-
-
-
-
-// export const getServerSideProps = async (context) => {
-//   let { locale } = context;
-//   const cookies = parseCookies(context);
-//   const userLocale = cookies['NEXT_LOCALE'] || locale; // 优先使用Cookie中的语言设置
-
-//   // 这里不再需要额外的逻辑来调整userLocale，
-//   // 因为我们假设在客户端设置的NEXT_LOCALE总是有效的
-
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(userLocale, ['common', 'components', 'pages'])),
-//     },
-//   };
-// };
-
-// export const getServerSideProps = async (context) => {
-//   let { locale } = context;
-//   const cookies = parseCookies(context);
-//   let userLocale = cookies['NEXT_LOCALE'];
-
-//   if (!userLocale) {
-//     // 这里是简化的逻辑，您可能需要根据实际情况进行复杂的语言匹配和选择
-//     const acceptLanguage = context.req.headers["accept-language"];
-//     userLocale = acceptLanguage ? acceptLanguage.split(',')[0].split('-')[0] : locale;
-//   }
-
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(userLocale, ['common', 'pages'])),
-//     },
-//   };
-// };
-
-// export async function getServerSideProps({ locale }) {
-//   return {
-//     props: {
-//       // 这里使用 locale 确保加载正确的语言资源
-//       ...(await serverSideTranslations(locale, ['common', 'pages'])),
-//     },
-//   };
-// }
-
-// export async function getServerSideProps({ req }) {
-//   const cookies = cookie.parse(req.headers.cookie || "");
-//   let finalLocale = cookies['NEXT_LOCALE'];
-
-//   if (!finalLocale) {
-//     const acceptLanguageHeader = req.headers['accept-language'];
-//     const parsedLanguages = acceptLanguageParser.parse(acceptLanguageHeader);
-//     const supportedLanguages = ['zh-Hans', 'zh-Hant', 'en'];
-//     const matchedLanguage = parsedLanguages.find(lang => supportedLanguages.includes(lang.code));
-
-//     finalLocale = matchedLanguage ? matchedLanguage.code : 'zh-Hant'; // 'en'作为回退语言
-//   }
-
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(finalLocale, ['common', 'components'])),
-//     },
-//   };
-// }

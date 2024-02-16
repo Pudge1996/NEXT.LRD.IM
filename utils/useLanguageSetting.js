@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next';
 import Cookie from 'js-cookie';
 import { useRouter } from 'next/router'; // 导入useRouter
 
-const useLanguageSetting = () => {
+const useLanguageSetting = (initialLocale) => {
   const { i18n } = useTranslation();
   const router = useRouter(); // 使用useRouter获取路由实例
 
@@ -15,7 +15,6 @@ const useLanguageSetting = () => {
         });
         document.documentElement.lang = locale;
         Cookie.set("NEXT_LOCALE", locale, { path: '/', sameSite: 'strict' }); // 更新Cookie
-        
       });
     };
     
@@ -55,7 +54,7 @@ const useLanguageSetting = () => {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [i18n, router.events]); // 添加router.events作为依赖项
+  }, [i18n]); // 添加router.events作为依赖项
 };
 
 export default useLanguageSetting;
