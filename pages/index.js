@@ -9,6 +9,7 @@ import siteMetadata from "/data/siteMetadata";
 import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
+import nextI18NextConfig from '../next-i18next.config.js'
 
 export const getServerSideProps = async (context) => {
   const cookies = parseCookies(context);
@@ -29,7 +30,7 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(finalLocale, ['common'], null, ['zh-Hans', 'zh-Hant', 'en'])),
+      ...(await serverSideTranslations(finalLocale, ['common'], nextI18NextConfig)),
     },
   };
 };
