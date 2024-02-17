@@ -8,14 +8,10 @@ const isDev = process.env.NODE_ENV === 'development'
 module.exports = {
   debug: true,
   backend: {
-    backendOptions: [
-      { // LocalStorageBackend options
-        expirationTime: isDev ? 0 : 60 * 60 * 1000, // 1 hour
-      },
-      { // HttpBackend options
-        loadPath: '/locales/{{lng}}/{{ns}}.json',
-      }
-    ],
+    backendOptions: {
+      expirationTime: isDev ? 0 : 60 * 60 * 1000,
+    },
+    loadPath: '/locales/{{lng}}/{{ns}}.json',
     backends: isBrowser ? [LocalStorageBackend, HttpBackend] : [],
   },
   partialBundledLanguages: isBrowser && true,
@@ -37,7 +33,6 @@ module.exports = {
   },
   loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
   ns: ['common', 'components', 'pages'],
-  
   
   serializeConfig: false,
   use: isBrowser ? [ChainedBackend] : [],
