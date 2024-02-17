@@ -1,9 +1,12 @@
-import { Fragment, useState } from "react";
+import React from "react";
+import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import TableContents from "/components/blog/TableContents";
+import { useTranslation } from 'next-i18next'
 
 export default function Example() {
-  const [open, setOpen] = useState(false);
+  const { t } = useTranslation("components");
+  const [open, setOpen] = React.useState(false);
   function openModal() {
     setOpen(true);
   }
@@ -12,10 +15,11 @@ export default function Example() {
     <>
       <button
         type="button"
+        role="button"
         onClick={openModal}
         className="w-full h-full absolute  bg-transparent inset-0 ring-default"
-        aria-label="目录"
-        title="目录"
+        aria-label={t("blog.TableContents_Mobile.icon")}
+        title={t("blog.TableContents_Mobile.icon_title")}
       ></button>
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={setOpen}>
@@ -44,7 +48,7 @@ export default function Example() {
                   leaveTo="translate-x-full"
                 >
                   {/* Panel整体 */}
-                  <Dialog.Panel className="pointer-events-auto relative w-full m-4 mr-0 pr-4 sm:m-6 sm:mr-0 sm:pr-6">
+                  <Dialog.Panel role="menu" className="pointer-events-auto relative w-full m-4 mr-0 pr-4 sm:m-6 sm:mr-0 sm:pr-6">
                     {/* 弹窗 */}
                     <div className="flex h-fit max-h-[calc(100vh-6rem)] flex-col overflow-y-scroll bg-color dark:border dark:border-neutral-800 shadow-xl rounded-xl">
                       <div className="px-6 pt-6 pb-2">
@@ -52,10 +56,10 @@ export default function Example() {
                           as="h5"
                           className="text-lg font-semibold text-primary"
                         >
-                          目录
+                          {t("blog.TableContents_Mobile.dialogHeading")}
                         </Dialog.Title>
                       </div>
-                      <div className="relative pt-2 pb-4 flex-1 px-6 max-h-[50vh] sm:max-h-[70vh]  overflow-auto">
+                      <div role="menubar" className="relative pt-2 pb-4 flex-1 px-6 max-h-[50vh] sm:max-h-[70vh]  overflow-auto">
                         {/* Replace with your content */}
                         <TableContents />
                         {/* /End replace */}
@@ -65,13 +69,14 @@ export default function Example() {
                       <div className="py-4 sm:pb-6 px-6">
                         <button
                           type="button"
+                          role="button"
                           className="min-w-full sm:w-max btn-base text-base btn-md bg-neutral-100 dark:bg-neutral-900 sm:hover:bg-neutral-200 relative text-center whitespace-nowrap"
                           onClick={() => setOpen(false)}
-                          aria-label="收起目录"
-                          title="收起目录"
+                          aria-label={t("blog.TableContents_Mobile.close")}
+                          title={t("blog.TableContents_Mobile.close_title")}
                         >
-                          <span className="sr-only">关闭目录弹窗</span>
-                          收起
+                          <span className="sr-only">{t("blog.TableContents_Mobile.close_title")}</span>
+                          {t("blog.TableContents_Mobile.close")}
                         </button>
                       </div>
                     </div>
