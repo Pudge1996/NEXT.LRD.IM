@@ -47,6 +47,7 @@ function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocal
   for (let { locale } of locales) {
     // 简化的处理逻辑，您可以根据需要调整
     if (locale.startsWith("zh")) {
+      return supportedLocales.includes("zh-Hans") ? "zh-Hans" : "zh-Hant";
       if (supportedLocales.includes("zh-Hans") || supportedLocales.includes("zh-Hant")) {
         // 假设支持"zh-Hans"或"zh-Hant"，您可以根据实际情况调整
         return locale.includes("CN") || locale.includes("SG") ? "zh-Hans" : "zh-Hant";
