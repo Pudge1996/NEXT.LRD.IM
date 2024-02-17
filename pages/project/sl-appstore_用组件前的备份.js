@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Zoom from "next-image-zoom";

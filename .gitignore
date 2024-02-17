@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+pages/project/sl-appstore_用组件前的备份.js
+pages/project/slapp-components_用组件前的备份.js
+pages/project/sl-appstore_用组件前的备份.js

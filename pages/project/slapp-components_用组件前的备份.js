@@ -7,6 +7,7 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectFooter from "/components/project/ProjectFooter";
 import Zoom from "next-image-zoom";
 
+
 export default function slappComponents() {
   const Title = ProjectItemData[2].projects[0].title;
   const Desc = ProjectItemData[2].projects[0].desc;
