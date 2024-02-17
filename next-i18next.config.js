@@ -26,7 +26,9 @@ module.exports = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
-    fallbackNS: 'common',
+    
+  },
+  fallbackNS: 'common',
     interpolation: {
       escapeValue: false, // not needed for react!!
     },
@@ -34,7 +36,6 @@ module.exports = {
       default: ['zh-Hans'],
     },
     loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
-  },
   
   
   
