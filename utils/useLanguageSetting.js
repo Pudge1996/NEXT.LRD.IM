@@ -10,9 +10,6 @@ const useLanguageSetting = (initialLocale) => {
   useEffect(() => {
     const setLanguage = (locale) => {
       i18n.changeLanguage(locale).then(() => {
-        i18n.reloadResources(locale).then(() => {
-            console.log(`Resources reloaded for ${locale}`);
-        });
         document.documentElement.lang = locale;
         Cookie.set("NEXT_LOCALE", locale, { path: '/', sameSite: 'strict' }); // 更新Cookie
       });
