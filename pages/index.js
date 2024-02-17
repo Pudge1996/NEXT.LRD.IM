@@ -1,13 +1,11 @@
 import React from "react";
-import { useTranslation, Translation } from 'next-i18next'
-// import { parseCookies } from 'nookies';
-// import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
+import { useTranslation, Translation } from 'next-i18next'
 import withServerSideTranslations from '/utils/withServerSideTranslations';
 
 function EnIntroduction() {
