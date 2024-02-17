@@ -16,7 +16,7 @@ module.exports = {
   },
   partialBundledLanguages: isBrowser && true,
   react: {
-    useSuspense: true, // 确保Suspense功能被启用
+    useSuspense: false,
   },
   i18n: {
     defaultLocale: 'zh-Hans',
@@ -26,7 +26,7 @@ module.exports = {
   },
   fallbackNS: 'common',
   interpolation: {
-    escapeValue: false, // not needed for react!!
+    escapeValue: false,
   },
   fallbackLng: {
     default: ['zh-Hans'],
