@@ -7,7 +7,6 @@ const nextConfig = {
   images: {
     deviceSizes: [960],
     unoptimized: true,
-    domains: ["lrdim.oss-cn-shenzhen.aliyuncs.com", "lrd.im", "aliyuncs.com"],
   },
 };
 
