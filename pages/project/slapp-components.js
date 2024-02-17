@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImage from "/components/project/ProjectImage";
 import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectNav from "/components/project/ProjectNav";
+import { useTranslation } from 'next-i18next'
+import withServerSideTranslations from '/utils/withServerSideTranslations';
+
+export const getServerSideProps = withServerSideTranslations(['common']);
 
 export default function slappComponents() {
-  const title = ProjectItemData[2].projects[0].title;
-  const desc = ProjectItemData[2].projects[0].desc;
+  const { t } = useTranslation("common");
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans'];
+  const title = dataForCurrentLanguage[2].projects[0].title;
+  const desc = dataForCurrentLanguage[2].projects[0].desc;
   const items = [
     { buttonName: "背景", imageLink: "0" },
     { buttonName: "文档结构", imageLink: "1" },
@@ -21,17 +27,15 @@ export default function slappComponents() {
     <>
       <Head>
         <title>
-          {title} - {siteMetadata.title}
+          {title} - {t("common.information.pageTitleSuffix")}
         </title>
-        <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={desc} />
 
         {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
       </Head>
+
       <div className="layout project-v2 flex flex-col gap-6">
         <section className="top-info">
           <h1 className="">{title}</h1>

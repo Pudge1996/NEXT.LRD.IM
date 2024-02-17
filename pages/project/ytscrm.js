@@ -4,10 +4,17 @@ import siteMetadata from "/data/siteMetadata";
 import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImgList from "/data/project/ProjectImgList";
 import ProjectTemplateV1 from "/components/project/ProjectTemplateV1";
+import { useTranslation } from 'next-i18next'
+import withServerSideTranslations from '/utils/withServerSideTranslations';
+
+export const getServerSideProps = withServerSideTranslations(['common']);
 
 export default function ytscrm() {
-  const title = ProjectItemData[1].projects[1].title;
-  const desc = ProjectItemData[1].projects[1].desc;
+  const { t } = useTranslation("common");
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = ProjectItemData[i18n.language] || ProjectItemData['zh-Hans'];
+  const title = dataForCurrentLanguage[1].projects[1].title;
+  const desc = dataForCurrentLanguage[1].projects[1].desc;
   const Images = ProjectImgList.filter(
     ({ groupName }) => groupName === "ytscrm"
   )
@@ -24,14 +31,11 @@ export default function ytscrm() {
     <>
       <Head>
         <title>
-          {title} - {siteMetadata.title}
+          {title} - {t("common.information.pageTitleSuffix")}
         </title>
-        <meta name="author" content={siteMetadata.author} />
         <meta name="description" content={desc} />
 
         {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
       </Head>

@@ -1,49 +1,14 @@
 import React from "react";
 import { useTranslation, Translation } from 'next-i18next'
-import { parseCookies } from 'nookies';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import { parseCookies } from 'nookies';
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import siteMetadata from "/data/siteMetadata";
 import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
-
-export const getServerSideProps = async (context) => {
-  const cookies = parseCookies(context);
-  const cookieLocale = cookies['NEXT_LOCALE'];
-
-  let finalLocale = cookieLocale || context.locale;
-
-  if (!cookieLocale) {
-    const acceptLanguage = context.req.headers['accept-language'];
-    finalLocale = getPreferredLocale(acceptLanguage, ['zh-Hans', 'zh-Hant'], 'en');
-  }
-
-  return {
-    props: {
-      ...(await serverSideTranslations(finalLocale, ['common', 'pages'])),
-    },
-  };
-};
-
-function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocale) {
-  const firstLocale = acceptLanguageHeader.split(',')[0].split(';')[0].trim();
-  
-  if (firstLocale.startsWith("zh")) {
-    // 进一步确定是简体中文还是繁体中文
-    if (firstLocale.includes("CN") || firstLocale.includes("SG")) {
-      return "zh-Hans"; // 简体中文
-    } else {
-      return "zh-Hant"; // 繁体中文
-    }
-  } else if (supportedLocales.includes(firstLocale)) {
-    return firstLocale;
-  }
-
-  return defaultLocale; // 如果第一个语言不是中文，也不在supportedLocales中，返回默认语言（en）
-}
+import withServerSideTranslations from '/utils/withServerSideTranslations';
 
 function EnIntroduction() {
   return(
@@ -221,3 +186,42 @@ const Index = () => {
 };
 
 export default Index;
+
+export const getServerSideProps = withServerSideTranslations(['common', 'pages']);
+
+
+
+// export const getServerSideProps = async (context) => {
+//   const cookies = parseCookies(context);
+//   const cookieLocale = cookies['NEXT_LOCALE'];
+
+//   let finalLocale = cookieLocale || context.locale;
+
+//   if (!cookieLocale) {
+//     const acceptLanguage = context.req.headers['accept-language'];
+//     finalLocale = getPreferredLocale(acceptLanguage, ['zh-Hans', 'zh-Hant'], 'en');
+//   }
+
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(finalLocale, ['common', 'pages'])),
+//     },
+//   };
+// };
+
+// function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocale) {
+//   const firstLocale = acceptLanguageHeader.split(',')[0].split(';')[0].trim();
+  
+//   if (firstLocale.startsWith("zh")) {
+//     // 进一步确定是简体中文还是繁体中文
+//     if (firstLocale.includes("CN") || firstLocale.includes("SG")) {
+//       return "zh-Hans"; // 简体中文
+//     } else {
+//       return "zh-Hant"; // 繁体中文
+//     }
+//   } else if (supportedLocales.includes(firstLocale)) {
+//     return firstLocale;
+//   }
+
+//   return defaultLocale; // 如果第一个语言不是中文，也不在supportedLocales中，返回默认语言（en）
+// }
