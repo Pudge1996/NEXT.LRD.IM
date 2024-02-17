@@ -19,11 +19,15 @@ module.exports = {
     useSuspense: false,
   },
   i18n: {
-    defaultLocale: 'zh-Hans',
+    defaultLocale: 'en',
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
-    
   },
+  localePath:
+    typeof window === 'undefined'
+      ? require('path').resolve('./public/locales')
+      : '/locales',
+  reloadOnPrerender: isDev,
   fallbackNS: 'common',
   interpolation: {
     escapeValue: false,
@@ -33,7 +37,6 @@ module.exports = {
   },
   loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
   ns: ['common', 'components', 'pages'],
-  
   serializeConfig: false,
   use: isBrowser ? [ChainedBackend] : [],
 }
