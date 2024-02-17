@@ -23,7 +23,7 @@ export const getServerSideProps = async (context) => {
   // It loads 'common' and 'pages' succeed, but still shows translation keys on the page.
   return {
     props: {
-      ...(await serverSideTranslations(finalLocale, ['common', 'pages'], nextI18NextConfig)),
+      ...(await serverSideTranslations(finalLocale, ['common'], nextI18NextConfig)),
     },
   };
 };
@@ -54,7 +54,7 @@ function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocal
 
 
 const Project = () => {
-  const { t } = useTranslation(['common','pages'])
+  const { t } = useTranslation(['common'])
   
   return (
     <>
