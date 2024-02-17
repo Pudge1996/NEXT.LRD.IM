@@ -59,13 +59,11 @@ const Project = () => {
   return (
     <>
       <div className="layout project">
-        <section className="mb-14">
-          <h1 className="">{t("common.information.author", { ns: 'common' })}</h1>
-          <p className="mb-3 mt-3 sm:mt-6">
-          {t("common.information.desc", { ns: 'common' })}
-          </p>
-          </section>
-        </div>
+        <h1 className="">{t("common.information.author", { ns: 'common' })}</h1>
+        <p>
+        {t("common.information.desc", { ns: 'common' })}
+        </p>
+      </div>
       </>
   );
 }
