@@ -23,6 +23,11 @@ module.exports = {
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
   },
+  localePath:
+    typeof window === 'undefined'
+      ? require('path').resolve('./public/locales')
+      : '/locales',
+  reloadOnPrerender: isDev,
   fallbackNS: 'common',
   interpolation: {
     escapeValue: false,
