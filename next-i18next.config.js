@@ -8,10 +8,10 @@ const isDev = process.env.NODE_ENV === 'development'
 module.exports = {
   debug: true,
   backend: {
-    backendOptions: {
-      expirationTime: isDev ? 0 : 60 * 60 * 1000,
-    },
-    loadPath: '/locales/{{lng}}/{{ns}}.json',
+    backendOptions: isBrowser ? [
+      { expirationTime: isDev ? 0 : 60 * 60 * 1000 },
+      { loadPath: '/locales/{{lng}}/{{ns}}.json' }
+    ] : [],
     backends: isBrowser ? [LocalStorageBackend, HttpBackend] : [],
   },
   partialBundledLanguages: isBrowser && true,
