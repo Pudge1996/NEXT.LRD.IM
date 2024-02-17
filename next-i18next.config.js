@@ -29,14 +29,14 @@ module.exports = {
     
   },
   fallbackNS: 'common',
-    interpolation: {
-      escapeValue: false, // not needed for react!!
-    },
-    fallbackLng: {
-      default: ['zh-Hans'],
-    },
-    loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
-  
+  interpolation: {
+    escapeValue: false, // not needed for react!!
+  },
+  fallbackLng: {
+    default: ['zh-Hans'],
+  },
+  loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
+  ns: ['common', 'components', 'pages'],
   
   
   serializeConfig: false,
