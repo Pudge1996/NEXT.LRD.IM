@@ -6,25 +6,11 @@
       "site": "Michael's Website · LRD.IM",
       "desc": "Michael's personal website, capturing the works, experiences, and insights from my design journey."
     },
-    "header": {
-      "projects": "Projects",
-      "blog": "Blog",
-      "about": "About"
-    },
     "pages":{
       "homepage": "Homepage",
       "404": "404: Page not found",
       "updates": "Updates",
       "resume": "Resume"
-    },
-    "footer": {
-      "updates": "Updates",
-      "updates_title": "View the update log of this site",
-      "rss": "RSS",
-      "rss_title": "Subscribe to Michael's design blog via RSS",
-      "switchLanguages": "Languages",
-      "switchLanguages_title": "Switch website language",
-      "switchThemes": "Switch website light/dark mode"
     }
   }
 }

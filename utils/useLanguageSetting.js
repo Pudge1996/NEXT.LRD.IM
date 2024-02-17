@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'; // 导入useRouter
 const useLanguageSetting = () => {
   const { i18n } = useTranslation();
   const router = useRouter(); // 使用useRouter获取路由实例
-
+  
   useEffect(() => {
     const setLanguage = (locale) => {
       i18n.changeLanguage(locale).then(() => {
@@ -17,6 +17,8 @@ const useLanguageSetting = () => {
         Cookie.set("NEXT_LOCALE", locale, { path: '/', sameSite: 'strict' }); // 更新Cookie
       });
     };
+    router.push(router.pathname, router.asPath, { shallow: false });
+    
     
 
     const handleRouteChange = () => {

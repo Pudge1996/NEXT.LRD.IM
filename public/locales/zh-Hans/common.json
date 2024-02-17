@@ -6,25 +6,11 @@
       "site": "李瑞东的个人网站 LRD.IM",
       "desc": "李瑞东的个人网站，记录我在设计路上的作品、经验和观点。"
     },
-    "header": {
-      "projects": "作品",
-      "blog": "博客",
-      "about": "关于我"
-    },
     "pages":{
       "homepage": "首页",
       "404": "404：找不到页面",
       "updates": "更新日志",
       "resume": "简历"
-    },
-    "footer": {
-      "updates": "更新日志",
-      "updates_title": "查看本站的更新日志",
-      "rss": "订阅 RSS",
-      "rss_title": "通过 RSS 订阅李瑞东的设计博客",
-      "switchLanguages": "Languages",
-      "switchLanguages_title": "Switch website language",
-      "switchThemes": "切換网站亮暗模式"
     }
   }
 }

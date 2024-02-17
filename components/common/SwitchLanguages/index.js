@@ -29,10 +29,9 @@ const changeLanguage = (lng) => {
         <div>
           <Menu.Button
             className="flex gap-1 items-center text-tertiary hover:text-primary"
-            title="切换语言"
           >
             <IoLanguage className="text-base" />
-            <span className="text-sm">切换语言</span>
+            <span className="text-sm">Languages</span>
           </Menu.Button>
         </div>
         <Transition

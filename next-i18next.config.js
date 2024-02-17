@@ -32,7 +32,7 @@ module.exports = {
     default: ['zh-Hans'],
   },
   loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
-  ns: ['common', 'components', 'pages'],
+  ns: ['common', 'pages'],
   
   serializeConfig: false,
   use: isBrowser ? [ChainedBackend] : [],

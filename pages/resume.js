@@ -24,7 +24,7 @@ export const getServerSideProps = async (context) => {
   // It loads 'common' and 'pages' succeed, but still shows translation keys on the page.
   return {
     props: {
-      ...(await serverSideTranslations(finalLocale, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(finalLocale, ['common', 'pages'], nextI18NextConfig)),
     },
   };
 };
@@ -54,17 +54,17 @@ function getPreferredLocale(acceptLanguageHeader, supportedLocales, defaultLocal
 }
 
 
-const Project = () => {
+const Resume = () => {
   const { t } = useTranslation(['common'])
   
   return (
     <>
       <div className="layout project">
-        <h1 className="">{t("common.information.author", { ns: 'common' })}</h1>
+        <h1 className="">{t("common.pages.resume", { ns: 'common' })}</h1>
         <p>
         {t("common.information.desc", { ns: 'common' })}
         </p>
-        <Link href="resume">{t("common.pages.resume", { ns: 'common' })} ➡️</Link>
+        <Link href="/">{t("common.pages.homepage", { ns: 'common' })} ➡️</Link>
       </div>
       </>
   );
@@ -72,7 +72,7 @@ const Project = () => {
 
 // Use "ready" attempting to load translation resources before showing content, but don't work
 
-const Index = () => {
+const ResumePage = () => {
   const { ready } = useTranslation();
 
   if (!ready) {
@@ -80,8 +80,8 @@ const Index = () => {
   }
 
   return (
-      <Project />
+      <Resume />
   );
 };
 
-export default Index;
+export default ResumePage;
