@@ -8,10 +8,10 @@ const isDev = process.env.NODE_ENV === 'development'
 module.exports = {
   debug: true,
   backend: {
-    backendOptions: {
-      expirationTime: isDev ? 0 : 60 * 60 * 1000,
-    },
-    loadPath: '/locales/{{lng}}/{{ns}}.json',
+    backendOptions: isBrowser ? [
+      { expirationTime: isDev ? 0 : 60 * 60 * 1000 },
+      { loadPath: '/locales/{{lng}}/{{ns}}.json' }
+    ] : [],
     backends: isBrowser ? [LocalStorageBackend, HttpBackend] : [],
   },
   partialBundledLanguages: isBrowser && true,
@@ -22,7 +22,6 @@ module.exports = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans', 'zh-Hant', 'en'],
     localeDetection: false,
-    
   },
   fallbackNS: 'common',
   interpolation: {
@@ -31,9 +30,7 @@ module.exports = {
   fallbackLng: {
     default: ['zh-Hans'],
   },
-  loadNamespaces: ['zh-Hans', 'zh-Hant', 'en'],
   ns: ['common', 'pages'],
-  
   serializeConfig: false,
   use: isBrowser ? [ChainedBackend] : [],
 }
