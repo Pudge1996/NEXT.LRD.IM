@@ -7,7 +7,7 @@ import ProjectNav from "/components/project/ProjectNav";
 import { useTranslation } from 'next-i18next'
 import withServerSideTranslations from '/utils/withServerSideTranslations';
 
-export const getServerSideProps = withServerSideTranslations(['common']);
+export const getServerSideProps = withServerSideTranslations(['common', 'components']);
 
 export default function analyticsGuide() {
   const { t } = useTranslation("common");

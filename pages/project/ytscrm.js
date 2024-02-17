@@ -7,7 +7,7 @@ import ProjectTemplateV1 from "/components/project/ProjectTemplateV1";
 import { useTranslation } from 'next-i18next'
 import withServerSideTranslations from '/utils/withServerSideTranslations';
 
-export const getServerSideProps = withServerSideTranslations(['common']);
+export const getServerSideProps = withServerSideTranslations(['common', 'components']);
 
 export default function ytscrm() {
   const { t } = useTranslation("common");
