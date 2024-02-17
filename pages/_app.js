@@ -10,7 +10,7 @@ import { appWithTranslation, useTranslation } from 'next-i18next'
 import nextI18NextConfig from '../next-i18next.config'
 import withServerSideTranslations from '/utils/withServerSideTranslations';
 
-export const getServerSideProps = withServerSideTranslations(['common']);
+export const getServerSideProps = withServerSideTranslations(["common", "components", "pages"]);
 
 function MyApp({ Component, pageProps }) {
   useLanguageSetting();

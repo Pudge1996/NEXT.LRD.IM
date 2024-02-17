@@ -6,6 +6,9 @@ import { useTranslation } from 'next-i18next';
 import Cookie from 'js-cookie'; // 引入js-cookie
 
 const SwitchLanguages = () => {
+
+  const { t } = useTranslation("common");
+
   const router = useRouter();
   const { i18n } = useTranslation();
   const languages = [
@@ -14,7 +17,7 @@ const SwitchLanguages = () => {
     { id: "en", value: "English" },
   ];
 
-const changeLanguage = (lng) => {
+  const changeLanguage = (lng) => {
     i18n.changeLanguage(lng).then(() => {
         document.documentElement.lang = lng;
         Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
@@ -29,10 +32,10 @@ const changeLanguage = (lng) => {
         <div>
           <Menu.Button
             className="flex gap-1 items-center text-tertiary hover:text-primary"
-            title="切换语言"
+            title={t('common.footer.switchLanguages_title')}
           >
             <IoLanguage className="text-base" />
-            <span className="text-sm">切换语言</span>
+            <span className="text-sm">{t('common.footer.switchLanguages')}</span>
           </Menu.Button>
         </div>
         <Transition

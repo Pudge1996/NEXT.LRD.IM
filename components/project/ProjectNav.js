@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import { IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons/io5/
-import { useTranslation, Translation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 
 export default function ProjectNav({ items }) {
   const { t } = useTranslation("components");

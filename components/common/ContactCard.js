@@ -2,18 +2,20 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import React from "react";
 import Image from "next/image";
-import { IoCall, IoMail } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons/io5/
-import { FaCheck } from "react-icons/fa6"; //https://react-icons.github.io/react-icons/icons/fa6/
+import { IoCall, IoMail } from "react-icons/io5";
+import { FaCheck } from "react-icons/fa6";
+import { useTranslation } from 'next-i18next'
 
 // 个人微信的弹窗
 
-export default function MyModal() {
+export default function ContactCard() {
+  const { t } = useTranslation("components");
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
-  const copyMobileText = <span className="flex gap-2 justify-center items-center"><IoCall /> 复制我的手机号</span>
-  const copyMailText = <span className="flex gap-2 justify-center items-center"><IoMail /> 复制我的 Email</span>
-  const copyMobileTextSucceed = <span className="flex gap-2 justify-center items-center"><FaCheck /> 已复制手机号</span>
-  const copyMailTextSucceed = <span className="flex gap-2 justify-center items-center"><FaCheck /> 已复制 Email</span>
+  const copyMobileText = <span className="flex gap-2 justify-center items-center"><IoCall className="shrink-0" />{t("ContactCard.copyPhone")}</span>
+  const copyMailText = <span className="flex gap-2 justify-center items-center"><IoMail className="shrink-0" />{t("ContactCard.copyEmail")}</span>
+  const copyMobileTextSucceed = <span className="flex gap-2 justify-center items-center"><FaCheck className="shrink-0" />{t("ContactCard.copyPhone_succeed")}</span>
+  const copyMailTextSucceed = <span className="flex gap-2 justify-center items-center"><FaCheck className="shrink-0" />{t("ContactCard.copyEmail_succeed")}</span>
   const [buttonCopyMobile, setButtonCopyMobile] = React.useState(copyMobileText);
   const [buttonCopyEmail, setButtonCopyEmail] = React.useState(copyMailText);
   function closeModal() {
@@ -53,8 +55,8 @@ export default function MyModal() {
       type="button"
       onClick={openModal}
       className="w-full h-full absolute bg-transparent inset-0 ring-default"
-      aria-label="联系方式"
-      title="联系方式"
+      aria-label={t("ContactCard.button")}
+      title={t("ContactCard.button_title")}
     >
     </button>
 
@@ -89,7 +91,7 @@ export default function MyModal() {
                   <Image
                     // 项目图片
                     src="https://lrdim.oss-cn-shenzhen.aliyuncs.com/qr-code.png"
-                    alt="微信号：18925001685"
+                    alt={t("ContactCard.img_alt")}
                     className="object-contain rounded-md"
                     onLoad={() => setIsLoaded(true)}
                     onError={() => setIsLoaded(true)}
@@ -101,12 +103,12 @@ export default function MyModal() {
                 </div>
                 <Dialog.Title
                   as="h3"
-                  className="font-semibold leading-relaxed"
+                  className="font-semibold leading-snug"
                 >
-                  <span className="hidden sm:block">扫一扫加我微信</span>
-                  <span className="sm:hidden">长按识别加我微信</span>
+                  <span className="hidden sm:block">{t("ContactCard.scanMe_desktop")}</span>
+                  <span className="sm:hidden">{t("ContactCard.scanMe_mobile")}</span>
                 </Dialog.Title>
-                <p className="p-0 m-0 text-tertiary text-sm">或</p>
+                <p className="p-0 m-0 text-tertiary text-sm pb-1">{t("ContactCard.or")}</p>
                 <button onClick={copyMobile} className="w-full m-0 text-tertiary text-base flex-1 btn-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800 sm:hover:bg-neutral-200 transition-colors">{buttonCopyMobile}</button>
                 <button onClick={copyEmail} className="m-0 text-tertiary text-base flex-1 btn-base text-secondary btn-md sm:btn-lg bg-color border dark:border-black border-neutral-200 dark:hover:border-neutral-800 sm:hover:bg-neutral-200 transition-colors">{buttonCopyEmail}</button>
               </div>

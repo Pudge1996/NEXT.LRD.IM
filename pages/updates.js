@@ -7,7 +7,7 @@ import ContactCard from "/components/common/ContactCard";
 import { useTranslation } from 'next-i18next'
 import withServerSideTranslations from '/utils/withServerSideTranslations';
 
-export const getServerSideProps = withServerSideTranslations(['common', "pages"]);
+export const getServerSideProps = withServerSideTranslations(['common', "components", "pages"]);
 
 export default function updates() {
   const { t } = useTranslation(["common", "pages"]);

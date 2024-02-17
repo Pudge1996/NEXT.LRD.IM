@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTranslation, Translation } from 'next-i18next'
 import withServerSideTranslations from '/utils/withServerSideTranslations';
 
-export const getServerSideProps = withServerSideTranslations(['common', "pages"]);
+export const getServerSideProps = withServerSideTranslations(['common', "components", "pages"]);
 
 function EnAbout() {
   const { t } = useTranslation(["common", "pages"]);
