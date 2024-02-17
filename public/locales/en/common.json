@@ -9,7 +9,8 @@
     "header": {
       "projects": "Projects",
       "blog": "Blog",
-      "about": "About"
+      "about": "About",
+      "mobileNavTitle": "Navigation menu"
     },
     "pages":{
       "homepage": "Homepage",

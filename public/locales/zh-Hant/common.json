@@ -9,7 +9,8 @@
     "header": {
       "projects": "作品",
       "blog": "部落格",
-      "about": "關於我"
+      "about": "關於我",
+      "mobileNavTitle": "導航選單"
     },
     "pages":{
       "homepage": "首頁",

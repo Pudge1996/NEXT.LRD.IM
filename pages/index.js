@@ -8,6 +8,8 @@ import Tooltips from "/components/common/Tooltips";
 import { useTranslation, Translation } from 'next-i18next'
 import withServerSideTranslations from '/utils/withServerSideTranslations';
 
+export const getServerSideProps = withServerSideTranslations(['common', 'pages']);
+
 function EnIntroduction() {
   return(
     <>
@@ -185,7 +187,7 @@ const Index = () => {
 
 export default Index;
 
-export const getServerSideProps = withServerSideTranslations(['common', 'pages']);
+
 
 
 
