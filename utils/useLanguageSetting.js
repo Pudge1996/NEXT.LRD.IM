@@ -17,7 +17,6 @@ const useLanguageSetting = () => {
         Cookie.set("NEXT_LOCALE", locale, { path: '/', sameSite: 'strict' }); // 更新Cookie
       });
     };
-    router.push(router.pathname, router.asPath, { shallow: false });
     
     
 

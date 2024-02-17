@@ -18,7 +18,7 @@ const changeLanguage = (lng) => {
     i18n.changeLanguage(lng).then(() => {
         document.documentElement.lang = lng;
         Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
-        router.push(router.pathname, router.asPath, { shallow: false });
+        router.push(router.pathname, router.asPath, { shallow: true });
         
     });
 };
