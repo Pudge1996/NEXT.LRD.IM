@@ -140,42 +140,7 @@ const Post = ({ code, frontmatter }) => {
             />
             <BlogFooter pageTitle={frontmatter.title} />
           </div>
-          {/* 桌面端侧栏目录，因内存占用较大而注释掉 */}
-          <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
-            <section>
-              <div className="flex flex-col gap-3 py-1">
-                <div className="flex gap-2 items-center">
-                  <div className="w-11 h-11 relative rounded-full overflow-hidden img-loading-bg">
-                    <Image
-                      src={siteMetadata.authorImg}
-                      alt="头像"
-                      fill
-                      sizes="100vw"
-                      style={{
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                  <div className="flex flex-col grow gap-2">
-                    <div className="font-medium leading-none">李瑞东</div>
-                    <div className="text-sm text-tertiary leading-none">
-                      发布于 <Date dateString={frontmatter.date} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <hr className="my-2" />
-            <section className="sticky top-24">
-              <h5 className="text-lg font-semibold mb-3">目录</h5>
-              <TableContents />
-            </section>
-          </aside>
         </div>
-      </div>
-      <div className="block xl:hidden fixed bg-color right-6 bottom-6 sm:right-4 sm:bottom-16 ring-default text-tertiary sm:hover:text-primary active:text-primary btn-base btn-icon bg-neutral-100 dark:bg-neutral-800 transition-colors">
-        <IoList className="text-xl" />
-        <TableContents_Mobile />
       </div>
     </>
   );

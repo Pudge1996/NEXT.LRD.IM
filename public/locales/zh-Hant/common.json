@@ -1,10 +1,10 @@
 {
   "common": {
     "information": {
-      "author": "李瑞東",
-      "pageTitleSuffix": "李瑞東 LRD.IM",
-      "site": "李瑞東的個人網站 LRD.IM",
-      "desc": "李瑞東的個人網站，記錄著我在設計領域的作品、經驗和觀點。"
+      "author": "名字",
+      "pageTitleSuffix": "名字 LRD.IM",
+      "site": "名字的個人網站 LRD.IM",
+      "desc": "名字的個人網站，記錄著我在設計領域的作品、經驗和觀點。"
     },
     "header": {
       "projects": "作品",
@@ -22,7 +22,7 @@
       "updates": "更新日誌",
       "updates_title": "檢視本站的更新日誌",
       "rss": "訂閱 RSS",
-      "rss_title": "透過 RSS 訂閱李瑞東的設計部落格",
+      "rss_title": "透過 RSS 訂閱名字的設計部落格",
       "switchLanguages": "Languages",
       "switchLanguages_title": "Switch website language",
       "switchThemes": "切換網站亮暗色模式"

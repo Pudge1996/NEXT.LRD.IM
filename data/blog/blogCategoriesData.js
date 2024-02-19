@@ -13,30 +13,6 @@ const blogCategoriesData = [
     url: "experience",
     num: "7",
   },
-  {
-    name: "分享会文稿",
-    desc: "在公司的分享会我通常会准备一份文稿，正好可以放到我的博客上面。（不包含早期没有准备文稿的分享会）",
-    url: "sharing",
-    num: "5",
-  },
-  {
-    name: "翻译好文",
-    desc: "为了学习到外部先进的实践经验，我尝试翻译文章来让自己精读某篇文章。主要从工作中竞品公司的 UX 博客来尝试入门。",
-    url: "translate",
-    num: "5",
-  },
-  {
-    name: "软件插件",
-    desc: "生涯早期比较喜欢研究各种软件和插件，所以了记录了不少相关技巧。后面发现掌握设计的方法/策略比掌握某款软件技巧更重要，所以基本不会更新了。",
-    url: "software",
-    num: "13",
-  },
-  {
-    name: "设计之外",
-    desc: "留一点空间记录设计之外的内容，比如本站的建设，或者其他奇思妙想（如有...）",
-    url: "others",
-    num: "6",
-  },
 ]
   
   export default blogCategoriesData;
