@@ -8,24 +8,11 @@
     },
     "header": {
       "projects": "作品",
-      "blog": "博客",
-      "about": "关于我",
-      "mobileNavTitle": "导航菜单"
-    },
-    "pages":{
-      "homepage": "首页",
-      "404": "404：找不到页面",
-      "updates": "更新日志",
-      "resume": "简历"
+      "blog": "博客"
     },
     "footer": {
-      "updates": "更新日志",
-      "updates_title": "查看本站的更新日志",
-      "rss": "订阅 RSS",
-      "rss_title": "通过 RSS 订阅名字的设计博客",
       "switchLanguages": "Languages",
-      "switchLanguages_title": "Switch website language",
-      "switchThemes": "切換网站亮暗模式"
+      "switchLanguages_title": "Switch website language"
     }
   }
 }

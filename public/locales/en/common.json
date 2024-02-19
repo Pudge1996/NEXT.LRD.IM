@@ -8,24 +8,11 @@
     },
     "header": {
       "projects": "Projects",
-      "blog": "Blog",
-      "about": "About",
-      "mobileNavTitle": "Navigation menu"
-    },
-    "pages":{
-      "homepage": "Homepage",
-      "404": "404: Page not found",
-      "updates": "Updates",
-      "resume": "Resume"
+      "blog": "Blog"
     },
     "footer": {
-      "updates": "Updates",
-      "updates_title": "View the update log of this site",
-      "rss": "RSS",
-      "rss_title": "Subscribe to Michael's design blog via RSS",
       "switchLanguages": "Languages",
-      "switchLanguages_title": "Switch website language",
-      "switchThemes": "Switch website light/dark mode"
+      "switchLanguages_title": "Switch website language"
     }
   }
 }

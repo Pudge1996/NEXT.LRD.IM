@@ -1,49 +1,10 @@
 {
-  "ContactCard": {
-    "copyPhone": "复制手机号",
-    "copyEmail": "复制 Email",
-    "copyPhone_succeed": "已复制手机号",
-    "copyEmail_succeed": "已复制 Email",
-    "button": "联系我",
-    "button_title": "获取联系方式",
-    "img_alt": "微信号：18925001685",
-    "scanMe_desktop": "扫一扫加我微信",
-    "scanMe_mobile": "长按识别加我微信",
-    "or": "或"
-  },
-  "ScrollToTop": {
-    "button_aria": "回到顶部"
-  },
-  "project": {
-    "ProjectFooter": {
-      "Resume": "查看简历",
-      "Resume_title": "查看李瑞东的简历",
-      "Projects": "所有作品",
-      "Projects_title": "查看所有作品",
-      "Contact": "联系我",
-      "Contact_title": "获取联系方式"
-    },
-    "ProjectNav":{
-      "icon": "目录",
-      "icon_title": "打开项目目录",
-      "dialogHeading": "跳转至",
-      "close": "收起目录",
-      "close_title": "关闭目录弹窗"
-    }
-  },
   "blog": {
     "BlogFooter": {
       "title": "🎉 你觉得这篇文章怎样？",
       "contact": "联系作者",
       "copyLink": "复制链接",
       "copyLink_title": "复制本文链接"
-    },
-    "TableContents_Mobile": {
-      "icon": "目录",
-      "icon_title": "打开文章目录",
-      "dialogHeading": "目录",
-      "close": "收起目录",
-      "close_title": "关闭目录弹窗"
     }
   }
   

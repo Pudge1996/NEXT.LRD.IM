@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import { useTranslation, Translation } from 'next-i18next'
 import withServerSideTranslations from '/utils/withServerSideTranslations';
 
@@ -43,9 +42,6 @@ const Project = () => {
   };
   return (
     <>
-      <Head>
-        <title>{t("common.pages.homepage", { ns: "common" })} - {t("common.information.pageTitleSuffix", { ns: "common" })}</title>
-      </Head>
       <div className="layout project">
         <section className="mb-14">
           <h1 className="">{t("common.information.author", { ns: 'common' })}</h1>

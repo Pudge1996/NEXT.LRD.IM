@@ -1,10 +1,4 @@
 {
-  "project": {
-    "resume": "查看简历",
-    "resume_title": "点击查看李瑞东的简历",
-    "contact": "联系我 👋🏻",
-    "projects": "作品"
-  },
   "blog": {
     "sortByCategory": "按分类浏览",
     "sortByDate": "从新到旧浏览",
@@ -13,18 +7,5 @@
       "TOC": "目录",
       "avatar": "头像"
     }
-  },
-  "about": {
-    "copyPhone": "复制手机号",
-    "copyEmail": "复制 Email",
-    "copyPhone_succeed": "已复制手机号",
-    "copyEmail_succeed": "已复制 Email",
-    "button": "联系我"
-  },
-  "updates": {
-    "desc": "了解 LRD.IM 的新变化，以及发展历程。",
-    "reportIssues": "功能反馈",
-    "reportIssues_title": "在 Github 中反馈本站功能问题",
-    "contact": "与我联系"
   }
 }
