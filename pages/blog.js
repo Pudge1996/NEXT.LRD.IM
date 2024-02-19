@@ -13,7 +13,6 @@ export const getServerSideProps = withServerSideTranslations(["common", "compone
 export default function blog({ posts }) {
   const { t } = useTranslation(["common", "pages"]);
   const { i18n } = useTranslation();
-  const [isLoaded, setIsLoaded] = React.useState(false);
 
   return (
     <>
