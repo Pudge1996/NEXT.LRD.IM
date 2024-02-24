@@ -23,7 +23,6 @@ export default function blog({ posts }) {
               key={index}
                 href={`/blog/${post.slug}`}
                 className="hover:no-underline group"
-                alt={post.frontmatter.title}
               >
                 <p className="font-semibold my-0 group-hover:text-blue-600">
                   {post.frontmatter.title}
