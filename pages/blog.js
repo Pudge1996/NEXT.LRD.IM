@@ -13,14 +13,14 @@ export default function blog({ posts }) {
   return (
     <>
       <div className="layout flex flex-col">
-          <div className="text-tertiary whitespace-nowrap text-sm">
+          <div className="text-tertiary whitespace-nowrap mb-4 text-sm">
             {t("blog.sortByDate", { ns: "pages" })}
           </div>
         {/* Post list */}
         <div className="flex flex-col gap-8">
           {posts.map((post, index) => (
-            <section key={index} className="flex flex-col">
               <Link
+              key={index}
                 href={`/blog/${post.slug}`}
                 className="hover:no-underline group"
                 alt={post.frontmatter.title}
@@ -29,7 +29,6 @@ export default function blog({ posts }) {
                   {post.frontmatter.title}
                 </p>
               </Link>
-            </section>
           ))}
         </div>
       </div>
