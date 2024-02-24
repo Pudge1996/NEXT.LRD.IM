@@ -1,16 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image";
 import siteMetadata from "/data/siteMetadata";
-import Date from "/components/common/Date";
 import BlogFooter from "/components/blog/BlogFooter";
-import TableContents from "/components/blog/TableContents";
-import TableContents_Mobile from "/components/blog/TableContents_Mobile";
 
 import { getMDXComponent } from "mdx-bundler/client";
 import { getAllPosts, getSinglePost } from "/utils/mdx";
-import { IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
 import Zoom from "next-image-zoom";
@@ -102,31 +97,12 @@ const Post = ({ code, frontmatter }) => {
         <title>
           {frontmatter.title} - {siteMetadata.title}
         </title>
-        <meta name="description" content={frontmatter.description} />
-        <meta name="keywords" content={frontmatter.tags} />
-
-        {/* For Soical Meida (openGraph) */}
-        <meta
-          property="og:title"
-          content={`${frontmatter.title} - ${siteMetadata.title}`}
-        />
-        <meta property="og:description" content={frontmatter.description} />
       </Head>
       <div className="layout blog-content">
         <div className="flex flex-col gap-0">
           <h1 className="mb-3 text-3xl sm:text-4xl xl:text-5xl xl:leading-[1.1]">
             {frontmatter.title}
           </h1>
-          <div className="flex gap-3 mb-7">
-            <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
-              <div className="flex Óxl:hidden items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-tertiary">
-                <div className="whitespace-nowrap">
-                {siteMetadata.author} 发布于 <Date dateString={frontmatter.date} />
-                </div>
-                  
-              </div>
-            </div>
-          </div>
         </div>
         <div className="flex">
           <div className="min-w-full mdx-bundler">
