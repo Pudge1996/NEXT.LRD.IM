@@ -2,9 +2,20 @@ import React from "react";
 import Head from "next/head";
 import siteMetadata from "/data/siteMetadata";
 import BlogFooter from "/components/blog/BlogFooter";
+
+import { getMDXComponent } from "mdx-bundler/client";
 import { getAllPosts, getSinglePost } from "/utils/mdx";
 
-const Post = ({ frontmatter }) => {
+const codePrefix = `
+if (typeof process === 'undefined') {
+  globalThis.process = { env: {} }
+}
+`;
+
+const Post = ({ code, frontmatter }) => {
+  const Component = React.useMemo(() => {
+    return getMDXComponent(codePrefix + code);
+  }, [code]);
   return (
     <>
       <Head>
