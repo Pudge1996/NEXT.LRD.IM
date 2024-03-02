@@ -2,33 +2,51 @@ import Head from "next/head";
 import Link from "next/link";
 import { HiThumbUp } from "react-icons/hi"; //https://react-icons.github.io/react-icons/icons?name=hi
 import { getCategoriesSharing } from "/utils/mdx";
-import siteMetadata from "/data/siteMetadata";
 import blogCategoriesData from "/data/blog/blogCategoriesData";
-
 import Date from "/components/common/Date";
+import { useTranslation, Translation } from 'next-i18next';
+import nextI18NextConfig from '/next-i18next.config.js';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }) => {
+  const posts = await getCategoriesSharing();
+
+  return {
+    props: {
+      posts,
+      ...(await serverSideTranslations(
+        locale,
+        ["common", "components", "pages"],
+        nextI18NextConfig
+      )),
+    },
+  };
+};
+
 
 export default function cateSharing({ posts }) {
+  const { t } = useTranslation(["common", "pages"]);
+  const { i18n } = useTranslation();
+  const dataForCurrentLanguage = blogCategoriesData[i18n.language] || blogCategoriesData["zh-Hans"];
   return (
     <>
       <Head>
         <title>
-          {blogCategoriesData[2].name} - 博客 - {siteMetadata.title}
+          {dataForCurrentLanguage[2].name} - {t("common.header.blog", { ns: "common" })} - {t("common.information.pageTitleSuffix", { ns: "common" })}
         </title>
-        <meta name="description" content={blogCategoriesData[2].desc} />
+        <meta name="description" content={dataForCurrentLanguage[2].desc} />
 
         {/* For Soical Meida (OpenGraph) */}
-        <meta property="og:image" content="网站宽屏图（16:9）" />
-        <meta property="og:image:alt" content="网站宽屏图的描述" />
         <meta
           property="og:title"
-          content={`${blogCategoriesData[2].name} - 博客 - ${siteMetadata.title}`}
+          content={`${dataForCurrentLanguage[2].name} - ${t("common.header.blog", { ns: "common" })} - ${t("common.information.pageTitleSuffix", { ns: "common" })}`}
         />
-        <meta property="og:description" content={blogCategoriesData[2].desc} />
+        <meta property="og:description" content={dataForCurrentLanguage[2].desc} />
       </Head>
       <div className="layout series">
         {/* 博客列表 */}
-        <h1>{blogCategoriesData[2].name}</h1>
-        <p>{blogCategoriesData[2].desc}</p>
+        <h1>{dataForCurrentLanguage[2].name}</h1>
+        <p>{dataForCurrentLanguage[2].desc}</p>
 
         <hr />
 
@@ -44,7 +62,13 @@ export default function cateSharing({ posts }) {
                 rel="noopener noreferrer"
               >
                 <HiThumbUp className="text-lg" />
-                {post.frontmatter.recommend}
+                <Translation>
+                  {(t, { i18n }) => (
+                    <>{i18n.language === "en" && <>{t("blog.recommendedText", { ns: "pages" })} {post.frontmatter.recommend}</>}
+                      {!(i18n.language === "en") && <>{post.frontmatter.recommend}&thinsp;{t("blog.recommendedText", { ns: "pages" })}</>}
+                    </>
+                  )}
+                </Translation>
               </Link>
               <Link
                 href={`/blog/${post.slug}`}
@@ -68,11 +92,3 @@ export default function cateSharing({ posts }) {
     </>
   );
 }
-
-export const getStaticProps = async () => {
-  const posts = getCategoriesSharing();
-
-  return {
-    props: { posts },
-  };
-};

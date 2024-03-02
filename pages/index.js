@@ -6,8 +6,18 @@ import ContactCard from "/components/common/ContactCard";
 import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
 import { useTranslation, Translation } from 'next-i18next'
-import nextI18NextConfig from '../next-i18next.config.js';
+import nextI18NextConfig from '/next-i18next.config.js';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(
+      locale,
+      ["common", "components", "pages"],
+      nextI18NextConfig
+    )),
+  },
+})
 
 function EnIntroduction() {
   return(
@@ -185,13 +195,3 @@ const Index = () => {
 };
 
 export default Index;
-
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(
-      locale,
-      ["common", "components", "pages"],
-      nextI18NextConfig
-    )),
-  },
-})

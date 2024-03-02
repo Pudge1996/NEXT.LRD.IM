@@ -2,6 +2,19 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation, Translation } from 'next-i18next'
+import nextI18NextConfig from '../next-i18next.config.js';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(
+      locale,
+      ["common", "components", "pages"],
+      nextI18NextConfig
+    )),
+  },
+})
+
 
 function EnAbout() {
   const { t } = useTranslation(["common", "pages"]);
@@ -10,7 +23,7 @@ function EnAbout() {
       <section>
       <h1 className="">{t("common.header.about")}</h1>
       <p className="mb-3 mt-3 sm:mt-6">
-        There are numerous things for me to complete...
+        There are numerous things for me to accomplish...
         <br />
         To learn about my work experience, visit my <Link href="/me" target="_blank" title={t("common.pages.resume")}>{t("common.pages.resume")}</Link>. <br />Contact me at: <span className="select-all whitespace-nowrap">lrdbuff@gmail.com</span>
       </p>

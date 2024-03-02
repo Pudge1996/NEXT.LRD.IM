@@ -14,7 +14,7 @@ import { getAllPosts, getSinglePost } from "/utils/mdx";
 import { IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation, Translation } from 'next-i18next';
 import nextI18NextConfig from '/next-i18next.config';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -110,8 +110,11 @@ if (typeof process === 'undefined') {
 }
 `;
 
+
+
+
 const Post = ({ code, frontmatter }) => {
-  const { t } = useTranslation(["common", "pages"]);
+  const { t, i18n } = useTranslation(["common", "pages"]);
   const Component = React.useMemo(() => {
     return getMDXComponent(codePrefix + code);
   }, [code]);
@@ -139,8 +142,14 @@ const Post = ({ code, frontmatter }) => {
           <div className="flex gap-3 mb-7">
             <div className="flex gap-[6px] xl:gap-3 items-center flex-grow">
               <div className="flex Óxl:hidden items-center xl:items-start flex-row xl:flex-col grow gap-1 xl:gap-2 text-base text-tertiary">
-                <div className="whitespace-nowrap">
-                {siteMetadata.author} 发布于 <Date dateString={frontmatter.date} />
+                <div className="xl:hidden whitespace-nowrap">
+                {i18n.language === 'en' ? (
+                  <>By {t("common.information.author", { ns: 'common' })} · <Date dateString={frontmatter.date} /></>
+                ) : i18n.language === 'zh-Hant' ? (
+                  <>{t("common.information.author", { ns: 'common' })} 於 <Date dateString={frontmatter.date} /> 發布</>
+                ) : (
+                  <>{t("common.information.author", { ns: 'common' })} 发布于 <Date dateString={frontmatter.date} /></>
+                )}
                 </div>
                   
               </div>
@@ -159,7 +168,7 @@ const Post = ({ code, frontmatter }) => {
             />
             <BlogFooter pageTitle={frontmatter.title} />
           </div>
-          {/* 桌面端侧栏目录，因内存占用较大而注释掉 */}
+          {/* 桌面端侧栏目录 */}
           <aside className="hidden xl:flex min-w-[216px] flex-col gap-4 ml-12">
             <section>
               <div className="flex flex-col gap-3 py-1">
@@ -167,7 +176,7 @@ const Post = ({ code, frontmatter }) => {
                   <div className="w-11 h-11 relative rounded-full overflow-hidden img-loading-bg">
                     <Image
                       src={siteMetadata.authorImg}
-                      alt="头像"
+                      alt={t("common.information.author", { ns: 'common' })}
                       fill
                       sizes="100vw"
                       style={{
@@ -176,9 +185,9 @@ const Post = ({ code, frontmatter }) => {
                     />
                   </div>
                   <div className="flex flex-col grow gap-2">
-                    <div className="font-medium leading-none">李瑞东</div>
+                    <div className="font-medium leading-none">{t("common.information.author", { ns: 'common' })}</div>
                     <div className="text-sm text-tertiary leading-none">
-                      发布于 <Date dateString={frontmatter.date} />
+                      <Date dateString={frontmatter.date} />
                     </div>
                   </div>
                 </div>

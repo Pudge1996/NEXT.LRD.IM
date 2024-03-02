@@ -11,10 +11,29 @@ import { useTranslation, Translation } from 'next-i18next';
 import nextI18NextConfig from '/next-i18next.config.js';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+export const getStaticProps = async ({ locale }) => {
+  const translations = await serverSideTranslations(
+    locale,
+    ["common", "components", "pages"],
+    nextI18NextConfig
+  );
+
+  const { posts } = await getAllPosts();
+  await generateRssFeed();
+
+  return {
+    props: {
+      ...translations,
+      posts,
+    },
+  };
+};
+
 
 export default function blog({ posts }) {
   const { t } = useTranslation(["common", "pages"]);
   const { i18n } = useTranslation();
+  const dataForCurrentLanguage = blogCategoriesData[i18n.language] || blogCategoriesData["zh-Hans"];
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   return (
@@ -68,7 +87,7 @@ export default function blog({ posts }) {
         </div>
 
         <div className="flex flex-row flex-wrap gap-3">
-          {blogCategoriesData.map((data, index) => (
+          {dataForCurrentLanguage.map((data, index) => (
             <Link
               href={`/blog/categories/${data.url}`}
               className={`flex flex-col gap-[2px] btn-base py-3 px-4 sm:px-5 bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 rounded sm:rounded-md grow ${
@@ -148,30 +167,3 @@ export default function blog({ posts }) {
   );
 }
 
-export const getStaticProps = async ({ locale }) => {
-  const translations = await serverSideTranslations(
-    locale,
-    ["common", "components", "pages"],
-    nextI18NextConfig
-  );
-
-  const { posts } = await getAllPosts();
-  await generateRssFeed();
-
-  return {
-    props: {
-      ...translations,
-      posts,
-    },
-  };
-};
-
-
-// export const getStaticProps = async () => {
-//   const posts = getAllPosts().posts;
-//   await generateRssFeed();
-
-//   return {
-//     props: { posts },
-//   };
-// };
