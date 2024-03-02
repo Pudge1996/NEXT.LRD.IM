@@ -4,26 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { HiThumbUp } from "react-icons/hi"; //https://react-icons.github.io/react-icons/icons?name=hi
 import { getAllPosts } from "/utils/mdx";
-import siteMetadata from "/data/siteMetadata";
 import blogCategoriesData from "/data/blog/blogCategoriesData";
 import Date from "/components/common/Date";
 import generateRssFeed from '/utils/generateRSSFeed';
-import { useTranslation, Translation } from 'next-i18next'
-import withServerSideTranslations from '/utils/withServerSideTranslations';
+import { useTranslation, Translation } from 'next-i18next';
+import nextI18NextConfig from '/next-i18next.config.js';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-// export const getServerSideProps = withServerSideTranslations(["common", "components", "pages"]);
-
-async function extraGetServerSideProps(context) {
-  const posts = getAllPosts().posts;
-  await generateRssFeed();
-
-  return {
-    props: { posts },
-  };
-}
-
-// 使用调整后的HOC并传递额外的逻辑
-export const getServerSideProps = withServerSideTranslations(['common', 'components', 'pages'], extraGetServerSideProps);
 
 export default function blog({ posts }) {
   const { t } = useTranslation(["common", "pages"]);
@@ -160,6 +147,25 @@ export default function blog({ posts }) {
     </>
   );
 }
+
+export const getStaticProps = async ({ locale }) => {
+  const translations = await serverSideTranslations(
+    locale,
+    ["common", "components", "pages"],
+    nextI18NextConfig
+  );
+
+  const { posts } = await getAllPosts();
+  await generateRssFeed();
+
+  return {
+    props: {
+      ...translations,
+      posts,
+    },
+  };
+};
+
 
 // export const getStaticProps = async () => {
 //   const posts = getAllPosts().posts;

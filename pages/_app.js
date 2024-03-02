@@ -5,15 +5,21 @@ import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from '@vercel/analytics/react';
-import useLanguageSetting from '/utils/useLanguageSetting';
 import { appWithTranslation, useTranslation } from 'next-i18next'
-import nextI18NextConfig from '../next-i18next.config'
-import withServerSideTranslations from '/utils/withServerSideTranslations';
+import nextI18NextConfig from '/next-i18next.config.js';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export const getServerSideProps = withServerSideTranslations(["common", "components", "pages"]);
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(
+      locale,
+      ["common", "components", "pages"],
+      nextI18NextConfig
+    )),
+  },
+})
 
 function MyApp({ Component, pageProps }) {
-  useLanguageSetting();
   const { t } = useTranslation('common');
   return (
     <>

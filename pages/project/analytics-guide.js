@@ -4,10 +4,19 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import ProjectImage from "/components/project/ProjectImage";
 import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectNav from "/components/project/ProjectNav";
-import { useTranslation } from 'next-i18next'
-import withServerSideTranslations from '/utils/withServerSideTranslations';
+import { useTranslation } from 'next-i18next';
+import nextI18NextConfig from '/next-i18next.config.js';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export const getServerSideProps = withServerSideTranslations(['common', 'components']);
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(
+      locale,
+      ["common", "components", "pages"],
+      nextI18NextConfig
+    )),
+  },
+})
 
 export default function analyticsGuide() {
   const { t } = useTranslation("common");

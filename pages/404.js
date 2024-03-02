@@ -1,6 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
 import siteMetadata from "/data/siteMetadata";
+import { useTranslation } from 'next-i18next';
+import nextI18NextConfig from '/next-i18next.config.js';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(
+      locale,
+      ["common", "components", "pages"],
+      nextI18NextConfig
+    )),
+  },
+})
 
 export default function Custom404() {
   return (

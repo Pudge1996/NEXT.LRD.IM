@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { Menu, Transition } from "@headlessui/react";
 import { IoLanguage } from "react-icons/io5";
 import { useTranslation } from 'next-i18next';
-import Cookie from 'js-cookie'; // 引入js-cookie
 
 const SwitchLanguages = () => {
 
@@ -20,8 +19,7 @@ const SwitchLanguages = () => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng).then(() => {
         document.documentElement.lang = lng;
-        Cookie.set("NEXT_LOCALE", lng, { path: '/', sameSite: 'strict' });
-        router.push(router.pathname, router.asPath, { shallow: true });
+        // router.push(router.pathname, router.asPath, { shallow: true });
         
     });
 };

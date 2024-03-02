@@ -7,13 +7,31 @@ import Date from "/components/common/Date";
 import BlogFooter from "/components/blog/BlogFooter";
 import TableContents from "/components/blog/TableContents";
 import TableContents_Mobile from "/components/blog/TableContents_Mobile";
+import Zoom from "next-image-zoom";
 
 import { getMDXComponent } from "mdx-bundler/client";
 import { getAllPosts, getSinglePost } from "/utils/mdx";
 import { IoList } from "react-icons/io5"; //https://react-icons.github.io/react-icons/icons?name=io5
 import { FiHash } from "react-icons/fi"; //https://react-icons.github.io/react-icons/icons?name=fi
 
-import Zoom from "next-image-zoom";
+import { useTranslation } from 'next-i18next';
+import nextI18NextConfig from '/next-i18next.config';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale, params }) => {
+  const post = await getSinglePost(params.slug);
+  return {
+    props: {
+      ...(await serverSideTranslations(
+        locale,
+        ["common", "components", "pages"],
+        nextI18NextConfig
+      )),
+      ...post
+    },
+  };
+};
+
 
 const BlogLink = ({ as, href, ...otherProps }) => {
   const isAbsolutePath = href.startsWith("http") || href.startsWith("mailto");
@@ -93,6 +111,7 @@ if (typeof process === 'undefined') {
 `;
 
 const Post = ({ code, frontmatter }) => {
+  const { t } = useTranslation(["common", "pages"]);
   const Component = React.useMemo(() => {
     return getMDXComponent(codePrefix + code);
   }, [code]);
@@ -167,7 +186,7 @@ const Post = ({ code, frontmatter }) => {
             </section>
             <hr className="my-2" />
             <section className="sticky top-24">
-              <h5 className="text-lg font-semibold mb-3">目录</h5>
+              <h5 className="text-lg font-semibold mb-3">{t("blog.TableContents_Mobile.dialogHeading", { ns: "components" })}</h5>
               <TableContents />
             </section>
           </aside>
@@ -179,13 +198,6 @@ const Post = ({ code, frontmatter }) => {
       </div>
     </>
   );
-};
-
-export const getStaticProps = async ({ params }) => {
-  const post = await getSinglePost(params.slug);
-  return {
-    props: { ...post },
-  };
 };
 
 export const getInitialProps = async ({}) => {

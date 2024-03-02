@@ -7,10 +7,19 @@ import ProjectFooter from "/components/project/ProjectFooter";
 import ProjectNav from "/components/project/ProjectNav";
 import styles from './styles.module.css'
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-import { useTranslation } from 'next-i18next'
-import withServerSideTranslations from '/utils/withServerSideTranslations';
+import { useTranslation } from 'next-i18next';
+import nextI18NextConfig from '/next-i18next.config.js';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export const getServerSideProps = withServerSideTranslations(['common', 'components']);
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(
+      locale,
+      ["common", "components", "pages"],
+      nextI18NextConfig
+    )),
+  },
+})
 
 
 export default function appSubscription() {
