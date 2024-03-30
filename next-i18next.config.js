@@ -6,7 +6,7 @@ const isBrowser = typeof window !== 'undefined'
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
-  debug: true,
+  debug: false,
   backend: {
     backendOptions: isBrowser ? [
       { expirationTime: isDev ? 0 : 60 * 60 * 1000 },

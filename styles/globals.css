@@ -498,8 +498,11 @@
 
 /* Tailwind CSS 以外的内容 */
 
-body{
+html{
   font-feature-settings: 'case';
+}
+html[lang="en"]{
+  font-feature-settings: 'case', 'ss06', 'ss04';
 }
 
 
