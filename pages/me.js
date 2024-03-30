@@ -2,21 +2,35 @@ import Head from 'next/head'
 import siteMetadata from "/data/siteMetadata";
 import Link from "next/link";
 import Tooltips from "/components/common/Tooltips";
+import { useTranslation, Translation } from 'next-i18next'
+import nextI18NextConfig from '/next-i18next.config.js';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(
+      locale,
+      ["common", "components", "pages"],
+      nextI18NextConfig
+    )),
+  },
+})
 
 
 export default function me() {
   const fileUrl = 'https://lrdim.oss-cn-shenzhen.aliyuncs.com/resources/resume-20221123.pdf';
+  const { t } = useTranslation(["common", "pages"]);
   return (
     
     <div className="">
        <Head>
-        <title>简历 - {siteMetadata.title}</title>
+       <title>{t("common.pages.resume", { ns: "common" })} - {t("common.information.pageTitleSuffix", { ns: "common" })}</title>
       </Head>
 
       <main className="resume max-w-2xl mx-auto pt-8 sm:pb-12 sm:pt-14 px-5 md:px-3">
         
         <h1 className="mb-5 sm:mb-10">
-          李瑞东
+        {t("common.information.author", { ns: "common" })}
         </h1>
 
         {/* 个人信息 */}

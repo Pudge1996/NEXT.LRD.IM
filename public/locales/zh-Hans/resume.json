@@ -1,0 +1,33 @@
+{
+  "introduction": {
+    "resume": "查看简历",
+    "projects": "作品"
+  },
+  "education": {
+    "resume": "查看简历",
+    "projects": "作品"
+  },
+  "contact": {
+    "resume": "查看简历",
+    "projects": "作品"
+  },
+  "experience": {
+    "ones": {
+      "name": "",
+      "name_title": "",
+      "period": "",
+      "title": "",
+      "location": "",
+      "desc": {
+        "desc1": "",
+        "desc2": "",
+        "desc3": ""
+      }
+    },
+    "projects": "作品"
+  },
+  "skills": {
+    "resume": "查看简历",
+    "projects": "作品"
+  }
+}
