@@ -9,24 +9,32 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 18 Jan 2024 06:44:05 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 04 May 2024 09:34:19 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 18 Jan 2024 06:44:05 GMT</pubDate>
+        <pubDate>Sat, 04 May 2024 09:34:19 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2024]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
         <item>
-            <title><![CDATA[English speaking skills for PTE test]]></title>
-            <description><![CDATA[In this post, I will detail the English-speaking skills I learned during my three-month learning journey, which especially met the PTE test criteria.]]></description>
-            <link>https://lrd.im/blog/2024-01-17</link>
-            <guid isPermaLink="true">https://lrd.im/blog/2024-01-17</guid>
+            <title><![CDATA[Lessons I learned after completing the Google UX Design Professional Certificate]]></title>
+            <description><![CDATA[Recently, I heard that Coursera has a UX design course developed by Google's design team. This course covers the entire design process and teaches us how to present our portfolio, prepare interviews, and the like.]]></description>
+            <link>https://lrd.im/blog/2024-05-05</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2024-05-05</guid>
             <dc:creator><![CDATA[李瑞东]]></dc:creator>
-            <pubDate>Mon, 15 Jan 2024 16:00:00 GMT</pubDate>
+            <pubDate>Sun, 05 May 2024 16:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[完成了 Google UX Design Professional Certificate 后的收获]]></title>
+            <description><![CDATA[最近了解到 Coursera 这个平台里面有一个 Google 设计团队出品的的 UX 设计课程，课程里会介绍完整的 UX 设计过程，并且教我们怎么写作品集和准备面试之类的。]]></description>
+            <link>https://lrd.im/blog/2024-05-04</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2024-05-04</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 03 May 2024 16:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[English speaking skills for PTE test]]></title>
-            <description><![CDATA[In this post, I will detail the English-speaking skills I learned during my three-month learning journey, which especially met the PTE test criteria.]]></description>
+            <description><![CDATA[In this post, I will detail the English-speaking skills I learned during the three-month learning journey, which specifically meet the PTE test criteria.]]></description>
             <link>https://lrd.im/blog/2024-01-16</link>
             <guid isPermaLink="true">https://lrd.im/blog/2024-01-16</guid>
             <dc:creator><![CDATA[李瑞东]]></dc:creator>
