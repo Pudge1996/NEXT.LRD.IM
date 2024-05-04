@@ -68,7 +68,7 @@
   /* 个人简历专用样式 */
   .resume{
     a{
-      @apply text-secondary print:no-underline underline underline-offset-2 decoration-neutral-400 sm:hover:decoration-blue-700 dark:decoration-neutral-500 sm:hover:font-medium transition-[text-decoration-color];
+      @apply text-secondary print:no-underline underline underline-offset-2 decoration-neutral-400 sm:hover:decoration-blue-700 dark:sm:hover:decoration-blue-400 dark:decoration-neutral-500 sm:hover:font-medium;
     }
     strong{
       @apply text-primary;
@@ -499,7 +499,7 @@
 /* Tailwind CSS 以外的内容 */
 
 body{
-  font-feature-settings: 'case';
+  font-feature-settings: 'cv06', 'ss04', 'cv03', 'ss01', 'ss02', 'ss07', 'case', 'kern' off;
 }
 
 

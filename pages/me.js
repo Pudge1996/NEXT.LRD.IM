@@ -43,6 +43,17 @@ export default function me() {
 
         {/* 工作经验 */}
         <section className='resume-exp flex flex-col gap-6 sm:gap-8'>
+        {/* <section>
+            <h2>2024.2 - Now</h2>    
+            <div>
+            <div>
+              <p><Link href="https://www.sheingroup.com/" target="_blank" rel="noopener noreferrer" title="SHEIN 集团官网">SHEIN</Link></p>    
+              <p>高级 B 端交互设计师，广州</p>    
+            </div>
+            <ul>
+            </ul>    
+            </div>
+          </section> */}
         <section>
             <h2>2023.2 - 2023.8</h2>    
             <div>
@@ -137,11 +148,11 @@ export default function me() {
             </section>
             <section>
               <strong>英语能力</strong>
-              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" rel="noopener noreferrer" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link>。<Link href="https://www.pearsonpte.com/pte-academic" rel="noopener noreferrer" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 86 分<Tooltips>考试时间：2023-12-26<br/>小分：听 89 读 80 说 79 写 90<br/><Link href="https://www.pearsonpte.com/research/scoring" rel="noopener noreferrer" target="_blank" title="PTE Academic 与雅思和托福的成绩换算表">查看成绩换算表</Link></Tooltips></p>
+              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" rel="noopener noreferrer" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link> 等设计专业文章。持有 <Link href="https://www.pearsonpte.com/pte-academic" rel="noopener noreferrer" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link>  成绩单</p>
             </section>
             <section>
               <strong>前端实现</strong>
-              <p>了解基础 React (State, Hooks)，善于在设计还原和构建设计系统的过程中打破设计与前端的壁垒，有相关实践经验</p>
+              <p>了解基础 React (State, Hooks)，善于在设计还原和构建设计系统的过程中打破设计与前端的壁垒，有丰富的实践经验</p>
             </section>
           </section>
 
