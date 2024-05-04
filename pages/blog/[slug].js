@@ -114,7 +114,7 @@ const Post = ({ code, frontmatter }) => {
       </Head>
       <div className="layout blog-content">
         <div className="flex flex-col gap-0">
-          <h1 className="mb-3 text-3xl sm:text-4xl xl:text-5xl xl:leading-[1.1]">
+          <h1 className="mb-3 text-3xl sm:text-4xl xl:text-5xl xl:leading-[1.1] text-pretty">
             {frontmatter.title}
           </h1>
           <div className="flex gap-3 mb-7">
