@@ -1,0 +1,175 @@
+---
+title: Uplifting your design details with the Case-Sensitive Forms feature
+description: When my workflow had fully transformed from Sketch to Figma, I found there was an option "Case-Sensitive Forms" placed in several typeface setting panels.
+category: 
+tags: font, typeface, typography, case-sensitive, OpenType, graphy, layout, figma, css, font feature
+author: 李瑞东
+date: "20240610"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/f9ed832978af"
+---
+
+![The image features a graphic with a light blue and white gradient background. It includes the text "Uplifting your design details with Case-Sensitive Forms" in bold blue letters and the website "LRD.IM" in smaller text. A 3D letter 'A' in a blue, bubble-like design is positioned on the right side of the image.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/01.png)
+
+## A curious discovery
+
+When my workflow had fully transformed from Sketch to Figma, I found there was an option "Case-Sensitive Forms" placed in several typeface setting panels. The appearance of the font might change slightly and occasionally when I enable this setting.
+
+I was interested in this setting option, then I tried to find out concepts and related knowledge about the term "Case-Sensitive Forms."
+
+In this post, I will explain what Case-Sensitive Forms are, when should we implement this feature to uplift our design with several practices, and how to use it in our workflow.
+
+![The image shows a settings panel in Figma focusing on typography settings. It highlights the "Case-Sensitive Forms" option, which is clearly marked in a dropdown menu under the "Details" tab. The "Case-Sensitive Forms" setting is encircled in red to emphasize its importance in the typography setup.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/02.png)
+
+## Features
+
+The "Case-Sensitive Forms" is a feature of OpenType features, which are like hidden compartments in fonts that allow us to change how fonts look and behave. When we use this feature, the font will:
+
+1. Shift some punctuation marks up to a higher position;
+2. Change oldstyle figures to modern figures.
+
+### Feature 1: Shifting some punctuation marks up to a higher position
+
+In general, punctuation marks are vertically centered with lowercase characters, which is known as "x-height."
+
+However, when using the Case-Sensitive Forms feature, some punctuation marks are aligned with the height of uppercase characters, which we call "Cap height."
+
+![Comparative display of text alignment with and without Case-Sensitive Forms in Figma, showing punctuation marks adjusted to a higher position.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/03.png)
+
+### Feature 2: Shifting some punctuation marks up to a higher position
+
+Some fonts use oldstyle figures by default to add visual attraction. It is often used in traditional publications like books and newspapers since this font has a rhythmic beauty with varied heights.
+
+When using the Case-Sensitive Forms feature, fonts will be directly changed to modern figures, also known as "lining figures."
+
+![Visual comparison in Figma of oldstyle figures versus modern figures using Case-Sensitive Forms feature.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/04.png)
+
+## Realistic practices
+
+Inspiring by the feature 1, shifting some punctuation marks up to a higher position, it is well-suited for compositions that mix uppercase characters, figures, and CJK characters.
+
+Here is a list of compositions that might be visually improved by using the Case-Sensitive Forms feature.
+
+### 1. International phone number
+
+Because figure glyphs are as high as uppercase characters, the use of Case-Sensitive Forms is ideal for displaying phone numbers that include area codes.
+
+![Graphic displaying an international phone number '+1(425) 555-0100' with normal and Case-Sensitive Forms formatting in Figma.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/05.png)
+
+### 2. Date and time
+
+Similarly, date and time is also well-suited for using the Case-Sensitive Forms feature since they are typically consisted of figures and marks.
+
+![Graphic displaying the date '2024-06-10 9:39 PM (GMT+8)' with normal and Case-Sensitive Forms formatting in Figma.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/06.png)
+
+### 3. All caps text
+
+To make titles or other important information visually prominent, we often capitalize the text, which is also ideal for using the Case-Sensitive Forms feature.
+
+![Graphic displaying the text 'SIGN-UP NOW' in all caps, with normal and Case-Sensitive Forms formatting in Figma.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/07.png)
+
+### 4. East Asian typography
+
+East Asian typography looks like a square, meaning the visual height of Chinese, Japanese, Korean, and Vietnamese characters is similar to the "X" letter's cap height.
+
+Therefore, the Case-Sensitive Forms feature are also fitting for the East Asian typography scenario, ensuring marks are vertically aligned with the characters.
+
+![Graphic displaying East Asian typography '50条/页' and 'NHK | 日本放送协会' with normal and Case-Sensitive Forms formatting in Figma.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/08.png)
+
+### 5. Sensitive information
+
+When displaying sensitive information on digital interfaces, such as Social Security Number(SSNs), bank account numbers, and phone numbers, we often use asterisks (*) or dots (•) to partially obscure it.
+
+In that case, the Case-Sensitive Forms feature is highly suitable.
+
+![Graphic displaying masked sensitive information '***-**-1234' with normal and Case-Sensitive Forms formatting in Figma.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/09.png)
+
+### 6. Text face
+
+A rare scenario that may be ideal for using the Case-Sensitive Forms feature is text faces, such as ":D" and ":-)"
+
+![Graphic displaying text faces ':D' and ':-)' with normal and Case-Sensitive Forms formatting in Figma.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/10.png)
+
+## How to use
+
+### 1. Supported typefaces
+
+We've just learned which scenarios are well-suited for using the Case-Sensitive Forms. However, before implementing this feature in digital interfaces, there is an important fact we need to bear in mind:
+
+>> Only typefaces that support the OpenType feature of Case-Sensitive Forms can enable this feature.
+
+It means that not ALL typefaces support this feature, even if we implement this setting in design tools or through coding. 
+
+I've simply made a list to clarify which typefaces support it and which not.
+
+Typefaces that support the Case-Sensitive Forms feature:
+
+1. DIN Pro;
+2. Inter;
+3. San Francisco (fonts for Apple platforms);
+4. Inria Sans;
+5. Warnock Pro…
+
+Typefaces that DO NOT support the Case-Sensitive Forms feature:
+
+1. Arial;
+2. Helvetica;
+3. Noto Sans;
+4. Roboto;
+5. Source Sans;
+6. Segoe UI…
+
+In other words, the Case-Sensitive Forms feature only works on Apple devices if we use the system default font on our website.
+
+### 2. Figma
+
+Follow these steps to implement the Case-Sensitive Forms feature in Figma. Select a text layer, then:
+
+1. Open the "Type settings" panel;
+2. Switch to the "Details" tab;
+3. Check the "Case-sensitive forms" option.
+
+![Screenshot of the Figma interface highlighting the Case-Sensitive Forms setting in the type settings panel. Step 1: Select the text layer indicated by a three dots icon. Step 2: Click on the 'Details' tab. Step 3: Enable the Case-Sensitive Forms option from a dropdown menu.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/11.png)
+
+### 3. CSS
+
+To use the Case-Sensitive Forms feature on the website, we just need to simply add `font-feature-settings: 'case';` to the element that we want to implement this feature.
+
+![Code snippet displayed in a dark theme editor with CSS properties: font-feature-settings: 'case'; This is used to implement Case-Sensitive Forms for displaying a phone number.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/12.png)
+
+Also, the CSS Compatibility of this style is quite good. Again, we need to ensure the typefaces support the Case-Sensitive Forms feature; otherwise there will be no changes.
+
+![Chart displaying high browser compatibility for CSS font-feature-settings, with most modern browsers showing extensive support for advanced typographic features.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/13.png)
+
+## Set as default?
+
+We've discussed many scenarios and advantages of using the Case-Sensitive Forms feature. So should we set it as the default style?
+
+My answer is **NO**.
+
+Although it can uplift visual details with numbers and capital text, it is quite awful when used with lowercase letters, which are more commonly used on our website.
+
+![Graphic displaying the sentence 'I bought apples (and oranges).' in two styles: normal and with Case-Sensitive Forms in Figma.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/14.png)
+
+However, we can safely implement the Case-Sensitive Forms feature in some components that always consist of numbers, marks, and capital letters. Here is the list of UI components:
+
+1. Avatar;
+2. Badge;
+3. Pagination (Image viewer, Swiper and the likes);
+4. Letter counter.
+
+![Display of various UI components using Case-Sensitive Forms in Figma, including Avatar icons with notification counts, Badge icons with user images, a pagination interface, and a letter counter showing 'My website is LRD.IM'.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/15.png)
+
+For comparison, let's see the most common solution in which the Case-Sensitive Forms feature is not implemented on digital interfaces.
+
+![Display of various UI components in Figma without Case-Sensitive Forms: Avatar icons with notification counts, Badge icons with user images, a pagination interface, and a letter counter showing 'My website is LRD.IM'.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-06-10/16.png)
+
+---
+
+Recently, my team has been redesigning our mobile component library. I've suggested using the Case-Sensitive Forms feature on the components listed above. Let's see the outcomes in the future.
+
+## References
+
+1. [Feature: case - Case sensitive Forms](https://www.preusstype.com/techdata/otf_case.php)
+2. [高级排版功能：Case-Sensitive Forms 是什么？](https://lrd.im/blog/2022-05-14)

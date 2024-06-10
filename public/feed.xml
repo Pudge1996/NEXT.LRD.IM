@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 04 May 2024 16:02:22 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jun 2024 05:53:30 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 04 May 2024 16:02:22 GMT</pubDate>
+        <pubDate>Mon, 10 Jun 2024 05:53:30 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2024]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[Uplifting your design details with the Case-Sensitive Forms feature]]></title>
+            <description><![CDATA[When my workflow had fully transformed from Sketch to Figma, I found there was an option "Case-Sensitive Forms" placed in several typeface setting panels.]]></description>
+            <link>https://lrd.im/blog/2024-06-10</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2024-06-10</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Sun, 09 Jun 2024 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[完成了 Google UX Design Professional Certificate 后的收获]]></title>
             <description><![CDATA[最近了解到 Coursera 这个平台里面有一个 Google 设计团队出品的的 UX 设计课程，课程里会介绍完整的 UX 设计过程，并且教我们怎么写作品集和准备面试之类的。]]></description>
