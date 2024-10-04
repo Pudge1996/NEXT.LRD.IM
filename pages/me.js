@@ -23,7 +23,7 @@ export default function me() {
         <section className='resume-info flex flex-col gap-6 sm:gap-8'>
           <section>
             <h2>个人简介</h2>
-            <p>5 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
+            <p>6 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 4 年 B 端 UI/UX 设计师 (2020-2024)</Tooltips>，现就职于 SHEIN 集团担任高级交互设计师。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
             <p>工作期间积累了<strong>国际化、设计系统搭建、数据可视化和体验度量等</strong>实践经验，并独立挖掘流程中的设计机会点，完成多个设计专项探索和设计自驱项目。</p>
           </section>
           <section>
@@ -43,17 +43,15 @@ export default function me() {
 
         {/* 工作经验 */}
         <section className='resume-exp flex flex-col gap-6 sm:gap-8'>
-        {/* <section>
-            <h2>2024.2 - Now</h2>    
+        <section>
+            <h2>2024.2 - 至今</h2>    
             <div>
             <div>
               <p><Link href="https://www.sheingroup.com/" target="_blank" rel="noopener noreferrer" title="SHEIN 集团官网">SHEIN</Link></p>    
-              <p>高级 B 端交互设计师，广州</p>    
+              <p>高级交互设计师，广州</p>    
             </div>
-            <ul>
-            </ul>    
             </div>
-          </section> */}
+          </section>
         <section>
             <h2>2023.2 - 2023.8</h2>    
             <div>
@@ -148,7 +146,7 @@ export default function me() {
             </section>
             <section>
               <strong>英语能力</strong>
-              <p>基础读写顺畅，无障碍阅读 <Link href="https://www.nngroup.com/" rel="noopener noreferrer" target="_blank" title="尼尔森诺曼集团首页">NN/g</Link> 和 <Link href="https://uxdesign.cc/" target="_blank" title="UX Collective 首页">UX Collective</Link> 等设计专业文章。持有 <Link href="https://www.pearsonpte.com/pte-academic" rel="noopener noreferrer" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link>  成绩单</p>
+              <p>基础读写顺畅，持有 <Link href="https://www.pearsonpte.com/pte-academic" rel="noopener noreferrer" target="_blank" title="PTE Academic 官网首页">PTE Academic</Link> 成绩单</p>
             </section>
             <section>
               <strong>前端实现</strong>

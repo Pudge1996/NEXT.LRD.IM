@@ -87,8 +87,8 @@ export default function index() {
         <section className="mb-14">
           <h1 className="">李瑞东</h1>
           <p className="mb-3 mt-3 sm:mt-6">
-            5 年工作经验的 UI/UX 设计师<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 3 年 B 端 UI/UX 设计师 (2020-2023)</Tooltips>，曾就职于 ONES 国际化部门和欢聚集团 SHOPLINE 设计
-            <span className="whitespace-nowrap">团队。</span>
+            6 年工作经验的 UI/UX 设计师<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 4 年 B 端 UI/UX 设计师 (2020-2024)</Tooltips>，现就职于 SHEIN 集团担任高级交互设计师。曾在 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队
+            <span className="whitespace-nowrap">工作。</span>
           </p>
           <p className="mt-3">
           拥有国际化、自研组件/图标库搭建、数据可视化和体验度量等实践<span className="whitespace-nowrap">经验，</span>同时也有<span className="whitespace-nowrap">企业服务</span>、研发管理和跨境电商 SaaS 产品的业务
