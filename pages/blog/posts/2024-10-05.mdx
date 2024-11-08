@@ -1,0 +1,174 @@
+---
+title: Sharing - 3D modeling & rendering flow in Figma
+description: My experience in building a 3D modeling and rendering workflow in Figma to improve our design effectiveness and quality.
+category: 分享会文稿
+tags: Sharing, Figma, Vector to 3D, 3D design, workflow, templates, working effectiveness
+author: 李瑞东
+date: "20241005"
+recommend: ""
+recommendLink: ""
+mediumLink: "https://pudge1996.medium.com/684caf671608"
+---
+
+![Cover page of the sharing session script, titled ‘Sharing: 3D Modeling & Rendering Flow on Figma.’ The background features a dark gradient, with three hexagonal icons centered, each with a lightning symbol. The left icon has an outline style, the middle icon is a flat blue fill, and the right icon features a 3D design, symbolizing the transition from 2D to 3D design.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/01.png)
+
+## Background
+
+### Current situation
+
+I have been working for the current company for half a year. I have a clear picture of the working pattern: We are a small design team, but each member has to be responsible for both the UI and UX design for many internal systems.
+
+Some of the design requirements are not complex at all, but the stakeholders want to make the interface aesthetically beautiful and different from other internal systems. In contrast, other demand sides hope designers can provide a clear and understandable solution to tackle the complex interaction flow.
+
+The previous one was much more difficult for me since I was interviewed for the senior UX designer position, and I had not expected to address these design requirements, which may have occurred considerable times.
+
+So it is time-consuming to design a portal website or refine a running internal system since I have to try multiple design solutions to ensure it will be aesthetically beautiful and outstanding.
+
+### Ideation
+
+I wonder if 3D pictures could be a great approach to suit this type of design requirements. So I researched external products from large firms, trying to know how they use 3D pictures in their SaaS products.
+
+![Screenshots of four different B-end products are shown, focusing on the application of 3D assets within these product interfaces. Each webpage design incorporates 3D elements of various styles to enhance visual appeal and user experience.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/02.png)
+
+After collecting and investing in multiple products, I found the patterns:
+
+1. 3D pictures are most likely used in landing pages, login pages, portal pages, and the like;
+
+2. Admin panels and dashboards do not use 3D pictures frequently, but they would appear in entries, feedback, and background decoration.
+
+### Conclusion
+
+Based on the pattern above, real working conditions, and small-sized tries, I summarized the first conclusion:
+
+1. 3D pictures are not frequently used on dashboard pages and system admin. However, using 3D pictures could improve the variety of pages. So it is not worth it to spend so much time on it.
+
+2. 3D pictures can effectively meet the expectations of demand sides when they want to make their dashboard and admin pages distinguish from other similar sites.
+
+
+## Difficulties
+
+Since I don’t have skills in 3D design, and my working strength is too high to spend much time learning, modeling, and rendering delicate 3D pictures, I just simply searched 3D visual elements on the Internet and then applied them to my deliverable.
+
+Initially, this approach was workable and can help me complete my work quickly. However, drawbacks are uncovered after multiple uses:
+
+1. **Difficulties of matching business contexts.** 3D pictures on the Internet support common scenarios well but can’t always precisely describe certain business scenarios.
+
+2. **Lack of series of an element.** Although we finally found a perfect 3D picture, it is hard to reach other similar elements from the same series, resulting in poor scalability.
+
+3. **Risks of infringement.** Using 3D pictures on the Internet might cause infringement, so applying it directly consists of potential risks.
+
+4. **Inconsistent quality.** Free elements are not guaranteed quality and sometimes fail to meet the standards of our design team.
+
+Here, I draw the second conclusion:
+
+> Searching for 3D pictures on the Internet has limited effectiveness, so we can’t fully rely on this approach.
+
+After drawing this conclusion, I feel horrible: does it mean that I should strive to learn skills in 3D design? My work strength doesn’t allow me to learn professional 3D software like Cinema 4D or Blender.
+
+![The logos of two professional 3D design software are displayed, with CINEMA 4D on the left and Blender on the right, emphasizing their importance in the 3D design field.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/03.png)
+
+After thorough consideration, I think the core demand for me is not to learn 3D software, rather, I should have the ability to gain 3D pictures. Apart from that, the whole process should consist of these features that suit my workflow well:
+
+1. **Quick render.** Since it is not worth it to spend much time on it during my work time.
+
+2. **Consistent style.** Ensuring our design has great scalability.
+
+3. **Great customizability.** It means that I can fully control elements on 3D pictures, ensuring outputs highly represent the business requirements and contexts.
+
+By chance, I know there is a plugin in Figma called “Vector to 3D”. By learning outputs published in the community, it seems that this plugin could meet the features above well, improving my work effectiveness and quality. So I asked my team leader if I could spend some time discovering this plugin and sharing my experiences with team members, and she approved.
+
+Therefore, this post is to record my internal sharing: My experience of how to build 3D modeling & rendering flow in Figma that improves our design effectiveness and quality.
+
+## Work with Vector to 3D
+
+### Introducing the plugin
+
+This is a paid plugin, we can search for and install it in the Figma community.
+
+![A screenshot of the Figma plugin ‘Vector to 3D’ interface shows how to search for and open the plugin page in the Figma community, with the right side displaying the plugin interface during the 3D conversion process.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/04.png)
+
+The control panel is comprised of three parts: Global, Object, and Animation settings. Here I will simply introduce the interface of the first two parts, ensuring all readers learn what this plugin can make.
+
+For the **Global** setting, we can adjust the cameras, and background on the “General” panel; apart from that, we can set the render quality and details on the following panel called “Render”; and then we can control lights on the next panel named “Light and Shadow”, this panel supports varies functions of lights, like the number, size, position, strength, color and so forth.
+
+![A layout settings screenshot of the Figma plugin ‘Vector to 3D’ shows global configuration options for the 3D scene, including modules for rendering quality, shadows, and lighting editor.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/05.png)
+
+For the **Object** setting, we can make a 3D model by extruding, inflating, or revolving, and then increase the detail of the model by setting “Mesh Quality”. Moreover, this plugin also supports material settings, like roughness, metallic, transmission, and the like.
+
+These features are more than sufficient to handle nearly all of my design tasks.
+
+![A screenshot of the configuration interface for individual objects within the Figma plugin ‘Vector to 3D’ displays options for adjusting specific parameters of the 3D object, such as material, color, and refractive index, along with material preset selection.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/06.png)
+
+### Make a template
+
+In this part, I will introduce two functions of this plugin: **Save Preset** and **Template Preset**.
+
+**Saving preset** allows us to memorize the current view, modeling, and material settings of the frame. We can reload all the settings by the next open, even sharing with friends.
+
+![A screenshot of the configuration saving and loading interface of the Figma plugin ‘Vector to 3D’ shows how to save the current configuration to a Figma layer and how to load preset configurations onto 3D objects.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/07.png)
+
+**Templating Preset** is not only the masterpiece of connecting the plugin with Figma but also a key factor in effectively generating 3D pictures.
+
+Once we built a template, the plugin would memorize all the raw object preset, next step, we can replace the raw object with anything else, and succeed the raw object preset to it.
+
+This approach is highly convenient for us when producing 3D elements. We just have to create a template, and then we replace various shapes, finally, we can produce endless 3D elements that fit our actual needs well.
+
+**How it works**: First, we need to set the frame as a component and make the replaceable element that we want to replace with a new one a child component. (In the following example, I set the square bottom as a replaceable element.)
+
+![A screenshot of converting elements into components in Figma shows a semi-circular element and a blue rectangle being converted into sub-components.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/08.png)
+
+Second, we duplicate the whole component and tune settings in the plugin, then save it. (In the following example, I make a glass ball and a square bottom base with a metallic surface)
+
+![A screenshot of saving 3D configurations in Figma, with the left side showing a blue rectangle component with a pink semi-circle, and the right side showing a 3D sphere and rectangular base generated using the ‘Vector to 3D’ plugin.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/09.png)
+
+Third, we need to create a bunch of shapes that are to replace the replaceable element, making them an individual component and ensuring their layer number, order, and name are the same as the replaceable element.
+
+![A screenshot of creating interchangeable elements in Figma displays multiple shapes (square, circle, star) as components.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/10.png)
+
+Last, we can hold the keys “cmd” + “option”, drag a new shape component to replace the replaceable element, and then reload the model again. Now we can see the new shape is applied to the same presets.
+
+![A screenshot in Figma shows replacing component elements and reloading the model using Cmd + Option, with the left side showing the process of replacing a circular base with a rectangular base, and the right side displaying the circular base adopting the rectangular base’s style after the replacement.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/11.png)
+
+Now we successfully made a template, we can produce endless 3D elements by creating and inserting new shapes.
+
+### Actual practice
+
+Here, I will share a case that is already used multiple times in my daily workflow.
+
+![A screenshot shows a blue 3D glass-style icon library, including symbols such as code, star, trash can, like, share, chat bubble, download, dollar sign, lightning, heart, plus sign, and quotation marks.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/12.png)
+
+In this template, the shape of icons and background are replaceable, generating endless pictures and fitting nearly all of my design tasks. So it can be a resource library, empowering other team members.
+
+Meanwhile, I created a color pattern, which not only can be used to represent states like success, fail, warning, and the like but also can be applied to the system with different color themes, ensuring our outputs are highly scalability.
+
+![A screenshot shows a color palette icon library with 3D-style icons in red, green, and orange, including symbols such as an exclamation mark, bell, cross, t-shirt, star, directional arrow, checkmark, music note, heart, and play button.](https://lrdim.oss-accelerate.aliyuncs.com/blogimg/2024-10-05/13.png)
+
+## Benefits
+
+In the post above, we learned the interface of Vector to 3D, how to make a template, and how I use this flow in actual workflow.
+
+We are familiar with the 3D design workflow in Figma. To conclude this post, I’d like to summarize the key advantages of this process.
+
+#### 1. Low learning costs
+
+We can simply recognize that the plugin “Vector to 3D” is a lite version of 3D software, simplifying complex functions from traditional 3D software and keeping essential functions.
+
+#### 2. Full design process within Figma
+
+This workflow allows us to produce great 3D elements that don’t have to leave Figma. Apart from that, we can simply tune colors in Figma, which doesn’t like the traditional workflow that always switches from software to software.
+
+#### 3. High scalability
+
+One of the core features of Vector to 3D is that makes up models from vector shapes, by taking advantage of this, we can efficiently produce 3D pictures that effectively meet our needs and align well with business contexts.
+
+#### 4. Consistent styles
+
+The plugin Vector to 3D can coordinate with the components of Figma, not only remembering global presets like lights and cameras; but also allowing replacements to succeed presets like materials and position from previous elements. By templating these presets, we can endlessly produce 3D pictures with the same style.
+
+---
+
+This workflow is not only successfully used in my daily work but also influences my colleagues. After this sharing, 50% of my team members purchased and used this plugin in their design tasks.
+
+### Solution for non-Figma users
+
+If you or your team are not using Figma for work currently, or you are not a designer but just simply want to try the flow from SVG shapes to 3D models, you can visit the online version of Vector to 3D: https://www.meimu.design/vector-to-3d/

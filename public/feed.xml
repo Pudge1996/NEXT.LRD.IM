@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 01 Sep 2024 09:16:08 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 08 Nov 2024 16:24:41 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 01 Sep 2024 09:16:08 GMT</pubDate>
+        <pubDate>Fri, 08 Nov 2024 16:24:41 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2024]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[Sharing - 3D modeling & rendering flow in Figma]]></title>
+            <description><![CDATA[My experience in building a 3D modeling and rendering workflow in Figma to improve our design effectiveness and quality.]]></description>
+            <link>https://lrd.im/blog/2024-10-05</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2024-10-05</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Fri, 04 Oct 2024 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[分享会文稿：Figma 3D 设计流程分享]]></title>
             <description><![CDATA[这篇文章是公司内部分享会的文稿，记录着我当时探索出来的经验：如何利用 Vector to 3D 插件在 Figma 建立 3D 设计流程来提升我们的设计效率和质量。]]></description>
