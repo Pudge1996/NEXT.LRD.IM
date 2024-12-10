@@ -9,13 +9,21 @@
             <link>https://lrd.im</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 08 Nov 2024 16:24:41 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Dec 2024 14:27:38 GMT</lastBuildDate>
         <atom:link href="https://lrd.im/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 08 Nov 2024 16:24:41 GMT</pubDate>
+        <pubDate>Tue, 10 Dec 2024 14:27:38 GMT</pubDate>
         <copyright><![CDATA[© 李瑞东 2017- 2024]]></copyright>
         <managingEditor><![CDATA[李瑞东]]></managingEditor>
         <webMaster><![CDATA[李瑞东]]></webMaster>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[探索 JPG 和 PNG 图片的压缩表现、算法与应用]]></title>
+            <description><![CDATA[这篇文章是一篇在团队月度分享会的记录，分享会内容主要是在回答这个问题：JPG 和 PNG 分别适合储存什么类型的图片？]]></description>
+            <link>https://lrd.im/blog/2024-12-10</link>
+            <guid isPermaLink="true">https://lrd.im/blog/2024-12-10</guid>
+            <dc:creator><![CDATA[李瑞东]]></dc:creator>
+            <pubDate>Mon, 09 Dec 2024 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Sharing - 3D modeling & rendering flow in Figma]]></title>
             <description><![CDATA[My experience in building a 3D modeling and rendering workflow in Figma to improve our design effectiveness and quality.]]></description>
