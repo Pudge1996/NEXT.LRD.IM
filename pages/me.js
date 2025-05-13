@@ -44,7 +44,16 @@ export default function me() {
         {/* 工作经验 */}
         <section className='resume-exp flex flex-col gap-6 sm:gap-8'>
         <section>
-            <h2>2024.2 - 至今</h2>    
+            <h2>2025.4 - 至今</h2>    
+            <div>
+            <div>
+              <p><Link href="https://www.sheingroup.com/" target="_blank" rel="noopener noreferrer" title="SHEIN 集团官网">SHEIN</Link></p>    
+              <p>资深交互设计师，广州</p>    
+            </div>
+            </div>
+          </section>
+        <section>
+            <h2>2024.2 - 2025.3</h2>    
             <div>
             <div>
               <p><Link href="https://www.sheingroup.com/" target="_blank" rel="noopener noreferrer" title="SHEIN 集团官网">SHEIN</Link></p>    
@@ -60,9 +69,9 @@ export default function me() {
               <p>B 端 UI/UX 设计师，深圳</p>    
             </div>
             <ul>
-              <li>负责 <Link href="https://ones.com/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES 国际化</Link>业务体验设计，包含新用户引导流程、<Link href="/project/ones/app-subscription" target="_blank" title="ONES 应用支持订阅项目详情">应用商店付费流程设计</Link>及系统多语言功能等功能的持续迭代；</li>  
-              <li>负责团队协同与任务管理工具 <Link href="https://ones.cn/products/task" target="_blank" rel="noopener noreferrer" title="ONES Task 产品介绍页">ONES Task</Link> 的前期需求挖掘和迭代，涉及权限系统改造和 Design&nbsp;Token 实践等；</li>  
-              <li>发起部门分享会，分享内容包含：竞品的的本地化设计策略分析（日本和北美）、网页性能指标及其改进方式等。</li>
+              <li>参与 <Link href="https://ones.com/" target="_blank" rel="noopener noreferrer" title="ONES 海外官网">ONES 国际化</Link>专项，包含新用户引导优化、<Link href="/project/ones/app-subscription" target="_blank" title="ONES 应用支持订阅项目详情">付费流程设计</Link>及多语言功能等；</li>  
+              <li>负责任务管理工具 <Link href="https://ones.cn/products/task" target="_blank" rel="noopener noreferrer" title="ONES Task 产品介绍页">ONES Task</Link> 设计，涉及权限系统改造和 Design&nbsp;Token 实践；</li>  
+              <li>组织设计分享会，内容包含：分享竞品本地化策略及网页性能优化方法。</li>
             </ul>    
             </div>
           </section>
@@ -74,12 +83,10 @@ export default function me() {
               <p>B 端 UI/UX 设计师，广州</p>    
             </div>
             <ul>
-              <li>独立负责 <Link href="https://shoplineapp.cn/" target="_blank" rel="noopener noreferrer" title="SHOPLINE 官网">SHOPLINE</Link> 商家后台数据业务和 App 项目的全流程设计；</li>  
-              <li>主导图表、<Link href="/project/analytics" target="_blank" title="SHOPLINE 数据透视表改版方案">表格</Link>等复杂组件的体验升级设计及方案落地，有效提升后台系统的可扩展性和使用屏效；</li>  
-              <li>负责 B 端体验标准化<Link href="/project/analytics-guide" target="_blank" title="SHOPLINE 数据体验标准化方案">项目</Link>：横向检视平台数据场景，与 UX 设计师协作统一数据展示标准；</li>  
-              <li>负责 App 端基础&业务<Link href="/project/slapp-components" target="_blank" title="SHOPLINE App 组件库方案">组件库</Link>搭建和交互模式探索。拥有基于东南亚地区商家特点而作出对应设计决策的实践经验；</li>
-              <li>支持 SHOPLINE 开放平台：应用商店独立化项目，针对商家和开发者这两个角色的核心诉求找到设计发力点并提供完整<Link href="/project/sl-appstore" target="_blank" title="SHOPLINE 开放平台设计方案">方案</Link>；</li>
-              <li>归纳国际化设计规范。结合外部成熟经验和公司业务所需作出合适的指引，并与广州、杭州和港台的设计同事<Link href="/blog/2022-01-02" target="_blank" title="多语言设计分享">分享设计经验</Link>。</li>
+              <li>独立负责 <Link href="https://shoplineapp.cn/" target="_blank" rel="noopener noreferrer" title="SHOPLINE 官网">SHOPLINE</Link> 商家后台数据业务及 App 端全流程设计，主导搭建 <Link href="/project/slapp-components" target="_blank" title="SHOPLINE App 组件库方案">App 端组件库</Link>；</li>
+              <li>主导图表、<Link href="/project/analytics" target="_blank" title="SHOPLINE 数据透视表改版方案">表格</Link>等复杂组件的体验升级。推动<Link href="/project/analytics-guide" target="_blank" title="SHOPLINE 数据体验标准化方案">数据体验标准化</Link>，统一跨业务域的数据展示规范与交互模式。；</li>  
+              <li>支持开放平台应用商店独立化项目，针对商家和开发者的核心诉求提供<Link href="/project/sl-appstore" target="_blank" title="SHOPLINE 开放平台设计方案">设计方案</Link>；</li>
+              <li>制定国际化设计规范，结合外部成熟经验和公司业务所需作出合适的指引，并与广州、杭州和港台的设计同事<Link href="/blog/2022-01-02" target="_blank" title="多语言设计分享">分享设计经验</Link>。</li>
             </ul>    
             </div>
           </section>
