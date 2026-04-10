@@ -23,7 +23,7 @@ export default function me() {
         <section className='resume-info flex flex-col gap-6 sm:gap-8'>
           <section>
             <h2>个人简介</h2>
-            <p>6 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 4 年 B 端 UI/UX 设计师 (2020-2024)</Tooltips>，现就职于 SHEIN 集团担任高级交互设计师。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
+            <p>8 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 6 年 B 端 UI/UX 设计师 (2020-2026)</Tooltips>，现就职于 SHEIN 集团担任高级交互设计师。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
             <p>工作期间积累了<strong>国际化、设计系统搭建、数据可视化和体验度量等</strong>实践经验，并独立挖掘流程中的设计机会点，完成多个设计专项探索和设计自驱项目。</p>
           </section>
           <section>
@@ -59,6 +59,10 @@ export default function me() {
               <p><Link href="https://www.sheingroup.com/" target="_blank" rel="noopener noreferrer" title="SHEIN 集团官网">SHEIN</Link></p>    
               <p>高级交互设计师，广州</p>    
             </div>
+              {/* <ul>
+                <li>独立负责集团级需求管理平台设计，包含甘特 / 看板 / 日历视图、空间 / Sprint 管理、统计看板等模块；</li>  
+                <li>负责客服后台智能工单辅助模块设计，通过用研挖掘用户痛点并推动优化项目落地。</li>
+              </ul>     */}
             </div>
           </section>
         <section>
