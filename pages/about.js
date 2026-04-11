@@ -28,7 +28,7 @@ export default function about() {
         <section>
           <h2 className="text-[22px] font-semibold">其他</h2>
           <p className="mt-2 mb-3">
-          本站永久开源，可在 <Link href="https://github.com/Pudge1996/NEXT.LRD.IM" target="_blank" rel="noopener noreferrer" title="Github">Github</Link> 中查看本站代码。同时也可以在 <Link href="/updates" title="Github">What's New</Link> 中查看站点的改版<span className="whitespace-nowrap">记录。</span>
+          本站永久开源，可在 <Link href="https://github.com/Pudge1996/NEXT.LRD.IM" target="_blank" rel="noopener noreferrer" title="GitHub">GitHub</Link> 中查看本站代码。同时也可以在 <Link href="/updates" title="GitHub">What's New</Link> 中查看站点的改版<span className="whitespace-nowrap">记录。</span>
           </p>
         </section>
       </div>
