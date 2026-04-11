@@ -37,7 +37,7 @@ export default function updates() {
           href="https://github.com/Pudge1996/NEXT.LRD.IM/issues"
           target="_blank"
           rel="noopener noreferrer"
-          title="Github Issues"
+          title="GitHub Issues"
         >
           反馈 Issues
         </Link>
