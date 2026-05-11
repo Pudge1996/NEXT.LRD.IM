@@ -6,6 +6,7 @@ import Tooltips from "/components/common/Tooltips";
 
 export default function me() {
   const fileUrl = 'https://lrdim.oss-cn-shenzhen.aliyuncs.com/resources/resume-20221123.pdf';
+  const workYear = Math.floor((Date.now() - new Date(2018, 6, 1).getTime()) / 31536000000);
   return (
     
     <div className="">
@@ -23,7 +24,7 @@ export default function me() {
         <section className='resume-info flex flex-col gap-6 sm:gap-8'>
           <section>
             <h2>个人简介</h2>
-            <p>8 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 6 年 B 端 UI/UX 设计师 (2020-2026)</Tooltips>，现就职于 SHEIN 集团担任高级交互设计师。有企业服务、研发管理和跨境电商 SaaS 产品的业务背景。</p>
+            <p>{workYear} 年 UI/UX 设计工作经验<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 6 年 B 端 UI/UX 设计师 (2020-2026)</Tooltips>，现就职于 SHEIN 集团担任资深交互设计师。拥有集团级项目工单管理系统、AIGC 平台和跨境电商 SaaS 产品的设计经验。</p>
             <p>工作期间积累了<strong>国际化、设计系统搭建、数据可视化和体验度量等</strong>实践经验，并独立挖掘流程中的设计机会点，完成多个设计专项探索和设计自驱项目。</p>
           </section>
           <section>

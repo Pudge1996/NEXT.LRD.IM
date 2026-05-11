@@ -8,7 +8,7 @@ import ProjectItemData from "/data/project/ProjectItemData";
 import Tooltips from "/components/common/Tooltips";
 
 export default function index() {
-
+  const workYear = Math.floor((Date.now() - new Date(2018, 6, 1).getTime()) / 31536000000);
   function ProjectItems() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
@@ -87,11 +87,11 @@ export default function index() {
         <section className="mb-14">
           <h1 className="">李瑞东</h1>
           <p className="mb-3 mt-3 sm:mt-6">
-            8 年工作经验的 UI/UX 设计师<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 6 年 B 端 UI/UX 设计师 (2020-2026)</Tooltips>，现就职于 SHEIN 集团担任高级交互设计师。曾在 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队
+            {workYear} 年工作经验的 UI/UX 设计师<Tooltips>2 年 C 端 UI 设计师 (2018-2020) <br/> 6 年 B 端 UI/UX 设计师 (2020-2026)</Tooltips>，现就职于 SHEIN 集团担任资深交互设计师。曾在 ONES 国际化部门和欢聚集团 SHOPLINE 设计团队
             <span className="whitespace-nowrap">工作。</span>
           </p>
           <p className="mt-3">
-          拥有国际化、自研组件/图标库搭建、数据可视化和体验度量等实践<span className="whitespace-nowrap">经验，</span>同时也有<span className="whitespace-nowrap">企业服务</span>、研发管理和跨境电商 SaaS 产品的业务
+          拥有国际化、自研组件/图标库搭建、数据可视化和体验度量等实践<span className="whitespace-nowrap">经验，</span>同时也有集团级项目工单管理系统、AIGC 平台和跨境电商 SaaS 产品的工作
             <span className="whitespace-nowrap">背景。</span>
           </p>
           <div className="flex items-center flex-col sm:flex-row gap-3 text-lg">
