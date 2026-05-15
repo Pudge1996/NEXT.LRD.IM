@@ -3,6 +3,7 @@ import Link from "next/link";
 import ContactCard from "/components/common/ContactCard";
 
 export default function ProjectFooter() {
+  const workYear = Math.floor((Date.now() - new Date(2018, 6, 1).getTime()) / 31536000000);
   return (
     <section className="max-w-2xl mx-auto px-5 md:px-0 relative">
       <section className="flex flex-col gap-4 sm:gap-6 p-4 mb-6 sm:p-6 rounded-lg mt-4 sm:mt-0 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-colors">
@@ -10,10 +11,10 @@ export default function ProjectFooter() {
           <div className="text-lg font-semibold">李瑞东</div>
           <div className="text-secondary">
             <span>
-              5 年工作经验的 UI/UX 设计师，拥有 <strong>国际化 SaaS</strong>、
+              {workYear} 年工作经验的 UI/UX 设计师，拥有 <strong>国际化 SaaS</strong>、
               <strong>自研组件/图标库搭建</strong>、<strong>数据可视化</strong>
               和<strong>体验度量</strong>
-              等实践经验，同时也有大型企业服务产品和跨境电商的业务
+              等实践经验，同时也有集团级项目工单管理系统、AIGC 平台和跨境电商 SaaS 产品的工作
               <span className="whitespace-nowrap">背景。</span>
             </span>
           </div>
